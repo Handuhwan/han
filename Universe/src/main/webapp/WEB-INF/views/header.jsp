@@ -23,7 +23,7 @@
 
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
-<!-- 스크립트란 -->
+<!-- 수정한거 보이게 하고싶은데 보이면 말좀해줘 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
