@@ -15,8 +15,9 @@
 
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="resources/css/common.css" rel="stylesheet">
 <link href="resources/css/main.css" rel="stylesheet">
-<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
@@ -40,7 +41,14 @@
 	<div class="container"> <!-- header nav  -->
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
-				gd
+				<div class="pull-left">
+					임시
+				</div>
+				<div class="pull-right">
+					<ul>
+						<li>asd</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
