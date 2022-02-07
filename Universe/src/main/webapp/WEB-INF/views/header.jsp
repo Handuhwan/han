@@ -13,16 +13,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Universe</title>
 
-<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="resources/css/main.css" rel="stylesheet">
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
-<script src="/resources/js/jquery-3.3.1.min.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript"></script>
+<script src="resources/js/jquery-3.3.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
 
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
@@ -33,6 +33,12 @@
 <!-- index header -->
 <header>
 
-
+	<div class="container"> <!-- header nav  -->
+		<div class="row">
+			<div class="col-md-12 col-sm-12 main_header_nav">
+				gd
+			</div>
+		</div>
+	</div>
 
 </header>
