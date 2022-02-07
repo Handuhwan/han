@@ -29,6 +29,7 @@
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
+<!-- <script src="/resources/js/"></script> 여분 -->
 </head>
 
 <!-- index header -->
