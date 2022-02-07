@@ -24,6 +24,7 @@
 <script src="/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript"></script>
 <script type="text/javascript"></script>
+<script type="text/javascript"></script>
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
