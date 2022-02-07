@@ -15,10 +15,18 @@
 
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-<!-- gd -->
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+
 
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
+<!-- <script src="/resources/js/"></script> 여분 -->
+<!-- <script src="/resources/js/"></script> 여분 -->
+<!-- <script src="/resources/js/"></script> 여분 -->
+<!-- <script src="/resources/js/"></script> 여분 -->
 </head>
 
 <!-- index header -->
