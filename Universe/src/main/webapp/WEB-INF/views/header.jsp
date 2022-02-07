@@ -23,6 +23,7 @@
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript"></script>
+<script type="text/javascript"></script>
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
