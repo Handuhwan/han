@@ -19,11 +19,9 @@
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
-<!-- 두환 일환 문주 재호 간바로 -->
 
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
-<script src=""></script>
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
 <!-- <script src="/resources/js/"></script> 여분 -->
