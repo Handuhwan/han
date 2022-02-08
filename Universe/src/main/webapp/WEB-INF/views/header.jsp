@@ -17,7 +17,7 @@
 <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="resources/css/common.css" rel="stylesheet">
 <link href="resources/css/main.css" rel="stylesheet">
-
+<link href="resources/css/sub.css" rel="stylesheet">
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
