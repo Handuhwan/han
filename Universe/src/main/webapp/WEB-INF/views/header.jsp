@@ -17,7 +17,7 @@
 <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="resources/css/common.css" rel="stylesheet">
 <link href="resources/css/main.css" rel="stylesheet">
-
+<link href="resources/css/sub.css" rel="stylesheet">
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
@@ -39,6 +39,8 @@
 				<div class="pull-right">
 					<ul>
 						<li>asd</li>
+						<li><a href="/member/login.do"><i class="fa fa-lock"></i> 로그인</a></li>
+						<li><a href="/member/join.do"><i class="fa fa-lock"></i> 회원가입</a></li>
 					</ul>
 				</div>
 			</div>
