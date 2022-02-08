@@ -63,7 +63,7 @@
 					</div>
 					<div class="dropdown">
  						<button class="dropbtn">MY PAGE<span class="caret"></span></button>
-			  			<div class="dropdown-content">
+			  			<div class="dropdown-content content2">
 			    			<a href="#">Link 1</a>
 			    			<a href="#">Link 2</a>
 			    			<a href="#">Link 3</a>
