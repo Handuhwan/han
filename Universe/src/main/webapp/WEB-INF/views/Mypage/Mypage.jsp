@@ -68,7 +68,7 @@
 									<td colspan="5">출력할 수 있는 데이터가 존재하지 않습니다.</td>
 								</tr>
 								<tr>
-									<td>1</td>
+									<td>2</td>
 									<td><img src=""></td>
 									<td>이름</td>
 									<td>판매가</td>
