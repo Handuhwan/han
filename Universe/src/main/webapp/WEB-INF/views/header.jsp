@@ -31,7 +31,6 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
 				<div class="pull-left">
-				
 				</div>
 				<div class="pull-right">
 				
