@@ -25,7 +25,7 @@ public class AdminLoginSuccessHandler implements AuthenticationSuccessHandler {
 		});
 		
 		if(roleNames.contains("ROLE_ADMIN")) {
-			response.sendRedirect("/adm/admin");
+			response.sendRedirect("/admin/admin");
 			return;
 		}
 		if(roleNames.contains("ROLE_MEMBER")) {
