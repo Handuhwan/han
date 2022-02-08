@@ -13,21 +13,21 @@
     		</div>
     	
     			<div class="col-md-6 newitem">
-    				<h2>LOGIN</h2>
+    				<h2 class="loginheader">LOGIN</h2>
     				
     				<form class="form-horizontal" name="frm" method="post" action="/login">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="form-group">
-					    <label for="userid" class="col-sm-2 control-label">Email</label>
-					    <div class="col-sm-10">
+					    <label for="userid" class="col-sm-2 control-label"></label>
+					    <div class="">
 					      <input type="text" name="username" class="form-control" id="userid" placeholder="Email">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="userpwd" class="col-sm-2 control-label">password</label>
-					    <div class="col-sm-10">
+					    <label for="userpwd" class="col-sm-2 control-label"></label>
+					    <div class="">
 					      <input type="password" name="password" class="form-control" id="userpwd" placeholder="password">
 					    </div>
 					  </div>
