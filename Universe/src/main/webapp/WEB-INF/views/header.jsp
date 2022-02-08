@@ -53,7 +53,7 @@
 
 					임시 두환 push / 두환??
 
-			
+					두환
 					
 				</div>
 				<div class="pull-right">
