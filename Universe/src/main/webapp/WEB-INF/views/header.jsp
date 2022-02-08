@@ -25,14 +25,7 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <script></script>
 
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
-<!-- <script src="/resources/js/"></script> 여분 -->
+
 </head>
 
 <!-- index header -->
