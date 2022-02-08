@@ -20,6 +20,7 @@
 					  
 					  <div class="form-group">
 					    <label for="userid" class="col-sm-2 control-label"></label>
+
 					    <div class="loginemail">
 					      <input type="text" name="username" class="form-control" id="userid" placeholder="Email"  style="height: 50px; ">
 					    </div>
@@ -44,6 +45,30 @@
 					     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 					    	 <button type="button" class="btn btn-default" onclick="googleout();"><img src="" alt="">구글회원탈퇴</button>
 					   	</div>
+
+					    <div class="">
+					      <input type="text" name="username" class="form-control" id="userid" placeholder="Email">
+					    </div>
+					  </div>
+					  
+					  <div class="form-group">
+					    <label for="userpwd" class="col-sm-2 control-label"></label>
+					    <div class="">
+					      <input type="password" name="password" class="form-control" id="userpwd" placeholder="password">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <input type="submit" class="btn btn-default" value="SIGN IN">&nbsp;&nbsp;&nbsp;
+					      <button type="button" class="btn btn-default" onclick="location.href='/member/join.do'">회원가입</button>
+						     <button type="button" class="btn btn-default" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
+					      
+					      <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>
+					      
+					     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+					     <button type="button" class="btn btn-default" onclick="googleout();"><img src="" alt="">구글회원탈퇴</button>
+					    </div>
+
 					    
 					  </div>
 					  
