@@ -7,11 +7,19 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Universe</title>
+
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="resources/css/common.css" rel="stylesheet">
+<link href="resources/css/main.css" rel="stylesheet">
+<link href="resources/css/sub.css" rel="stylesheet">
 
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
@@ -24,9 +32,14 @@
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
+
+<script src="resources/js/jquery-3.3.1.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script></script>
+
 
 
 </head>
@@ -41,6 +54,7 @@
 				<span style="font-size:16px;"></span>
 				</div>
 				<div class="pull-right">
+
 					<span style="font-size:16px;">님 환영합니다.</span>
 					<div class="dropdown">
  						<button class="dropbtn">알림<span class="caret"></span></button>
@@ -58,6 +72,7 @@
 			 			</div>
 					</div>
 					
+
 				</div>
 			</div>
 		</div>
