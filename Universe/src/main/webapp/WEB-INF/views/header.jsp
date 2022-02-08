@@ -44,7 +44,7 @@
 				<div class="pull-left">
 					임시 일환 push 두환 확인/
 					임시 재호 push 확인 바람/
-					s
+					임시 두환 push /
 					
 					
 				</div>
