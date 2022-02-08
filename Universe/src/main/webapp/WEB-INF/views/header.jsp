@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
 				<div class="pull-left">
-				<span style="font-size:16px;"></span>
+				<span style="font-size:16px;"><a href="">로그인</a></span>
 				</div>
 				<div class="pull-right">
 
@@ -52,7 +52,7 @@
 
 
 
-			<span style="font-size:16px;">님 환영합니다.</span>
+			<span style="font-size:16px;  padding-right:10px;">님 환영합니다.</span>
 
 					<div class="dropdown">
  						<button class="dropbtn">알림<span class="caret"></span></button>
