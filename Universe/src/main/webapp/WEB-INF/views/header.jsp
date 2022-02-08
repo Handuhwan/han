@@ -13,11 +13,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Universe</title>
 
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="resources/css/common.css" rel="stylesheet">
-<link href="resources/css/main.css" rel="stylesheet">
-<link href="resources/css/sub.css" rel="stylesheet">
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/resources/css/common.css" rel="stylesheet">
+<link href="/resources/css/main.css" rel="stylesheet">
+<link href="/resources/css/sub.css" rel="stylesheet">
+<link href="/resources/css/member.css" rel="stylesheet">
+<link href="/resources/css/login.css" rel="stylesheet">
+
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
@@ -37,11 +40,26 @@
 				<div class="pull-left">
 				</div>
 				<div class="pull-right">
-					<ul>
-						<li>asd</li>
-						<li><a href="/member/login.do"><i class="fa fa-lock"></i> 로그인</a></li>
-						<li><a href="/member/join.do"><i class="fa fa-lock"></i> 회원가입</a></li>
-					</ul>
+
+
+					<span>님 환영합니다.</span>
+					<div class="dropdown">
+ 						<button class="dropbtn">알림<span class="caret"></span></button>
+			  			<div class="dropdown-content" style="left:-135px; min-width:290px;">
+			    			<a href="#">새로운 메세지가 도착했습니다.</a>
+			    			
+			 			</div>
+					</div>
+					<div class="dropdown">
+ 						<button class="dropbtn">MY PAGE<span class="caret"></span></button>
+			  			<div class="dropdown-content">
+			    			<a href="#">Link 1</a>
+			    			<a href="#">Link 2</a>
+			    			<a href="#">Link 3</a>
+			 			</div>
+					</div>
+					
+
 				</div>
 			</div>
 		</div>
