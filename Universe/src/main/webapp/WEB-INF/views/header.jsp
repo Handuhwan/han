@@ -35,15 +35,6 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
 				<div class="pull-left">
-					임시 일환 push 두환 확인/
-					임시 재호 push 확인 바람/
-
-					s
-					문주 수정중
-
-
-					
-					
 				</div>
 				<div class="pull-right">
 					<ul>
