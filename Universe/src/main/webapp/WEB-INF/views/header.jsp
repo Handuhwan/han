@@ -47,7 +47,13 @@
 				</div>
 				<div class="pull-right">
 
-					<span style="font-size:16px;">님 환영합니다.</span>
+
+					<span>님 환영합니다.</span>
+
+
+
+			<span style="font-size:16px;">님 환영합니다.</span>
+
 					<div class="dropdown">
  						<button class="dropbtn">알림<span class="caret"></span></button>
 			  			<div class="dropdown-content" style="left:-135px; min-width:290px;">
@@ -63,7 +69,7 @@
 			    			<a href="#">Link 3</a>
 			 			</div>
 					</div>
-					
+
 
 				</div>
 			</div>
