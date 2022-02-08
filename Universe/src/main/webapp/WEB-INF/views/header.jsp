@@ -13,19 +13,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Universe</title>
 
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="resources/css/common.css" rel="stylesheet">
-<link href="resources/css/main.css" rel="stylesheet">
-<link href="resources/css/sub.css" rel="stylesheet">
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/resources/css/common.css" rel="stylesheet">
+<link href="/resources/css/main.css" rel="stylesheet">
+<link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/login.css" rel="stylesheet">
 
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 
-<script src="resources/js/jquery-3.3.1.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/jquery-3.3.1.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
 <script></script>
 
 
@@ -38,9 +38,10 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
 				<div class="pull-left">
+				<span style="font-size:16px;"></span>
 				</div>
 				<div class="pull-right">
-					<span>님 환영합니다.</span>
+					<span style="font-size:16px;">님 환영합니다.</span>
 					<div class="dropdown">
  						<button class="dropbtn">알림<span class="caret"></span></button>
 			  			<div class="dropdown-content" style="left:-135px; min-width:290px;">
