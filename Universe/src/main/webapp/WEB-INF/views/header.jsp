@@ -49,7 +49,6 @@
 				<div class="pull-right">
 
 
-					<span>님 환영합니다.</span>
 
 
 
