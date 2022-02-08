@@ -22,6 +22,12 @@
 
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+
+
+<script></script>
+
+
+
 </head>
 
 <!-- index header -->
@@ -31,6 +37,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 main_header_nav">
 				<div class="pull-left">
+				
 				</div>
 				<div class="pull-right">
 				
