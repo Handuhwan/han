@@ -5,24 +5,24 @@
 <%@ include file="../header.jsp"%>
 
 <!-- Contents Start -->
-<div class="container">
+<div class="container mypage_box">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 mypage_con">
 			<!-- Box Start -->
-			<div class="pull-left">
+			<div class="pull-left mypage_left">
 				<img src="" alt="">
-				<h2>유저 닉네임</h2>
+				<h3>유저 닉네임</h3>
 				<div class="Stars">평점표시</div>
 				<a href="">내 상점 관리</a>
 			</div>
-			<div class="pull-right">
+			<div class="pull-right mypage_right">
 				<div class="nickname">
 					<h2>유저 닉네임</h2>
 					<button class="modify_nickname">상점명 수정</button>
 				</div>
 				<div class="user_info">
-					<P>상점오픈일</P>
-					<p>상점방문수</p>
+					<div>상점오픈일</div>
+					<div>상점방문수</div>
 				</div>
 				<div class="intro">
 					<input type="text" class="intro_text" placeholder="소개글을 입력해주세요">
