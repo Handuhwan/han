@@ -49,11 +49,7 @@
 					문주 수정중
 
 
-					임시 두환 push / 두환asd
-
-					임시 두환 push / 두환??
-
-					두환
+					
 					
 				</div>
 				<div class="pull-right">
