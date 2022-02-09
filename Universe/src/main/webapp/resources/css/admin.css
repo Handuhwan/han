@@ -2,11 +2,17 @@
 
 
 .admin_logo{
-	
+	width: 100%;
+    padding-bottom: 20px;
+    margin-top: 60px;
 }
 
 .admin_ctgry {
-	
+	padding-bottom: 18px;
+}
+
+.admin_date {
+	padding-bottom: 20px;
 }
 
 .admin_ctgry_detail{
@@ -18,25 +24,124 @@
 
 .admin_ctgry_detail:hover {color: #2a2a2a;}
 
-.how-pagination1 {
+.wrap_admin_menu {
+  overflow: auto;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.admin_menu {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 680px;
+}
+
+.admin_menu tr {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.admin_menu .column-0 {
+  width: 172px;
+  padding-left: 50px;
+}
+
+.admin_menu .column-1 {
+  width: 140px;
+  padding-left: 5px;
+}
+
+.admin_menu .column-2 {
+  font-size: 15px;
+}
+
+.admin_menu .column-3 {
+  width: 120px;
+  font-size: 16px;
+}
+
+.admin_menu .column-4 {
+  width: 120px;
+  font-size: 16px;
+}
+
+.admin_menu .admin_head th {
+  font-family: Poppins-Bold;
+  font-size: 13px;
+  color: #555;
+  text-transform: uppercase;
+  line-height: 1.6;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align:left;
+}
+
+.admin_menu td {
+  font-family: Poppins-Regular;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+.admin_pagination {
   font-family: Poppins-Regular;
   font-size: 14px;
   color: #808080;
-
   width: 36px;
   height: 36px;
   border-radius: 50%;
   border: 1px solid #e6e6e6;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
 }
 
-.how-pagination1:hover {
+.admin_pagination:hover {
   background-color: #999;
   border-color: #999;
   color: #fff;
 }
 
-.active-pagination1 {
+.admin_pagination_active {
   background-color: #999;
   border-color: #999;
   color: #fff;
 }
+
+.wrap_admin_search {
+	overflow: hidden;
+	pos-relative
+}
+
+.admin_search {
+	font-family: Poppins-Regular;
+  	font-size: 15px;
+ 	line-height: 1.466667;
+ 	color : #fff;
+ 	width: 100%;
+  	height: 50px;
+  	padding-left: 28px;
+  	padding-right: 55px;
+  	border: 1px solid #e6e6e6;
+}
+
+.admin_search::-webkit-input-placeholder { color: #888;}
+
+.admin_search_btn {
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	width: 55px;
+  	height: 100%;
+  	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: 18px;
+	color: #999;
+	-webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.admin_search_btn:hover {color: #D8C6BC;}
