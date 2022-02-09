@@ -66,7 +66,7 @@
 			  			<div class="dropdown-content content2">
 			    			<a href="#">판매리스트</a>
 			    			<a href="#">구매리스트</a>
-			    			<a href="#">정보수정</a>
+			    			<a href="#">정보수정!</a>
 			 			</div>
 					</div>
 
