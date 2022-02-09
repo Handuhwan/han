@@ -15,7 +15,9 @@ local.properties
 .loadpath
 .recommenders
 .target
-/target/
+.target/
+*.properties
+target/
 .gitignore
 # External tool builders
 .externalToolBuilders/
