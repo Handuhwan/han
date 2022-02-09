@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+
 .loginheader {
 	font-size: 40px;
 	margin-top:30px; 
@@ -22,6 +24,13 @@
 	font-weight:bold;
 	
 }
+.signup {
+	font-weight: 560;
+    font-size: 16px;
+    border: solid 2px;
+    width: 340px;
+    height: 50px;
+}
 .naverbutton {
 	margin-right: 9px;
 	border-style:solid;
@@ -38,6 +47,24 @@
 	width:300px;
 	color: #fff;
     background-color: #00c63b;
+    text-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    border-style:solid;
+}
+.kakaofont{
+	margin-top: 15px;
+	line-height: 35px;
+	text-align:left;
+	width:300px;
+	color: #fff;
+    background-color: #fbe300;
+    text-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    border-style:solid;
+}
+.googlefont{
+	margin-top: 15px;
+	line-height: 35px;
+	text-align:left;
+	width:300px;
     text-shadow: 0 0 2px rgb(0 0 0 / 20%);
     border-style:solid;
 }
@@ -77,7 +104,7 @@ transition: all .3s
 /*======= Button 4 회원가입 =======*/
 .btn4 {
 	border-style:hidden;
-
+	margin-top: 9px;
 }
 .btn4::before {
   content: '';
@@ -106,3 +133,16 @@ transition: all .3s
   -ms-transform: scale(1, 1);
   transform: scale(1, 1)
 }
+/*join.jsp*/
+.dropdownconsent{
+	width: 1140px;
+	float:left;
+}
+.textline{
+	width: 1140px;
+}
+.intextline {
+	height: 200px;
+    width: 1100px;
+}
+
