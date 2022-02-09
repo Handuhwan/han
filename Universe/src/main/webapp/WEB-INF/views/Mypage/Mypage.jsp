@@ -22,7 +22,7 @@
 				</div>
 				<div class="user_info">
 					<P>상점오픈일</P>
-					<p>상점방문수</p>
+					<p>상점방문수~</p>
 				</div>
 				<div class="intro">
 					<input type="text" class="intro_text" placeholder="소개글을 입력해주세요">
