@@ -1,1 +1,19 @@
 @charset "UTF-8";
+
+
+.admin_logo{
+	
+}
+
+.admin_ctgry {
+	
+}
+
+.admin_ctgry_detail{
+	font-family: Poppins-Regular;
+ 	font-size: 15px;
+  	line-height: 1.666667;
+  	color:#cl6;
+}
+
+.admin_ctgry_detail:hover {color: #2a2a2a;}
