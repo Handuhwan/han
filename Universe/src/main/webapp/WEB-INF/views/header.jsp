@@ -64,9 +64,9 @@
 					<div class="dropdown">
  						<button class="dropbtn">MY PAGE<span class="caret"></span></button>
 			  			<div class="dropdown-content content2">
-			    			<a href="#">Link 1</a>
-			    			<a href="#">Link 2</a>
-			    			<a href="#">Link 32!</a>
+			    			<a href="#">판매리스트</a>
+			    			<a href="#">구매리스트</a>
+			    			<a href="#">정보수정</a>
 			 			</div>
 					</div>
 

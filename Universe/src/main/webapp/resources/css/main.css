@@ -48,6 +48,9 @@
     font-size:13px;
     line-height:40px;
 }
+.content2{
+	min-width:100px
+}
 .content2 a{
 	height:10px;
 	line-height:0px;
