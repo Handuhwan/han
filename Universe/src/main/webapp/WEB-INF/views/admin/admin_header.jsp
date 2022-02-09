@@ -19,12 +19,13 @@
 	<link href="/resources/css/main.css" rel="stylesheet">
 	<link href="/resources/css/sub.css" rel="stylesheet">
 	<link href="/resources/css/member.css" rel="stylesheet">
-	<link href="/resources/css/login.css" rel="stylesheet">
+	<link href="../resources/css/admin.css" rel="stylesheet">
     
     <script src="/resources/js/jquery-3.3.1.min.js"></script>
 	<script src="/resources/js/bootstrap.min.js"></script>
 	<script src="/resources/js/member.js"></script>
 	<script src="/resources/js/my.js"></script>
+	
 </head>
   
 <body>
@@ -46,19 +47,19 @@
 
 						<li class="admin_ctgry">
 							<a href="" class="admin_ctgry_detail">
-								알림
+								✔ 알림
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
 							<a href="" class="admin_ctgry_detail">
-								회원관리
+								✔ 회원관리
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
 							<a href="admin_logout.do" class="admin_ctgry_detail">
-								로그아웃
+								✔ 로그아웃
 							</a>
 						</li>
 					</ul>
