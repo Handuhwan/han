@@ -35,18 +35,20 @@
 					  </div>
 					  
 					  <div class="form-group">
-					    <div class="">
-					      <input type="submit" class="btn btn-default btn2" value="SIGN UP" style="width: 341px; height: 54px; margin-top:20px; margin-bottom:20px; border-style:solid; border-color: black; font-size: large;">
+					    <div >
+					      <input type="submit" class="btn btn-default btn2" value="SIGN UP" style="">
 					       </div>
 					       <div>
-					     	 <button type="button" class="btn btn-default logingroup" onclick="location.href='/member/join.do' ">회원가입</button>
-					     	 <button type="button" class="btn btn-default" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
+					       	 
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" >회원가입</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
 					      </div>
 					      <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>
 					      
 					     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 					    	 <button type="button" class="btn btn-default" onclick="googleout();"><img src="" alt="">구글회원탈퇴</button>
 					   	</div>
+					   	
 						</div>		
 					   
 					  
