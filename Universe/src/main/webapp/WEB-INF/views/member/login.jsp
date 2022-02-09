@@ -43,14 +43,17 @@
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" >회원가입</button>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
 					      </div>
-					      <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>
+					      
+					   		<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="naverbutton">네이버 로그인</button>
+							<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="">카카오 로그인</button>
+							<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="">구글 로그인</button>
+						</div>		
+					   
+					   <!-- <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>
 					      
 					     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 					    	 <button type="button" class="btn btn-default" onclick="googleout();"><img src="" alt="">구글회원탈퇴</button>
-					   	</div>
-					   	
-						</div>		
-					   
+					   	</div> -->
 					  
 					
 					 
