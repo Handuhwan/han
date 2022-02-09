@@ -21,8 +21,8 @@
 					<button class="modify_nickname">상점명 수정</button>
 				</div>
 				<div class="user_info">
-					<P>상점오픈일</P>
-					<p>상점방문수</p>
+					<P>상점오픈일1234</P>
+					<p>상점방문수klll1234</p>
 				</div>
 				<div class="intro">
 					<input type="text" class="intro_text" placeholder="소개글을 입력해주세요">
