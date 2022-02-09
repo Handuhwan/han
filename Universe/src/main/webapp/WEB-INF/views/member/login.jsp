@@ -33,9 +33,10 @@
 					      <input type="password" name="password" class="form-control" id="userpwd" placeholder="password" style="height: 50px; ">
 					    </div>
 					  </div>
+					  
 					  <div class="form-group">
 					    <div class="">
-					      <input type="submit" class="btn btn-default " value="SIGN UP" style="width: 341px; height: 54px; margin-top:20px; margin-bottom:20px; border-style:solid; border-color: black; font-size: large;">
+					      <input type="submit" class="btn btn-default btn2" value="SIGN UP" style="width: 341px; height: 54px; margin-top:20px; margin-bottom:20px; border-style:solid; border-color: black; font-size: large;">
 					       </div>
 					       <div>
 					     	 <button type="button" class="btn btn-default logingroup" onclick="location.href='/member/join.do' ">회원가입</button>
@@ -46,7 +47,7 @@
 					     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
 					    	 <button type="button" class="btn btn-default" onclick="googleout();"><img src="" alt="">구글회원탈퇴</button>
 					   	</div>
-									
+						</div>		
 					   
 					  
 					
