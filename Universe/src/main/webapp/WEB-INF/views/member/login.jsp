@@ -9,7 +9,7 @@
     		<div class="row">
     		
     		<div class="col-md-6 newitem">
-    		<!--  사진 -->
+    			<img src="/resources/images/ingg.webp" alt="" class="" style="width: 500px; height: 500px;">
     		</div>
     	
     			<div class="col-md-6 newitem">
@@ -36,7 +36,7 @@
 					  
 					  <div class="form-group">
 					    <div >
-					      <input type="submit" class="btn btn-default btn2" value="SIGN UP" style="">
+					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" >
 					       </div>
 					       <div>
 					       	 
@@ -45,8 +45,8 @@
 					      </div>
 					      
 					   		<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="naverbutton">네이버 로그인</button>
-							<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="">카카오 로그인</button>
-							<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="">구글 로그인</button>
+							<button type="button" class="btn btn-default kakaofont" onclick=""><img src="/resources/images/kakao.png" alt="" class="naverbutton">카카오 로그인</button>
+							<button type="button" class="btn btn-default googlefont" onclick=""><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
 						</div>		
 					   
 					   <!-- <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>
