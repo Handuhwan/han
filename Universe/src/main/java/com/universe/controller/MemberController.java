@@ -55,4 +55,8 @@ public class MemberController {
 	public void login() {
 		
 	}
+	@GetMapping("/findIdPwd")
+	public void findIdPwd() {
+	
+	}
 }
