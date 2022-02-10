@@ -24,4 +24,9 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	
+	@GetMapping("/admin_alert")
+	public String adminAlert() {
+		return "/admin/admin_alert";
+	}
+	
 }

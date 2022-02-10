@@ -36,7 +36,7 @@
 				<div class="nav">
 					<ul>
 						<li>
-							<img src="/resources/images/logo_03.png" class="admin_logo">
+							<img src="/resources/images/logo_03-1.png" class="admin_logo">
 						</li>	
 							
 						<li class="">
@@ -46,13 +46,13 @@
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="" class="admin_ctgry_detail">
+							<a href="/admin/admin_alert" class="admin_ctgry_detail">
 								✔ 알림
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="" class="admin_ctgry_detail">
+							<a href="/admin/admin" class="admin_ctgry_detail">
 								✔ 회원관리
 							</a>
 						</li>

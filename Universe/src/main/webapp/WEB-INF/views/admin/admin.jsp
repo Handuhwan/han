@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@ include file="admin_header.jsp" %>
 
 			<div class="col-md-10">
@@ -38,8 +41,8 @@
 											<td class="column-3">${mlist.phone}</td>
 											<td class="column-0">
 												${mlist.status}
-												<button type="button" class="" onclick="()">정지</button>
-												<button type="button" class="" onclick="()">블락</button>
+												<button type="button" class="btn btn-default" onclick="()">정지</button>
+												<button type="button" class="btn btn-default" onclick="()">블락</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -49,8 +52,8 @@
 					</div>
 				</div>
 				<!-- pagination -->
-				<div class="col-md-12" > <!-- style="padding-left:420px;" -->
-					<div style="text-align: center;">
+				<div class="col-md-12" > 
+					<div style="text-align: center; padding-top: 15px;">
 						<a href="#" class="admin_pagination admin_pagination_active">
 							1
 						</a>
