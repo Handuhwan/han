@@ -1,1 +1,280 @@
 @charset "UTF-8";
+
+ul, ol {list-style: none;}
+a {text-decoration: none;}
+
+.topmybox {
+	margin: 30px 0;
+	padding: 30px 30px;
+	border: 1px solid #e8e8e8;
+}
+
+.botmybox {
+	padding: 30px 30px;
+}
+
+.mybox_left {
+	width: 25%;
+	text-align: center;
+	
+}
+
+.mybox_left > .Stars {
+	padding-bottom: 30px;
+}
+
+.mybox_left > .myboximg {
+	width: 40%;
+}
+
+.mybox_left > .myStoreLink {
+	padding: 5px 10px;
+	border: 1px solid #e8e8e8;
+}
+
+.mybox_right {
+	width: 75%;
+	padding-left: 20px;
+	postion:relative;
+}
+
+.mybox_right > .user_info {
+	border-top: 1px solid #e8e8e873;
+    border-bottom: 1px solid #e8e8e873;
+    padding: 10px 0;
+}
+
+.nickname {
+	padding-bottom: 25px;
+}
+
+.user_info > .user_a {
+	margin-right: 30px;
+}
+
+.nickname > .modify_nickname {
+	margin-left: 10px;
+    padding: 0 5px;
+    font-size: x-small;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+}
+
+.user_info > .user_a > img {
+	margin-right: 10px;
+}
+
+.intro_btn {
+	height: 56px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 250px;
+}
+
+.intro_text {
+	-webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+    line-height: 1.57;
+    white-space: pre-wrap;
+}
+
+.intro_btn > .intro_btn2 {
+	height: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 5px;
+    color: rgb(136, 136, 136);
+    border: 1px solid rgb(238, 238, 238);
+    font-size: 11px;
+}
+
+.nav_bar {
+	border-bottom: 1px solid #000;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover {
+    color: #000;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-bottom-color: transparent;
+    height: 50px;
+    font-weight: 600;
+}
+
+.nav-tabs > li > a {
+	height: 50px;
+	color: #777;
+}
+
+.nav_bar > .nav_title {
+	width: 25%;
+	text-align: center;
+}
+
+.info_title {
+	font-size: 18px;
+    padding: 20px 0px 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.info_count {
+	color: rgb(247, 47, 51);
+}
+
+.table > tbody > tr > td {
+	border: none;
+}
+
+.product_table {
+	border-bottom: 1px solid #e8e8e8;
+	height: 100px;
+}
+
+.faq_text {
+	width: 100%;
+    padding: 20px 0 30px;
+    height: 120px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.faq_textarea {
+	width: 91%;
+    height: 100%;
+    resize: none;
+    font-size: 13px;
+    line-height: 1.5;
+    padding:10px 10px;
+    margin-right:10px;
+    border: 1px solid rgb(238, 238, 238);
+}
+
+.faq_insert {
+	border: 1px solid rgb(238, 238, 238);
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 20px;
+    font-size: 13px;
+    color: rgb(136, 136, 136);
+    background: #fff;
+}
+
+.faq_insert > img {
+	margin-right: 5px;
+}
+
+.comment_contain {
+	padding-top: 25px;
+}
+
+.leftBox img {
+	display: block;
+    margin-right: 15px;
+}
+
+.chat_user {
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    color: rgb(136, 136, 136);
+    margin-bottom: 10px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.rightBox {
+	width: 100%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.chat_content {
+	margin-bottom: 20px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.chat_btn {
+	display: flex;
+    margin-bottom: 20px;
+    padding-left: 60px;
+}
+
+.comment_check {
+	font-size: 13px;
+    -webkit-box-align: unset;
+    align-items: unset;
+    margin-right: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.comment_check > a {
+	color: rgb(136, 136, 136);
+	padding-left: 5px;
+}
+
+.comment_check > a::after {
+    content: "";
+    width: 1px;
+    height: 13px;
+    position: absolute;
+    border-right: 1px solid rgb(238, 238, 238);
+    top: 4px;
+    right: -14px;
+}
+
+.comment_check > .comdel::after {
+	border-right: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
