@@ -7,18 +7,20 @@
     <section class="product">
     	<div class="container">
     		<div class="row">
-    			<div class="col-md-12">
+    			<div class="col-md-12" style="">
     			<!-- 약관동의 -->
-					<div class="btn-group">
-					
-					  <button class="btn btn-default btn-lg dropdown-toggle dropdownconsent" type="button" data-toggle="dropdown" aria-expanded="false">
+    				
+				  <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false">
 					     이용약관 동의 <span class="consent">(필수)</span>
 					  </button>
-					  	<div>
-					  		<input type="checkbox" name="agreeall" class="agree" value="y" > 
-					 		 동의 합니다
- 						</div>
- 					
+					
+						  <div class="chkbox accordionbottom">
+						    <input id="one" type="checkbox" name="agreeall" value="y" >
+						    <span class="check"></span>
+						    <label for="one">동의</label>
+						  </div>
+					 	
+ 				
 						  <ul class="dropdown-menu" role="menu">
 							 <li>
 							 	<a class="textline">
@@ -40,34 +42,38 @@
 								</li>
 						  </ul>
 					</div>
-					</div>
+					
 					<div class="col-md-12">
-					<div class="btn-group">
-					  <button class="btn btn-default btn-lg dropdown-toggle dropdownconsent" type="button" data-toggle="dropdown" aria-expanded="false">
+					
+					  <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false">
 					     이메일 수신 동의 <span class="consent" >(필수)</span>
 					  </button>
-					   <div>
-    						<input type="checkbox" name="agree" class="agree" value="y" > 동의 합니다
- 						</div>	
-						  <ul class="dropdown-menu" role="menu">
-							 <li>
-							 	<a class="textline">
-							 	 <textarea class="intextline"> 
-							 	  	마케팅 수신 모두 동의시, 즉시 사용가능한 쿠폰을 지급해 드립니다.
-								 </textarea>
-								</a>
-							</li>
-						  </ul>
-					</div>
+						  <div class="chkbox accordionbottom">
+							    <input id="two" type="checkbox" name="agreeall" value="y" >
+							    <span class="check"></span>
+							    <label for="two">동의</label>
+							  </div>
+								  <ul class="dropdown-menu" role="menu">
+									 <li>
+									 	<a class="textline">
+									 	 <textarea class="intextline"> 
+									 	  	마케팅 수신 모두 동의시, 즉시 사용가능한 쿠폰을 지급해 드립니다.
+										 </textarea>
+										</a>
+									</li>
+								  </ul>
+				
 					</div>
 					<div class="col-md-12">
-						<div class="btn-group">
-					  <button class="btn btn-default btn-lg dropdown-toggle dropdownconsent" type="button" data-toggle="dropdown" aria-expanded="false">
+					
+					  <button class="accordion " type="button" data-toggle="dropdown" aria-expanded="false">
 					     쇼핑정보 수신 동의 <span class="consent">(선택)</span>
 					  </button>
-					   <div>
-					    	<input type="checkbox" name="agree" class=""value="y"  > 동의 합니다
-					   </div>	
+					    <div class="chkbox accordionbottom">
+						    <input id="three" type="checkbox" name="agreeall" value="y" >
+						    <span class="check"></span>
+						    <label for="three">동의</label>
+						  </div>
 						  <ul class="dropdown-menu" role="menu">
 							 <li>
 							 	<a class="textline">
@@ -80,65 +86,66 @@
 								</a>
 							</li>
 						  </ul>
-					</div>
+			
     			</div>
     			
     			<div class="col-md-9 newitem">
-    				<h2>회원가입</h2>
+    				<h2 class="join">회원가입</h2>
     				
     				<form class="form-horizontal" name="aaa" method="post">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="form-group">
-					    <label for="id" class="col-sm-2 control-label">아이디</label>
+					    <label for="id" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">아이디</label>
 					    <div class="col-sm-10">
-					      <input type="text" name="id" class="form-control" id="id" placeholder="아이디 입력">
+					      <input type="text" name="id" class="form-control" id="id" placeholder="아이디 입력" style="padding: 23px;">
 					      <span id="msg"></span>
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="pwd" class="col-sm-2 control-label">암호</label>
+					    <label for="pwd" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">암호</label>
 					    <div class="col-sm-10">
-					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력">
+					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 23px;">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="pwdcheck" class="col-sm-2 control-label">암호확인</label>
+					    <label for="pwdcheck" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">암호확인</label>
 					    <div class="col-sm-10">
-					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인">
+					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인" style="padding: 23px;">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="name" class="col-sm-2 control-label">이름</label>
+					    <label for="name" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">이름</label>
 					    <div class="col-sm-10">
-					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력">
+					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력" style="padding: 23px;">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="member_post" class="col-sm-2 control-label">주소</label>
+					    <label for="member_post" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">주소</label>
 					    <div class="col-sm-10">
-					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호">
+					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px;">
 					      <input type="button" value="우편번호 찾기" onclick="findAddr()"><br><br>
-					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr">
+					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr" style="margin-bottom: 5px;">
 					      <input type="text" name="address2" class="form-control"  placeholder="나머지 주소">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="phone" class="col-sm-2 control-label">전화번호</label>
+					    <label for="phone" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">전화번호</label>
 					    <div class="col-sm-10">
-					      <input type="text" name="phone" class="form-control" id="phone" placeholder="전화번호 입력">
+					      <input type="text" name="phone" class="form-control" id="phone" placeholder="전화번호 입력" style="padding: 10px;">
+					      <a href="#" class="mobilePopup" onclick="mobilePopup('ubsstore4377' , 'dream' ); return false;">휴대폰인증</a>
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="button" class="btn btn-default" onclick="goJoin()">회원가입 등록</button>
-					      <button type="reset" class="btn btn-default">취소</button>
+					      <button type="button" class=" joinmembership" onclick="goJoin()">회원가입 등록</button>
+					      
 					    </div>
 					  </div>
 					  
@@ -177,5 +184,21 @@
   }
     }
   </script> 
+  <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
 <%@ include file = "../footer.jsp"%>
