@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <%@ include file="admin_header.jsp" %>
 
 			<div class="col-md-10">
@@ -18,10 +21,10 @@
 						<table class="admin_menu"> <!-- table -->
 							<tr class="admin_head">
 								<th class="column-0">아이디</th>
-								<th class="column-2">이름</th>
-								<th class="column-1">닉네임</th>
-								<th class="column-3">전화번호</th>
-								<th class="column-4">상태</th>
+								<th class="column-1">이름</th>
+								<th class="column-0">닉네임</th>
+								<th class="column-0">전화번호</th>
+								<th class="column-2">상태</th>
 							</tr>
 							<c:choose>
 								<c:when test = "${mlist eq null }"> 
@@ -33,13 +36,13 @@
 									<c:forEach items = "${mlist}" var="mlist">
 										<tr>
 											<td class="column-0">${mlist.id}</td>
-											<td class="column-2">${mlist.name}</td>
-											<td class="column-1">${mlist.nickname}</td>
-											<td class="column-3">${mlist.phone}</td>
-											<td class="column-0">
+											<td class="column-1">${mlist.name}</td>
+											<td class="column-0">${mlist.nickname}</td>
+											<td class="column-0">${mlist.phone}</td>
+											<td class="column-2">
 												${mlist.status}
-												<button type="button" class="" onclick="()">정지</button>
-												<button type="button" class="" onclick="()">블락</button>
+												<button type="button" class="btn btn-default" onclick="()">정지</button>
+												<button type="button" class="btn btn-default" onclick="()">블락</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -49,8 +52,8 @@
 					</div>
 				</div>
 				<!-- pagination -->
-				<div class="col-md-12" > <!-- style="padding-left:420px;" -->
-					<div style="text-align: center;">
+				<div class="col-md-12" > 
+					<div style="text-align: center; padding-top: 15px;">
 						<a href="#" class="admin_pagination admin_pagination_active">
 							1
 						</a>
