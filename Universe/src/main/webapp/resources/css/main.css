@@ -18,7 +18,7 @@
     background-color: #fff;
     color: #000;
    
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
 }
@@ -66,4 +66,16 @@
     display: block;
 }
 
-
+.serch-box input{
+	border:3px solid #cfd4f4;
+	padding:6px 13px;
+	width:435px;
+}
+.header_recent{
+	border: 1px solid #e8e8e8;
+    position: relative;
+    top: 130px;
+    right: 55px;
+    width: 110px;
+    text-align: center;
+}
