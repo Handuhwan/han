@@ -237,6 +237,419 @@ a {text-decoration: none;}
 	border-right: 0px;
 }
 
+.likeBar {
+	margin: 25px 0px 20px;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.selectBtn {
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.selectCheck {
+	width: 24px;
+    height: 24px;
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+    transition: border 0.2s ease 0s, background-color 0.2s ease 0s;
+    position: relative;
+}
+
+.selectCheck::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent rgb(204, 204, 204) rgb(204, 204, 204) transparent;
+    width: 8px;
+    height: 14px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+}
+
+.selectCheck::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    width: 0px;
+    height: 0px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+    transition: width 0.1s ease-out 0s, height 0.1s ease-out 0.1s;
+}
+
+.scBtn {
+	margin-left: 10px;
+    padding: 0px 10px;
+    height: 28px;
+    border: 1px solid rgb(238, 238, 238);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 13px;
+    background: rgb(255, 255, 255);
+    color: rgb(136, 136, 136);
+}
+
+.aBtn {
+    display: flex;
+    font-size: 13px;
+}
+
+
+.selectCheck2 {
+	width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    background: rgb(247, 47, 51);
+    border: 1px solid rgb(247, 47, 51);
+    transition: border 0.2s ease 0s, background-color 0.2s ease 0s;
+}
+
+.selectCheck2::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent rgb(204, 204, 204) rgb(204, 204, 204) transparent;
+    width: 8px;
+    height: 14px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+}
+
+.selectCheck2::after {
+    content: "";
+    width: 8px;
+    height: 14px;
+    border-right: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.selectCheck2::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    width: 0px;
+    height: 0px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+    transition: width 0.1s ease-out 0s, height 0.1s ease-out 0.1s;
+}
+
+.selected {
+    margin-right: 20px;
+    position: relative;
+    display: block;
+    color: rgb(247, 47, 51);
+}
+
+.selected::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -10px;
+    width: 1px;
+    height: 12px;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.unselected {
+    margin-right: 20px;
+    position: relative;
+    display: block;
+}
+
+.unselected::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -10px;
+    width: 1px;
+    height: 12px;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.selected:last-child::after {
+    border-right: 0px;
+}
+
+.unselected:last-child::after {
+    border-right: 0px;
+}
+
+.likeListBox {
+	display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.selectOne {
+    width: 545px;
+    margin-bottom: 20px;
+}
+
+.oneLink {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    border: 1px solid rgb(238, 238, 238);
+    position: relative;
+}
+
+.productCheck {
+    position: absolute;
+    top: 20px;
+    right: 12px;
+}
+
+.linkCheck {
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+    transition: border 0.2s ease 0s, background-color 0.2s ease 0s;
+    position: relative;
+}
+
+.linkCheck::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent rgb(204, 204, 204) rgb(204, 204, 204) transparent;
+    width: 8px;
+    height: 14px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+}
+
+.linkCheck::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    width: 0px;
+    height: 0px;
+    transform: rotate(40deg);
+    transform-origin: 100% 100%;
+    transition: width 0.1s ease-out 0s, height 0.1s ease-out 0.1s;
+}
+
+.productImg {
+    position: relative;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.kWqxvV {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.productContent {
+    width: 363px;
+    flex-shrink: 0;
+}
+
+.productImg > img {
+    height: 100%;
+}
+
+.buvryO {
+    margin: 21px 0px 10px;
+    width: 100%;
+    height: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hELMZu {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+}
+
+.hELMZu div {
+    position: relative;
+}
+
+.hELMZu div::after {
+    content: "원";
+    position: absolute;
+    font-weight: normal;
+    font-size: 13px;
+    top: 3px;
+    right: -15px;
+}
+
+.eXrOkK {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(136, 136, 136);
+    font-size: 12px;
+}
+
+.jkraVY {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-top: 1px solid rgb(238, 238, 238);
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    box-sizing: border-box;
+}
+
+.jkraVY img {
+    margin-right: 5px;
+}
+
+.frwOfl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dcoOvl {
+    width: 196px;
+    margin-right: 11px;
+    margin-bottom: 11px;
+}
+
+.fRjjJt {
+    border: 1px solid rgb(238, 238, 238);
+    background: rgb(255, 255, 255);
+    display: block;
+}
+
+.bGOWdF {
+    position: relative;
+    width: 100%;
+    height: 194px;
+}
+
+.jqaedh {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.khEzpv {
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 3px 3px;
+    position: absolute;
+    left: 50px;
+    bottom: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.fTyTGh {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.eoXTJU {
+    padding: 15px 10px;
+    height: 80px;
+}
+
+.jXLIfz {
+    position: relative;
+    font-size: 14px;
+    padding-bottom: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.fpXkTz {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 20px;
+}
+
+.fQmeHZ {
+    height: 40px;
+    border-top: 1px solid rgb(238, 238, 238);
+    font-size: 12px;
+    display: block;
+    padding: 14px 10px 14px 35px;
+    color: rgb(102, 102, 102);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+.hcGbNt {
+    font-size: 16px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hcGbNt::after {
+    content: "원";
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+.fQmeHZ img {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 8px);
+}
+
+.hCkfPo {
+    font-size: 12px;
+    color: rgb(136, 136, 136);
+}
+
 
 
 
