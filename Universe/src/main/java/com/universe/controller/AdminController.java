@@ -28,9 +28,9 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	
-	@GetMapping("/admin_alert")
+	@GetMapping("/admin_ya")
 	public String adminAlert() {
-		return "/admin/admin_alert";
+		return "/admin/admin_ya";
 	}
 	
 	public static void main(String[] args) {
@@ -48,7 +48,10 @@ public class AdminController {
 		
 	  }
 
-
+	@GetMapping("/adminLogout")
+	public String adminLogout() {
+		return "redirect:/";
+	}
 
 	
 }
