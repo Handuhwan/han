@@ -24,7 +24,7 @@
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/login.css" rel="stylesheet">
-
+<link href="/resources/css/mypage.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
