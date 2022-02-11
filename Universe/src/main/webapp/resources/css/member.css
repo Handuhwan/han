@@ -16,8 +16,6 @@
  .logingroup {
 	border-style:solid;
 
-
-
 }
 .loginemail {
 	width: 340px;
@@ -71,7 +69,13 @@
 
 /*======= Button 2 =======*/
 .form-group .btn btn-default btn2 {
-	width: 341px; height: 54px; margin-top:20px; margin-bottom:20px; border-style:solid; border-color: black; font-size: large;
+	width: 341px; 
+	height: 54px; 
+	margin-top:20px; 
+	margin-bottom:20px; 
+	border-style:solid; 
+	border-color: black; 
+	font-size: large;
 }
 .btn2::before{
   content: "";
@@ -267,8 +271,7 @@ transition: all .3s
 /*아이디 비밀번호 찾기*/
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: #fff;
   font-size: 17px;
   font-weight: 560;
   
@@ -276,13 +279,13 @@ transition: all .3s
 
 /* Style the buttons inside the tab */
 .tab button {
+  margin-bottom: 10px;
   background-color: #fff;
   float: left;
   outline: none;
   cursor: pointer;
- transition: 0.3s;
-    border: solid 1px;
-  padding-top:10px;
+  transition: 0.3s;
+  padding-top:21px;
   padding-bottom:10px;
   font-size: 17px; font-weight: 600;
 }
@@ -295,12 +298,14 @@ transition: all .3s
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: dbd9d9;
  
 }
 
 /* Style the tab content */
 .tabcontent {
+  margin-right: 15px;
+  margin-left: 15px;
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
@@ -308,16 +313,21 @@ transition: all .3s
 }
 .idpwdcenter {
 	    text-align: center;
+	     margin-bottom: 20px;
 	
 }
-.idpwdleft {
-	
-	border-right: 1px solid;
-	
+.locksub {
+font-size: 1.4rem;
+    color: #666;
+    line-height: 2rem;
 }
-.idpwdright {
-	padding-right: 200px;
+.lockname {
+	font-size: 1.9rem;
+    color: #111;
+    line-height: 2.5rem;
+    font-weight: 600;
 }
+
 .findphone {
 	padding-top: 20px;
 }

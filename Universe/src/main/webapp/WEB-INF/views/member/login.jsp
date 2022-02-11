@@ -42,7 +42,7 @@
 					       	 
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" >회원가입</button>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">회원 탈퇴</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop.do'">회원 탈퇴</button>
 					      </div>
 					      
 					   		<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="naverbutton">네이버 로그인</button>
