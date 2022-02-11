@@ -20,6 +20,9 @@
 	<link href="/resources/css/sub.css" rel="stylesheet">
 	<link href="/resources/css/member.css" rel="stylesheet">
 	<link href="../resources/css/admin.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
     <script src="/resources/js/jquery-3.3.1.min.js"></script>
 	<script src="/resources/js/bootstrap.min.js"></script>
@@ -46,21 +49,22 @@
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="/admin/admin_alert" class="admin_ctgry_detail">
+							<a href="/admin/admin_ya" class="admin_ctgry_detail" style="padding-left: 5px;">
 								✔ 알림
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="/admin/admin" class="admin_ctgry_detail">
+							<a href="/admin/admin" class="admin_ctgry_detail" style="padding-left: 5px;">
 								✔ 회원관리
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="admin_logout.do" class="admin_ctgry_detail">
-								✔ 로그아웃
-							</a>
+							<form name="logout" method="post" action="/admin/adminLogout" class="admin_ctgry_detail">
+				        		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				        		<button type="submit" class="admin_ctgry_detail" style="background-color:white; border:none;">✔ 로그아웃</button>
+				        	</form>
 						</li>
 					</ul>
 				</div>
