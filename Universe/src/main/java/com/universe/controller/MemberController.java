@@ -59,4 +59,8 @@ public class MemberController {
 	public void findIdPwd() {
 	
 	}
+	@GetMapping("/memberdrop")
+	public void memberdrop() {
+	
+	}
 }

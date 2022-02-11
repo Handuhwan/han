@@ -24,7 +24,7 @@
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/login.css" rel="stylesheet">
-
+<link href="/resources/css/mypage.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
@@ -74,12 +74,12 @@
 </div> <!-- main_header_nav -->
 	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #e8e8e8; height:120px;">
 		<div class="pull-right">
-			<div class="header_recent">
+			<!-- <div class="header_recent">
 				<p style="margin-bottom:-5px; padding-top:5px; padding-bottom:5px; border-bottom:1px solid #000;">최근본 상품</p>
 				<a><img style="width:100px; height:80px; border-bottom:1px solid" alt="" src="/resources/images/mark.png"></a>
 				<a><img style="width:100px; height:80px;  border-bottom:1px solid" alt="" src="/resources/images/mark.png"></a>
 				<a><img style="width:100px; height:80px;  border-bottom:1px solid" alt="" src="/resources/images/mark.png"></a>
-			</div>
+			</div> -->
 		</div>
 		
 		<div class="container" >
