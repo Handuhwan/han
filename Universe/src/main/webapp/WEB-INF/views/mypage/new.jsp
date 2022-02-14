@@ -11,16 +11,9 @@
 			<div class="sc-jTqLGJ lfQZRP">
 				<div class="sc-wRHdD DcYnj">
 					<nav class="sc-cClmTo bnFEIX">
-						<div class="sc-kOCNXg cnmmrB">
-							<a class="sc-cZLAbK kSJVTd" href="">상품등록</a>
-						</div>
-						<div class="sc-kOCNXg gYlEW">
-							<a class="sc-cZLAbK kSJVTd" href="/products/manage">상품관리</a>
-						</div>
-						<div class="sc-kOCNXg gYlEW">
-							<a href="" target="_blank" rel="noopener noreferrer"
-								class="sc-iVOTot jtVVsU">구매 / 판매 내역</a>
-						</div>
+						<div class="sc-kOCNXg cnmmrB"><a class="sc-cZLAbK kSJVTd" href="new">상품등록</a></div>
+						<div class="sc-kOCNXg gYlEW"><a class="sc-cZLAbK kSJVTd" href="manage">상품관리</a></div>
+						<div class="sc-kOCNXg gYlEW"><a href="" target="_blank" rel="noopener noreferrer" class="sc-iVOTot jtVVsU">구매 / 판매 내역</a></div>
 					</nav>
 				</div>
 				<div class="sc-hlELIx mCnrk">
@@ -29,15 +22,16 @@
 							<h2>
 								기본정보<span>*필수항목</span>
 							</h2>
+							<form name="productInsert" action="" method="post" onsubmit="">
 							<ul class="sc-eetwQk pPWss">
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc icTXTK">
-										상품이미지<span>*</span><small>(0/12)</small>
+										상품이미지<small>(0/12)</small>
 									</div>
 									<div class="sc-fdJbru lhSEWN">
 										<ul class="sc-cClmTo dHLNTh">
 											<li class="sc-cZLAbK dkAkSi">이미지 등록 
-												<input type="file" accept="image/jpg, image/jpeg, image/png" multiple="">
+												<input type="file" accept="image/jpg, image/jpeg, image/png" multiple="multiple">
 											</li>
 										</ul>
 										<div class="sc-kOCNXg ksQfBV">
@@ -64,19 +58,19 @@
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc fFLTCi">
-										제목<span>*</span>
+										제목
 									</div>
 									<div class="sc-fdJbru lhSEWN">
 										<div class="sc-hmyDHa lmzEGH">
 											<div class="sc-dYcyhn gknpN">
-												<input type="text" placeholder="상품 제목을 입력해주세요." class="sc-jTNJqp jcrNYi" value="">
+												<input type="text" placeholder="상품 제목을 입력해주세요." class="sc-jTNJqp jcrNYi" value="" style="width:50%">
 											</div>
 										</div>
 									</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc jERTnV">
-										카테고리<span>*</span>
+										카테고리
 									</div>
 									<div class="sc-fdJbru lhSEWN">
 										<div class="sc-fxgLge eZXISU">
@@ -111,62 +105,55 @@
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc fFLTCi">
-										거래지역<span>*</span>
+										거래지역
 									</div>
 									<div class="sc-fdJbru lhSEWN">
-										<div class="sc-MKjYC gSSZou">
-											<button type="button" class="sc-bQduHL dOgdyz">내 위치</button>
-											<button type="button" class="sc-bQduHL dOgdyz">최근 지역</button>
-											<button type="button" class="sc-bQduHL dOgdyz">주소 검색</button>
-											<button type="button" class="sc-bQduHL dOgdyz">지역설정안함</button>
+										<div class="sc-MKjYC gSSZou" style="padding-bottom: 15px;">
+											<button type="button" class="sc-bYwvMP bHlvJI">내 위치</button>
+											<button type="button" class="sc-bYwvMP bHlvJI">최근 지역</button>
+											<button type="button" class="sc-bYwvMP bHlvJI">주소 검색</button>
+											<button type="button" class="sc-bYwvMP bHlvJI">지역설정안함</button>
 										</div>
-										<input readonly="" placeholder="선호 거래 지역을 검색해주세요." class="sc-iUpOdG gqalHj" value="지역설정안함">
+										<input name="location" readonly style="height: 4rem;" placeholder="선호 거래 지역을 검색해주세요." class="sc-iUpOdG gqalHj" value="지역설정안함">
 									</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
-									<div class="sc-dUcZlc tUmmy">상태<span>*</span></div>
+									<div class="sc-dUcZlc tUmmy">상태</div>
 										<div class="sc-fdJbru lhSEWN">
 											<div class="sc-csSMhA dVmQdR">
 												<label for="중고상품" class="sc-bscRGj jObBkF">
-													<input id="중고상품" type="radio" value="0" checked="">중고상품
+													<input id="중고상품" name="status" type="radio" value="1" checked="checked">중고상품
 												</label>
 												<label for="새상품" class="sc-bscRGj hsSwto">
-													<input id="새상품" type="radio" value="0">새상품
+													<input id="새상품" name="status" type="radio" value="0">새상품
 												</label>
 											</div>
 										</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
-									<div class="sc-dUcZlc tUmmy">교환<span>*</span></div>
+									<div class="sc-dUcZlc tUmmy">교환</div>
 										<div class="sc-fdJbru lhSEWN">
 											<div class="sc-csSMhA dVmQdR">
 												<label for="교환불가" class="sc-bscRGj jObBkF">
-													<input id="교환불가" type="radio" value="0" checked="">교환불가
+													<input id="교환불가" name="exchange" type="radio" value="0" checked="checked">교환불가
 												</label>
 												<label for="교환가능" class="sc-bscRGj hsSwto">
-													<input id="교환가능" type="radio" value="0">교환가능
+													<input id="교환가능" name="exchange" type="radio" value="1">교환가능
 												</label>
 											</div>
 										</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
-									<div class="sc-dUcZlc fFLTCi">가격<span>*</span></div>
+									<div class="sc-dUcZlc fFLTCi">가격</div>
 										<div class="sc-fdJbru lhSEWN">
-											<div class="sc-kGeDwz ektOSj">
-												<input type="text" placeholder="숫자만 입력해주세요." class="sc-hgeeVt cOoyPc" value="">원
-											</div>
-											<div class="sc-gwZsXD kOeYrr">
-												<div class="sc-jJkQYJ eILUaf">
-													<label for="freesShipping" class="sc-cKZAiZ fyMiMw">
-														<input id="freesShipping" type="checkbox">배송비 포함
-													</label>
-												</div>
+											<div class="sc-kGeDwz ektOSj" style="padding-top:10px">
+												<input type="text" placeholder="숫자만 입력해주세요." class="sc-hgeeVt cOoyPc" value="" style="width:30%">&nbsp;원
 											</div>
 										</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc hGxtuw">
-										설명<span>*</span>
+										설명
 									</div>
 									<div class="sc-fdJbru lhSEWN">
 										<textarea placeholder="상품 설명을 입력해주세요. (10글자 이상)" rows="6" class="sc-kOnlKp jOtnbk"></textarea>
@@ -176,16 +163,17 @@
 									<div class="sc-dUcZlc tUmmy">수량</div>
 									<div class="sc-fdJbru lhSEWN">
 										<div class="sc-cBOTKl iLsYdV">
-											<input type="text" class="sc-hkHFWD wUvmE" value="1">&nbsp;개
+											<input type="text" class="sc-hkHFWD wUvmE" value="1" style="width:20%">&nbsp;개
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="sc-goFBvh iRIYrs">
-										<button type="button" class="sc-feWbDf gEWDoq"></button>
+										<button type="submit" class="sc-feWbDf gEWDoq"></button>
 									</div>
 								</li>
 							</ul>
+							</form>
 						</section>
 					</main>
 				</div>
