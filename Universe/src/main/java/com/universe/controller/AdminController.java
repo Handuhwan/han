@@ -28,9 +28,9 @@ public class AdminController {
 		return "/admin/admin";
 	}
 	
-	@GetMapping("/admin_ya")
+	@GetMapping("/admin_alert")
 	public String adminAlert() {
-		return "/admin/admin_ya";
+		return "/admin/admin_alert";
 	}
 	
 	public static void main(String[] args) {
@@ -43,10 +43,12 @@ public class AdminController {
 	    String Date = date.format(today);
 	    String Time = time.format(today);
 	        
-	    //System.out.println("Date: "+date.format(today));
-	    //System.out.println("Time: "+time.format(today));
+	    System.out.println("Date: "+date.format(today));
+	    System.out.println("Time: "+time.format(today));
 		
 	  }
+	
+
 
 	@GetMapping("/adminLogout")
 	public String adminLogout() {

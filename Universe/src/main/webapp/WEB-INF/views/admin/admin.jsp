@@ -33,28 +33,46 @@
 								<th class="column-0">전화번호</th>
 								<th class="column-2">상태</th>
 							</tr>
-							<c:choose>
-								<c:when test = "${mlist eq null }"> 
+							<!--<c:choose>
+								 <c:when test = "${mlist eq null }"> 
 									<tr style="text-align:center;">
 										<td colspan = "7" style="font-family: Poppins-Bold; font-size:25px;">There's No Data</td>
 									</tr>
 								</c:when>
-								<c:otherwise>
-									<c:forEach items = "${mlist}" var="mlist">
+								<c:otherwise> 
+									<c:forEach items = "${mlist}" var="mlist">-->
 										<tr>
-											<td class="column-0">${mlist.id}</td>
-											<td class="column-1">${mlist.name}</td>
-											<td class="column-0">${mlist.nickname}</td>
-											<td class="column-0">${mlist.phone}</td>
+											<td class="column-0">야호</td><!--${mlist.id}  -->
+											<td class="column-1"></td><!--${mlist.name}  -->
+											<td class="column-0"></td><!--${mlist.nickname}  -->
+											<td class="column-0"></td><!--${mlist.phone}  -->
 											<td class="column-2">
-												${mlist.status}
-												<button type="button" class="btn btn-default" onclick="()">정지</button>
-												<button type="button" class="btn btn-default" onclick="()">블락</button>
+												<!-- ${mlist.status} -->
+												<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">정지</button>
+													<!-- Modal -->
+													<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+													  <div class="modal-dialog">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+													      </div>
+													      <div class="modal-body">
+													        ...
+													      </div>
+													      <div class="modal-footer">
+													        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													        <button type="button" class="btn btn-primary">Save changes</button>
+													      </div>
+													    </div>
+													  </div>
+													</div>
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">블락</button>
 											</td>
 										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
+									<!--</c:forEach>
+								 </c:otherwise> 
+							</c:choose>-->
 						</table>
 					</div>
 				</div>
