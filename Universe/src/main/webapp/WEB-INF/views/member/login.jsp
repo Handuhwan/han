@@ -36,17 +36,17 @@
 					  
 					  <div class="form-group">
 					    <div >
-					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" >
+					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" style="	margin-left:0px;">
 					       </div>
 					       <div>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" >회원가입</button>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" style="margin-left:0px;">회원가입</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findPwd.do'">아이디/비밀번호 찾기</button>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop.do'">회원 탈퇴</button>
 					      </div>
 					      
-					   		<button type="button" class="btn btn-default naverfont" onclick=""><img src="/resources/images/naver.png" alt="" class="naverbutton">네이버 로그인</button>
-							<button type="button" class="btn btn-default kakaofont" onclick=""><img src="/resources/images/kakao.png" alt="" class="naverbutton">카카오 로그인</button>
-							<button type="button" class="btn btn-default googlefont" onclick=""><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
+					   		<button type="button" class="btn btn-default naverfont" onclick="" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
+							<button type="button" class="btn btn-default kakaofont" onclick="" style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+							<button type="button" class="btn btn-default googlefont" onclick="" style="margin-left:0px;"><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
 						</div>		
 					   
 					   <!-- <button type="button" class="btn btn-default" onclick="javascript:kakaoLogin();"><img src="" alt=""></button>

@@ -33,46 +33,84 @@
 								<th class="column-0">전화번호</th>
 								<th class="column-2">상태</th>
 							</tr>
-							<!--<c:choose>
-								 <c:when test = "${mlist eq null }"> 
-									<tr style="text-align:center;">
-										<td colspan = "7" style="font-family: Poppins-Bold; font-size:25px;">There's No Data</td>
-									</tr>
-								</c:when>
-								<c:otherwise> 
-									<c:forEach items = "${mlist}" var="mlist">-->
-										<tr>
-											<td class="column-0">야호</td><!--${mlist.id}  -->
-											<td class="column-1"></td><!--${mlist.name}  -->
-											<td class="column-0"></td><!--${mlist.nickname}  -->
-											<td class="column-0"></td><!--${mlist.phone}  -->
-											<td class="column-2">
-												<!-- ${mlist.status} -->
-												<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">정지</button>
-													<!-- Modal -->
-													<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-													  <div class="modal-dialog">
-													    <div class="modal-content">
-													      <div class="modal-header">
-													        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-													      </div>
-													      <div class="modal-body">
-													        ...
-													      </div>
-													      <div class="modal-footer">
-													        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													        <button type="button" class="btn btn-primary">Save changes</button>
-													      </div>
-													    </div>
-													  </div>
+						
+							<tr>
+								<td class="column-0">야호</td><!--${mlist.id}  -->
+								<td class="column-1">x</td><!--${mlist.email}  -->
+								<td class="column-0">x</td><!--${mlist.nickname}  -->
+								<td class="column-0">x</td><!--${mlist.phone}  -->
+								<td class="column-2">
+									<!-- ${mlist.status} -->
+									<button type="button" class="btn_suspended" data-toggle="modal" data-target="#myModal">정지</button>
+										<!-- Modal -->
+										<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										        <h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>
+										        <div class="block_square">대상 회원 아이디</div>
+										      </div>
+										      
+										      <div class="modal-header">
+										      	<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>
+											      	<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    성인/도박 등 불법광고 및 스팸 활동
+													  </label>
 													</div>
-												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">블락</button>
-											</td>
-										</tr>
-									<!--</c:forEach>
-								 </c:otherwise> 
-							</c:choose>-->
+													<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    바람직하지 않은 활동(광고,도배,욕설,비방 등)
+													  </label>
+													</div>
+													<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    사이트 내 자체 운영 원칙에 위배되는 활동
+													  </label>
+													</div>
+													<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <input class="suspended" type="text" id="suspended" placeholder="기타- 한글 25자 이내로 작성해 주세요">
+													</div>
+										      </div>
+										      
+										      <div class="modal-header">
+										      	<h4 class="modal-title" id="myModalLabel">활동 정지 기간</h4>
+										      		<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    1일
+													  </label>
+													</div>
+													<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    7일
+													  </label>
+													</div>
+													<div class="form-check">
+													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+													  <label class="form-check-label" for="flexCheckDefault">
+													    30일
+													  </label>
+													</div>
+										      </div>
+										      
+										      <div class="modal-footer">
+										      	<p>대상 회원을 활동 정지 하시겠습니까?</p>
+										        <button type="button" class="btn_check" data-dismiss="modal">확인</button>
+										        <button type="button" class="btn_cancel">취소</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+									<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">블락</button>
+								</td>
+							</tr>
 						</table>
 					</div>
 				</div>

@@ -140,14 +140,14 @@
 					    <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >주소</label>
 					    <div class="col-sm-10 joinbox">
 					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px; text-align: left; width: 27%; border: 1px solid #ccc;">
-					      <input type="button" value="우편번호 찾기" onclick="findAddr()" class="address"><br><br>
+					      <input type="button" value="우편번호 찾기" onclick="findAddr()" class="address" style="margin-left: 3px;"><br><br>
 					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr" style="margin-bottom: 5px; padding: 16px; width: 27%;">
 					      <input type="text" name="address2" class="form-control"  placeholder="나머지 주소" style="padding: 16px; width: 27%;">
 					    </div>
 					  </div>
 					  
 					  <div class="">
-					    <label for="phone" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" > 전화번호</label>
+					    <label for="phone" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 18px; padding-bottom: 14px" > 전화번호</label>
 					    <div class="col-sm-10 joinbox">
 					      <input type="text" name="phone" class="form-control" id="phone" placeholder="전화번호 입력" style="padding: 16px; width: 27%; display:inline-block;">
 					      <a href="#" class="mobilePopup" onclick="mobilePopup('ubsstore4377' , 'dream' ); return false;"><img  src="/resources/images/mobile.png" style="width:23px;">휴대폰인증</a>
@@ -156,7 +156,7 @@
 					  
 					  <div class="">
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="button" class=" btn btn-default  signup1" onclick="goJoin()">회원가입 등록</button>
+					      <button type="button" class="btn btn-default  signup1" onclick="goJoin()">회원가입 등록</button>
 					      
 					    </div>
 					  </div>
