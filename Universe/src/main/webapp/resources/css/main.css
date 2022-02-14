@@ -44,7 +44,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border-bottom:1px solid #000;
+    border-bottom:1px solid #e8e8e8;
     height:70px;
     font-size:13px;
     line-height:40px;
@@ -58,7 +58,7 @@
 }
 
 .dropdown-content a:hover {
-	background-color: #e8e8e8
+	text-decoration: underline;
 }
 
 
@@ -118,5 +118,8 @@
 }
 .footerlink{
 	text-decoration: underline;
-	color:#a6a6a6;
+	color:#111111;
+}
+.b_top:hover{
+	text-decoration:none;
 }
