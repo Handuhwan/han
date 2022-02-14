@@ -139,6 +139,7 @@ transition: all .3s
 }
 /*join.jsp*/
 .accordion {
+
  background-color: #fff;
   color: #444;
   cursor: pointer;
@@ -148,10 +149,9 @@ transition: all .3s
   outline: none;
   font-size: 15px;
   transition: 0.4s;
-  border-bottom: 1px solid #dbdbdb;
+ 
 }
 .accordionbottom{
-	border-bottom: 1px solid #dbdbdb;
 	margin-top: 20px;
 }
 
@@ -162,58 +162,83 @@ transition: all .3s
 	height: 200px;
     width: 1100px;
 }
+.address{
+	border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 3px;
+    padding: 4px;
+    background-color:#fff;
+	padding: 9px 13px 9px 13px;
+}
+.address:hover {
+     text-decoration: underline;
+}
+
 .mobilePopup{
     display: block;
     width: 103px;
     line-height: 33px;
-    margin-top: 15px;
     text-align: center;
-    border: 1px solid #707070;
-    background-color: #ececec;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display:inline-block;
 }
 .mobilePopup:hover {
-	 display: block;
     width: 103px;
     line-height: 33px;
     margin-top: 15px;
     text-align: center;
-    background-color: #b4b4b4;
-      border: 1px solid #707070;
-    border-bottom: none;
 }
 .join{
 	font-weight: bolder;
 	margin-top: 30px;
     margin-bottom: 30px;
     color: #616161;
-    border-top: 2px solid #000;
     padding-top:20px;
 }
-.joinmembership{
-	display: block;
-    margin-top: 40px;
+.signup1    
+{
+	margin-top: 20px;
+   font-weight: 560;
     font-size: 18px;
-    text-align: ceter;
-    width: 100%;
-    line-height: 78px;
-    color: #fff;
-    background-color: #a99765;
-    }
-.joinmembership:hover    
-     {
-  display: block;
-    margin-top: 40px;
-    font-size: 18px;
-    text-align: ceter;
-    width: 100%;
-    line-height: 78px;
-    color: #fff;
-    background-color: #957745;
+    border: solid 2px;
+    padding: 18px 125px 18px 125px;
 }
+.joinbuttton {
+	padding: 12px 0 12px 18px;
+    border-top: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    color: #353535;
+    text-align: left;
+    font-weight: normal;
+    background-color: #fff;
+}
+.joinbuttton1 {
+	padding: 12px 0 12px 18px;
+    border-top: 1px solid #e5e5e5;
+    color: #353535;
+    text-align: left;
+    font-weight: normal;
+    background-color: #fff;
+}
+.joinbox {
+	padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    color: #353535;
+    font-size: 12px;
+    vertical-align: middle;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
 /* 체크박스*/
 .chkbox {
+  padding-bottom: 16px;
   width: 300px;
-  margin: 25px 0;
   display: flex;
   align-items: center;
   user-select: none;
@@ -339,4 +364,11 @@ font-size: 1.4rem;
     color:#fff;	
     width: 80px;
     font-weight: 600;
+}
+
+/*회원탈퇴*/
+.memberlabel{
+	font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

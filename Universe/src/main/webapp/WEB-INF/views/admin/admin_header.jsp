@@ -13,21 +13,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Administrator</title>
     
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/resources/css/common.css" rel="stylesheet">
-	<link href="/resources/css/main.css" rel="stylesheet">
-	<link href="/resources/css/sub.css" rel="stylesheet">
-	<link href="/resources/css/member.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../resources/images/favicon.ico"/>
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../resources/css/common.css" rel="stylesheet">
+	<link href="../resources/css/main.css" rel="stylesheet">
+	<link href="../resources/css/sub.css" rel="stylesheet">
+	<link href="../resources/css/member.css" rel="stylesheet">
 	<link href="../resources/css/admin.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
-    <script src="/resources/js/jquery-3.3.1.min.js"></script>
-	<script src="/resources/js/bootstrap.min.js"></script>
-	<script src="/resources/js/member.js"></script>
-	<script src="/resources/js/my.js"></script>
+    <script src="../resources/js/jquery-3.3.1.min.js"></script>
+	<script src="../resources/js/bootstrap.min.js"></script>
+	<script src="../resources/js/main.js"></script>
+	<script src="../resources/js/summernote.min.js"></script>
+	<script src="../resources/js/admin.js"></script>
+	
+	
 	
 </head>
   
@@ -42,14 +46,11 @@
 							<img src="/resources/images/logo_03-1.png" class="admin_logo">
 						</li>	
 							
-						<li class="">
-							<div class="admin_date">
-								<p>February xxth, 2022 xx:xxPM </p>
-							</div>
+						<li class="admin_ctgry" id="now" style="font-family: Poppins-Italic; font-size: 20px;">
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="/admin/admin_ya" class="admin_ctgry_detail" style="padding-left: 5px;">
+							<a href="/admin/admin_alert" class="admin_ctgry_detail" style="padding-left: 5px;">
 								✔ 알림
 							</a>
 						</li>
@@ -70,3 +71,4 @@
 				</div>
 			</div>
 			<!-- 왜 안되노 -->
+			
