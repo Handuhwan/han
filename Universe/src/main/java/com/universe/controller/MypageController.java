@@ -23,8 +23,13 @@ public class MypageController {
 		
 	}
 	
-	@GetMapping("/myproduct")
-	public void myproduct() {
+	@GetMapping("/new")
+	public void newInsert() {
+		
+	}
+	
+	@GetMapping("/manage")
+	public void manage() {
 		
 	}
 

@@ -115,6 +115,7 @@
 				<div class="pull-right" style="margin-top:35px;">
 					
 					<div class="dropdown">
+
 					
  						<button class="dropbtn" style=""><img alt="" src="/resources/images/main-bell.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
 			  			<div class="dropdown-content" style="left:35px; min-width:275px;">

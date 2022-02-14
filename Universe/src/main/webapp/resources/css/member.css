@@ -23,6 +23,7 @@
 	
 }
 .signup {
+
 	font-weight: 560;
     font-size: 16px;
     border: solid 2px;
@@ -30,7 +31,7 @@
     height: 50px;
 }
 .naverbutton {
-	margin-right: 9px;
+	
 	border-style:solid;
 	height: 35px;
     line-height: 35px;
@@ -184,12 +185,7 @@ transition: all .3s
     border-radius: 5px;
     display:inline-block;
 }
-.mobilePopup:hover {
-    width: 103px;
-    line-height: 33px;
-    margin-top: 15px;
-    text-align: center;
-}
+
 .join{
 	font-weight: bolder;
 	margin-top: 30px;
@@ -204,6 +200,10 @@ transition: all .3s
     font-size: 18px;
     border: solid 2px;
     padding: 18px 125px 18px 125px;
+	margin-bottom: 50px;
+}
+.signup1:hover {
+	color:#6098FF; 
 }
 .joinbuttton {
 	padding: 12px 0 12px 18px;
@@ -301,6 +301,9 @@ transition: all .3s
   font-weight: 560;
   
 }
+.tablinks {
+	margin-left:0px;
+}
 
 /* Style the buttons inside the tab */
 .tab button {
@@ -360,7 +363,7 @@ font-size: 1.4rem;
 .account{
 	margin-top: 60px;
     float: right;
-    background-color:#E56D29;
+    background-color:#6098FF;;
     color:#fff;	
     width: 80px;
     font-weight: 600;
