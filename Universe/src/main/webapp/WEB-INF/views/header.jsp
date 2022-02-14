@@ -106,7 +106,7 @@
 			<div class="col-md-12 col-sm-12" style="margin-top:20px;">
 				<div class="pull-left">
 					
-					<div class="serch-box" "> <!-- serch box -->
+					<div class="serch-box" > <!-- serch box -->
 						<img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;">
 						<form style="display:inline" name="main-serch" method="post" action="">
 					<!--  <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"> -->
@@ -119,14 +119,14 @@
 					
 					<div class="dropdown">
 
+					
  						<button class="dropbtn" style=""><img alt="" src="/resources/images/bell.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
 			  			<div class="dropdown-content" style="left:-135px; min-width:290px;">
 			    			<a href="#">새로운 메세지가 도착했습니다.</a>
-			    			
 			 			</div>
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
- 						<button class="dropbtn"><img alt="" src="/resources/images/user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+ 						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			  			<div class="dropdown-content content2">
 			    			<a href="#">판매리스트</a>
 			    			<a href="#">구매리스트</a>

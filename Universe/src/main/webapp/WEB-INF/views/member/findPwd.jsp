@@ -6,10 +6,10 @@
 <body>
 <div class="container">
     <div class="row" >
-	    <div class="col-md-2">
+	    <div class="col-md-1">
 	    </div>
 	    
-    	<div class="col-md-8">
+    	<div class="col-md-9">
 		    	<div>
 		    	<a><img  src="/resources/images/lock.png" style="width:90px;"></a>
 		    		<p class="lockname">아이디/패스워드를 잊어버리셨나요?</p>
@@ -19,7 +19,7 @@
 					<h2 class="idpwdcenter">ID / PW 찾기</h2>
 					
 					<div class="col-md-12 tab">
-					  <button class="col-md-6 tablinks " onclick="openCity(event, 'London')" ><p >아이디</p></button>
+					  <button class="col-md-6 tablinks " onclick="openCity(event, 'London')" ><p>아이디</p></button>
 					  <button class="col-md-6 tablinks " onclick="openCity(event, 'Paris')" ><p>비밀번호</p></button>
 					</div>
 					
@@ -67,8 +67,8 @@
 					</div>
 				</div>
 			</div>
-		<div class="col-md-6" style="margin:100px;">
-		</div>
+		<div class="col-md-2">
+	    </div>
 	</div>
 </div>
 
