@@ -12,7 +12,7 @@
 			<div class="pull-left mybox_left">
 				<img src="/resources/images/store.png" alt="" class="myboximg">
 				<h2>코딩스토어</h2>
-				<a href="myproduct">상품등록</a>
+				<a href="new">상품등록</a>
 				<div class="Stars">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
