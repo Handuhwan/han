@@ -23,5 +23,9 @@ public class MypageController {
 		
 	}
 	
+	@GetMapping("/myproduct")
+	public void myproduct() {
+		
+	}
 
 }

@@ -12,6 +12,7 @@
 			<div class="pull-left mybox_left">
 				<img src="/resources/images/store.png" alt="" class="myboximg">
 				<h2>코딩스토어</h2>
+				<a href="myproduct">상품등록</a>
 				<div class="Stars">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
@@ -236,6 +237,43 @@
 						
 					<div role="tabpanel" class="tab-pane" id="review">
 						<h3 class="info_title">상점후기&nbsp;<span class="info_count">7</span></h3>
+							<div class="comment_contain">
+								<div class="leftBox pull-left">
+									<img src="/resources/images/store.png" width="48" height="48" alt="프로필 이미지">
+								</div>
+								
+								<div class="rightBox">
+									<div class="chat_user">
+										<div class="id">두환마켓</div>
+										<div class="date">3일전</div>
+									</div>
+									<div class="sc-gGCbJM eAYqVt">
+										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
+										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
+										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
+										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
+										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
+										<br>
+									</div>
+									
+									<div>
+										<a class="sc-gFXMyG DlcMZ" href="">
+											<button class="sc-jWxkHr hHxDRR">맛있는 햄버거가게 e-쿠폰&nbsp;
+												<img src="/resources/images/rightarrow.png" width="6" height="10" alt="화살표 아이콘"></button>
+										</a>
+									</div>
+									
+									<div class="sc-MYvYT izkVcA">
+										<img src="/resources/images/hambuk.jpg" width="100" height="100" alt="로딩 이미지">
+									</div>
+									
+									<div class="chat_content">댓글다는 프로그램좀 알 수 있을까요?</div>
+									
+									<div class="chat_btn">
+										<div class="comment_check"><img src="/resources/images/X.png" width="17" height="14" alt="댓글삭제 버튼 이미지"><a href="">댓글삭제</a></div>
+									</div>
+								</div>
+							</div>
 					</div>
 				</div>
 
