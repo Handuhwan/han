@@ -7,24 +7,14 @@
     <section class="product">
     	<div class="container">
     		<div class="row">
-    			<div class="col-md-12" style="">
-    			<!-- 약관동의 -->
-    				
-				  <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false">
-					     이용약관 동의 <span class="consent">(필수)</span>
-					  </button>
-					
-						  <div class="chkbox accordionbottom">
-						    <input id="one" type="checkbox" name="agreeall" value="y" >
-						    <span class="check"></span>
-						    <label for="one">동의</label>
-						  </div>
-					 	
- 				
-						  <ul class="dropdown-menu" role="menu">
+    		<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 79px;">
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+								    이용약관 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
 							 <li>
 							 	<a class="textline">
-							 	 <textarea class="intextline"> 
+							 	<textarea class="intextline"> 
 							 	■ 수집하는 개인정보 항목 및 수집방법
 									가. 수집하는 개인정보의 항목
 									o 회사는 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
@@ -38,43 +28,27 @@
 									나. 수집방법
 									- 홈페이지, 서면양식, 게시판, 이메일, 이벤트 응모, 배송요청, 전화, 팩스, 생성 정보 수집 툴을 통한 수집
 									 </textarea>
-									</a>
-								</li>
+								</a>
+							</li>
 						  </ul>
-					</div>
-					
-					<div class="col-md-12">
-					
-					  <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false">
-					     이메일 수신 동의 <span class="consent" >(필수)</span>
-					  </button>
-						  <div class="chkbox accordionbottom">
-							    <input id="two" type="checkbox" name="agreeall" value="y" >
+					</div><!--col-md-6  -->
+						  
+					<div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
+						  
+						    <div class="chkbox accordionbottom" style="margin-top: 53px;">
+							    <input id="one" type="checkbox" name="agreeall" value="y" >
 							    <span class="check"></span>
-							    <label for="two">동의</label>
+							    <label for="one">동의</label>
 							  </div>
-								  <ul class="dropdown-menu" role="menu">
-									 <li>
-									 	<a class="textline">
-									 	 <textarea class="intextline"> 
-									 	  	마케팅 수신 모두 동의시, 즉시 사용가능한 쿠폰을 지급해 드립니다.
-										 </textarea>
-										</a>
-									</li>
-								  </ul>
-				
-					</div>
-					<div class="col-md-12">
+    				 </div><!-- col-md-3 -->
+    				
+    				
 					
-					  <button class="accordion " type="button" data-toggle="dropdown" aria-expanded="false">
-					     쇼핑정보 수신 동의 <span class="consent">(선택)</span>
-					  </button>
-					    <div class="chkbox accordionbottom">
-						    <input id="three" type="checkbox" name="agreeall" value="y" >
-						    <span class="check"></span>
-						    <label for="three">동의</label>
-						  </div>
-						  <ul class="dropdown-menu" role="menu">
+					<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+								     이메일 수신 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
+							</button>
+							<ul class="dropdown-menu" role="menu" >
 							 <li>
 							 	<a class="textline">
 							 	 <textarea class="intextline"> 
@@ -86,65 +60,103 @@
 								</a>
 							</li>
 						  </ul>
-			
-    			</div>
-    			
-    			<div class="col-md-9 newitem">
+					</div><!--col-md-6  -->
+						  
+						  <div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 19px;">
+						  
+						    <div class="chkbox accordionbottom" style="margin-top: 45px;">
+							    <input id="two" type="checkbox" name="agreeall" value="y" >
+							    <span class="check"></span>
+							    <label for="two">동의</label>
+							  </div>
+    				     	</div><!-- col-md-3 -->
+    				 
+    				     
+    				   	
+    				   	<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
+
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+								     마케팅 수신 동의 <span class="consent" style="font-weight: 100;">(선택)</span>
+							</button>
+							<ul class="dropdown-menu" role="menu" >
+							 <li>
+							 	<a class="textline">
+							 	 <textarea class="intextline"> 
+							 	마케팅 수신 모두 동의시, 즉시 사용가능한 쿠폰을 지급해 드립니다.
+								 </textarea>
+								</a>
+							</li>
+						  </ul>
+					</div><!--col-md-6  -->
+						  
+						  <div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 34px;">
+						  
+						    <div class="chkbox accordionbottom" style="margin-top: 30px;">
+							    <input id="three" type="checkbox" name="agreeall" value="y" >
+							    <span class="check"></span>
+							    <label for="three">동의</label>
+							  </div>
+    				    	</div><!-- col-md-3 -->
+    				 
+    				  <div class="col-md-12" style=" border-top: 2px solid #000; margin-top:50px;">
+    				  </div>
+    				   
+    			<div class="col-md-9 newitem" >
     				<h2 class="join">회원가입</h2>
     				
     				<form class="form-horizontal" name="aaa" method="post">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
-					  <div class="form-group">
-					    <label for="id" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">아이디</label>
-					    <div class="col-sm-10">
-					      <input type="text" name="id" class="form-control" id="id" placeholder="아이디 입력" style="padding: 23px;">
+					  <div class="">
+					    <label for="id" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >이메일</label>
+					    <div class="col-sm-10 joinbox" >
+					      <input type="text" name="id" class="form-control " id="id" placeholder="이메일 형식" style="padding: 16px; width: 27%;">
 					      <span id="msg"></span>
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="pwd" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">암호</label>
-					    <div class="col-sm-10">
-					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 23px;">
+					  <div class="">
+					    <label for="pwd" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >암호</label>
+					    <div class="col-sm-10 joinbox">
+					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 16px; width: 27%;">
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="pwdcheck" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">암호확인</label>
-					    <div class="col-sm-10">
-					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인" style="padding: 23px;">
+					  <div class="">
+					    <label for="pwdcheck" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >암호확인</label>
+					    <div class="col-sm-10 joinbox">
+					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인" style="padding: 16px; width: 27%;">
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="name" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">이름</label>
-					    <div class="col-sm-10">
-					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력" style="padding: 23px;">
+					  <div class="">
+					    <label for="name" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >이름</label>
+					    <div class="col-sm-10 joinbox">
+					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력" style="padding: 16px; width: 27%;">
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="member_post" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">주소</label>
-					    <div class="col-sm-10">
-					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px;">
-					      <input type="button" value="우편번호 찾기" onclick="findAddr()"><br><br>
-					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr" style="margin-bottom: 5px;">
-					      <input type="text" name="address2" class="form-control"  placeholder="나머지 주소">
+					  <div class="">
+					    <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >주소</label>
+					    <div class="col-sm-10 joinbox">
+					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px; text-align: left; width: 27%; border: 1px solid #ccc;">
+					      <input type="button" value="우편번호 찾기" onclick="findAddr()" class="address"><br><br>
+					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr" style="margin-bottom: 5px; padding: 16px; width: 27%;">
+					      <input type="text" name="address2" class="form-control"  placeholder="나머지 주소" style="padding: 16px; width: 27%;">
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="phone" class="col-sm-2 control-label" style="font-size: 19px; font-weight: 500;">전화번호</label>
-					    <div class="col-sm-10">
-					      <input type="text" name="phone" class="form-control" id="phone" placeholder="전화번호 입력" style="padding: 10px;">
-					      <a href="#" class="mobilePopup" onclick="mobilePopup('ubsstore4377' , 'dream' ); return false;">휴대폰인증</a>
+					  <div class="">
+					    <label for="phone" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" > 전화번호</label>
+					    <div class="col-sm-10 joinbox">
+					      <input type="text" name="phone" class="form-control" id="phone" placeholder="전화번호 입력" style="padding: 16px; width: 27%; display:inline-block;">
+					      <a href="#" class="mobilePopup" onclick="mobilePopup('ubsstore4377' , 'dream' ); return false;"><img  src="/resources/images/mobile.png" style="width:23px;">휴대폰인증</a>
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
+					  <div class="">
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="button" class=" joinmembership" onclick="goJoin()">회원가입 등록</button>
+					      <button type="button" class=" btn btn-default  signup1" onclick="goJoin()">회원가입 등록</button>
 					      
 					    </div>
 					  </div>

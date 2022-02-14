@@ -9,7 +9,7 @@
     		<div class="row">
     		
     		<div class="col-md-6 newitem">
-    			<img src="/resources/images/ingg.webp" alt="" class="" style="width: 500px; height: 500px;">
+    			<img src="/resources/images/ingg.webp" alt="" class="" style="width: 500px; height: 500px;  margin-top: 36px;">
     		</div>
     	
     			<div class="col-md-6 newitem">
@@ -39,7 +39,6 @@
 					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" >
 					       </div>
 					       <div>
-					       	 
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" >회원가입</button>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findIdPwd.do'">아이디/비밀번호 찾기</button>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop.do'">회원 탈퇴</button>
