@@ -118,11 +118,8 @@
 				<div class="pull-right" style="margin-top:35px;">
 					
 					<div class="dropdown">
-<<<<<<< HEAD
- 						<button class="dropbtn" style=""><!-- <img alt="" src="/resources/images/notification.png"> -->&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
-=======
+
  						<button class="dropbtn" style=""><img alt="" src="/resources/images/bell.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			  			<div class="dropdown-content" style="left:-135px; min-width:290px;">
 			    			<a href="#">새로운 메세지가 도착했습니다.</a>
 			    			
