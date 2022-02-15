@@ -9,12 +9,10 @@
 		<result property="id" column="id" />
 		<result property="pwd" column="pwd" />
 		<result property="name" column="name" />
-		<result property="email" column="email" />
 		<result property="zip_num" column="zip_num" />
 		<result property="address1" column="address1" />
 		<result property="address2" column="address2" />
 		<result property="phone" column="phone" />
-		<result property="useyn" column="useyn" />
 		<result property="indate" column="indate" />
 		<collection property="authList" resultMap="authMap"></collection>
 	</resultMap>
@@ -23,7 +21,7 @@
 		<result property="auth" column="auth" />
 	</resultMap>
 	<select id="read" resultMap="tbl_memberMap">
-		SELECT mem.id, pwd, name, useyn, phone,email, zip_num,address1,address2,indate,auth
+		SELECT mem.id, pwd, name,  phone, zip_num,address1,address2,indate,auth
 		FROM member mem LEFT OUTER JOIN member_auth auth on mem.id =
 		auth.id
 		WHERE mem.id = #{id}

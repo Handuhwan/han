@@ -41,6 +41,7 @@
 								<td class="column-0"></td><!--${mlist.phone}  -->
 								<td class="column-2">
 									<!-- ${mlist.status} -->
+									
 									<button type="button" class="btn_suspended" data-toggle="modal" data-target="#myModal" >정지</button>
 										<!-- Modal -->
 										<div class="modal fade" style="text-align:left;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
