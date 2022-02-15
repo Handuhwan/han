@@ -40,7 +40,7 @@ public class MemberController {
 		
 		return result;
 	}
-	@PostMapping("/memberinsertpro.do")
+	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
 		
 		String inputPass = pwencoder.encode(member.getPwd());
