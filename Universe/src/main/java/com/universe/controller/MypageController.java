@@ -32,5 +32,10 @@ public class MypageController {
 	public void manage() {
 		
 	}
+	
+	@GetMapping("/details")
+	public void details() {
+		
+	}
 
 }
