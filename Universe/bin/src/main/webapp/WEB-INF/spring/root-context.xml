@@ -15,7 +15,7 @@
    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property><!--"com.mysql.cj.jdbc.Driver myscl사용할떄 사용 -->
       <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"></property> 
-      <property name="username" value="shop"></property>
+      <property name="username" value="universe"></property>
       <property name="password" value="1234"></property>
    </bean>   
    <!-- connection 설정 -->

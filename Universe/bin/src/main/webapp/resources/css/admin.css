@@ -42,16 +42,6 @@
     margin: 0 auto;
 }
 
-.login_btn {
-	padding: 14px 20px;
-    background-color: #989ec6;
-    color:white;
-    width:100%;
-    font-family: Poppins-Regular; 
-    font-size:15px; 
-    border: 1px solid #fff;
-}
-
 .login_square p {
 	text-align: center; 
 	font-size: 22px; 
@@ -147,14 +137,17 @@
 
 .admin_menu .column-0 {
   width: 172px;
+  text-align:center;
 }
 
 .admin_menu .column-1 {
   width: 140px;
+  text-align:center;
 }
 
 .admin_menu .column-2 {
   font-size: 15px;
+  text-align:center;
 }
 
 .admin_menu .column-3 {
@@ -313,6 +306,27 @@ a:hover {
     border: 1px solid #989ec6;
     padding: 1px 5px;
 }
+
+.btn_blocked {
+	background-color: #989ec6;
+    color:white;
+    font-family: Poppins-Regular;
+    font-size:15px; 
+    border: 1px solid #989ec6;
+    padding: 1px 5px;
+}
+
+.login_btn {
+	padding: 14px 20px;
+    background-color: #989ec6;
+    color:white;
+    width:100%;
+    font-family: Poppins-Regular; 
+    font-size:15px; 
+    border: 1px solid #fff;
+    width: 576px;
+}
+
 
 /*modal------------------------------------------------------------------------------*/
 
