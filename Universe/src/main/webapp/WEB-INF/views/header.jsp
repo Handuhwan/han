@@ -42,7 +42,7 @@
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
-<script src="/resources/js/my.js"></script>
+
 
 
 
@@ -71,7 +71,7 @@
 				</div>
 				<div class="pull-right" style="margin-right:15px;">
 				
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="" style="color:rgb(103 103 103);">회원가입</a></span>
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
 
 					
 			
@@ -92,7 +92,7 @@
 			
 			
 			<div style="margin-top:20px;" class="header_recent" >
-				<a class="b_top" style="color:#586fff; font-weight:600" href="#header">　　　TOP　　　</a>
+				<a class="b_top" style="color:#586fff; font-weight:600" id="top_btn">　　　TOP　　　</a>
 			</div> <!--  맨위로 가기 버튼 -->
 			
 			
@@ -104,7 +104,7 @@
 				<div class="pull-left">
 					
 					<div class="serch-box" > <!-- serch box -->
-						<img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;">
+						<a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
 						<form style="display:inline" name="main-serch" method="post" action="">
 					<!--  <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"> -->
 						<input type="text" placeholder="#상품명 #지역명 #상점명">

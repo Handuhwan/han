@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+
+.loginheader {
+	font-size: 40px;
+	margin-top:30px; 
+	margin-bottom:30px;
+
+
+}
+.loginemail {
+	width: 340px;
+	font-weight:bold;
+	
+}
+ .logingroup {
+	border-style:solid;
+
+}
+.loginemail {
+	width: 340px;
+	font-weight:bold;
+	
+}
+.signup {
+
+	font-weight: 560;
+    font-size: 16px;
+    border: solid 2px;
+    width: 340px;
+    height: 50px;
+}
+.naverbutton {
+	
+	border-style:solid;
+	height: 35px;
+    line-height: 35px;
+    font-size: 11px;
+    padding-left: 6px;
+    float:left
+}
+.naverfont {
+	margin-top: 15px;
+	line-height: 35px;
+	text-align:left;
+	width:300px;
+	color: #fff;
+    background-color: #00c63b;
+    text-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    border-style:solid;
+}
+.kakaofont{
+	margin-top: 15px;
+	line-height: 35px;
+	text-align:left;
+	width:300px;
+	color: #fff;
+    background-color: #fbe300;
+    text-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    border-style:solid;
+}
+.googlefont{
+	margin-top: 15px;
+	line-height: 35px;
+	text-align:left;
+	width:300px;
+    text-shadow: 0 0 2px rgb(0 0 0 / 20%);
+    border-style:solid;
+}
+
+/*======= Button 2 =======*/
+.form-group .btn btn-default btn2 {
+	width: 341px; 
+	height: 54px; 
+	margin-top:20px; 
+	margin-bottom:20px; 
+	border-style:solid; 
+	border-color: black; 
+	font-size: large;
+}
+.btn2::before{
+  content: "";
+position: absolute;
+top: 0;
+left: 0;
+display: block;
+width: 100%;
+height: 100%;
+z-index: -1;
+background-color: #000;
+-webkit-transform: scaleY(.3);
+transform: scaleY(.3);
+opacity: 0;
+transition: all .3s
+}
+
+.btn2:hover{
+  color:#6098FF;  
+}
+.btn2:hover::before{
+  opacity: 1;
+  background-color: #fff;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
+  transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+}
+
+/*======= Button 4 회원가입 =======*/
+.btn4 {
+	border-style:hidden;
+	margin-top: 9px;
+}
+.btn4::before {
+  content: '';
+  position: absolute;
+  bottom: 0%;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background: #6098FF;
+  display: block;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+}
+
+.btn4:hover::before {
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1)
+}
+/*join.jsp*/
+.accordion {
+
+ background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+ 
+}
+.accordionbottom{
+	margin-top: 20px;
+}
+
+.textline{
+	width: 1140px;
+}
+.intextline {
+	height: 200px;
+    width: 1100px;
+}
+.address{
+	border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 3px;
+    padding: 4px;
+    background-color:#fff;
+	padding: 9px 13px 9px 13px;
+}
+.address:hover {
+     text-decoration: underline;
+}
+
+.mobilePopup{
+    display: block;
+    width: 103px;
+    line-height: 33px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display:inline-block;
+}
+
+.join{
+	font-weight: bolder;
+	margin-top: 30px;
+    margin-bottom: 30px;
+    color: #616161;
+    padding-top:20px;
+}
+.signup1    
+{
+	margin-top: 20px;
+   font-weight: 560;
+    font-size: 18px;
+    border: solid 2px;
+    padding: 18px 125px 18px 125px;
+	margin-bottom: 50px;
+}
+.signup1:hover {
+	color:#6098FF; 
+}
+.joinbuttton {
+	padding: 12px 0 12px 18px;
+    border-top: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    color: #353535;
+    text-align: left;
+    font-weight: normal;
+    background-color: #fff;
+}
+.joinbuttton1 {
+	padding: 12px 0 12px 18px;
+    border-top: 1px solid #e5e5e5;
+    color: #353535;
+    text-align: left;
+    font-weight: normal;
+    background-color: #fff;
+}
+.joinbox {
+	padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    color: #353535;
+    font-size: 12px;
+    vertical-align: middle;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* 체크박스*/
+.chkbox {
+  padding-bottom: 16px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.chkbox label {
+  font-size: 15px;
+  color: #4D4D4D;
+  position: absolute;
+  z-index: 10;
+  padding-left: 50px;
+  cursor: pointer;
+}
+.chkbox input {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.chkbox input:checked ~ .check {
+  border-color: #a99765;
+  box-shadow: 0px 0px 0px 15px #a99765 inset;
+}
+.chkbox input:checked ~ .check::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.chkbox .check {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 100px;
+  background-color: #FFF;
+  border: 2px solid #a99765;
+  box-shadow: 0px 0px 0px 0px #a99765 inset;
+  transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+.chkbox .check::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 4;
+  position: absolute;
+  transform: scale(0);
+  background-size: 50%;
+  background-image: url("https://webdevtrick.com/demos/checkmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-delay: 0.2s !important;
+  transition: all 0.25s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+
+/*아이디 비밀번호 찾기*/
+.tab {
+  overflow: hidden;
+  background-color: #fff;
+  font-size: 17px;
+  font-weight: 560;
+  
+}
+.tablinks {
+	margin-left:0px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  margin-bottom: 10px;
+  background-color: #fff;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  padding-top:21px;
+  padding-bottom:10px;
+  font-size: 17px; font-weight: 600;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: dbd9d9;
+ 
+}
+
+/* Style the tab content */
+.tabcontent {
+  margin-right: 15px;
+  margin-left: 15px;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.idpwdcenter {
+	    text-align: center;
+	     margin-bottom: 20px;
+	
+}
+.locksub {
+font-size: 1.4rem;
+    color: #666;
+    line-height: 2rem;
+}
+.lockname {
+	font-size: 1.9rem;
+    color: #111;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+
+.findphone {
+	padding-top: 20px;
+}
+
+.account{
+	margin-top: 60px;
+    float: right;
+    background-color:#6098FF;;
+    color:#fff;	
+    width: 80px;
+    font-weight: 600;
+}
+
+/*회원탈퇴*/
+.memberlabel{
+	font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
