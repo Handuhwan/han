@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 ul li{
@@ -17,3 +18,24 @@ h1, h2, h3, h4, h5, span, div, p, ul, li, a, strong{
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+=======
+@charset "UTF-8";
+
+ul li{
+	list-style:none;
+	
+}
+a{
+	color:#000;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+a:hover{
+	color:#000;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+h1, h2, h3, h4, h5, span, div, p, ul, li, a, strong{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
