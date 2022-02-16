@@ -51,7 +51,7 @@
 
 						<li class="admin_ctgry">
 							<a href="/admin/admin_alert" class="admin_ctgry_detail" style="padding-left: 5px;">
-								✔ 알림11
+								✔ 알림11222
 							</a>
 						</li>
 
