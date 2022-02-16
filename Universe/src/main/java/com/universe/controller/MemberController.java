@@ -28,7 +28,7 @@ public class MemberController {
 	private PasswordEncoder pwencoder;
 	
 	
-	@GetMapping("/join.do")
+	@GetMapping("/join")
 	public void memberView() { //회원가입
 		
 	}
