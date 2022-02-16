@@ -41,20 +41,20 @@
 								<td class="column-0"></td><!--${mlist.phone}  -->
 								<td class="column-2">
 									<!-- ${mlist.status} -->
-									
-									<button type="button" class="btn_suspended" data-toggle="modal" data-target="#myModal" >정지</button>
-										<!-- Modal -->
-										<div class="modal fade" style="text-align:left;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-										  <div class="modal-dialog">
-										    <div class="modal-content">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-										        <h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>
-										        <div class="block_square">대상 회원 아이디</div>
-										      </div>
-										      
-										      <div class="modal-header">
-										      	<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>
+								
+								<!-- suspended button -->	
+								<button type="button" class="btn_suspended" data-toggle="modal" data-target="#myModal" >정지</button>
+									<div class="modal fade" style="text-align:left;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+									    		<div class="modal-header">
+									        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									        		<h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>
+									        		<div class="block_square">대상 회원 아이디</div>
+									      		</div>
+									      
+									    		<div class="modal-header">
+										      		<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>
 											      	<div class="form-check">
 													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 													  <label class="form-check-label" for="flexCheckDefault">
@@ -77,10 +77,10 @@
 													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 													  <input class="suspended" type="text" id="suspended" placeholder="기타- 한글 25자 이내로 작성해 주세요">
 													</div>
-										      </div>
-										      
-										      <div class="modal-header">
-										      	<h4 class="modal-title" id="myModalLabel">활동 정지 기간</h4>
+									     		</div>
+									      
+									      		<div class="modal-header">
+										      		<h4 class="modal-title" id="myModalLabel">활동 정지 기간</h4>
 										      		<div class="form-check">
 													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 													  <label class="form-check-label" for="flexCheckDefault">
@@ -99,29 +99,31 @@
 													    30일
 													  </label>
 													</div>
-										      </div>
-										      
-										      <div class="modal-footer">
-										      	<p>대상 회원을 활동 정지 하시겠습니까?</p>
-										        <button type="button" class="btn_check" data-dismiss="modal">확인</button>
-										        <button type="button" class="btn_cancel">취소</button>
-										      </div>
-										    </div>
-										  </div>
-										</div>
-									<button type="button" class="btn_blocked" data-toggle="modal" data-target="#blockModal" >블락</button>
-										<!-- Modal -->
-										<div class="modal fade" id="blockModal" style="text-align:left;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-										  <div class="modal-dialog">
-										    <div class="modal-content">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-										        <h4 class="modal-title" id="myModalLabel">블락할 회원</h4>
-										        <div class="block_square">대상 회원 아이디</div>
-										      </div>
-										      
-										      <div class="modal-header">
-										      	<h4 class="modal-title" id="myModalLabel">블락 사유</h4>
+									     		 </div>
+									      
+											      <div class="modal-footer">
+											     	<p>대상 회원을 활동 정지 하시겠습니까?</p>
+											      	<button type="button" class="btn_check" data-dismiss="modal">확인</button>
+											      	<button type="button" class="btn_cancel">취소</button>
+											      </div>
+											</div>
+									  	</div>
+									</div>
+								
+								<!-- block button -->
+								<button type="button" class="btn_blocked" data-toggle="modal" data-target="#blockModal" >블락</button>
+									<div class="modal fade" id="blockModal" style="text-align:left;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+									    
+											    <div class="modal-header">
+											    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											   		<h4 class="modal-title" id="myModalLabel">블락할 회원</h4>
+											    	<div class="block_square">대상 회원 아이디</div>
+											    </div>
+									      
+											    <div class="modal-header">
+												    <h4 class="modal-title" id="myModalLabel">블락 사유</h4>
 											      	<div class="form-check">
 													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 													  <label class="form-check-label" for="flexCheckDefault">
@@ -144,16 +146,17 @@
 													  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 													  <input class="suspended" type="text" id="suspended" placeholder="기타- 한글 25자 이내로 작성해 주세요">
 													</div>
-										      </div>
-										      
-										      <div class="modal-footer">
-										      	<p>대상 회원을 활동 블락 하시겠습니까?</p>
-										        <button type="button" class="btn_check" data-dismiss="modal">확인</button>
-										        <button type="button" class="btn_cancel">취소</button>
-										      </div>
-										    </div>
-										  </div>
-										</div>
+											    </div>
+									      
+											    <div class="modal-footer">
+											    	<p>대상 회원을 활동 블락 하시겠습니까?</p>
+											   		<button type="button" class="btn_check" data-dismiss="modal">확인</button>
+											    	<button type="button" class="btn_cancel">취소</button>
+											    </div>
+									      
+										    </div> <!-- modal-content fin -->
+										  </div> <!-- modal-dialog fin -->
+										</div> <!-- modal fade fin -->
 								</td>
 							</tr>
 						</table>
