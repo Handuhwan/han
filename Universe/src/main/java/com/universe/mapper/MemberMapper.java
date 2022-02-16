@@ -9,7 +9,7 @@ public interface MemberMapper {
 	
 	public int idCheck(String id);
 	
-	public void insert(MemberVO member);
+	public void insert(MemberVO member); // 회원가입
 	
 	public int insert_auth(MemberVO member);
 }

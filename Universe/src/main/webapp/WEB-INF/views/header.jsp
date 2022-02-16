@@ -58,7 +58,7 @@
 
 <!-- main header -->
 <header>
-	<span id="header"></span>
+	<span id="header12"></span>
 	
 
 </header>
