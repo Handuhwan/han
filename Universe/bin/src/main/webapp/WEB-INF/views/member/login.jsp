@@ -23,14 +23,14 @@
 
 
 					    <div class="loginemail">
-					      <input type="text" name="username" class="form-control" id="userid" placeholder="Email"  style="height: 50px; ">
+					      <input type="text" name="username" class="form-control" id="id" placeholder="Email"  style="height: 50px; ">
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
 					    <label for="userpwd" class="col-sm-2 control-label"></label>
 					    <div class="loginemail">
-					      <input type="password" name="password" class="form-control" id="userpwd" placeholder="password" style="height: 50px; ">
+					      <input type="password" name="password" class="form-control" id="pwd" placeholder="password" style="height: 50px; ">
 					    </div>
 					  </div>
 					  
@@ -39,9 +39,9 @@
 					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" style="	margin-left:0px;">
 					       </div>
 					       <div>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join.do'" style="margin-left:0px;">회원가입</button>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findPwd.do'">아이디/비밀번호 찾기</button>
-					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop.do'">회원 탈퇴</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join'" style="margin-left:0px;">회원가입</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findPwd">아이디/비밀번호 찾기</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
 					   		<button type="button" class="btn btn-default naverfont" onclick="" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>

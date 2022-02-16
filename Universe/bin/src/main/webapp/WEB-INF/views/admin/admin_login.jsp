@@ -20,7 +20,7 @@
 <body>
 	
 	<div id="adminlog" class="login_square">
-		<form class="admin_content" action="adminok.do" method="post">
+		<form class="admin_content" action="adminok.do" method="post" name="login">
 	
 	    <div class="admin_container">
 	    	<h1>Administrator Login</h1>

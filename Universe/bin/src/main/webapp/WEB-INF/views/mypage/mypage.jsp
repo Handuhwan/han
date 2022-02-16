@@ -29,8 +29,9 @@
 					<button class="modify_nickname">상점명 수정</button>
 				</div>
 				<div class="user_info">
-					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">상점오픈일&nbsp;7일 전</div>
-					<div class="user_a"><img src="/resources/images/visiter.png" width="14" height="13" alt="방문수 아이콘">상점방문수&nbsp;35 명</div>
+					<div class="user_a pull-left"><img src="/resources/images/coins.png" width="14" height="13" alt="오픈일 아이콘">마일리지&nbsp;:&nbsp;50.000 원</div>
+					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">상점오픈일&nbsp;:&nbsp;7일 전</div>
+					<div class="user_a"><img src="/resources/images/visiter.png" width="14" height="13" alt="방문수 아이콘">상점방문수&nbsp;:&nbsp;35 명</div>
 				</div>
 				<div class="intro_text">
 					<p>안녕하세요 여러가지 코드를 판매하고 있는 코딩스토어입니다.<br>많은 관심과 사랑 부탁드립니다 ~ ^^</p>

@@ -102,15 +102,19 @@ a {text-decoration: none;}
     color: #000;
     cursor: default;
     background-color: #fff;
-    border: 1px solid #000;
     border-bottom-color: transparent;
     height: 50px;
-    font-weight: 600;
+    font-weight: bold;
+   	font-size: large;
+   	border: none;
+    border-bottom: 2px solid #000;
 }
 
 .nav-tabs > li > a {
 	height: 50px;
 	color: #777;
+	font-size: large;
+    font-weight: 900;
 }
 
 .nav_bar > .nav_title {
@@ -1330,10 +1334,11 @@ th {
 
 .dTable h2 {
 	font-weight: 900;
+    font-size: revert;
+    padding: 20px 0;
 }
 
 .detailsTab {
-	width: 50%;
     margin: 0 auto;
 }
 
@@ -1341,18 +1346,65 @@ th {
 	width: 33.3333%;
 }
 
+.detailsTab li a {
+	border: none;
+    border-bottom: 1px solid #e8e8e8;
+}
 
+.detailsContents {
+    margin: 0 auto;
+	padding-top: 20px;
+}
 
+.none_details {
+	font-size: 1rem;
+    text-align: center;
+    margin-top: 3.125rem;
+    font-size: large;
+    font-weight: bold;
+}
 
+.statusBtn {
+	margin-top: 10px;
+	border: none;
+	background-color: #e8e8e8;
+	border-radius: 20px;
+	padding: 3px 6px;
+	color: rgb(155, 153, 169);
+	margin-right: 6px;
+}
 
+.statusBtn:hover,
+.status:active {
+	margin-top: 10px;
+	border: none;
+	background-color: #cfd4f4;
+	border-radius: 20px;
+	padding: 3px 6px;
+	color: #fff;
+}
 
+.buyTable, .sellTable, .calulateTable {
+	width: 100%;
+}
 
+.detailsContents table thead {
+    font-weight: bold;
+    border-top: 2px solid #cfd4f4;
+    border-bottom: 2px solid #cfd4f4;
+    height: 4.5rem;
+    font-size: larger;
+}
 
+.detailsContents table thead > tr {
+    height: 2.5rem;
+}
 
-
-
-
-
+.detailsContents tbody tr {
+	border-bottom: 1px solid #e8e8e8;
+    height: 4.5rem;
+    padding-bottom: 10px;
+}
 
 
 
