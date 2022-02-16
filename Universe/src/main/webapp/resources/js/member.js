@@ -1,4 +1,4 @@
-function go_join() {
+function memeber_insert_form() {
 	
 
 	

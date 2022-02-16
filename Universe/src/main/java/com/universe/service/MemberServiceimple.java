@@ -22,10 +22,11 @@ public class MemberServiceimple implements MemberService {
 	}
 	@Override
 	public void register(MemberVO member) {
+		System.out.println("여기");
 		mapper.insert(member);
-		
+		System.out.println("여기1");
 		mapper.insert_auth(member);
-		
+		System.out.println("여기2");
 	}
 
 }
