@@ -172,6 +172,10 @@
 						<a href="#" class="admin_pagination">
 							2
 						</a>
+						
+						<a href="#" class="admin_pagination">
+							2
+						</a>
 					</div>				
 				</div>
 						
