@@ -104,6 +104,7 @@
 				<div class="pull-left">
 					
 					<div class="serch-box" > <!-- serch box -->
+						
 						<a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
 						<form style="display:inline" name="main-serch" method="post" action="">
 					<!--  <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"> -->
