@@ -44,8 +44,18 @@
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
-					   		<button type="button" class="btn btn-default naverfont" onclick="" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
-							<button type="button" class="btn btn-default kakaofont" onclick="" style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+					   		<button type="button" class="btn btn-default naverfont" id="naver_id_login" onclick="naverlogin()" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
+					   			<div id="naver_id_login" style="text-align: center"> 
+					   				<a href="${naver_url}">
+					   			</a></div>
+
+							<button type="button" class="btn btn-default kakaofont" onclick=" location.href='http://localhost:208/member/login' " style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+							   <a href="https://kauth.kakao.com/oauth/authorize
+									    ?client_id=258fa9cb44b6868e86dfeb3d3b78c89c
+									    &redirect_uri=http://http://localhost:208/member/login
+									    &response_type=code">로그인</a>
+							  <a id="kakao-login-btn"></a>
+   								 <a href="http://developers.kakao.com/logout">Logout</a>
 							<button type="button" class="btn btn-default googlefont" onclick="" style="margin-left:0px;"><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
 						</div>		
 					   
@@ -64,48 +74,23 @@
     	</div>
     </section>
     <!-- contents end -->
- <body>
-  <!-- 카카오톡 로그인 -->
-   
-    <script>
-        window.Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c');
+    <script type='text/javascript'>
+        //<![CDATA[
+        // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('Your KEY');
+        // 카카오 로그인 버튼을 생성합니다.
+        Kakao.Auth.createLoginButton({
+            container: '#kakao-login-btn',
+            success: function (authObj) {
+                alert(JSON.stringify(authObj));
+            },
+            fail: function (err) {
+                alert(JSON.stringify(err));
+            }
+        });
+      //]]>
+    </script>
 
-        function kakaoLogin() {
-            window.Kakao.Auth.login({
-                scope: 'profile_nickname, account_email ', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
-                success: function(response) {
-                	alert("로그인 완료");
-                    console.log(response) // 로그인 성공하면 받아오는 데이터
-                    window.Kakao.API.request({ // 사용자 정보 가져오기 
-                        url: '/v2/user/me',
-                        success: (res) => {
-                            const kakao_account = res.kakao_account;
-                            console.log(kakao_account)
-                       }
-                    });
-                    // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
-                },
-                fail: function(error) {
-                    console.log(error);
-                }
-            });
-        }
-    </script>
-    <!--카카오톡 로그아웃 -->
-    <script>
-    window.Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c');
-	function kakaoLogout() {
-    	if (!Kakao.Auth.getAccessToken()) {
-		    console.log('Not logged in.');
-		    return;
-	    }
-	    Kakao.Auth.logout(function(response) {
-    		alert(response +' logout');
-		    window.location.href='/'
-	    });
-};
-    </script>
-    <!--카카오톡 탈퇴 -->
     <script>
     function secession() {
     	Kakao.API.request({
