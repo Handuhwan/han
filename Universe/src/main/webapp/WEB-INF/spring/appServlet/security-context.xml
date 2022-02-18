@@ -14,8 +14,8 @@
 
 	<security:http auto-config="true" use-expressions="true">
 		<!-- <security:form-login/>  -->
-		<security:intercept-url pattern="/adm/adminlogin" access="permitAll"/>
-		<security:intercept-url pattern="/adm/admin" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/admin/admin_login" access="permitAll"/>
+		<security:intercept-url pattern="/admin/admin" access="hasRole('ROLE_ADMIN')"/>
 		<!--  <security:intercept-url pattern="/sample/insert" access="hasAnyRole({'ROLE_ADMIN','ROLE_USER'})"/> -->
 		
 		<!-- 권한이 없는 사람이 접근하면  -->
@@ -24,11 +24,15 @@
 			authentication-failure-handler-ref="customLoginFail"
 			/>
 		<!-- 로그아웃 처리 -->
+<<<<<<< HEAD
+		<security:logout logout-url="/admin/adminLogout" invalidate-session="true" logout-success-url="/"/>
+=======
 		<security:logout logout-url="/adm/adminLogout" invalidate-session="true" logout-success-url="/"/>
 	
 		<!-- 권한 없는사람 페이지 처리 -->
 		<security:access-denied-handler ref="customAccessDenied"/>
 	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	</security:http>
 	
 	<security:authentication-manager>
