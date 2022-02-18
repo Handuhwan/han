@@ -15,7 +15,7 @@
     			<div class="col-md-6 newitem">
     				<h2 class="loginheader">LOGIN</h2>
     				
-    				<form class="form-horizontal" name="frm" method="post" action="/login">
+    				<form class="form-horizontal"  method="post" action="/login">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="form-group">

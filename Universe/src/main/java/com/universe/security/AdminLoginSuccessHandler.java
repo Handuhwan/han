@@ -31,6 +31,8 @@ public class AdminLoginSuccessHandler implements AuthenticationSuccessHandler {
 		if(roleNames.contains("ROLE_MEMBER")) {
 			response.sendRedirect("/");
 			return;
+		}if(roleNames.contains("ROLE_BEN")) {
+			response.sendRedirect("/member/controller");
 		}
 		response.sendRedirect("/");
 	}

@@ -21,10 +21,9 @@
 		<result property="auth" column="auth" />
 	</resultMap>
 	<select id="read" resultMap="tbl_memberMap">
-		SELECT mem.id, pwd, name,  phone, zip_num,address1,address2,indate,auth
-		FROM member mem LEFT OUTER JOIN member_auth auth on mem.id =
-		auth.id
-		WHERE mem.id = #{id}
+		select * 
+        from member mem left outer join member_auth auth on mem.id = auth.id 
+        where mem.id = #{id}
 	</select>
 	</mapper>
 

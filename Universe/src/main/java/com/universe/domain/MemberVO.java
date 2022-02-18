@@ -20,7 +20,7 @@ public class MemberVO {
     private String grade;
     private String indate;
     private int usercount;
-    private int status;
+    private String status;
     private String intro;
     private int point;
     private String usedropdate;
