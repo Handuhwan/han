@@ -24,7 +24,7 @@ $(function(){
 	
 })
 
-$(window).scroll(function(){
+$(window).scroll(function(){ //top버튼 
     
     if($(this).scrollTop() > 100 ){
       $("#top_btn").addClass("on");
@@ -35,7 +35,7 @@ $(window).scroll(function(){
     
   });
   
-$(function(){
+$(function(){ // top버튼
 
 	$("#top_btn").click(function(){
  	 window.scrollTo({top : 0, behavior: 'smooth'}); 
@@ -43,3 +43,7 @@ $(function(){
 
 })
 
+function header_logout(){ //헤더 로그아웃 버튼
+	
+	header_logout.submit();
+}

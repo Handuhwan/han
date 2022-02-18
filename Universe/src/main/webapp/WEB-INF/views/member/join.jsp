@@ -7,6 +7,7 @@
     <section class="product">
     	<div class="container">
     		<div class="row">
+
     		<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 79px;">
 						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
 								    이용약관 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
@@ -100,7 +101,7 @@
     				 
     				  <div class="col-md-12" style=" border-top: 2px solid #000; margin-top:50px;">
     				  </div>
-    				   
+    
     			<div class="col-md-9 newitem" >
     				<h2 class="join">회원가입</h2>
     				
