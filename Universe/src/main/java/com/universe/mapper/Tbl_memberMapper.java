@@ -6,4 +6,5 @@ public interface Tbl_memberMapper {
 
 	public MemberVO read(String userid);
 	
+	
 }
