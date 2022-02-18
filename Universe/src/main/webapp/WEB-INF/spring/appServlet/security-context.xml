@@ -13,13 +13,13 @@
 
 	<security:http>
 		<!-- <security:form-login/>  -->
-		<security:intercept-url pattern="/adm/adminlogin" access="permitAll"/>
-		<security:intercept-url pattern="/adm/admin" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/admin/admin_login" access="permitAll"/>
+		<security:intercept-url pattern="/admin/admin" access="hasRole('ROLE_ADMIN')"/>
 		<!--  <security:intercept-url pattern="/sample/insert" access="hasAnyRole({'ROLE_ADMIN','ROLE_USER'})"/> -->
 		<!-- 권한이 없는 사람이 접근하면  -->
 		<security:form-login login-page="/member/login" authentication-success-handler-ref="AdminLoginSucess"/>
 		<!-- 로그아웃 처리 -->
-		<security:logout logout-url="/adm/adminLogout" invalidate-session="true" logout-success-url="/"/>
+		<security:logout logout-url="/admin/adminLogout" invalidate-session="true" logout-success-url="/"/>
 	</security:http>
 	
 	<security:authentication-manager>

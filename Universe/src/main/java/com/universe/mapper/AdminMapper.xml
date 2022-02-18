@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.universe.mapper.AdminMapper">
+
+	<sql id="criteria">
+			<trim prefix="(" suffix= ") and " prefixOverrides="OR">
+				<foreach collection="typeArr" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'I'.toString()">
+								id like '%'||#{keyword}||'%' 
+							</when>
+							<when test="type == 'N'.toString()">
+								name like '%'||#{keyword}||'%' 
+							</when>
+							<when test="type == 'B'.toString()">
+								nickname like '%'||#{keyword}||'%' 
+							</when>
+							
+						</choose>
+					</trim>
+				</foreach>
+			</trim>	
+	</sql>
+	
+	<select id="getlistWithPaging" resultType="com.universe.domain.MemberVO">
+		<![CDATA[
+			
+			select id,name,nickname,phone,status 
+			from (
+				select /*+ index_desc(member member_pk)*/ rownum rn ,id,name,nickname,phone,status 
+				from member 
+				where 
+			]]>	
+			
+		<include refid="criteria"></include>
+		
+			
+			
+		<![CDATA[
+				 rownum <= #{pageNum} * #{amount}
+			)
+			where rn > (#{pageNum}-1) * #{amount}
+		
+		]]>
+		
+		
+	</select>
+	
+	
+	
+	<select id="getTotalCount" resultType="int">
+		
+			select count(*) from member where 
+			
+			<include refid="criteria"></include>
+		<![CDATA[	
+			  usernumber>0
+		]]>
+	
+		
+	</select>
+	
+	
+</mapper>

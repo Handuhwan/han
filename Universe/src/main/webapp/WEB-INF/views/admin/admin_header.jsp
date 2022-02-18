@@ -48,10 +48,14 @@
 							
 						<li class="admin_ctgry" id="now" style="font-family: Poppins-Italic; font-size: 20px;">
 						</li>
+						
+						<li class="admin_ctgry" style="font-family: Poppins-Italic; font-size: 12px; font-style: italic;">
+							관리자님 환영합니다!
+						</li>
 
 						<li class="admin_ctgry">
 							<a href="/admin/admin_alert" class="admin_ctgry_detail" style="padding-left: 5px;">
-								✔ 알림11222
+								✔ 알림
 							</a>
 						</li>
 
