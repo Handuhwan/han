@@ -43,8 +43,11 @@
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 =======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
 
 
