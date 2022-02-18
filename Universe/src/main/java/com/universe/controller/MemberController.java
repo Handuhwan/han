@@ -1,11 +1,14 @@
 package com.universe.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -63,4 +66,11 @@ public class MemberController {
 	public void memberdrop() {
 	
 	}
+	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
+	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
+		
+		//String id = prin.getName(); // login한 아이디를 가져옴
+		
+	}
+	
 }
