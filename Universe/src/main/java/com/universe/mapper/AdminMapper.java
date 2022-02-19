@@ -10,5 +10,7 @@ public interface AdminMapper {
 	public int getTotalCount(Criteria cri);
 	
 	public List<MemberVO> getlistWithPaging(Criteria cri); // 페이징위한
-
+	
+	void admin_member_forced_evictionCheck(MemberVO dto) throws Exception;
+	
 }
