@@ -32,6 +32,10 @@
 		<!-- 권한 없는사람 페이지 처리 -->
 		<security:access-denied-handler ref="customAccessDenied"/>
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	</security:http>
 	
 	<security:authentication-manager>
