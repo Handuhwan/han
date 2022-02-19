@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.universe.criteria.Criteria;
 import com.universe.criteria.PageVO;
+import com.universe.domain.MemberVO;
 import com.universe.service.AdminService;
 
 import lombok.AllArgsConstructor;
@@ -54,6 +55,37 @@ public class AdminController {
 	     ModelAndView mv = new ModelAndView("redirect:/");
 	     return mv;
 	 }
+	 
+	 @RequestMapping("/admin_member_forced_eviction")
+	    public ModelAndView admin_member_forced_eviction(String id) throws Exception {
+	        
+	        //유저의 아이디를 삭제 (강제탈퇴) 시키기위해서 vo에 담는다.
+	        MemberVO mvo = new MemberVO();
+	        mvo.setId(id);
+	        
+	        //회원탈퇴 체크를 하기위한 메소드, 탈퇴 시키려는 회원의 아이디가 있는지 검사한후에 result 변수에 저장한다.
+	        service.admin_member_forced_evictionCheck(mvo);
+	        
+	 
+	        ModelAndView mav = new ModelAndView();
+	        
+	        if(mvo.getId() != null) {    //회원 강제탈퇴가 성공했을시 출력되는 뷰
+	            
+	            mav.setViewName("admin/admin");
+	            
+	            mav.addObject("message", "회원이 정상적으로 강제탈퇴 처리 되었습니다.");
+	            
+	        }else {
+	            
+	            mav.setViewName("admin/admin");
+	            
+	            mav.addObject("message", "회원 목록에 없는 회원입니다. 다시 확인해주세요.");
+	        }
+	        
+	        
+	        return mav;
+	                
+	    }
 	 
 	 
 	

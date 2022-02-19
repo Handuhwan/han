@@ -24,15 +24,14 @@
 			authentication-failure-handler-ref="customLoginFail"
 			/>
 		<!-- 로그아웃 처리 -->
-<<<<<<< HEAD
+
 		<security:logout logout-url="/admin/adminLogout" invalidate-session="true" logout-success-url="/"/>
-=======
+
 		<security:logout logout-url="/adm/adminLogout" invalidate-session="true" logout-success-url="/"/>
 	
 		<!-- 권한 없는사람 페이지 처리 -->
 		<security:access-denied-handler ref="customAccessDenied"/>
 	
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	</security:http>
 	
 	<security:authentication-manager>

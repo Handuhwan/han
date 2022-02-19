@@ -16,7 +16,7 @@ public class AdminLoginSuccessHandler implements AuthenticationSuccessHandler {
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-			Authentication auth) throws IOException, ServletException {
+		Authentication auth) throws IOException, ServletException {
 		
 		List<String> roleNames= new ArrayList<>();
 		auth.getAuthorities().forEach(authlist ->{

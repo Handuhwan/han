@@ -1,3 +1,10 @@
 /target/
+/.classpath
+/.gitignore
+/.project
 /.settings/
+/.springBeans
+/Users/
+/pom.xml
+/springhanulso5/
 /src/

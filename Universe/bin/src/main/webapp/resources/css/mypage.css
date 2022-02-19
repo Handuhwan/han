@@ -45,7 +45,31 @@ a {text-decoration: none;}
 }
 
 .nickname {
-	padding-bottom: 25px;
+	padding-bottom: 24.5px;
+	font-weight: bold;
+	font-size: large;
+}
+
+.newStoreName {
+	font-weight: bold;
+	font-size: middle;
+	padding-bottom:20px;
+}
+
+.newStoreName > button {
+	border: 1px solid #e8e8e8;
+    background: #f3f3f3;
+    color: #8f8f8f;
+    border: none;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+.newStoreName > input {
+	border: 1px solid #e8e8e8;
+	width: 30%;
+	height: 3rem;
+	padding-left: 10px;
 }
 
 .user_info > .user_a {
@@ -58,6 +82,8 @@ a {text-decoration: none;}
     font-size: x-small;
     background: #fff;
     border: 1px solid #e8e8e8;
+    top: 37px;
+    position: absolute;
 }
 
 .user_info > .user_a > img {
@@ -696,6 +722,7 @@ button {
     background-color: transparent;
     cursor: pointer;
     outline: none;
+    border: none;
 }
 
 .izkVcA img:last-child {
@@ -1406,12 +1433,40 @@ th {
     padding-bottom: 10px;
 }
 
+.aTag {
+	padding-left:60px;
+}
 
+.newIntroBox {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    height: 150px;
+    padding-top: 30px;
+}
 
+.newIntroBox > textarea {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    resize: none;
+    border: 1px solid rgb(238, 238, 238);
+}
 
-
-
-
+.newIntroBox > button {
+    width: 100px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-right: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid rgb(238, 238, 238);
+    background: rgb(250, 250, 250);
+    color: rgb(136, 136, 136);
+    font-weight: bold;
+}
 
 
 

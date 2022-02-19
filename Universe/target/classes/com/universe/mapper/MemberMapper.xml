@@ -15,4 +15,15 @@
 		values(#{id},'ROLE_USER')
 	</insert>
 	
+	<!-- 회원 강제탈퇴관련 mapper -->
+	
+    <!-- <delete id="admin_member_forced_evictionCheck">
+    delete from member
+    where id=#{id}
+    </delete>-->
+    
+    <update id="admin_member_forced_evictionCheck">
+    	update member set status = '2' where usernumber=#{usernumber}
+    </update>
+	
 </mapper>
