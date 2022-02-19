@@ -23,17 +23,22 @@
 								기본정보<span>*필수항목</span>
 							</h2>
 							<form name="productInsert" action="" method="post" onsubmit="">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 							<ul class="sc-eetwQk pPWss">
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc icTXTK">
-										상품이미지<small>(0/12)</small>
+										상품이미지<small>(0/3)</small>
 									</div>
 									<div class="sc-fdJbru lhSEWN">
-										<ul class="sc-cClmTo dHLNTh">
-											<li class="sc-cZLAbK dkAkSi">이미지 등록 
-												<input type="file" accept="image/jpg, image/jpeg, image/png" multiple="multiple">
+										<ul class="sc-cClmTo dHLNTh" id="new_img">
+											<li class="sc-cZLAbK dkAkSi" >이미지 등록 
+												<input type="file" class="inp-img" accept="image/jpg, image/jpeg, image/png" multiple="multiple">
+												
 											</li>
 										</ul>
+										
+										<div id="preview"></div>
+											
 										<div class="sc-kOCNXg ksQfBV">
 											<b>* 상품 이미지는 640x640에 최적화 되어 있습니다.</b>
 											<br>- 이미지는 상품등록 시 정사각형으로 짤려서 등록됩니다.
@@ -182,7 +187,25 @@
 	</div>
 </div>
 		
+<script>
+function readInputFile(input) {
+    if(input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#preview').append("<img src="+ e.target.result +">");
+        }
+        reader.readAsDataURL(input.files[0]);
+        console.log(input.files[0]);
+    }
+}
+ 
+$(".inp-img").on('change', function(){
+    readInputFile(this);
+});
 
+
+
+</script>
 
 
 <%@ include file="../footer.jsp"%>

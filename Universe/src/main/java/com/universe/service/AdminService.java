@@ -11,5 +11,7 @@ public interface AdminService {
 	
 	public List<MemberVO> getlistWithPaging(Criteria cri);
 	
+	void admin_member_forced_evictionCheck(MemberVO dto) throws Exception;
+	
 
 }
