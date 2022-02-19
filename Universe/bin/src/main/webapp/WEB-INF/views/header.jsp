@@ -42,8 +42,16 @@
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+<script src="/resources/js/mypage.js"></script>
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
 
@@ -58,7 +66,7 @@
 
 <!-- main header -->
 <header>
-	<span id="header"></span>
+	<span id="header12"></span>
 	
 
 </header>
@@ -67,20 +75,26 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<div class="pull-left"  style="margin-left:50px;">
-				<span style="font-size:13px;  padding-right:10px;">님 환영합니다!</span>	
-				</div>
+				<sec:authorize access="isAuthenticated()">
+				<span style="font-size:13px;  padding-right:10px;"> <sec:authentication property="principal.member.name"/> 님 환영합니다!</span>	
+				</sec:authorize>
+				</div> <!-- left end -->
 				<div class="pull-right" style="margin-right:15px;">
-				
+				<sec:authorize access="isAnonymous()">
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
-
-					
-			
-				</div>
+				</sec:authorize> 
+				<sec:authorize access="isAuthenticated()">
+				<form action="/admin/logout" method="post" name="header_logout">
+				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</a></span>
+				</form>
+				</sec:authorize>
+				</div><!-- right end -->
 			</div> <!-- 맨위 -->
 		</div>
 	</div>
 </div> <!-- main_header_nav -->
-	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #e8e8e8; height:120px;">
+	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #cfd4f4; height:120px;">
 		<div class="pull-right">
 			<div class="header_recent"> <!-- 최근본 게시물 -->
 				<p style="margin-bottom:-5px; padding-top:5px; padding-bottom:5px;">최근본 상품</p>

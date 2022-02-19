@@ -7,6 +7,7 @@
     <section class="product">
     	<div class="container">
     		<div class="row">
+
     		<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 79px;">
 						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
 								    이용약관 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
@@ -100,17 +101,17 @@
     				 
     				  <div class="col-md-12" style=" border-top: 2px solid #000; margin-top:50px;">
     				  </div>
-    				   
+    
     			<div class="col-md-9 newitem" >
     				<h2 class="join">회원가입</h2>
     				
-    				<form class="form-horizontal" action="/member/memberinsert" name="join" method="post" onsubmit="return go_join()">
+    				<form class="form-horizontal" action="/member/memberinsert" name="join" method="post" onsubmit="return memeber_insert_form()">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="">
 					    <label for="id" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >이메일</label>
 					    <div class="col-sm-10 joinbox" >
-					      <input type="text" name="userid" class="form-control " id="id" placeholder="이메일 형식" style="padding: 16px; width: 27%;">
+					      <input type="text" name="id" class="form-control " id="id" placeholder="이메일 형식" style="padding: 16px; width: 27%;">
 					      <span id="idmsg"></span>
 					    </div>
 					  </div>
@@ -118,7 +119,7 @@
 					  <div class="">
 					    <label for="pwd" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >암호</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="password" name="password" class="form-control" id="pwd" placeholder="암호입력" style="padding: 16px; width: 27%;">
+					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 16px; width: 27%;">
 					     <span id="pwmsg"></span>
 					    </div>
 					  </div>

@@ -1,6 +1,5 @@
 package com.universe.controller;
 
-<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,9 +10,8 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
-=======
+
 import java.security.Principal;
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -88,15 +86,13 @@ public class MemberController {
 	public void memberdrop() {
 	
 	}
-<<<<<<< HEAD
-=======
+
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
 	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
 		
 		//String id = prin.getName(); // login한 아이디를 가져옴
 		
 	}
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 }
 

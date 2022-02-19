@@ -42,18 +42,7 @@
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-=======
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
-
-
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-
-
 
 </head>
 
@@ -141,7 +130,7 @@
 					<div class="dropdown">
  						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			  			<div class="dropdown-content content2">
-			    			<a href="#">판매리스트</a>
+			    			<a href="/mypage/mypage">마이페이지</a>
 			    			<a href="#">구매리스트</a>
 			    			<a href="#">정보수정</a>
 			 			</div>
