@@ -21,14 +21,18 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public int getTotal(Criteria cri) {
-		// TODO Auto-generated method stub
 		return mapper.getTotalCount(cri);
 	}
 	
 	@Override
 	public List<MemberVO> getlistWithPaging(Criteria cri) {
-		// TODO Auto-generated method stub
 		return mapper.getlistWithPaging(cri);
+	}
+	
+	@Override
+	public void admin_member_forced_evictionCheck(MemberVO mvo) throws Exception {
+		 mapper.admin_member_forced_evictionCheck(mvo);
+		
 	}
 
 }

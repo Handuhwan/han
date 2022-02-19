@@ -44,18 +44,13 @@
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
-					   		<button type="button" class="btn btn-default naverfont" id="naver_id_login" onclick="naverlogin()" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
-					   			<div id="naver_id_login" style="text-align: center"> 
-					   				<a href="${naver_url}">
-					   			</a></div>
+					   		<button type="button"  class="btn btn-default naverfont" id="naver_id_login" onclick="naverlogin()" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
+					   			
 
-							<button type="button" class="btn btn-default kakaofont" onclick=" location.href='http://localhost:208/member/login' " style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
-							   <a href="https://kauth.kakao.com/oauth/authorize
-									    ?client_id=258fa9cb44b6868e86dfeb3d3b78c89c
-									    &redirect_uri=http://http://localhost:208/member/login
-									    &response_type=code">로그인</a>
-							  <a id="kakao-login-btn"></a>
-   								 <a href="http://developers.kakao.com/logout">Logout</a>
+							<button type="button" class="btn btn-default kakaofont" onclick="kakaoLogin()"id="kakao-login-btn" style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+							<a href="javascript:kakaoLogin();"><p>그만</p></a>
+							
+							
 							<button type="button" class="btn btn-default googlefont" onclick="" style="margin-left:0px;"><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
 						</div>		
 					   
@@ -74,67 +69,62 @@
     	</div>
     </section>
     <!-- contents end -->
-    <script type='text/javascript'>
-        //<![CDATA[
-        // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('Your KEY');
-        // 카카오 로그인 버튼을 생성합니다.
-        Kakao.Auth.createLoginButton({
-            container: '#kakao-login-btn',
-            success: function (authObj) {
-                alert(JSON.stringify(authObj));
-            },
-            fail: function (err) {
-                alert(JSON.stringify(err));
-            }
-        });
-      //]]>
-    </script>
-
-    <script>
-    function secession() {
-    	Kakao.API.request({
-        	url: '/v1/user/unlink',
-        	success: function(response) {
-        		console.log(response);
-        		//callback(); //연결끊기(탈퇴)성공시 서버에서 처리할 함수
-        		window.location.href='/'
-        	},
-        	fail: function(error) {
-        		console.log('탈퇴 미완료')
-        		console.log(error);
-        	},
-    	});
-    };
-    </script>
-    <!--  구글 로그인 -->
-   
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-       	alert("로그인 완료");
-      }
-      
-      function googleout() {
-    	  gapi.auth2.getAuthInstance().disconnect();
-      }
-    </script>
+    
  
-    
-</body>
-    
-          
+
+   <script type="text/javascript"> //초기화 시키기. 
+   $(document).ready(function(){ 
+	   Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c'); 
+	   Kakao.isInitialized(); }); 
+   </script>
    
+   <script type="text/javascript"> 
+   function loginWithKakao() {
+	   Kakao.Auth.authorize({ 
+		   redirectUri: 'http://localhost:208/member/login' }); 
+	   } 
+   </script>
+   
+   <script type="text/javascript"> 
+   var kakao_message = new Object(); 
+   $(document).ready(function(){ 
+	   var ACCESS_TOKEN= $("TRcSkxgJNnnKJkW21ZekRGPSD7CaPf6gSxP83_BCxNpdT0EePGWdJopQ9KPdVekZRhTI9worDSAAAAF_B7eVwA").val(); 
+	   //할당받은 토근을 세팅
+	   Kakao.Auth.setAccessToken(ACCESS_TOKEN); 
+	   console.log(Kakao.Auth.getAccessToken()); 
+	   Kakao.API.request({ url: '/v2/user/me', 
+		   success: function(response) { 
+			   console.log(response); 
+			   kakao_message['id']=response['id'];
+			   kakao_message['email']=response['kakao_account']['email']; 
+			   kakao_message['nickname']=response['kakao_account']['profile']['nickname']; 
+			   console.log(kakao_message);
+			   var m_uid = 'KAKAO_'+kakao_message['id']; 
+			   console.log(""+window.location.hostname+""); 
+			   var data = JSON.stringify({ uid : m_uid , uname : kakao_message['nickname'] , uemail : kakao_message['email'] , join_pass : 'KAKAO' }); 
+			   // 로그인시 서버에서 넘어왔음.. 
+			   //로그인정보가 있다면 로그인 시도하기.. 
+			   var url = '/user/userid_duplicate_check'; 
+			   getPostData(url,data,callback_userid_duplicate_check, false); 
+			   if(!is_userid) //sns가입된 id가 있다면 로그인 시도. 
+			   { 
+				   url = '/user/naver_kakao_sns_login'; 
+				   getPostData(url,data,callback_join_ok, false); 
+				   } else if(is_userid) 
+					   //sns로 가입된 id가 없다면 가입시도.. 
+					   { 
+					   $("#i_id").val(m_uid); 
+					   $("#i_name").val(kakao_message['nickname']); 
+					   $("#i_email").val(kakao_message['email']); 
+					   } 
+			   }, fail: function(error) { 
+				   console.log(error); 
+				   } 
+			   }); 
+	   }); 
+   </script>
+
+
+
 
 <%@ include file = "../footer.jsp"%>
