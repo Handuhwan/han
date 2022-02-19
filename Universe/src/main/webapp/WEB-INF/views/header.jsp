@@ -39,30 +39,18 @@
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
-<<<<<<< HEAD
 <script src="/resources/js/member.js"></script>
-=======
-<script src="/resources/js/member.js"></script>
-<<<<<<< HEAD
-=======
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
+
 <script src="/resources/js/mypage.js"></script>
-<<<<<<< HEAD
+
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
-=======
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 </head>
 
 <script type="text/javascript"> 
@@ -92,9 +80,9 @@
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
 				</sec:authorize> 
 				<sec:authorize access="isAuthenticated()">
-				<form action="/admin/logout" method="post" name="header_logout">
+				<form action="/admin/adminLogout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</a></span>
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
 				</form>
 				</sec:authorize>
 				</div><!-- right end -->
