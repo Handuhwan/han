@@ -1,5 +1,7 @@
 package com.universe.domain;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -10,7 +12,7 @@ public class ProductVO {
 	private String content;
 	private String kind;
 	private String price;
-	private String indate;
+	private Date indate;
 	private int quantity;
 	private String location;
 	private String condition;
@@ -19,5 +21,9 @@ public class ProductVO {
 	private String id;
 	private int likecount;
 	private int viewcount;
+	private String img1;
+	private String img2;
+	private String img3;
 	
+	private String realrealdate;
 }
