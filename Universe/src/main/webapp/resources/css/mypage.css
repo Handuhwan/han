@@ -1467,6 +1467,31 @@ th {
     color: rgb(136, 136, 136);
     font-weight: bold;
 }
+.preview button{
+	position: relative;
+    right: 200px;
+    
+    color:#e8e8e8;
+    bottom: 80px;
+    font-size: 11px;
+}
+.preview button:hover{
+	border: 1px solid #000;
+}
+.preview div{
+	display:inline-block;
+}
 
+.preview img{
+	width:200px;
+	height:200px;
+	margin-left:42px;
+	margin-top:20px;
+}
 
-
+#imgblock .allblock1, .allblock2{
+	display:none;
+}
+.allblock0{
+	display:block
+}

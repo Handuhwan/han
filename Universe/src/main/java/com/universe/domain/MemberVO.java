@@ -17,7 +17,7 @@ public class MemberVO {
     private String address1;
     private String address2;
     private String phone;
-    private String grade;
+    private int grade;
     private String indate;
     private int usercount;
     private String status;
@@ -25,7 +25,16 @@ public class MemberVO {
     private int point;
     private String usedropdate;
     private int usedrop;
+<<<<<<< HEAD
     private String code;
+=======
+<<<<<<< HEAD
+    
+=======
+    private int gradeCount;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	   
 	private List<Member_authVO> authList;
+	
 }

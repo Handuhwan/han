@@ -44,8 +44,13 @@
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
-					   		<button type="button" class="btn btn-default naverfont" onclick="" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
-							<button type="button" class="btn btn-default kakaofont" onclick="" style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+					   		<button type="button"  class="btn btn-default naverfont" id="naver_id_login" onclick="naverlogin()" style="margin-left:0px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인</button>
+					   			
+
+							<button type="button" class="btn btn-default kakaofont" onclick="kakaoLogin()"id="kakao-login-btn" style="margin-left:0px;"><img src="/resources/images/kakao.png" alt="" class="naverbutton" >카카오 로그인</button>
+							<a href="javascript:kakaoLogin();"><p>그만</p></a>
+							
+							
 							<button type="button" class="btn btn-default googlefont" onclick="" style="margin-left:0px;"><img src="/resources/images/google.png" alt="" class="naverbutton">구글 로그인</button>
 						</div>		
 					   
@@ -64,92 +69,62 @@
     	</div>
     </section>
     <!-- contents end -->
- <body>
-  <!-- 카카오톡 로그인 -->
-   
-    <script>
-        window.Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c');
-
-        function kakaoLogin() {
-            window.Kakao.Auth.login({
-                scope: 'profile_nickname, account_email ', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
-                success: function(response) {
-                	alert("로그인 완료");
-                    console.log(response) // 로그인 성공하면 받아오는 데이터
-                    window.Kakao.API.request({ // 사용자 정보 가져오기 
-                        url: '/v2/user/me',
-                        success: (res) => {
-                            const kakao_account = res.kakao_account;
-                            console.log(kakao_account)
-                       }
-                    });
-                    // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
-                },
-                fail: function(error) {
-                    console.log(error);
-                }
-            });
-        }
-    </script>
-    <!--카카오톡 로그아웃 -->
-    <script>
-    window.Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c');
-	function kakaoLogout() {
-    	if (!Kakao.Auth.getAccessToken()) {
-		    console.log('Not logged in.');
-		    return;
-	    }
-	    Kakao.Auth.logout(function(response) {
-    		alert(response +' logout');
-		    window.location.href='/'
-	    });
-};
-    </script>
-    <!--카카오톡 탈퇴 -->
-    <script>
-    function secession() {
-    	Kakao.API.request({
-        	url: '/v1/user/unlink',
-        	success: function(response) {
-        		console.log(response);
-        		//callback(); //연결끊기(탈퇴)성공시 서버에서 처리할 함수
-        		window.location.href='/'
-        	},
-        	fail: function(error) {
-        		console.log('탈퇴 미완료')
-        		console.log(error);
-        	},
-    	});
-    };
-    </script>
-    <!--  구글 로그인 -->
-   
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-       	alert("로그인 완료");
-      }
-      
-      function googleout() {
-    	  gapi.auth2.getAuthInstance().disconnect();
-      }
-    </script>
+    
  
-    
-</body>
-    
-          
+
+   <script type="text/javascript"> //초기화 시키기. 
+   $(document).ready(function(){ 
+	   Kakao.init('258fa9cb44b6868e86dfeb3d3b78c89c'); 
+	   Kakao.isInitialized(); }); 
+   </script>
    
+   <script type="text/javascript"> 
+   function loginWithKakao() {
+	   Kakao.Auth.authorize({ 
+		   redirectUri: 'http://localhost:208/member/login' }); 
+	   } 
+   </script>
+   
+   <script type="text/javascript"> 
+   var kakao_message = new Object(); 
+   $(document).ready(function(){ 
+	   var ACCESS_TOKEN= $("TRcSkxgJNnnKJkW21ZekRGPSD7CaPf6gSxP83_BCxNpdT0EePGWdJopQ9KPdVekZRhTI9worDSAAAAF_B7eVwA").val(); 
+	   //할당받은 토근을 세팅
+	   Kakao.Auth.setAccessToken(ACCESS_TOKEN); 
+	   console.log(Kakao.Auth.getAccessToken()); 
+	   Kakao.API.request({ url: '/v2/user/me', 
+		   success: function(response) { 
+			   console.log(response); 
+			   kakao_message['id']=response['id'];
+			   kakao_message['email']=response['kakao_account']['email']; 
+			   kakao_message['nickname']=response['kakao_account']['profile']['nickname']; 
+			   console.log(kakao_message);
+			   var m_uid = 'KAKAO_'+kakao_message['id']; 
+			   console.log(""+window.location.hostname+""); 
+			   var data = JSON.stringify({ uid : m_uid , uname : kakao_message['nickname'] , uemail : kakao_message['email'] , join_pass : 'KAKAO' }); 
+			   // 로그인시 서버에서 넘어왔음.. 
+			   //로그인정보가 있다면 로그인 시도하기.. 
+			   var url = '/user/userid_duplicate_check'; 
+			   getPostData(url,data,callback_userid_duplicate_check, false); 
+			   if(!is_userid) //sns가입된 id가 있다면 로그인 시도. 
+			   { 
+				   url = '/user/naver_kakao_sns_login'; 
+				   getPostData(url,data,callback_join_ok, false); 
+				   } else if(is_userid) 
+					   //sns로 가입된 id가 없다면 가입시도.. 
+					   { 
+					   $("#i_id").val(m_uid); 
+					   $("#i_name").val(kakao_message['nickname']); 
+					   $("#i_email").val(kakao_message['email']); 
+					   } 
+			   }, fail: function(error) { 
+				   console.log(error); 
+				   } 
+			   }); 
+	   }); 
+   </script>
+
+
+
 
 <%@ include file = "../footer.jsp"%>

@@ -2,18 +2,28 @@ package com.universe.controller;
 
 
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.universe.criteria.Criteria;
 import com.universe.criteria.PageVO;
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 import com.universe.service.AdminService;
 
 import lombok.AllArgsConstructor;
@@ -44,10 +54,14 @@ public class AdminController {
 		return "admin/admin";
 	}
 	
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin_alert")
-	public String adminAlert() {
+	public String adminAlert(Model model) {
+		model.addAttribute("report", service.admin_alert());
 		return "/admin/admin_alert";
 	}
+	
 	
 	 @RequestMapping("/adminLogout")
 	 public ModelAndView logout(HttpSession session) {
@@ -56,39 +70,59 @@ public class AdminController {
 	     return mv;
 	 }
 	 
-	 @RequestMapping("/admin_member_forced_eviction")
-	    public ModelAndView admin_member_forced_eviction(String id) throws Exception {
-	        
-	        //유저의 아이디를 삭제 (강제탈퇴) 시키기위해서 vo에 담는다.
-	        MemberVO mvo = new MemberVO();
-	        mvo.setId(id);
-	        
-	        //회원탈퇴 체크를 하기위한 메소드, 탈퇴 시키려는 회원의 아이디가 있는지 검사한후에 result 변수에 저장한다.
-	        service.admin_member_forced_evictionCheck(mvo);
-	        
 	 
-	        ModelAndView mav = new ModelAndView();
-	        
-	        if(mvo.getId() != null) {    //회원 강제탈퇴가 성공했을시 출력되는 뷰
-	            
-	            mav.setViewName("admin/admin");
-	            
-	            mav.addObject("message", "회원이 정상적으로 강제탈퇴 처리 되었습니다.");
-	            
-	        }else {
-	            
-	            mav.setViewName("admin/admin");
-	            
-	            mav.addObject("message", "회원 목록에 없는 회원입니다. 다시 확인해주세요.");
-	        }
-	        
-	        
-	        return mav;
-	                
-	    }
+	 @PostMapping("/admin_member_forced_eviction")
+		public String admin_member_forced_eviction(ReportVO rvo,@RequestParam("reasons") String reason,String block) throws Exception{
+		 
+		 if(rvo.getReason() == null || rvo.getReason() == "") { //기타의 raido박스는 value값이 0이니까 밑의 textarea의 값을 가지고 오기 위해
+			 rvo.setReason(reason);
+			 
+		 }
+		 
+			service.admin_member_forced_checked(block,rvo.getReported_id());
+			service.Admin_Reason(rvo);
+			
+		if(rvo.getReason() == "7") {
+			
+		}
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+
+			Calendar cal = Calendar.getInstance();
+			System.out.println("오늘 날짜: "+sdf.format(cal.getTime()));
+
+			cal.add(Calendar.MONTH, 1); //한달 후
+			cal.add(Calendar.DAY_OF_MONTH,7); //7일 후
+
+			System.out.println("7일 후: "+sdf.format(cal.getTime()));
+
+			
+			
+			return "redirect:/admin/admin";
+		}
 	 
 	 
+	 @ResponseBody
+	 @GetMapping("/admin_menu")
+	 public  List<MemberVO> AjaxstatusList(String menu){
+		 List<MemberVO> list = new ArrayList<MemberVO>();
+		 
+		 if(menu ==null || menu=="") {
+			list = service.allList();
+		 }else {
+		 System.out.println("현재 값"+menu);
+		
+		 System.out.println("최종값"+menu);
+		 list =  service.adminmenu(menu);
+		 }
+		 
+		 
+		 System.out.println("control end");
+		 System.out.println(list.size());
+		 return list;
+	                     
+	 }
 	
 
 	
-}
+}//fin

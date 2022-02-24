@@ -11,7 +11,9 @@
 			<!-- Box Start -->
 			<div class="pull-left mybox_left">
 				<img src="/resources/images/store.png" alt="" class="myboximg">
-				<h2>코딩스토어</h2>
+				<div id="prBox">
+					<h2 id="prNickname"><sec:authentication property="principal.member.nickname"/></h2> <!-- 닉네임 출력 -->
+				</div>
 				<div class="Stars">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
@@ -25,19 +27,27 @@
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
-						<span>코딩스토어</span>
+						<span id="storeNickname"><sec:authentication property="principal.member.nickname"/></span> <!-- 닉네임 출력 -->
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
+					
 					</div>
 				</div>
 				<div class="user_info">
-					<div class="user_a pull-left"><img src="/resources/images/coins.png" width="14" height="13" alt="오픈일 아이콘">마일리지&nbsp;:&nbsp;50.000 원</div>
-					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">상점오픈일&nbsp;:&nbsp;7일 전</div>
-					<div class="user_a"><img src="/resources/images/visiter.png" width="14" height="13" alt="방문수 아이콘">상점방문수&nbsp;:&nbsp;35 명</div>
+					<div class="user_a pull-left"><img src="/resources/images/coins.png" width="14" height="13" alt="오픈일 아이콘">
+						마일리지&nbsp;:&nbsp;<sec:authentication property="principal.member.point"/> 원
+					</div>
+					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
+						상점오픈일&nbsp;:&nbsp; <span id="storeTimeValue"></span>
+						<input type="hidden" id="openDay"value="<sec:authentication property="principal.member.indate"/>">
+					</div>
+					<div class="user_a"><img src="/resources/images/visiter.png" width="14" height="13" alt="방문수 아이콘">
+						상점방문수&nbsp;:&nbsp;<sec:authentication property="principal.member.usercount"/> 명
+					</div>
 				</div>
 				<div class="introContainer" id="introContainer">
 					<div class="introBox" id="introBox">
 						<div class="intro_text" id="intro_text">
-							<p>안녕하세요 여러가지 코드를 판매하고 있는 코딩스토어입니다.<br>많은 관심과 사랑 부탁드립니다 ~ ^^</p>
+							<p>소개글을 입력해주세요</p>
 						</div>
 						<div class="intro_btn" id="intro_btn">
 							<button class="intro_btn2" id="intro_btn2" onclick="modifyIntro()">소개글 수정</button>
@@ -293,15 +303,15 @@
 
 <script>
 
-	var csrfHeaderName = "${_csrf.headerName}";
-	var csrfTokenValue = "${_csrf.token}";
-			
-	$(document).ajaxSend(function(e, xhr, options) {
-	
-		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+var csrfHeaderName = "${_csrf.headerName}";
+var csrfTokenValue = "${_csrf.token}";
 		
-	})
+$(document).ajaxSend(function(e, xhr, options) {
+
+	xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
 	
+})
+
 </script>
 
 <%@ include file="../footer.jsp"%>
