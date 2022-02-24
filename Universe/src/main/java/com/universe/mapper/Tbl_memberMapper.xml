@@ -23,6 +23,7 @@
 		<result property="address2" column="address2" />
 		<result property="phone" column="phone" />
 		<result property="indate" column="indate" />
+		<result property="gradecount" column="gradecount" />
 		<collection property="authList" resultMap="authMap"></collection>
 	</resultMap>
 	<resultMap type="com.universe.domain.Member_authVO" id="authMap">

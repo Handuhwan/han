@@ -41,7 +41,7 @@
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
 
-
+<script src="/resources/js/product.js"></script>
 
 
 <script src="/resources/js/mypage.js"></script>
@@ -49,6 +49,7 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 
 
 </head>
@@ -92,11 +93,8 @@
 </div> <!-- main_header_nav -->
 	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #cfd4f4; height:120px;">
 		<div class="pull-right">
-			<div class="header_recent"> <!-- 최근본 게시물 -->
-				<p style="margin-bottom:-5px; padding-top:5px; padding-bottom:5px;">최근본 상품</p>
-				<a href=""><img alt="" src="/resources/images/mark.png"></a>
-				<a href=""><img alt="" src="/resources/images/mark.png"></a>
-				<a href=""><img alt="" src="/resources/images/mark.png"></a>
+			<div class="header_recent" id="header_recent"> <!-- 최근본 게시물 -->
+				<p style="margin-bottom:15px; padding-top:5px; padding-bottom:5px;">최근본 상품</p>
 			</div> <!-- 최근본 게시물 end -->
 			
 			
@@ -124,23 +122,13 @@
 					
 				</div>
 				<div class="pull-right" style="margin-top:35px;">
-					
 					<div class="dropdown">
-
-					
- 						<button class="dropbtn" style=""><img alt="" src="/resources/images/main-bell.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
-			  			<div class="dropdown-content" style="left:35px; min-width:275px;">
-			    			<a href="#">새로운 메세지가 도착했습니다.</a>
-			    			<a href="#">새로운 메세지가 도착했습니다.</a>
-			 			</div>
+ 						<button class="dropbtn" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
+			  			
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
- 						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
-			  			<div class="dropdown-content content2">
-			    			<a href="/mypage/mypage">마이페이지</a>
-			    			<a href="#">구매리스트</a>
-			    			<a href="#">정보수정</a>
-			 			</div>
+ 						<button class="dropbtn" onclick="location.href='/mypage/mypage'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
+			  			
 					</div>&nbsp;&nbsp;
 					
 					<a href="" class="dropbtn"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>

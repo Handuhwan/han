@@ -1,4 +1,6 @@
 function setCookie(name, value, exp) {
+
+
 	var date = new Date();
 	date.setTime(date.getTime() + exp*24*60*60*1000);
 	
@@ -9,19 +11,37 @@ function setCookie(name, value, exp) {
 
 
 
-function itemcookie(itemnum){ //최근본상품
+function itemcookie(img,pno){ //최근본상품
 
-	
-	setCookie(itemnum,itemnum,1);
-	
-	
+	setCookie(pno,img,1);
+
 }
 
 
-$(function(){
+$(function(){ // 쿠키 실행
 	
-	console.log(document.cookie);
+	var cc = "";
 	
+	var str = "";
+	
+	  var cookie = document.cookie.split(';');
+	  
+    cookie.some(function (item) {
+        // 공백을 제거
+        item = item.replace(' ', '');
+ 		console.log("거름1:"+item);
+
+        var dic = item.split('=');
+ 		console.log("거름:"+dic);
+ 		
+ 		str = "<a href='/product/productview'><img src='/Pupload/"+dic[1]+"'></a>"
+    	$("#header_recent").append(str)
+	})
+	
+	
+	
+	
+
 })
 
 $(window).scroll(function(){ //top버튼 
@@ -47,3 +67,8 @@ function header_logout(){ //헤더 로그아웃 버튼
 	
 	header_logout.submit();
 }
+
+
+
+
+
