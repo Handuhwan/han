@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.universe.domain.MemberVO;
 import com.universe.mapper.MemberMapper;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 
@@ -17,7 +18,7 @@ public class MemberServiceimple implements MemberService {
 	
 	@Override
 	public int idCheck(String id) {
-		
+		System.out.println("서비스 id실행 "+id);
 		return mapper.idCheck(id);
 	}
 	@Override

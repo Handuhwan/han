@@ -44,8 +44,19 @@
 =======
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
+<<<<<<< HEAD
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+=======
 <<<<<<< HEAD
 =======
 <script src="/resources/js/product.js"></script>
@@ -65,6 +76,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </head>
 
@@ -97,7 +109,14 @@
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/adminLogout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+<<<<<<< HEAD
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
+				<button href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
+				
+				
+=======
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				</form>
 				</sec:authorize>
 				</div><!-- right end -->

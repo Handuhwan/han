@@ -13,5 +13,6 @@ public interface MemberMapper {
 	
 	public int insert_auth(MemberVO member);
 	
-	public String home(MemberVO member); //카카오톡 로그인
+	
+
 }

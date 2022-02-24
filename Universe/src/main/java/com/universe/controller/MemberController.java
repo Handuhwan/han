@@ -2,6 +2,8 @@ package com.universe.controller;
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,21 +18,32 @@ import javax.servlet.http.HttpSession;
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.security.Principal;
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
 import java.util.Iterator;
 import java.util.Map;
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+import javax.servlet.http.HttpServletRequest;
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import javax.servlet.http.HttpSession;
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
 
 import java.security.Principal;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,9 +79,30 @@ public class MemberController {
 	public void memberView() { //회원가입
 		
 	}
+	@RequestMapping(value="/findPwd")
+	public void finpwd() {
+		
+	}
+	@RequestMapping(value="/memberdrop")
+	public void memberdrop() {
+		
+	}
+	
+	@GetMapping(value= "/joinsns")
+	public void membersnsView(Model model, @RequestParam("id") String id,@RequestParam("name") String name) { //회원가입
+			model.addAttribute("id",id);
+			model.addAttribute("name", name);
+	}
+	@RequestMapping(value="/loginsns")
+	public void loginsns(Model model, @RequestParam("id") String id) {
+		model.addAttribute("id",id);
+		
+	}
 	
 	@GetMapping("/checkUserid.do")
-	public @ResponseBody int checkUserid(@RequestParam("check") String id) { // @ResponseBody json형식으로 리턴
+	public @ResponseBody int checkUserid(String id) { // @ResponseBody json형식으로 리턴
+		System.out.println("controller ajax start");
+		
 		int result = service.idCheck(id);
 		log.info("result(아이디체크 ajax) : " + result);
 		
@@ -84,25 +118,33 @@ public class MemberController {
 		
 		return "redirect:/";
 	}
-	@RequestMapping(value = "/login",method = {RequestMethod.GET,RequestMethod.POST} )
+	@RequestMapping(value="/login")
 	public void login() {
 		
-		 }
-	@GetMapping("/findPwd")
-	public void findPwd() {
-	
-	}
-	@GetMapping("/memberdrop")
-	public void memberdrop() {
-	
+		
 	}
 
 <<<<<<< HEAD
+	//네이버 로그인
+	@RequestMapping(value="/naverlogin")
+	public String isComplete(HttpSession session) {
+		return"/login";
+		}
+	@RequestMapping(value="/callback")
+	public String navLogin(HttpServletRequest request) throws Exception {
+		return "/login";
+	}
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+=======
 
 =======
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
 	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
 		
@@ -110,10 +152,14 @@ public class MemberController {
 		
 	}
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 	
 =======
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	 @RequestMapping(value="/", method= RequestMethod.GET)
 	    public String index() {
@@ -126,12 +172,17 @@ public class MemberController {
 	        log.info("callback controller");
 	        return "callback";
 	    }
+<<<<<<< HEAD
+	  
+}
+=======
 	    
 	    
 	    
 	    
 
 }//fin
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
 	
