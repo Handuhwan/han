@@ -25,6 +25,8 @@ public class MemberVO {
     private int point;
     private String usedropdate;
     private int usedrop;
+    
 	   
 	private List<Member_authVO> authList;
+	
 }
