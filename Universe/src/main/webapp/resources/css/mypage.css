@@ -105,6 +105,22 @@ a {text-decoration: none;}
     overflow-y: auto;
     line-height: 1.57;
     white-space: pre-wrap;
+    resize: none;
+}
+
+.intro_text2 {
+	padding-top:43.5px;
+	-webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+    line-height: 1.57;
+    white-space: pre-wrap;
+    resize: none;
+}
+
+.introContainer {
+	height: 160px;
 }
 
 .intro_btn > .intro_btn2 {
@@ -203,7 +219,7 @@ a {text-decoration: none;}
 	margin-right: 5px;
 }
 
-.comment_contain {
+.chat {
 	padding-top: 25px;
 }
 
@@ -225,6 +241,7 @@ a {text-decoration: none;}
 .rightBox {
 	width: 100%;
     border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 10px 0;
 }
 
 .chat_content {
@@ -237,7 +254,7 @@ a {text-decoration: none;}
 
 .chat_btn {
 	display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 60px;
 }
 
@@ -1482,12 +1499,55 @@ th {
 	display:inline-block;
 }
 
+<<<<<<< HEAD
+.textBox {
+	position: absolute;
+    right: 140px;
+    top: 245px;
+    color: rgb(136, 136, 136);
+}
+
+.faqContentCheckBox {
+	position: absolute;
+    top: 235px;
+    right: 140px;
+    color: rgb(136, 136, 136);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
 .preview img{
 	width:200px;
 	height:200px;
 	margin-left:42px;
 	margin-top:20px;
 }
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 #imgblock .allblock1, .allblock2{
 	display:none;

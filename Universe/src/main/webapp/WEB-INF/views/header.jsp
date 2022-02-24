@@ -15,7 +15,6 @@
 
 <title>Universe</title>
 
-
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/resources/css/summernote.min.css" rel="stylesheet">
@@ -23,7 +22,6 @@
 <link href="/resources/css/main.css" rel="stylesheet">
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
-<link href="/resources/css/login.css" rel="stylesheet">
 <link href="/resources/css/mypage.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -38,6 +36,10 @@
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
+<<<<<<< HEAD
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/member.js"></script>
+=======
 <<<<<<< HEAD
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
@@ -63,7 +65,13 @@
 
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
+<<<<<<< HEAD
+<script src="/resources/js/faqReply.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
+=======
 <<<<<<< HEAD
 =======
 
@@ -78,6 +86,7 @@
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </head>
 
 <script type="text/javascript"> 
@@ -90,7 +99,6 @@
 <!-- main header -->
 <header>
 	<span id="header12"></span>
-	
 
 </header>
 <div class="main_header_nav">
@@ -105,10 +113,13 @@
 				<div class="pull-right" style="margin-right:15px;">
 				<sec:authorize access="isAnonymous()">
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
-				</sec:authorize> 
+				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/adminLogout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+<<<<<<< HEAD
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
+=======
 <<<<<<< HEAD
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
 				<button href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
@@ -116,6 +127,7 @@
 				
 =======
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				</form>
 				</sec:authorize>
@@ -160,9 +172,19 @@
 			  			
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
+<<<<<<< HEAD
+						<sec:authorize access="isAuthenticated()">
+ 						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+			 			</sec:authorize>
+			 			<sec:authorize access="isAnonymous()">
+ 						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+			 			</sec:authorize>
+=======
  						<button class="dropbtn" onclick="location.href='/mypage/mypage'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
 			  			
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>&nbsp;&nbsp;
+					
 					
 					<a href="" class="dropbtn"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>
 					

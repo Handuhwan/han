@@ -4,7 +4,7 @@
 
 	<mapper namespace="com.universe.mapper.Tbl_memberMapper">
 
-			<resultMap type="com.universe.domain.MemberVO" id="tbl_memberMap">
+	<resultMap type="com.universe.domain.MemberVO" id="tbl_memberMap">
 		<id property="id" column="id" />
 		<result property="id" column="id" />
 		<result property="pwd" column="pwd" />
@@ -30,11 +30,13 @@
 		<result property="id" column="id" />
 		<result property="auth" column="auth" />
 	</resultMap>
+	
 	<select id="read" resultMap="tbl_memberMap">
 		select * 
         from member mem left outer join member_auth auth on mem.id = auth.id 
         where mem.id = #{id}
 	</select>
+	
 	</mapper>
 
 	
