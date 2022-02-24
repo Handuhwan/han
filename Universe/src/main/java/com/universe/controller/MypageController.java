@@ -34,25 +34,32 @@ public class MypageController {
 	@GetMapping("/mypage")
 	public void mypage(@RequestParam("id") String id, Model model) {
 		
+		
 		UserVO uvo = service.infomationAboutUser(id);
 		
 		id = uvo.getId();
 		
 		service.storePlusCount(id);
+		System.out.println("여기까지실행1");
 		int userCount = service.selectUserCount(id);
+		System.out.println("여기까지실행2");
 		int pCount = service.selectProductCount(id);
+		System.out.println("여기까지실행3");
 		//List<ProductVO> plist = service.selectProductListById(id);
 		int faqCount = service.faqCount(id);
-		
+		System.out.println(faqCount);
+		System.out.println("여기까지실행4");
 		log.info("방문자 수 : "+userCount);
 		log.info("상품 수 : "+pCount);
 		//log.info("상품리스트 : "+plist);
 		
 		model.addAttribute("memberInfo", uvo);
+		
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
 		//model.addAttribute("plist", plist);
 		model.addAttribute("faqCount", faqCount);
+		
  		
 	}
 	
