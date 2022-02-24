@@ -24,11 +24,56 @@
 			authentication-failure-handler-ref="customLoginFail"
 			/>
 		<!-- 로그아웃 처리 -->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		<security:logout logout-url="/admin/adminLogout" invalidate-session="true" logout-success-url="/"/>
+<<<<<<< HEAD
 		
 		<!-- 권한 없는사람 페이지 처리 -->
-		<security:access-denied-handler ref="customAccessDenied"/>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+	
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+		<!-- 권한 없는사람 페이지 처리 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+		<security:access-denied-handler ref="customAccessDenied"/>
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+		<security:access-denied-handler ref="customAccessDenied"/>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	</security:http>
 	
 	<security:authentication-manager>

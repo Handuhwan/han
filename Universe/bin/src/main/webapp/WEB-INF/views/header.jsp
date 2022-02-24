@@ -44,24 +44,42 @@
 =======
 <script src="/resources/js/member.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+=======
+<<<<<<< HEAD
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+=======
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
 <<<<<<< HEAD
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
+<<<<<<< HEAD
 =======
+=======
+
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 <<<<<<< HEAD
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+<<<<<<< HEAD
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+=======
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </head>
 
@@ -147,12 +165,17 @@
 			 			</div>
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
+<<<<<<< HEAD
  						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			  			<div class="dropdown-content content2">
 			    			<a href="/mypage/mypage">마이페이지</a>
 			    			<a href="#">구매리스트</a>
 			    			<a href="#">정보수정</a>
 			 			</div>
+=======
+ 						<a class="dropbtn" href="/mypage/mypage" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</a>
+			  		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>&nbsp;&nbsp;
 					
 					<a href="" class="dropbtn"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>
