@@ -40,21 +40,12 @@
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
-<<<<<<< HEAD
-=======
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-<script src="/resources/js/mypage.js"></script>
-<<<<<<< HEAD
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
-=======
-
-
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
 </head>
 
@@ -87,7 +78,10 @@
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/logout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</a></span>
+				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
+				<button href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
+				
+				
 				</form>
 				</sec:authorize>
 				</div><!-- right end -->

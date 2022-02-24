@@ -45,5 +45,16 @@ $(function(){ // top버튼
 
 function header_logout(){ //헤더 로그아웃 버튼
 	
+	if(kakaoLogout()){
+		header_logout.submit();
+		return true;
+	}else if(naverLogout()){
+		header_logout.submit();
+		return true;
+	}else if(signOut()){
+		header_logout.submit();
+		return true;
+	}
 	header_logout.submit();
+	return false;
 }
