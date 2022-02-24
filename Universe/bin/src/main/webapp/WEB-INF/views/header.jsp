@@ -35,29 +35,34 @@
 
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
 <!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
-
-
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
 <script src="/resources/js/main.js"></script>
+<<<<<<< HEAD
+<script src="/resources/js/member.js"></script>
+=======
 <script src="/resources/js/member.js"></script>
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-<<<<<<< HEAD
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-=======
+
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-=======
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
+<<<<<<< HEAD
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
+=======
 
+<<<<<<< HEAD
+=======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
-
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </head>
 
 <script type="text/javascript"> 
@@ -144,7 +149,7 @@
 					<div class="dropdown">
  						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			  			<div class="dropdown-content content2">
-			    			<a href="#">판매리스트</a>
+			    			<a href="/mypage/mypage">마이페이지</a>
 			    			<a href="#">구매리스트</a>
 			    			<a href="#">정보수정</a>
 			 			</div>

@@ -6,17 +6,16 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.universe.domain.MemberVO;
-import com.universe.mapper.Tbl_memberMapper;
+import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
 
 import lombok.AllArgsConstructor;
@@ -32,10 +31,29 @@ public class MypageController {
 	@Setter (onMethod_ = @Autowired)
 	private MypageService service;
 	
-	@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 	@GetMapping("/mypage")
-	public void mypage(Principal principal) {
+	public void mypage(@RequestParam("id") String id, Model model) {
 		
+		UserVO uvo = service.infomationAboutUser(id);
+		
+		id = uvo.getId();
+		
+		service.storePlusCount(id);
+		int userCount = service.selectUserCount(id);
+		int pCount = service.selectProductCount(id);
+		//List<ProductVO> plist = service.selectProductListById(id);
+		int faqCount = service.faqCount(id);
+		
+		log.info("방문자 수 : "+userCount);
+		log.info("상품 수 : "+pCount);
+		//log.info("상품리스트 : "+plist);
+		
+		model.addAttribute("memberInfo", uvo);
+		model.addAttribute("userCount", userCount);
+		model.addAttribute("pCount", pCount);
+		//model.addAttribute("plist", plist);
+		model.addAttribute("faqCount", faqCount);
+ 		
 	}
 	
 	@GetMapping("/new")
@@ -62,10 +80,10 @@ public class MypageController {
 		
 		String nickname = newNickname.get("newNickname");
 		String id = principal.getName();
-		log.info("id : "+id);
-		log.info("nickname : "+nickname);
+		log.info("ID : "+id);
+		log.info("Store name : "+nickname);
 		
-		return service.updateNickname(nickname, id) 
+		return service.updateNickname(nickname, id)
 				? new ResponseEntity<> (nickname, HttpStatus.OK)
 				: new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}	
@@ -79,15 +97,13 @@ public class MypageController {
 		
 		String intro = newIntro.get("text");
 		String id = principal.getName();
-		log.info("text : "+intro);
-		log.info("id : "+id);
+		log.info("Intro : "+intro);
+		log.info("ID : "+id);
 		
 		return service.updateIntro(intro, id)
 				? new ResponseEntity<> (intro, HttpStatus.OK)
 				: new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
-	
 
 }
 	

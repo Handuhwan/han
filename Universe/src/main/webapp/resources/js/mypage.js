@@ -110,6 +110,8 @@ function modifyIntro() {
 	console.log("modifyIntro Module is.............")
 	
 	var introContainer = document.getElementById('introContainer');
+	var originIntro = $('#originIntro').text();
+	console.log(originIntro);
 	
 	var introBox = document.getElementById('introBox');
 	introBox.remove();
@@ -118,9 +120,21 @@ function modifyIntro() {
 	newIntroBox.setAttribute("class", "newIntroBox")
 	newIntroBox.setAttribute("id", "newIntroBox")
 	
+	var textBox = document.createElement('div');
+	textBox.setAttribute("class", "textBox");
+	
+	var textCount = document.createElement('span');
+	textCount.setAttribute("class", "textCount");
+	textCount.textContent = '0자';
+	
+	var textTotal = document.createElement('span');
+	textTotal.setAttribute("class", "textTotal");
+	textTotal.textContent = '/100자';
+	
 	var introTextArea = document.createElement('textarea');
 	introTextArea.setAttribute("class", "introTextArea");
 	introTextArea.setAttribute("id", "introTextArea");
+	introTextArea.textContent = originIntro;
 	
 	var newButton = document.createElement('button');
 	newButton.setAttribute("class", "introOkButton");
@@ -129,8 +143,39 @@ function modifyIntro() {
 	newButton.textContent = '확인';
 	
 	introContainer.append(newIntroBox);
+	newIntroBox.append(textBox);
+	textBox.append(textCount);
+	textBox.append(textTotal);
 	newIntroBox.append(introTextArea);
 	newIntroBox.append(newButton);
+	
+	$('#introTextArea').keyup(function(e) {
+	
+		let content = $(this).val();
+		
+		if(content.length == 0 || content == '') {
+			$('.textCount').text('0자');
+		}else {
+			$('.textCount').text(content.length + '자');
+		}
+		
+		if(content.length > 100) {
+			$(this).val($(this).val().substring(0, 100));
+			alert('글자수는 100자까지 입력 가능합니다.'); 
+		}; 
+		
+		var str = $(this).val();
+		var str_arr = str.split("\n");
+		var row = str_arr.length;
+
+		if(row > 3) {
+			alert("3줄 이상 입력할 수 없습니다.")
+		
+			var lastChar = str.slice(0, -1);
+		
+			$("this").val(lastChar)
+		};
+	});
 }
 //-------------------------------- modifyIntro END ------------------------------------
 
@@ -154,16 +199,17 @@ function newIntroCheck() {
 		
 		var newIntroBox = $('#newIntroBox');
 		newIntroBox.remove();
-	
+		
 		var introBox = document.createElement('div');
 		introBox.setAttribute("class", "introBox");
 		introBox.setAttribute("id", "introBox");
 		
-		var intro_text = document.createElement('div');
-		intro_text.setAttribute("class", "intro_text");
-		intro_text.setAttribute("id", "intro_text");
+		var intro_text2 = document.createElement('div');
+		intro_text2.setAttribute("class", "intro_text2");
+		intro_text2.setAttribute("id", "intro_text");
 		
 		var p = document.createElement('p');
+		p.setAttribute("id", "originIntro");
 		p.textContent = data;
 		
 		var intro_btn = document.createElement('div');
@@ -177,9 +223,9 @@ function newIntroCheck() {
 		intro_btn2.textContent = '소개글 수정';
 		
 		introContainer.append(introBox)
-		introBox.append(intro_text);
+		introBox.append(intro_text2);
 		introBox.append(intro_btn);
-		intro_text.append(p);
+		intro_text2.append(p);
 		intro_btn.append(intro_btn2);
 		
 		},error : function(xhr,status,error) {
@@ -228,39 +274,62 @@ $(function() {
 })
 //-------------------------------- 상점오픈일 END -------------------------------
 
+//---------------------------- 문의등록 날짜 계산 ---------------------------------
+$(function() {
 
+	$('#faqTextarea').keyup(function(e) {
+	
+		let content = $(this).val();
+		
+		if(content.length == 0 || content == '') {
+			$('.faqContentCheck').text('0자');
+		}else {
+			$('.faqContentCheck').text(content.length + '자');
+		}
+		
+		if(content.length > 100) {
+			$(this).val($(this).val().substring(0, 100));
+			alert('글자수는 100자까지 입력 가능합니다.'); 
+		}; 
+		
+		var str = $(this).val();
+		var str_arr = str.split("\n");
+		var row = str_arr.length;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		if(row > 3) {
+			alert("3줄 이상 입력할 수 없습니다.")
+		
+			var lastChar = str.slice(0, -1);
+		
+			$("this").val(lastChar)
+		};
+	});
+})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

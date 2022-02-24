@@ -2,8 +2,8 @@ package com.universe.domain;
 
 
 import java.util.List;
-
 import lombok.Data;
+
 @Data
 public class MemberVO {
 	
@@ -17,7 +17,7 @@ public class MemberVO {
     private String address1;
     private String address2;
     private String phone;
-    private String grade;
+    private int grade;
     private String indate;
     private int usercount;
     private String status;
@@ -25,6 +25,7 @@ public class MemberVO {
     private int point;
     private String usedropdate;
     private int usedrop;
+    private int gradecount;
 	   
 	private List<Member_authVO> authList;
 }
