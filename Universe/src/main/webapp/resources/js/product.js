@@ -61,3 +61,61 @@
  	
  }
  
+ $(function(){ //view페이지 active 
+ 
+ 	var i =$(".pcarousel").children("div").first();
+ 	
+ 	i.addClass("active")
+ 	
+ 	$(".psalerdiv a:nth-child(2) span").css("left","191px");
+ 
+ 	
+ 
+ 
+ }) //function end
+ 
+ 
+function productviewjjim(pno){ //찜insert 찜 up
+
+ 	
+	$.ajax({
+		type:"get",
+		url:"/product/productjjim",
+		data:({
+			pno : pno,
+		}),
+		dataType:"json",
+		success:function(result){
+			console.log(result);
+			$("#pjjimbutton").removeAttr("onclick");
+			$("#pjjimbutton").attr("onclick","productviewjjimdown("+pno+")")
+			$("#pjjimbutton img").removeAttr("src");
+			$("#pjjimbutton img").attr("src","/resources/images/pjjim1.png")
+			$("#productlikecount").html(result);
+		},
+		error:function(xhr,error,errrr){
+			alert("로그인후 이용가능합니다");
+		}
+	}) // ajax end	
+} //function end
+
+function productviewjjimdown(pno){ //찜 삭제
+
+
+	$.ajax({
+		type:"get",
+		url:"/product/productjjimdown",
+		data:({
+			pno:pno,
+		}),
+		dataType:"json",
+		success:function(result){
+			console.log(result);
+			$("#pjjimbutton").removeAttr("onclick");
+			$("#pjjimbutton").attr("onclick","productviewjjim("+pno+")")
+			$("#pjjimbutton img").removeAttr("src");
+			$("#pjjimbutton img").attr("src","/resources/images/pjjim0.png")
+			$("#productlikecount").html(result);
+		}
+	}) //ajax end
+} // function end

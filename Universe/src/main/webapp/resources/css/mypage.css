@@ -1516,42 +1516,25 @@ th {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 .preview img{
 	width:200px;
 	height:200px;
 	margin-left:42px;
 	margin-top:20px;
 }
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 #imgblock .allblock1, .allblock2{
 	display:none;
 }
 .allblock0{
 	display:block
+}
+#mypayplus{
+	text-align:right;
+	width:90px;
+	border:0;
+	background:#fff;
+}
+#realmypagepaybtn{
+	display:none;
 }

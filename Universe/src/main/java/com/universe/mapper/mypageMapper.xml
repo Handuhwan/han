@@ -42,6 +42,12 @@
 		select count(*) as cnt from faq where id = #{id}
 	</select>
 	
+	
+	
+	<!-- paypay충전 -->
+	<update id="paypay">
+		update member set point = point + #{amount} where id=#{id}
+	</update>
 </mapper>
 
 

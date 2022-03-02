@@ -59,6 +59,12 @@ public class MypageServiceImpl implements MypageService {
 	public int faqCount(String id) {
 		return mapper.faqCount(id);
 	}
+	
+	@Override
+	public int paypay(String id, int amount) {
+		
+		return mapper.paypay(id, amount);
+	}
 }
 
 

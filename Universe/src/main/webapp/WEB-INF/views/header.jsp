@@ -23,6 +23,8 @@
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/mypage.css" rel="stylesheet">
+<link href="/resources/css/product.css" rel="stylesheet">
+<link href="/resources/css/chat.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
@@ -39,8 +41,8 @@
 
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
-
-
+<script src="/resources/js/chat.js"></script>
+<script src="/resources/js/pay.js"></script>
 
 
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
@@ -61,11 +63,10 @@
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
 
 
-
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 
 
-
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 
 <script type="text/javascript"> 
@@ -133,9 +134,16 @@
 					<div class="serch-box" > <!-- serch box -->
 						
 						<a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
-						<form style="display:inline" name="main-serch" method="post" action="">
-					<!--  <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"> -->
-						<input type="text" placeholder="#상품명 #지역명 #상점명">
+						<form style="display:inline" id ="searchForm" method="get" action="/" onsubmit="searchEvt()">
+						<input type="text" name="keyword" class="search_word" placeholder="#상품명 #지역명 #상점명" >
+						
+						<div style="display:none">
+						<select name="type" class="select" style="width:65px;">
+						<option value="LCT">제목</option>
+						</select>
+						</div>
+						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 						</form>
 					</div>
 					

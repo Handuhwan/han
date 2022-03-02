@@ -26,6 +26,9 @@ public interface MypageService {
 		// 상품문의 개수 출력
 		public int faqCount(String id);
 		
+		
+		// paypay충전
+		public int paypay(String id,int amount);
 }
 
 

@@ -112,6 +112,15 @@ public class MypageController {
 				: new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	@RequestMapping(value = "/paypay")
+	public void paypay(String id,int amount) {
+		System.out.println("paypay id : "+id);
+		System.out.println("payamount : " +amount);
+		int result = service.paypay(id, amount);
+		System.out.println(result);
+	}
+	
+	
 }
 	
 

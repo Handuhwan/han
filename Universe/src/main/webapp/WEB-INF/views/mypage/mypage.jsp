@@ -22,6 +22,7 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
 				<a href="new" class="myStoreLink">내 상점 관리</a>
+				
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
@@ -29,12 +30,17 @@
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
-					
+			
 					</div>
 				</div>
 				<div class="user_info">
 					<div class="user_a pull-left"><img src="/resources/images/coins.png" width="14" height="13" alt="오픈일 아이콘">
-						포인트&nbsp;:&nbsp;${memberInfo.point}&nbsp;원
+						포인트&nbsp;:&nbsp;<span id="mymoeny">
+						<input disabled="disabled" value="${memberInfo.point} 원" type="text" id="mypayplus" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></span>&nbsp;
+						
+						<input type="hidden" id="mypayId" value="${memberInfo.id }">
+						<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
+						<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
 					</div>
 					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
 						상점오픈일&nbsp;:&nbsp;<span id="storeTimeValue"></span>
@@ -433,6 +439,83 @@
 
 
 
+</script>
+
+<script>
+$("#check_module").click(function () {
+	
+	var pageid="${memberInfo.id}"
+	var id="";
+	<sec:authorize access="isAuthenticated()">
+	
+	id = '<sec:authentication property="principal.member.id"/>';
+
+	</sec:authorize>
+
+	if(id !='' || pageid==id){
+
+		var amount = $("#mypayplus").val();
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp60625472'); 
+		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+		// ''안에 띄어쓰기 없이 가맹점 식별코드를 붙여넣어주세요. 안그러면 결제창이 안뜹니다.
+		IMP.request_pay({
+			pg: 'inicis',
+			pay_method: 'card',
+			merchant_uid: 'merchant_' + new Date().getTime(),
+			/* 
+			 *  merchant_uid에 경우 
+			 *  https://docs.iamport.kr/implementation/payment
+			 *  위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+			 */
+			name: 'Universe 포인트 충전',
+			// 결제창에서 보여질 이름
+			// name: '주문명 : ${auction.a_title}',
+			// 위와같이 model에 담은 정보를 넣어 쓸수도 있습니다.
+			amount: amount,
+			// amount: ${bid.b_bid},
+			// 가격 	
+			buyer_name: '${memberInfo.name}',
+			buyer_email:id,
+			// 구매자 이름, 구매자 정보도 model값으로 바꿀 수 있습니다.
+			// 구매자 정보에 여러가지도 있으므로, 자세한 내용은 맨 위 링크를 참고해주세요.
+			buyer_postcode: '123-456',
+			}, function (rsp) {
+				console.log(rsp);
+			if (rsp.success) {
+				var msg = '결제가 완료되었습니다.';
+				msg += ' 결제 금액 : ' + rsp.paid_amount +'원';
+				// success.submit();
+				// 결제 성공 시 정보를 넘겨줘야한다면 body에 form을 만든 뒤 위의 코드를 사용하는 방법이 있습니다.
+				// 자세한 설명은 구글링으로 보시는게 좋습니다.
+				$.ajax({
+					type:"get",
+					data:({
+						amount:amount,
+						id:id
+					}),
+					dataType:"json",
+					url:"/mypage/paypay",
+					success:function(){
+						
+					}
+					
+				
+				})//ajax end
+				location.href='/mypage/mypage?id='+id
+			} else {
+				var msg = '결제에 실패하였습니다.';
+				msg += '에러내용 : ' + rsp.error_msg;
+			} //
+			alert(msg);
+		});
+	} //if end
+	else{
+		alert("로그인후 이용 가능한 서비스입니다.")
+	}
+	
+	
+}); // fun end
 </script>
 
 <%@ include file="../footer.jsp"%>
