@@ -1,5 +1,9 @@
 package com.universe.service;
 
+<<<<<<< HEAD
+import java.util.ArrayList;
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,12 +23,28 @@ public class ProductServiceImple implements ProductService {
 	
 	@Override
 	public void ProductInsert(ProductVO pvo) { // 상품 등록
-		
 		mapper.ProductInsert(pvo);
-		
 	}
 	
 	@Override
+<<<<<<< HEAD
+	public List<ProductVO> productList(String id, int no) {
+		
+		List<ProductVO> plist = new ArrayList<ProductVO>();
+		
+		if(no == 0) {
+			plist = mapper.recentList(id);
+		}else if(no == 1) {
+			plist = mapper.viewcountList(id);
+		}else if(no == 2) {
+			plist = mapper.rowPriceList(id);
+		}else {
+			plist = mapper.highPriceList(id);
+		}
+		return plist;
+	}
+
+=======
 	public ProductVO Productview(int pno) { // 상품 view
 		
 		mapper.productviewcount(pno);
@@ -66,4 +86,5 @@ public class ProductServiceImple implements ProductService {
 		return mapper.productjjimcheck(pno, id);
 	}
 	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

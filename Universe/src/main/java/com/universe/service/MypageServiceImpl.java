@@ -1,12 +1,8 @@
 package com.universe.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.universe.domain.FaqVO;
-import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.mapper.mypageMapper;
 
@@ -46,11 +42,6 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	@Override
-	public List<ProductVO> selectProductListById(String id) {
-		return mapper.selectProductListById(id);
-	}
-	
-	@Override
 	public int selectProductCount(String id) {
 		return mapper.selectProductCount(id);
 	}
@@ -61,10 +52,22 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	@Override
+<<<<<<< HEAD
+	public int likeCount(String id) {
+		return mapper.likeCount(id);
+	}
+	
+	@Override
+	public int reviewCount(String id) {
+		return mapper.reviewCount(id);
+	}
+	
+=======
 	public int paypay(String id, int amount) {
 		
 		return mapper.paypay(id, amount);
 	}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 
 

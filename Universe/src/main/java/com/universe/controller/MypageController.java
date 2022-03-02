@@ -1,7 +1,9 @@
 package com.universe.controller;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JacksonInject.Value;
+import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
 
@@ -44,9 +48,18 @@ public class MypageController {
 		int userCount = service.selectUserCount(id);
 		System.out.println("여기까지실행2");
 		int pCount = service.selectProductCount(id);
+<<<<<<< HEAD
+=======
 		System.out.println("여기까지실행3");
 		//List<ProductVO> plist = service.selectProductListById(id);
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int faqCount = service.faqCount(id);
+<<<<<<< HEAD
+		int likeCount = service.likeCount(id);
+		int reviewCount = service.reviewCount(id);
+		
+	    model.addAttribute("memberInfo", uvo);
+=======
 		System.out.println(faqCount);
 		System.out.println("여기까지실행4");
 		log.info("방문자 수 : "+userCount);
@@ -55,12 +68,17 @@ public class MypageController {
 		
 		model.addAttribute("memberInfo", uvo);
 		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
-		//model.addAttribute("plist", plist);
 		model.addAttribute("faqCount", faqCount);
+<<<<<<< HEAD
+		model.addAttribute("likeCount", likeCount);
+		model.addAttribute("rCount", reviewCount);
+=======
 		
  		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 	@GetMapping("/new")
@@ -69,12 +87,12 @@ public class MypageController {
 	}
 	
 	@GetMapping("/manage")
-	public void manage() {
+	public void manage(@RequestParam("id") String id, Model model) {
 		
 	}
 	
 	@GetMapping("/details")
-	public void details() {
+	public void details(@RequestParam("id") String id, Model model) {
 		
 	}
 	
@@ -87,8 +105,6 @@ public class MypageController {
 		
 		String nickname = newNickname.get("newNickname");
 		String id = principal.getName();
-		log.info("ID : "+id);
-		log.info("Store name : "+nickname);
 		
 		return service.updateNickname(nickname, id)
 				? new ResponseEntity<> (nickname, HttpStatus.OK)
@@ -104,13 +120,13 @@ public class MypageController {
 		
 		String intro = newIntro.get("text");
 		String id = principal.getName();
-		log.info("Intro : "+intro);
-		log.info("ID : "+id);
 		
 		return service.updateIntro(intro, id)
 				? new ResponseEntity<> (intro, HttpStatus.OK)
 				: new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	
 
 	@RequestMapping(value = "/paypay")
 	public void paypay(String id,int amount) {

@@ -1,13 +1,14 @@
-
- var pricewon = $("#pprice").val();
+var pricewon = $("#pprice").val();
  
- function price12(jum){
- var pri = jum.value
- var len = jum.value.length
- if(len>8){
- 	alert("비싼 물건입니다.")
- 	pri = "";
- }
+function price12(jum){
+var pri = jum.value
+var len = jum.value.length
+	if(len>8){
+ 		alert("비싼 물건입니다.")
+ 		pri = "";
+}
+ 
+ 
  
  var real = pri.toString()
   .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -56,11 +57,44 @@
  	
  	var real = $("#pprice").val();
  	$("#pprice").val(real.replace(/,/g, "")); // 콤마제거;
- 	
+}
  
- 	
- }
  
+<<<<<<< HEAD
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+=======
  $(function(){ //view페이지 active 
  
  	var i =$(".pcarousel").children("div").first();
@@ -119,3 +153,4 @@ function productviewjjimdown(pno){ //찜 삭제
 		}
 	}) //ajax end
 } // function end
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git

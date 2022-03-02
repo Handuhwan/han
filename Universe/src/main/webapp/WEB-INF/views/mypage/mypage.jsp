@@ -21,16 +21,44 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
+<<<<<<< HEAD
+				<sec:authorize access="isAuthenticated()">
+					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
+					<c:choose>
+						<c:when test="${memberInfo.id eq logID}">
+							<a href="new" class="myStoreLink2">우주톡</a>
+						</c:when>
+						<c:otherwise>
+							<a href="new" class="myStoreLink">내 상점 관리</a>
+						</c:otherwise>
+					</c:choose>
+				</sec:authorize>
+=======
 				<a href="new" class="myStoreLink">내 상점 관리</a>
 				
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
+<<<<<<< HEAD
+						<sec:authorize access="isAuthenticated()">
+							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
+							<c:choose>
+								<c:when test="${memberInfo.id ne logID}">
+									<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
+								</c:when>
+								<c:otherwise>
+									
+								</c:otherwise>
+							</c:choose>
+						</sec:authorize>
+=======
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 			
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>
 				</div>
 				<div class="user_info">
@@ -55,9 +83,24 @@
 						<div class="intro_text" id="intro_text">
 							<p id="originIntro">${memberInfo.intro}</p>
 						</div>
-						<div class="intro_btn" id="intro_btn">
-							<button class="intro_btn2" id="intro_btn2" onclick="modifyIntro()">소개글 수정</button>
-						</div>
+						<sec:authorize access="isAuthenticated()">
+							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
+							<c:choose>
+								<c:when test="${memberInfo.id eq logID}">
+									<button class="intro_btn2" id="intro_btn2" onclick="modifyIntro()">소개글 수정</button>
+								</c:when>
+								<c:otherwise>
+									<div class="intro_btn" id="intro_btn">
+										<div class="sc-gVLVqr exSGCd">
+											<a class="sc-hBbWxd glWKMh">
+												<img src="/resources/images/reportImg.png" width="14" height="14" alt="신고하기 아이콘">
+												신고하기
+											</a>
+										</div>
+									</div>
+								</c:otherwise>
+							</c:choose>
+						</sec:authorize>
 					</div>
 				</div>
 			</div>
@@ -91,35 +134,16 @@
 								<div class="selectBtn">
 									전체&nbsp;${pCount}&nbsp;개
 								</div>
-								<div class="aBtn">
-									<a class="rbBtn selected" href="javascript:recentList">최신순</a>
-									<a class="rbBtn unselected" href="javascript:popularList">인기순</a>
-									<a class="rbBtn unselected" href="javascript:lowPriceList">저가순</a>
-									<a class="rbBtn unselected" href="javascript:highPriceList">고가순</a>
+								<div class="aBtn" id="proBtn">
+									<a class="rbBtn selected" href="javascript:productList(0)">최신순</a>
+									<a class="rbBtn unselected" href="javascript:productList(1)">인기순</a>
+									<a class="rbBtn unselected" href="javascript:productList(2)">저가순</a>
+									<a class="rbBtn unselected" href="javascript:productList(3)">고가순</a>
 								</div>
 							</div>
 							<div class="sc-iBmynh frwOfl">
-								<div class="sc-fKGOjr dcoOvl">
-								<c:forEach items="${plist}" var="plist">
-									<a class="sc-cugefK fRjjJt" href="/productView?pno=${plist.pno}">
-										<div class="sc-fnwBNb bGOWdF">
-											<img src="${pageContext.request.contextPath}/Pupload/${plist.img}" width="194" height="194" alt="상품 이미지">
-											<div class="sc-dREXXX fTyTGh"></div>
-										</div>
+								<div class="sc-fKGOjr dcoOvl" id="productList">
 									
-										<div class="sc-iNhVCk eoXTJU">
-											<div class="sc-eAKXzc jXLIfz">${plist.title}</div>
-											<div class="sc-dRFtgE fpXkTz">
-												<div class="sc-bfYoXt hcGbNt">${plist.price}</div>
-												<div class="sc-gkFcWv hCkfPo">
-													<span id="plistTime"></span>
-													<input type="hidden" id="productInsertDate" value="${plist.indate}">
-												</div>
-											</div>
-										</div>
-										<div class="sc-gbOuXE fQmeHZ"><img src="/resources/images/location.png" width="15" height="17" alt="위치 아이콘">${plist.location}</div>
-									</a>
-								</c:forEach>
 								</div>
 							</div>
 						</div>
@@ -168,133 +192,57 @@
 					</div>
 
 					<div role="tabpanel" class="tab-pane" id="like">
-						<h3 class="info_title">찜&nbsp;<span class="info_count">12</span></h3>
+						<h3 class="info_title">찜&nbsp;<span class="info_count" id="likeCount">${likeCount}</span></h3>
 							<div class="likeBox">
 								<div class="likeBar">
 									<div class="selectBtn">
-										<div class="selectCheck"></div>
-										<button class="scBtn">선택삭제</button>
+										<input type="checkbox" class="selectCheck" id="allCheck" style="bottom: 2px;">
+										<button type="button" onclick="likeRemove()" class="scBtn">선택삭제</button>
 									</div>
-									<div class="aBtn">
-										<a class="rbBtn selected">최신순</a>
-										<a class="rbBtn unselected">인기순</a>
-										<a class="rbBtn unselected">저가순</a>
-										<a class="rbBtn unselected">고가순</a>
+									<div class="aBtn" id="likeBtn">
+										<a class="rbBtn selected" href="javascript:likeList(0)">최신순</a>
+										<a class="rbBtn unselected" href="javascript:likeList(1)">인기순</a>
+										<a class="rbBtn unselected" href="javascript:likeList(2)">저가순</a>
+										<a class="rbBtn unselected" href="javascript:likeList(3)">고가순</a>
 									</div>
 								</div>
 								
-								<div class="likeListBox">
-									<div class="selectOne">
-										<a class="oneLink" href="">
-											<div class="productCheck">
-												<div class="linkCheck"></div>
-											</div>
-											<div class="productImg">
-												<img src="https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg" alt="상품 이미지">
-												<div class="sc-cqPOvA kWqxvV"></div>
-											</div>
-											<div class="productContent">
-												<div class="sc-RbTVP buvryO">[해외] 베이프 베이팅 에이프 루즈핏 풀오버 후드</div>
-												<div class="sc-drlKqa hELMZu"><div>339,000</div></div>
-												<div class="sc-hMrMfs eXrOkK">52분 전</div>
-												<div class="sc-bIqbHp jkraVY"><img src="/resources/images/location.png" width="15" height="17" alt="위치 아이콘">위치없음</div>
-											</div>
-										</a>
-									</div>
-									<div class="selectOne">
-										<a class="oneLink" href="">
-											<div class="productCheck">
-												<div class="linkCheck"></div>
-											</div>
-											<div class="productImg">
-												<img src="https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg" alt="상품 이미지">
-												<div class="sc-cqPOvA kWqxvV"></div>
-											</div>
-											<div class="productContent">
-												<div class="sc-RbTVP buvryO">[해외] 베이프 베이팅 에이프 루즈핏 풀오버 후드</div>
-												<div class="sc-drlKqa hELMZu"><div>339,000</div></div>
-												<div class="sc-hMrMfs eXrOkK">52분 전</div>
-												<div class="sc-bIqbHp jkraVY"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAiCAYAAABIiGl0AAAAAXNSR0IArs4c6QAAA6xJREFUWAm1l01IVFEUx51xNAtxIcEENuQIrqTxO8OEmj5IAncVUS2E2kS0axO4C5KiFi0lXIh9QBC1kKgwclNGjaNOSUEapVRiUSHoTOo4/c743vjem/vGp8xcuHPu+Z//Of9778y9740rz0EbGxsrjsViQait9JpEIuF1uVzbGCfo0/jT2GGwx6WlpQN+vz+Gn7G5MkXD4fAOil6C047dlImrxxCfg9tVUFBwtbq6ekbHrVYpzAoLo9FoJ+QL9AJrkkN/3u12d9bW1l5hMsvWnDTh4eHh8uXl5fvMutFK3qD/jLxTDQ0Nv4z5JuHR0VH/4uLiKwjy/WWtseJPLKTZKO7Wq4dCoa1LS0tP8bMqKvURrcT0TU1NbRZfWkqYWXVrhJVI9j+bZmZmbuplk1s9NDR0GNEnOpgrKz8ydBrZ8rBHRHCur0MsCvc1Pazl1GF301PbqOFpBh3Z4Rv0oIvVBgBG01hqYKCwsPBMIBD4bAxHIpGKhYWFbrB9RtxuzDEr9yB6zI5gwV/U19cfYLvktjI1mQh19rOI5wSCpqDC4bgelaXvUcRMEGJzAO0qUZ2oxdrx53XMzsI9KMJldgQDPsgPYtLgK4fCoeigMmgA2R2fCG83YMohxCFlQAHCDSlgE8Tkytx8yDZmbHCKMxIMQSdcJueWFU8Y8pRDiA3KgAJ0yJ1wJMwqGrlSWxQ6Jkg4wjWBamfCzQzfqmOrqGwNXo/c56uoeaTFejSuOWjxmNx7KXiHwYIlpnIr4I1xVo9TPF8nyFgwiYFV6LidhZfgJaFXv6vvUeCEHVmBy7UZ0fAAds3rUq+BcD8X0SFZcR5XWJcecGhFqEnrjkW12rfEJoV5PRlgJg+1QM4MGqG6uroHKWEZsNXnCfzNmWpe3iL1z9LjJmGuux+AF3MlTO1rrDb1FExutS5GQB5tj3Q/WxbRSElJyWVjPZOwBLxe70mI8sKXrTaZn59/pLKy8p+xYJqwz+eLFhUVtUH6aCRuZMwC/tBba2pqvlnz04SFUFVV9Zsj1krSd2vCOvwYNdo4sx9UOUphIfJ9f8XsRXxclbgGNiuiHNOXdjxbYUlgtuMINzN8Y1dAgU+BtTDxfkUsBWUUFhYFfmKCTKAvlWU/kDfPJo7mO3vKSiR5V69Fkrg8DPj32IHtwE2+FhvzmFivx+M5xz/ENV8sJM+xsC4yMjKyKx6P32YC8rdE2iz9HKu8m/QcfqxbWOry7N2CkRfznZzR0/yIvjBeV/sPFdozA8TD8zUAAAAASUVORK5CYII=" width="15" height="17" alt="위치 아이콘">위치없음</div>
-											</div>
-										</a>
-									</div>
-									<div class="selectOne">
-										<a class="oneLink" href="">
-											<div class="productCheck">
-												<div class="linkCheck"></div>
-											</div>
-											<div class="productImg">
-												<img src="https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg" alt="상품 이미지">
-												<div class="sc-cqPOvA kWqxvV"></div>
-											</div>
-											<div class="productContent">
-												<div class="sc-RbTVP buvryO">[해외] 베이프 베이팅 에이프 루즈핏 풀오버 후드</div>
-												<div class="sc-drlKqa hELMZu"><div>339,000</div></div>
-												<div class="sc-hMrMfs eXrOkK">52분 전</div>
-												<div class="sc-bIqbHp jkraVY"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAiCAYAAABIiGl0AAAAAXNSR0IArs4c6QAAA6xJREFUWAm1l01IVFEUx51xNAtxIcEENuQIrqTxO8OEmj5IAncVUS2E2kS0axO4C5KiFi0lXIh9QBC1kKgwclNGjaNOSUEapVRiUSHoTOo4/c743vjem/vGp8xcuHPu+Z//Of9778y9740rz0EbGxsrjsViQait9JpEIuF1uVzbGCfo0/jT2GGwx6WlpQN+vz+Gn7G5MkXD4fAOil6C047dlImrxxCfg9tVUFBwtbq6ekbHrVYpzAoLo9FoJ+QL9AJrkkN/3u12d9bW1l5hMsvWnDTh4eHh8uXl5fvMutFK3qD/jLxTDQ0Nv4z5JuHR0VH/4uLiKwjy/WWtseJPLKTZKO7Wq4dCoa1LS0tP8bMqKvURrcT0TU1NbRZfWkqYWXVrhJVI9j+bZmZmbuplk1s9NDR0GNEnOpgrKz8ydBrZ8rBHRHCur0MsCvc1Pazl1GF301PbqOFpBh3Z4Rv0oIvVBgBG01hqYKCwsPBMIBD4bAxHIpGKhYWFbrB9RtxuzDEr9yB6zI5gwV/U19cfYLvktjI1mQh19rOI5wSCpqDC4bgelaXvUcRMEGJzAO0qUZ2oxdrx53XMzsI9KMJldgQDPsgPYtLgK4fCoeigMmgA2R2fCG83YMohxCFlQAHCDSlgE8Tkytx8yDZmbHCKMxIMQSdcJueWFU8Y8pRDiA3KgAJ0yJ1wJMwqGrlSWxQ6Jkg4wjWBamfCzQzfqmOrqGwNXo/c56uoeaTFejSuOWjxmNx7KXiHwYIlpnIr4I1xVo9TPF8nyFgwiYFV6LidhZfgJaFXv6vvUeCEHVmBy7UZ0fAAds3rUq+BcD8X0SFZcR5XWJcecGhFqEnrjkW12rfEJoV5PRlgJg+1QM4MGqG6uroHKWEZsNXnCfzNmWpe3iL1z9LjJmGuux+AF3MlTO1rrDb1FExutS5GQB5tj3Q/WxbRSElJyWVjPZOwBLxe70mI8sKXrTaZn59/pLKy8p+xYJqwz+eLFhUVtUH6aCRuZMwC/tBba2pqvlnz04SFUFVV9Zsj1krSd2vCOvwYNdo4sx9UOUphIfJ9f8XsRXxclbgGNiuiHNOXdjxbYUlgtuMINzN8Y1dAgU+BtTDxfkUsBWUUFhYFfmKCTKAvlWU/kDfPJo7mO3vKSiR5V69Fkrg8DPj32IHtwE2+FhvzmFivx+M5xz/ENV8sJM+xsC4yMjKyKx6P32YC8rdE2iz9HKu8m/QcfqxbWOry7N2CkRfznZzR0/yIvjBeV/sPFdozA8TD8zUAAAAASUVORK5CYII=" width="15" height="17" alt="위치 아이콘">위치없음</div>
-											</div>
-										</a>
-									</div>
-									<div class="selectOne">
-										<a class="oneLink" href="">
-											<div class="productCheck">
-												<div class="linkCheck"></div>
-											</div>
-											<div class="productImg">
-												<img src="https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg" alt="상품 이미지">
-												<div class="sc-cqPOvA kWqxvV"></div>
-											</div>
-											<div class="productContent">
-												<div class="sc-RbTVP buvryO">[해외] 베이프 베이팅 에이프 루즈핏 풀오버 후드</div>
-												<div class="sc-drlKqa hELMZu"><div>339,000</div></div>
-												<div class="sc-hMrMfs eXrOkK">52분 전</div>
-												<div class="sc-bIqbHp jkraVY"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAiCAYAAABIiGl0AAAAAXNSR0IArs4c6QAAA6xJREFUWAm1l01IVFEUx51xNAtxIcEENuQIrqTxO8OEmj5IAncVUS2E2kS0axO4C5KiFi0lXIh9QBC1kKgwclNGjaNOSUEapVRiUSHoTOo4/c743vjem/vGp8xcuHPu+Z//Of9778y9740rz0EbGxsrjsViQait9JpEIuF1uVzbGCfo0/jT2GGwx6WlpQN+vz+Gn7G5MkXD4fAOil6C047dlImrxxCfg9tVUFBwtbq6ekbHrVYpzAoLo9FoJ+QL9AJrkkN/3u12d9bW1l5hMsvWnDTh4eHh8uXl5fvMutFK3qD/jLxTDQ0Nv4z5JuHR0VH/4uLiKwjy/WWtseJPLKTZKO7Wq4dCoa1LS0tP8bMqKvURrcT0TU1NbRZfWkqYWXVrhJVI9j+bZmZmbuplk1s9NDR0GNEnOpgrKz8ydBrZ8rBHRHCur0MsCvc1Pazl1GF301PbqOFpBh3Z4Rv0oIvVBgBG01hqYKCwsPBMIBD4bAxHIpGKhYWFbrB9RtxuzDEr9yB6zI5gwV/U19cfYLvktjI1mQh19rOI5wSCpqDC4bgelaXvUcRMEGJzAO0qUZ2oxdrx53XMzsI9KMJldgQDPsgPYtLgK4fCoeigMmgA2R2fCG83YMohxCFlQAHCDSlgE8Tkytx8yDZmbHCKMxIMQSdcJueWFU8Y8pRDiA3KgAJ0yJ1wJMwqGrlSWxQ6Jkg4wjWBamfCzQzfqmOrqGwNXo/c56uoeaTFejSuOWjxmNx7KXiHwYIlpnIr4I1xVo9TPF8nyFgwiYFV6LidhZfgJaFXv6vvUeCEHVmBy7UZ0fAAds3rUq+BcD8X0SFZcR5XWJcecGhFqEnrjkW12rfEJoV5PRlgJg+1QM4MGqG6uroHKWEZsNXnCfzNmWpe3iL1z9LjJmGuux+AF3MlTO1rrDb1FExutS5GQB5tj3Q/WxbRSElJyWVjPZOwBLxe70mI8sKXrTaZn59/pLKy8p+xYJqwz+eLFhUVtUH6aCRuZMwC/tBba2pqvlnz04SFUFVV9Zsj1krSd2vCOvwYNdo4sx9UOUphIfJ9f8XsRXxclbgGNiuiHNOXdjxbYUlgtuMINzN8Y1dAgU+BtTDxfkUsBWUUFhYFfmKCTKAvlWU/kDfPJo7mO3vKSiR5V69Fkrg8DPj32IHtwE2+FhvzmFivx+M5xz/ENV8sJM+xsC4yMjKyKx6P32YC8rdE2iz9HKu8m/QcfqxbWOry7N2CkRfznZzR0/yIvjBeV/sPFdozA8TD8zUAAAAASUVORK5CYII=" width="15" height="17" alt="위치 아이콘">위치없음</div>
-											</div>
-										</a>
-									</div>
+								<div class="likeListBox" id="likeListBox">
+									
 								</div>
 							</div>
 					</div>
 						
 					<div role="tabpanel" class="tab-pane" id="review">
-						<h3 class="info_title">상점후기&nbsp;<span class="info_count">7</span></h3>
-							<div class="comment_contain">
-								<div class="leftBox pull-left">
-									<img src="/resources/images/store.png" width="48" height="48" alt="프로필 이미지" style="margin-top: 13px;">
-								</div>
+						<h3 class="info_title">상점후기&nbsp;<span class="info_count" id="rCount">${rCount}</span></h3>
+						
+							<div class="reviewList" id="reviewChat">
 								
-								<div class="rightBox">
-									<div class="chat_user">
-										<div class="id">두환마켓</div>
-										<div class="date">3일전</div>
-									</div>
-									<div class="sc-gGCbJM eAYqVt">
-										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
-										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
-										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
-										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
-										<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 2점 이미지">
-										<br>
-									</div>
-									
-									<div class="aTag">
-										<a class="sc-gFXMyG DlcMZ" href="">
-											<button class="sc-jWxkHr hHxDRR">맛있는 햄버거가게 e-쿠폰&nbsp;
-												<img src="/resources/images/rightarrow.png" width="6" height="10" alt="화살표 아이콘"></button>
-										</a>
-									</div>
-									
-									<div class="sc-MYvYT izkVcA">
-										<img src="/resources/images/hambuk.jpg" width="100" height="100" alt="로딩 이미지">
-									</div>
-									
-									<div class="chat_content">댓글다는 프로그램좀 알 수 있을까요?</div>
-									
-									<div class="chat_btn">
-										<div class="comment_check"><img src="/resources/images/X.png" width="17" height="14" alt="댓글삭제 버튼 이미지"><a href="">댓글삭제</a></div>
-									</div>
-								</div>
 							</div>
+							
+							<div class="paging">
+								<c:if test="${pageMaker.prev }">
+									<a href="${pageMaker.startPage - 1}"><i
+										class="fa fa-angle-double-left"></i></a>
+								</c:if>
+								<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+									<a href="${num }" class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
+								</c:forEach>
+								<c:if test="${pageMaker.next }">
+									<a href="${pageMaker.endPage + 1}"><i
+										class="fa fa-angle-double-right"></i></a>
+								</c:if>
+								<div>
+								
+								</div>
+								<form id="actionForm" action="my" method="get">
+									<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+									<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+									<input type="hidden" name="type" value="${pageMaker.cri.type }">
+									<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+								</form>
+							</div>
+							
 					</div>
 				</div>
 
@@ -308,6 +256,9 @@
 
 <script>
 
+	var MEMID = '<c:out value="${memberInfo.id}"/>';
+	
+
 	var csrfHeaderName = "${_csrf.headerName}";
 	var csrfTokenValue = "${_csrf.token}";
 			
@@ -316,8 +267,75 @@
 		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
 		
 	})
+	
 </script>
-<script>
+<script>//------------------------------------------ 상품 스크립트 ---------------------------------------------
+$(function() {
+	
+	var id = '<c:out value="${memberInfo.id}"/>';
+	var productUL = $('#productList');
+	productList(0);
+	
+	console.log("상품리스트 출력실행");
+	console.log(id);
+	
+})
+	function productList(list) {
+	
+		var state = "판매완료"; 
+		var sttr = "";
+		var cnt = list+1;
+		
+		$.ajax ({
+			type : 'get',
+			url : '/product/productList',
+			data : {
+				id:id,
+				no:list
+			},
+			dataType : "json",
+			success : function(result){
+				
+				$("#proBtn a").css("color", "black");
+				$("#proBtn a:nth-child("+cnt+")").css("color", "red");
+				
+				for(var i=0, len=result.length || 0; i < len; i++) {
+					sttr +=	"<div class='col-md-3'>";
+					sttr +=		"<a class='sc-cugefK fRjjJt' href='/product/productview?pno="+result[i].pno+"'>";
+					sttr +=			"<div class='sc-fnwBNb bGOWdF'>";
+					sttr +=				"<img src='/resources/images/table.jpg' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
+											if(result[i].status == state){
+					sttr +=					"<div class='sc-dREXXX fTyTGh'>";
+					sttr +=						"<span class='soldout'>판 매 완 료</span>";
+					sttr +=					"</div>";
+											}
+					sttr +=			"</div>";
+					sttr +=			"<div class='sc-iNhVCk eoXTJU'>";
+					sttr +=				"<div class='sc-eAKXzc jXLIfz'>"+result[i].title+"</div>";
+					sttr +=				"<div class='sc-dRFtgE fpXkTz'>";
+					sttr +=					"<div class='sc-bfYoXt hcGbNt'>"+result[i].price+"</div>";
+					sttr +=					"<div class='sc-gkFcWv hCkfPo'>";
+					sttr +=						"<span id='plistTime'>"+result[i].realrealdate+"</span>";
+					sttr +=					"</div>";
+					sttr +=				"</div>";
+					sttr +=			"</div>";
+					sttr +=			"<div class='sc-gbOuXE fQmeHZ'>";
+					sttr +=				"<img src='/resources/images/location.png' width='15' height='17' alt='위치 아이콘'>";
+					sttr +=				"<span class='locationName'>"+result[i].location+"</span>";
+					sttr +=			"</div>";
+					sttr +=		"</a>";
+					sttr +=	"</div>";
+			}
+				$("#productList").html(sttr);
+			},error:function(error){
+				console.log(error)
+			}
+	})
+}
+
+
+</script>
+<script>//------------------------------------------ 상품문의 스크립트 ---------------------------------------------
 	
 	var id = '<c:out value="${memberInfo.id}"/>';
 	var replyer =  '<c:out value="${memberInfo.nickname}"/>'
@@ -353,7 +371,7 @@
 				str +=		"</div>";
 				str +=		"<div class='chat_content'>"+list[i].reply+"</div>";
 		        str +=		"<div class='chat_btn'>";
-		        str +=			"<div class='comment_check'><img src='/resources/images/comment.png' width='17' height='14' alt='댓글달기 버튼 이미지'><button type='button' onclick='faqAnswer("+list[i].replyer+")' >댓글달기</a></div>";
+		        str +=			"<div class='comment_check'><img src='/resources/images/comment.png' width='17' height='14' alt='댓글달기 버튼 이미지'><button type='button' onclick='faqAnswer("+list[i].qno+")' >댓글달기</a></div>";
 		        str +=			"<div class='comment_check'><img src='/resources/images/faq_delete.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><button type='button' onclick='faqDelete("+list[i].qno+")' class='faqDeleteBtn' class='comdel'>삭제하기</a></div>";
 				str +=		"</div>";
 				str +=	"</div>";
@@ -408,12 +426,11 @@
 		})
 	}
 	
-	function faqAnswer(replyer) {
+	function faqAnswer(bno) {
 		
-		var listID = replyer;
-		var textarea = $("#faqTextarea");
+		var listID = $("#"+bno).text();
 		
-		
+		$("#faqTextarea").val("@"+listID+" : ");
 		
 	}
 	
@@ -433,12 +450,251 @@
 	console.log("counting......");
 	}
 		
+</script>
+
+<script>//------------------------------------------ 찜 스크립트 ---------------------------------------------
+
+$(function() {
+
+	var id = '<c:out value="${memberInfo.id}"/>';
+	likeList(0);
+    
+	$("#allCheck").click(function() {
+	    if($("#allCheck").is(":checked")){
+	       $("input[name='lc']").prop("checked",true);
+	    }else{
+	       $("input[name='lc']").prop("checked",false);
+	    }
+	 });
 	
+})
+
+	function chooseCheck() {
+		
+		var L = $(".productCheck").find("input").length;
+		
+	   if($("input[name='lc']:checked").length == L) {
+	      $("#allCheck").prop("checked", true);
+	   }else{
+	      $("#allCheck").prop("checked", false);
+	   }
+	   
+	}
+
+	function likeList(no) {
 	
+		var status = "판매완료"; 
+		var str = "";
+		var nth = no+1;
+		
+		$.ajax ({
+			type : 'get',
+			url : '/liked/likeList',
+			data : {
+				id:id,
+				no:no
+			},
+			dataType : "json",
+			success : function(result){
+				
+				$("#likeBtn a").css("color", "black");
+				$("#likeBtn a:nth-child("+nth+")").css("color", "red");
+				
+				for(var i=0, len=result.length || 0; i < len; i++) {
+					str +=	"<div class='selectOne' id='selectOne'>";
+					str +=		"<a class='oneLink' href='/product/productview?pno="+result[i].pno+"'>";  // <---------------------- 여기에 /product/productview경로 넣어주시면 됩니다 !!
+					str +=			"<div class='productCheck'>";
+					str +=				"<input type='checkbox' onclick='chooseCheck()' name='lc' class='linkCheck' value="+result[i].pno+">";
+					str +=			"</div>";
+					str +=			"<div class='productImg'>";
+					str +=				"<img src='https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
+					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
+											if(result[i].status == status) {
+					str +=						"<div class='sc-dREXXX fTyTGh'>";
+					str +=							"<span class='soldout'>판 매 완 료</span>";
+					str +=						"</div>";
+											}
+					str +=			"</div>";
+					str +=			"<div class='productContent'>";
+					str +=				"<input type='hidden' id='likeQno' value="+result[i].qno+">";
+					str +=				"<div class='sc-RbTVP buvryO'>"+result[i].title+"</div>";
+					str +=				"<div class='sc-drlKqa hELMZu'><div>"+result[i].price+"</div></div>";
+					str +=				"<div class='sc-hMrMfs eXrOkK'>"+result[i].realrealdate+"</div>";
+					str +=				"<div class='sc-bIqbHp jkraVY'><img src='/resources/images/location.png' width='15' height='17' alt='위치 아이콘'>"+result[i].location+"</div>";
+					str +=			"</div>";
+					str +=		"</a>";
+					str +=	"</div>";
+			}
+				$('#likeListBox').html(str);
+				
+			},error : function(error){
+				console.log(error);
+			}
+		})
+		
+		console.log("likeList Operating......");
+	}
+	
+	function likeRemove() {
 		
 
+		var pnoCnt = $('input:checkbox[name=lc]:checked').length;
+		var thisID = id
+		
+		var arr = $('input:checkbox[name=lc]:checked');
+		var values = [];
+		
+	
+		for(var i=0; i < pnoCnt; i++) {
+			values[i] = arr[i].value
+		}
+		
+		var data = {
+				id : thisID,
+				pnoArr : values
+		}
+		
+		if(pnoCnt == 0) {
+			
+			alert("삭제하실 상품을 선택해주세요");
+			
+		}else{
+			
+			var confirmChk = confirm("정말로 삭제하시겠습니까?");
+			
+			$.ajax ({
+				type: 'get',
+				url: '/liked/likeRemove',
+				data: data,
+				dataType: 'text',
+				success : function(result) {
+					likeCount(id);
+					likeList(0);
+				}
+				
+			})
+			console.log("likedRemove Operating......");
+			
+		}
+	}
+	
+	function likeCount(id) {
+		
+		$.ajax ({
+			type : 'get',
+			url : '/liked/likeCount',
+			data : ({ id:id }),
+			success : function(result) {
+				$('#likeCount').html(result);
+			},error : function(xhr, status, error) {
+				console.log("likeCounting ERROR");
+			}
+		})
+		console.log("likeCounting operating......");
+	}
+	
+	
+</script>
+<script>//------------------------------------------ 상품후기 스크립트 ---------------------------------------------
 
-
+$(function() {
+	
+	var id = '<c:out value="${memberInfo.id}"/>';
+	
+	reviewList(1);
+	
+})
+	
+	function reviewList(page) {
+		
+		var str = "";
+		
+		$.ajax ({
+			type : 'get',
+			url : '/review/pages/'+id+'/'+page,
+			data : { id:id, page:page },
+			dataType : "json",
+			success : function(result){
+				
+				for(var i=0, len=result.length || 0; i < len; i++) {
+					str += "<div class='comment_contain'>";
+					str += 	"<div class='leftBox pull-left'>";
+					str += 		"<img src='/resources/images/store.png' width='48' height='48' alt='프로필 이미지' style='margin-top: 13px;'>"; // <----- 프로필이미지 추가하면 여기에 넣어주세요!!
+					str += 	"</div>";
+					str += 	"<div class='rightBox'>";
+					str +=		"<div class='chat_user'>";
+					str +=			"<div class='id'>"+result[i].nickname+"</div>";
+					str += 			"<div class='date'>"+result[i].realrealdate+"</div>";
+					str +=	"</div>";
+					str +=	"<div class='sc-gGCbJM eAYqVt'>"; // <----------- 별점은 이곳에서 처리해주세요 !!
+					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+					str += 		"<br>";
+					str += 	"</div>";	
+					str += 	"<div class='aTag'>";
+					str += 		"<a class='sc-gFXMyG DlcMZ' href='/product/productview?pno="+result[i].pno+"'>";
+					str += 			"<button class='sc-jWxkHr hHxDRR'>"+result[i].title+"&nbsp;";
+					str += 				"<img src='/resources/images/rightarrow.png' width='6' height='10' alt='화살표 아이콘'></button>";
+					str += 		"</a>";
+					str += 	"</div>";
+					str += 	"<div class='sc-MYvYT izkVcA'>";
+					str += 		"<img src='/resources/images/hambuk.jpg' width='100' height='100' alt='상품이미지'>";
+					str += 	"</div>";
+					str += 	"<div class='chat_content'>"+result[i].content+"</div>";
+					str += 	"<div class='chat_btn'>";
+					str += 		"<div class='comment_check'><img src='/resources/images/X.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><a href='javascript:reviewRemove("+result[i].rno+")'>댓글삭제</a></div>";
+					str += 	"</div>";
+					str += 	"</div>";
+					str += "</div>";
+			}
+			$('#reviewChat').html(str);
+			},error : function(error){
+				console.log(error);
+			}
+		})
+		
+		console.log("reviewList Operating......");
+	}
+	
+	function reviewRemove(rno) {
+		
+		var data = { rno:rno };
+		
+		$.ajax ({
+			type : 'get',
+			url : '/review/reviewDelete',
+			data : data,
+			success : function(result) {
+				reviewCount(id);
+				reviewList(1);
+			}
+			
+		})
+		console.log("Review Removing......");
+		
+	}
+	
+	function reviewCount(id) {
+		
+		$.ajax ({
+			type : "get",
+			url : "/review/reviewCount",
+			data : ({ id:id }),
+			dataType : 'text',
+			success : function(result) {
+				$('#rCount').html(result);
+			},error : function(xhr, status, error) {
+				console.log("Review Counting Error");
+			}
+		})
+		
+	console.log("review counting......");
+	}
+	
+	
 </script>
 
 <script>

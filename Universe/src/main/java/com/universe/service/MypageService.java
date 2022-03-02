@@ -1,9 +1,5 @@
 package com.universe.service;
 
-import java.util.List;
-
-import com.universe.domain.FaqVO;
-import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 
 public interface MypageService {
@@ -20,15 +16,24 @@ public interface MypageService {
 		public int selectUserCount(String id);
 		
 		// 상품출력 및 상품개수 출력
-		public List<ProductVO> selectProductListById(String id);
 		public int selectProductCount(String id);
 		
 		// 상품문의 개수 출력
 		public int faqCount(String id);
 		
+<<<<<<< HEAD
+		// 찜 개수 출력
+		public int likeCount(String id);
+		
+		// 후기 개수 출력
+		public int reviewCount(String id);
+		
+		
+=======
 		
 		// paypay충전
 		public int paypay(String id,int amount);
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 
 

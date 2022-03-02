@@ -1,4 +1,7 @@
 package com.universe.controller;
+<<<<<<< HEAD
+
+=======
 
 <<<<<<< HEAD
 
@@ -56,8 +59,16 @@ import javax.servlet.http.HttpSession;
 
 <<<<<<< HEAD
 =======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.security.Principal;
+<<<<<<< HEAD
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -88,7 +99,6 @@ public class MemberController {
 	
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pwencoder;
-	
 	
 	@GetMapping("/join")
 	public void memberView() { //회원가입
@@ -149,18 +159,29 @@ public class MemberController {
 		return "/login";
 	}
 <<<<<<< HEAD
+	
+=======
+<<<<<<< HEAD
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
 	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
 		
 		//String id = prin.getName(); // login한 아이디를 가져옴
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
+<<<<<<< HEAD
+	@RequestMapping(value="/", method= RequestMethod.GET)
+=======
 	@RequestMapping(value="/", method= RequestMethod.GET)
 =======
 
@@ -174,6 +195,7 @@ public class MemberController {
 	 @RequestMapping(value="/", method= RequestMethod.GET)
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	    public String index() {
 	        log.info("home controller");
 	        return "APIExamNaverLogin";
@@ -183,6 +205,8 @@ public class MemberController {
 	    public String loginPOSTNaver(HttpSession session) {
 	        log.info("callback controller");
 	        return "callback";
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
@@ -202,13 +226,18 @@ public class MemberController {
 	    
 	    
 	    
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 <<<<<<< HEAD
 }//fin
+<<<<<<< HEAD
+}
+=======
 =======
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 	
 

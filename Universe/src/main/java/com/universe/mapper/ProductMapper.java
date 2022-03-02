@@ -2,12 +2,24 @@ package com.universe.mapper;
 
 import java.util.List;
 
+<<<<<<< HEAD
+=======
 import org.apache.ibatis.annotations.Param;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import com.universe.domain.ProductVO;
 
 public interface ProductMapper {
 
+<<<<<<< HEAD
+	public void ProductInsert(ProductVO pvo);
+	
+	public List<ProductVO> recentList(String id);
+	public List<ProductVO> viewcountList(String id);
+	public List<ProductVO> highPriceList(String id);
+	public List<ProductVO> rowPriceList(String id);
+	
+=======
 	
 	public void ProductInsert(ProductVO pvo); //상품등록
 	
@@ -30,4 +42,5 @@ public interface ProductMapper {
 	public int productjjimcount(int pno); // 찜 카운터 ajax
 	
 	public int productjjimcheck(@Param("pno") int pno,@Param("id") String id); //찜 체크 버튼 1 0
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
