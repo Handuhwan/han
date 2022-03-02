@@ -1,7 +1,9 @@
 package com.universe.controller;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JacksonInject.Value;
+import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
 
@@ -41,19 +45,16 @@ public class MypageController {
 		service.storePlusCount(id);
 		int userCount = service.selectUserCount(id);
 		int pCount = service.selectProductCount(id);
-		//List<ProductVO> plist = service.selectProductListById(id);
 		int faqCount = service.faqCount(id);
+		int likeCount = service.likeCount(id);
+		int reviewCount = service.reviewCount(id);
 		
-		log.info("방문자 수 : "+userCount);
-		log.info("상품 수 : "+pCount);
-		//log.info("상품리스트 : "+plist);
-		
-		model.addAttribute("memberInfo", uvo);
+	    model.addAttribute("memberInfo", uvo);
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
-		//model.addAttribute("plist", plist);
 		model.addAttribute("faqCount", faqCount);
- 		
+		model.addAttribute("likeCount", likeCount);
+		model.addAttribute("rCount", reviewCount);
 	}
 	
 	@GetMapping("/new")
@@ -62,12 +63,12 @@ public class MypageController {
 	}
 	
 	@GetMapping("/manage")
-	public void manage() {
+	public void manage(@RequestParam("id") String id, Model model) {
 		
 	}
 	
 	@GetMapping("/details")
-	public void details() {
+	public void details(@RequestParam("id") String id, Model model) {
 		
 	}
 	
@@ -80,8 +81,6 @@ public class MypageController {
 		
 		String nickname = newNickname.get("newNickname");
 		String id = principal.getName();
-		log.info("ID : "+id);
-		log.info("Store name : "+nickname);
 		
 		return service.updateNickname(nickname, id)
 				? new ResponseEntity<> (nickname, HttpStatus.OK)
@@ -97,13 +96,13 @@ public class MypageController {
 		
 		String intro = newIntro.get("text");
 		String id = principal.getName();
-		log.info("Intro : "+intro);
-		log.info("ID : "+id);
 		
 		return service.updateIntro(intro, id)
 				? new ResponseEntity<> (intro, HttpStatus.OK)
 				: new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	
 
 }
 	

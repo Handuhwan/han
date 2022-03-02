@@ -3,14 +3,24 @@ package com.universe.controller;
 import java.io.File;
 import java.security.Principal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.universe.criteria.Criteria;
+import com.universe.domain.FaqVO;
 import com.universe.domain.ProductVO;
 import com.universe.service.ProductService;
 
@@ -104,4 +114,80 @@ public class ProductController {
 	public void productview() {
 		
 	}
+	
+	@RequestMapping(value = "/productList")
+	public @ResponseBody List<ProductVO> recentList(String id, int no) {
+		
+		List<ProductVO> plist = new ArrayList<ProductVO>();
+		plist = pservice.productList(id, no);
+		
+		Date today = new Date();
+	    double Dtime= today.getTime();
+		
+		int size = plist.size();
+	    for(int i=0; size>i; i++) {
+	      
+		    double pdate = plist.get(i).getIndate().getTime();
+		    int betweenTime = (int) Math.floor((Dtime - pdate) / 1000 / 60) ;
+		    int betweenHour = betweenTime / 60;
+		    int betweenDay = betweenTime / 60 / 24;
+		    
+		    String indate = null;
+		    
+		    if(betweenTime < 1) {
+		       plist.get(i).setRealrealdate("방금 전");
+		         
+		    }else if(betweenTime < 60) {
+		       indate = Integer.toString(betweenTime);
+		       plist.get(i).setRealrealdate(indate + " 분 전");
+		   
+		    }else if(betweenHour < 24) {
+		       indate = Integer.toString(betweenHour);
+		       plist.get(i).setRealrealdate(indate+"시간 전");
+		      
+		    }else if(betweenDay < 365) {
+		       plist.get(i).setRealrealdate(betweenDay+"일 전");
+		         
+		    }else {
+		       plist.get(i).setRealrealdate((betweenDay / 365) + "년 전");
+		   
+		    }
+	    }
+	    return plist;
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

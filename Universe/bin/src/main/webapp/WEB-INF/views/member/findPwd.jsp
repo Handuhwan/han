@@ -50,7 +50,7 @@
 					<div class="form-group">
 					   <div class="loginemail">
 					    	<p class="findphone">이메일</p>
-					      <input type="text" name="name" class="form-control" id="name" placeholder="name"  style="height: 50px; ">
+					      <input type="text" name="name" class="form-control" id="email" placeholder="name"  style="height: 50px; ">
 					    </div>
 					  
 					  <div class="loginemail">

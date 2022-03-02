@@ -119,12 +119,10 @@ public class FaqController {
 	@GetMapping(value = "/faqcount")
 	public ResponseEntity<String> faqcount(String id) {
 		
-		log.info("카운트할 ID : "+id);
-		
 		String result = Integer.toString(service.counting(id));
 		
 		return new ResponseEntity<> (result, HttpStatus.OK);
-	}	
+	}//문의 개수 출력
 }
 	
 
