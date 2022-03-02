@@ -20,24 +20,41 @@
 					<main class="sc-erOsFi erTKwf">
 						<section class="sc-eGXxtx dAQnYb">
 							<h2>
-								기본정보<span>*필수항목</span>
+								기본정보<span>*필수항목</span><button onclick="productinsertcheck()">zz</button>
 							</h2>
-							<form name="productInsert" action="" method="post" onsubmit="">
+							<form name="productInsert" action="/product/productinsert" enctype="multipart/form-data" method="post" onsubmit="return productinsertcheck()">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+							
 							<ul class="sc-eetwQk pPWss">
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc icTXTK">
-										상품이미지<small>(0/3)</small>
+										상품이미지<small id="imglength">(0/3)</small>
 									</div>
 									<div class="sc-fdJbru lhSEWN">
 										<ul class="sc-cClmTo dHLNTh" id="new_img">
-											<li class="sc-cZLAbK dkAkSi" >이미지 등록 
-												<input type="file" class="inp-img" accept="image/jpg, image/jpeg, image/png" multiple="multiple">
-												
+											<li class="sc-cZLAbK dkAkSi" id="imgblock">이미지 등록 
+												<div id="allblock0" class="allblock0">
+												<input type="file" class="inp-img" accept="image/jpg, image/jpeg, image/png" name="imgs" >
+												</div>
+												<div id="allblock1" class="allblock1">
+												<input type="file" class="inp-img" accept="image/jpg, image/jpeg, image/png" name="imgs" >
+												</div>
+												<div id="allblock2" class="allblock2">
+												<input type="file" class="inp-img" accept="image/jpg, image/jpeg, image/png" name="imgs" >
+												</div>
 											</li>
 										</ul>
 										
-										<div id="preview"></div>
+										<div id="preview" class="preview">
+											<div id="imgviewbox0">											
+											</div>
+											
+											<div id="imgviewbox1">
+											</div>
+											
+											<div id="imgviewbox2">
+											</div>
+										</div>
 											
 										<div class="sc-kOCNXg ksQfBV">
 											<b>* 상품 이미지는 640x640에 최적화 되어 있습니다.</b>
@@ -68,7 +85,7 @@
 									<div class="sc-fdJbru lhSEWN">
 										<div class="sc-hmyDHa lmzEGH">
 											<div class="sc-dYcyhn gknpN">
-												<input type="text" placeholder="상품 제목을 입력해주세요." class="sc-jTNJqp jcrNYi" value="" style="width:50%">
+												<input type="text" placeholder="상품 제목을 입력해주세요." id="ptitle" class="sc-jTNJqp jcrNYi" name="title" value="" style="width:50%">
 											</div>
 										</div>
 									</div>
@@ -82,7 +99,8 @@
 											<ul class="sc-gtXRHa blTxHK">
 												<li class="sc-fyjYeE jIOHwG">
 													<label for="category"></label>
-														<select>
+														<select name="kind"  id="pkind">
+															<option value="">선택</option>
 															<option value="여성의류">여성의류</option>
 															<option value="남성의류">남성의류</option>
 															<option value="신발">신발</option>
@@ -110,16 +128,16 @@
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc fFLTCi">
-										거래지역
+										내 동네
 									</div>
-									<div class="sc-fdJbru lhSEWN">
-										<div class="sc-MKjYC gSSZou" style="padding-bottom: 15px;">
-											<button type="button" class="sc-bYwvMP bHlvJI">내 위치</button>
-											<button type="button" class="sc-bYwvMP bHlvJI">최근 지역</button>
-											<button type="button" class="sc-bYwvMP bHlvJI">주소 검색</button>
-											<button type="button" class="sc-bYwvMP bHlvJI">지역설정안함</button>
-										</div>
-										<input name="location" readonly style="height: 4rem;" placeholder="선호 거래 지역을 검색해주세요." class="sc-iUpOdG gqalHj" value="지역설정안함">
+									<div class="sc-fdJbru lhSEWN" style="padding-top:7px;">								
+										
+										<span>지역명 : </span>
+										<input name="location" id="location" readonly style="width:300px;height: 4rem;" class="sc-iUpOdG gqalHj" value="">
+										<span>도로명 : </span>
+										<input name="load" id="load" readonly style="width:300px;height: 4rem;" class="sc-iUpOdG gqalHj" value="">
+										<button type="button" onclick="readaddress()" class="sc-bYwvMP bHlvJI">내 동네 검색</button>
+										
 									</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
@@ -127,10 +145,10 @@
 										<div class="sc-fdJbru lhSEWN">
 											<div class="sc-csSMhA dVmQdR">
 												<label for="중고상품" class="sc-bscRGj jObBkF">
-													<input id="중고상품" name="status" type="radio" value="1" checked="checked">중고상품
+													<input id="" name="condition" type="radio" value="중고상품" checked="checked">중고상품
 												</label>
 												<label for="새상품" class="sc-bscRGj hsSwto">
-													<input id="새상품" name="status" type="radio" value="0">새상품
+													<input id="" name="condition" type="radio" value="새상품">새상품
 												</label>
 											</div>
 										</div>
@@ -140,10 +158,10 @@
 										<div class="sc-fdJbru lhSEWN">
 											<div class="sc-csSMhA dVmQdR">
 												<label for="교환불가" class="sc-bscRGj jObBkF">
-													<input id="교환불가" name="exchange" type="radio" value="0" checked="checked">교환불가
+													<input id="교환불가" name="exchange" type="radio" value="교환불가" checked="checked">교환불가
 												</label>
 												<label for="교환가능" class="sc-bscRGj hsSwto">
-													<input id="교환가능" name="exchange" type="radio" value="1">교환가능
+													<input id="교환가능" name="exchange" type="radio" value="교환가능">교환가능
 												</label>
 											</div>
 										</div>
@@ -152,7 +170,8 @@
 									<div class="sc-dUcZlc fFLTCi">가격</div>
 										<div class="sc-fdJbru lhSEWN">
 											<div class="sc-kGeDwz ektOSj" style="padding-top:10px">
-												<input type="text" placeholder="숫자만 입력해주세요." class="sc-hgeeVt cOoyPc" value="" style="width:30%">&nbsp;원
+												<input onchange="price12(this)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" id="pprice" name="price" placeholder="숫자만 입력해주세요." class="sc-hgeeVt cOoyPc" value="" style="width:30%">&nbsp;원
+												
 											</div>
 										</div>
 								</li>
@@ -161,14 +180,14 @@
 										설명
 									</div>
 									<div class="sc-fdJbru lhSEWN">
-										<textarea placeholder="상품 설명을 입력해주세요. (10글자 이상)" rows="6" class="sc-kOnlKp jOtnbk"></textarea>
+										<textarea id="pcontent" name="content" placeholder="상품 설명을 입력해주세요. (10글자 이상)" rows="6" class="sc-kOnlKp jOtnbk"></textarea>
 									</div>
 								</li>
 								<li class="sc-cIwbeI jRHmma">
 									<div class="sc-dUcZlc tUmmy">수량</div>
 									<div class="sc-fdJbru lhSEWN">
 										<div class="sc-cBOTKl iLsYdV">
-											<input type="text" class="sc-hkHFWD wUvmE" value="1" style="width:20%">&nbsp;개
+											<input type="text" name="quantity" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="pquantity" class="sc-hkHFWD wUvmE" value="1" style="width:20%">&nbsp;개
 										</div>
 									</div>
 								</li>
@@ -188,25 +207,96 @@
 </div>
 		
 <script>
+
+var cnt = 0;
+
+
+
 function readInputFile(input) {
+
+	
     if(input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            $('#preview').append("<img src="+ e.target.result +">");
+        
+            $('#imgviewbox'+cnt).append("<img src="+e.target.result +"><button onclick='delImg(this)'>x</button>");
+            $("#allblock"+cnt).css("display","none")     
+            cnt++;
+            if($("#allblock"+cnt).find("input").val() == ''){   	
+            $("#allblock"+cnt).css("display","block")
+             
+            }
+            $("#imglength").html("("+$("#preview img").length+"/3)")
         }
         reader.readAsDataURL(input.files[0]);
-        console.log(input.files[0]);
+       
     }
 }
  
 $(".inp-img").on('change', function(){
-    readInputFile(this);
+	
+	readInputFile(this);
 });
 
+function readaddress(){
+	
+	navigator.geolocation.getCurrentPosition(
+			function(position) {
+			var lat = position.coords.latitude
+			var lng = position.coords.longitude
+			getAddr(lat,lng)
+			}, 
+			);
+	
+}
 
+function getAddr(lat,lng){
+    let geocoder = new kakao.maps.services.Geocoder();
 
+    let coord = new kakao.maps.LatLng(lat, lng);
+    let callback = function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+        	 console.log(result);
+        	var ori_add =result[0].address.address_name;
+        	var ori_add1 =result[0].address.region_1depth_name;
+        	var ori_add2 =result[0].address.region_2depth_name;
+        	var ori_add3 =result[0].address.region_3depth_name;
+        	  $("#location").val(ori_add1+" "+ori_add2+" "+ori_add3);
+        	var road_add=result[0].road_address.address_name;
+        	 $("#load").val(road_add)
+            
+           
+          
+        }
+    }
+    geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+}
+
+function delImg(img){
+	
+	
+	var papa = $(img).parent('div');
+	var indexnum = $(img).parent('div').index();
+	cnt = indexnum;
+	
+	$("#allblock"+indexnum).css("display","block");
+	$("#allblock"+indexnum).html()
+  
+    papa.empty();
+	$("#imglength").html("("+$("#preview img").length+"/3)")
+
+}
 </script>
 
+
+<script>
+
+	
+function price(){
+	alert("");
+}
+
+</script>
 
 <%@ include file="../footer.jsp"%>
 

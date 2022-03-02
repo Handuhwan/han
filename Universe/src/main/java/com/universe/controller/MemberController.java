@@ -1,5 +1,8 @@
 package com.universe.controller;
 
+<<<<<<< HEAD
+
+=======
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,27 +11,54 @@ import java.net.URL;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.UUID;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+//github.com/Handuhwan/han.git
+
+=======
 
 import javax.servlet.http.HttpSession;
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.security.Principal;
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+//github.com/Handuhwan/han.git
+=======
 import java.util.Iterator;
 import java.util.Map;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import javax.servlet.http.HttpServletRequest;
+<<<<<<< HEAD
+//github.com/Handuhwan/han.git
+=======
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import javax.servlet.http.HttpSession;
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
+//github.com/Handuhwan/han.git
 
+<<<<<<< HEAD
+=======
 import java.security.Principal;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -118,17 +148,31 @@ public class MemberController {
 	public String navLogin(HttpServletRequest request) throws Exception {
 		return "/login";
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
 	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
 		
 		//String id = prin.getName(); // login한 아이디를 가져옴
+<<<<<<< HEAD
+		
+	}
+	
+	@RequestMapping(value="/", method= RequestMethod.GET)
+=======
 
 	}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
+<<<<<<< HEAD
+
+=======
 	 @RequestMapping(value="/", method= RequestMethod.GET)
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 	    public String index() {
 	        log.info("home controller");
@@ -139,20 +183,30 @@ public class MemberController {
 	    public String loginPOSTNaver(HttpSession session) {
 	        log.info("callback controller");
 	        return "callback";
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	 }
 
 	    
 
 	  
+<<<<<<< HEAD
+=======
 
 }
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	    
 	    
 	    
 	    
 
+<<<<<<< HEAD
+}//fin
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
 	

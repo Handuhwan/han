@@ -39,11 +39,13 @@ public class AdminController {
 	@Setter(onMethod_ = @Autowired)
 	private AdminService service;
 	
+	//admin로그인화면
 	@GetMapping("/admin_login")
 	public void adminLoginForm() {
 		//아이디나 비밀번호가 틀렸을 때 경고 메세지를 띄워야함 
 	}
 	
+	//admin list페이지
 	@GetMapping("/admin")
 	public String adminMain(Criteria cri ,Model model) {
 		model.addAttribute("list",service.getlistWithPaging(cri));
@@ -55,6 +57,7 @@ public class AdminController {
 	}
 	
 	
+	//admin_alert.jsp에 리스트를 출력하기 위한
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin_alert")
 	public String adminAlert(Model model) {
@@ -63,6 +66,7 @@ public class AdminController {
 	}
 	
 	
+	//로그아웃
 	 @RequestMapping("/adminLogout")
 	 public ModelAndView logout(HttpSession session) {
 		 session.invalidate();
@@ -71,20 +75,25 @@ public class AdminController {
 	 }
 	 
 	 
+	 //회원 블락 기능
 	 @PostMapping("/admin_member_forced_eviction")
 		public String admin_member_forced_eviction(ReportVO rvo,@RequestParam("reasons") String reason,String block) throws Exception{
 		 
+		 
+		
 		 if(rvo.getReason() == null || rvo.getReason() == "") { //기타의 raido박스는 value값이 0이니까 밑의 textarea의 값을 가지고 오기 위해
 			 rvo.setReason(reason);
 			 
 		 }
 		 
+		 System.out.println("이유씨"+rvo.getReason());
+		 
 			service.admin_member_forced_checked(block,rvo.getReported_id());
 			service.Admin_Reason(rvo);
 			
-		if(rvo.getReason() == "7") {
+		//if(rvo.getAdmin_report() == "7") {
 			
-		}
+		//}
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
@@ -102,6 +111,9 @@ public class AdminController {
 		}
 	 
 	 
+	 
+	 
+	 //admin 검색 기능
 	 @ResponseBody
 	 @GetMapping("/admin_menu")
 	 public  List<MemberVO> AjaxstatusList(String menu){

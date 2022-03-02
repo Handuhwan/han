@@ -38,13 +38,19 @@
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
+<<<<<<< HEAD
+=======
 <script src="/resources/js/chat.js"></script>
 <script src="/resources/js/pay.js"></script>
 
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <meta name="google-signin-scope" content="profile email">
@@ -57,16 +63,28 @@
 
 
 <script src="/resources/js/mypage.js"></script>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/faqReply.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 
 
+<<<<<<< HEAD
+
+=======
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </head>
 
 <script type="text/javascript"> 
@@ -97,11 +115,22 @@
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/adminLogout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
 				<button href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
+<<<<<<< HEAD
+				
+				
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
 
 				</form>
@@ -154,17 +183,26 @@
 			  			
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 						<sec:authorize access="isAuthenticated()">
  						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			 			</sec:authorize>
 			 			<sec:authorize access="isAnonymous()">
  						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			 			</sec:authorize>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
  						<button class="dropbtn" onclick="location.href='/mypage/mypage'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
 			  			
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>&nbsp;&nbsp;
 					
 					

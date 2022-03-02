@@ -3,16 +3,77 @@
 
 <mapper namespace="com.universe.mapper.mypageMapper">
 
+	<!-- 회원정보 불러오기 -->
+	<select id="infomationAboutUser" resultType="com.universe.domain.UserVO">
+		select * from member where id = #{id}
+	</select>
+	
+	<!-- 상점명 수정 -->
 	<update id="updateNickname">
-	
 		update member set nickname = #{nickname} where id = #{id}
-	
 	</update>
 	
+	<!-- 상점소개 수정 -->
 	<update id="updateIntro">
-	
 		update member set intro = #{intro} where id = #{id}
-	
 	</update>
-
+	
+	<!-- 해당 회원의 상점 방문자수 카운트 -->
+	<update id="storePlusCount">
+		update member set usercount = usercount + 1 where id = #{id}
+	</update>
+	
+	<!-- 해당 회원의 상점 방문자수 출력 -->
+	<select id="selectUserCount" resultType="int">
+		select usercount from member where id = #{id}
+	</select>
+	
+	<!-- 해당 회원의 상품등록 정보출력 -->
+	<select id="selectProductListById" resultType="com.universe.domain.ProductVO">
+		select * from product where id = {#id}
+	</select>
+	
+	<!-- 상품의 개수 출력 -->
+	<select id="selectProductCount" resultType="int">
+		select count(*) as cnt from product where id = #{id}
+	</select>
+	
+	<select id="faqCount" resultType="int">
+		select count(*) as cnt from faq where id = #{id}
+	</select>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
