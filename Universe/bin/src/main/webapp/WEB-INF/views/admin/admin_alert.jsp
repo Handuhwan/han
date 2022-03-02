@@ -14,33 +14,33 @@
 					  </div>
 					</form>
 				</div>
-				<div class="col-md-12" style="margin-top: 60px;">
-					<div class="wrap_admin_menu"> 
-						<table class="admin_menu"> <!-- table -->
-							<tr class="admin_head">
-								<th class="column-0">신고 받은 아이디</th>
-								<th class="column-0">신고 아이디</th>
-								<th class="column-2">신고 사유</th>
-							</tr>
-							<c:choose>
-								<c:when test = "${report eq null }"> 
-									<tr style="text-align:center;">
-										<td colspan = "7" style="font-family: Poppins-Bold; font-size:25px;">There's No Data</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<c:forEach items = "${report}" var="report">
-										<tr>
-											<td class="column-0"></td>
-											<td class="column-0"></td>
-											<td class="column-2"></td>
+					<div class="col-md-12" style="margin-top: 60px;">
+						<div class="wrap_admin_menu"> 
+							<table class="admin_menu"> <!-- table -->
+								<tr class="admin_head">
+									<th class="column-0">신고 받은 아이디</th>
+									<th class="column-0">신고 아이디</th>
+									<th class="column-2">신고 사유</th>
+								</tr>
+								
+							
+									<c:if test = "${empty report }"> 
+										<tr style="text-align:center;">
+											<td colspan = "7" style="font-family: Poppins-Bold; font-size:25px;">There's No Data</td>
 										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</table>
+									</c:if>
+									<c:if test="${ not empty report }">
+										<c:forEach items = "${report}" var="report">
+											<tr>
+												<td class="column-0">${report.reported_id}</td>
+												<td class="column-0">${report.id}</td>
+												<td class="column-2">${report.report}</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+							</table>
+						</div>
 					</div>
-				</div>
 				<!-- pagination -->
 				<div class="col-md-12" > 
 					<div style="text-align: center; padding-top: 25px; padding-bottom: 70px;">
@@ -52,13 +52,10 @@
 							2
 						</a>
 					</div>				
-				</div>
+				</div> <!-- /.pagination -->
 				
 				
-				<!-- 왜 안되냐 말이야 -->
-				<!-- 되라되라되라 -->
-				<!-- 안되는 이유가? -->
-				<!-- 야 -->
+				
 				
 				
 						

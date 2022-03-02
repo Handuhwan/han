@@ -5,13 +5,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <!DOCTYPE html>
+
 <html lang="ko">
 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
 
 <title>Universe</title>
 
@@ -36,57 +39,42 @@
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
-<<<<<<< HEAD
-<script src="/resources/js/main.js"></script>
-<script src="/resources/js/member.js"></script>
-=======
-<<<<<<< HEAD
-<script src="/resources/js/main.js"></script>
-<script src="/resources/js/member.js"></script>
-=======
-<script src="/resources/js/main.js"></script>
-<script src="/resources/js/member.js"></script>
-<<<<<<< HEAD
-=======
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
-<<<<<<< HEAD
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/member.js"></script>
+
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/member.js"></script>
+
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/member.js"></script>
+
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
-=======
-<<<<<<< HEAD
-=======
+
 <script src="/resources/js/product.js"></script>
 
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 <script src="/resources/js/mypage.js"></script>
-<<<<<<< HEAD
+
 <script src="/resources/js/faqReply.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
 
-<<<<<<< HEAD
-=======
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 </head>
 
 <script type="text/javascript"> 
@@ -117,25 +105,22 @@
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/adminLogout" method="post" name="header_logout">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-<<<<<<< HEAD
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
-=======
-<<<<<<< HEAD
+
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
-				<button href="/" onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
+				<button type="submit" onclick="header_logout()" id= "header_logout" style="color:rgb(103 103 103);">로그아웃</button></span>
 				
 				
-=======
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				</form>
 				</sec:authorize>
-				</div><!-- right end -->
+				<button  type ="button" onclick="signOut()">구글 로그아웃</button>		
+				<button type="button"  onclick="naverLogout() ">네이버 로그아웃 잘됨</button>
+				<button type="button"  onclick="kakaoLogout()">카카오톡 로그아웃</button>
+							</div><!-- right end -->
 			</div> <!-- 맨위 -->
 		</div>
 	</div>
 </div> <!-- main_header_nav -->
+
 	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #cfd4f4; height:120px;">
 		<div class="pull-right">
 			<div class="header_recent" id="header_recent"> <!-- 최근본 게시물 -->
@@ -172,17 +157,17 @@
 			  			
 					</div>&nbsp;&nbsp;
 					<div class="dropdown">
-<<<<<<< HEAD
+
 						<sec:authorize access="isAuthenticated()">
  						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			 			</sec:authorize>
 			 			<sec:authorize access="isAnonymous()">
  						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
 			 			</sec:authorize>
-=======
+
  						<button class="dropbtn" onclick="location.href='/mypage/mypage'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
 			  			
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 					</div>&nbsp;&nbsp;
 					
 					
@@ -197,8 +182,5 @@
 			</div> <!-- 컨테이너 상위 박스 -->
 			
 			
-			
-		
-		
-	
-		
+			 <!-- 네이버 -->
+  

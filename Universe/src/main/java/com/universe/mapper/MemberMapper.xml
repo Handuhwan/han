@@ -15,6 +15,13 @@
 		values(#{id},'ROLE_USER')
 	</insert>
 	
+	<!-- 아이디 찾기 -->
+	
+	<select id="findId" resultType="com.universe.domain.MemberVO">
+		select id from member where name = #{name} and phone = #{phone}
+	</select>
+
+	
 	<!-- 회원 강제탈퇴관련 mapper -->
 	
     <!-- <delete id="admin_member_forced_evictionCheck">

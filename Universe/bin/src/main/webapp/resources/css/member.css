@@ -31,42 +31,51 @@
     height: 50px;
 }
 .naverbutton {
-	
+/* 	border: 1px solid #ddd; */
+	margin-right: 29px;
 	border-style:solid;
-	height: 35px;
+	height: 30px;
     line-height: 35px;
     font-size: 11px;
     padding-left: 6px;
     float:left
 }
 .naverfont {
+	box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
+	padding-right: 60px;
 	margin-top: 15px;
 	line-height: 35px;
-	text-align:left;
 	width:300px;
 	color: #fff;
-    background-color: #00c63b;
+    background-color: #1EC800;
     text-shadow: 0 0 2px rgb(0 0 0 / 20%);
     border-style:solid;
+   
 }
 .kakaofont{
+	box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
+	padding-right: 60px;
+	padding-top: 7px;
 	margin-top: 15px;
-	line-height: 35px;
-	text-align:left;
-	width:300px;
+	width:302px;
 	color: #fff;
     background-color: #fbe300;
     text-shadow: 0 0 2px rgb(0 0 0 / 20%);
     border-style:solid;
 }
 .googlefont{
+	padding-right: 60px;
+	padding-left: 0px;
+
+	width:310px;
 	margin-top: 15px;
-	line-height: 35px;
-	text-align:left;
-	width:300px;
     text-shadow: 0 0 2px rgb(0 0 0 / 20%);
     border-style:solid;
 }
+.btn btn-default naverfont a img {
+	width:0px;
+}
+
 
 /*======= Button 2 =======*/
 .form-group .btn btn-default btn2 {
@@ -316,6 +325,7 @@ transition: all .3s
   padding-top:21px;
   padding-bottom:10px;
   font-size: 17px; font-weight: 600;
+  border: groove;
 }
 
 /* Change background color of buttons on hover */

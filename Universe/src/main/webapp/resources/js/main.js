@@ -68,12 +68,15 @@ function header_logout(){ //헤더 로그아웃 버튼
 	if(kakaoLogout()){
 		header_logout.submit();
 		return true;
+		 console.log('카카오로그아웃 성공');
 	}else if(naverLogout()){
 		header_logout.submit();
 		return true;
+		 console.log('네이버 로그아웃 성공');
 	}else if(signOut()){
 		header_logout.submit();
 		return true;
+		 console.log('구글 로그아웃 성공');
 	}
 	header_logout.submit();
 	return false;

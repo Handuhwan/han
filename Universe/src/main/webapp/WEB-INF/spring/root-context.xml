@@ -27,7 +27,6 @@
       <property name="dataSource" ref="dataSource"></property>
    </bean>
    <!-- sqlsessionfactory data소스 호출 -->
-   
   
    <!-- mybatis에서 가장 핵심적인 sqlsession이라는 존재와 sqlsessionfactory 이다 
    sqlsessionfactory 객체 : sqlsession에서 객체를 만든다.
