@@ -22,5 +22,7 @@ public interface mypageMapper {
 	public int selectProductCount(@Param("id") String id);
 	
 	public int faqCount(String id);
+	
+	public int paypay(@Param("id") String id,@Param("amount") int amount);
 
 }

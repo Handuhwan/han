@@ -1515,6 +1515,7 @@ th {
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -1539,6 +1540,8 @@ th {
 
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 .preview img{
 	width:200px;
 	height:200px;
@@ -1551,4 +1554,13 @@ th {
 }
 .allblock0{
 	display:block
+}
+#mypayplus{
+	text-align:right;
+	width:90px;
+	border:0;
+	background:#fff;
+}
+#realmypagepaybtn{
+	display:none;
 }

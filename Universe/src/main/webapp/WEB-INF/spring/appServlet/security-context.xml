@@ -23,14 +23,29 @@
 			authentication-success-handler-ref="AdminLoginSucess"
 			authentication-failure-handler-ref="customLoginFail"
 			/>
+<<<<<<< HEAD
 		<!-- 로그아웃 처리 -->
 
+=======
+		<!-- 로그아웃 처리 -->
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		<security:logout logout-url="/admin/adminLogout" invalidate-session="true" logout-success-url="/"/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		
 		<!-- 권한 없는사람 페이지 처리 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 		<security:access-denied-handler ref="customAccessDenied"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 	</security:http>
 	
