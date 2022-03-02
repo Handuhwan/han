@@ -1499,7 +1499,6 @@ th {
 	display:inline-block;
 }
 
-<<<<<<< HEAD
 .textBox {
 	position: absolute;
     right: 140px;
@@ -1540,14 +1539,12 @@ th {
 
 
 
-=======
 .preview img{
 	width:200px;
 	height:200px;
 	margin-left:42px;
 	margin-top:20px;
 }
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 #imgblock .allblock1, .allblock2{
 	display:none;

@@ -329,9 +329,10 @@ a:hover {
 
 /*modal------------------------------------------------------------------------------*/
 
-.block_square {
+.block_square input {
 	border: 1px solid #ccc;
     margin-top: 10px;
+    width: 100%;
 }
 
 .modal-title {
@@ -359,4 +360,10 @@ a:hover {
 .form-check-label {
 	font-family: Poppins-Regular;
 	font-weight: 100;
+}
+.block_day{
+	display:none;
+}
+.textbox{
+	display:none;
 }

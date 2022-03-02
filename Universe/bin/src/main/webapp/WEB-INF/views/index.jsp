@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -61,14 +62,14 @@
 				<c:forEach items="${homelist}" var="list">
   					<div class="col-sm-6 main_items">
     					<div class="thumbnail">
-      						<a onclick="itemcookie(1)" href="#">
-      						<img src="/resources/images/table.jpg" alt="...">
+       						<a onclick="itemcookie('${list.img1}','${list.pno }')" href="/product/productview">
+      						<input type="hidden" name="main" value="${list.img1 }">
+      							<img src="/Pupload/${list.img1 }" alt="..." onclick="">
       						</a>
       						<div class="caption">
-        					<p style="font-size:20px;">${list.title }</p>
-        					<span style="font-size:16px; font-weight:600">10,000,000 원</span>
-        			
-        					<span class="items_day">1시간 전</span>
+        					<p style="font-size:20px;">${list.title }</p>   					
+        					<span style="font-size:16px; font-weight:600"><fmt:formatNumber value="${list.price }"/>원</span>
+        					<span class="items_day" >${list.realrealdate}</span>
       						</div> <!-- 썸네일 내용 -->
     					</div> <!--  썸네일 end -->
     					

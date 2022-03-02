@@ -27,8 +27,21 @@ $(function(){
 	}
    
    
+   
 	var thistime = m[mm]+" "+dd+"th "+yy+" "+h+":"+min+" "+ampm;
 	// m 배열도 0번째방부터 시작, Date함수의 month도 0번째 방부터 시작
+	
+	if(dd==1){
+		thistime = m[mm]+" "+dd+"st "+yy+" "+h+":"+min+" "+ampm;
+	}
+	if(dd==2){
+		thistime = m[mm]+" "+dd+"nd "+yy+" "+h+":"+min+" "+ampm;
+	}
+	
+	if(dd==3){
+		thistime = m[mm]+" "+dd+"rd "+yy+" "+h+":"+min+" "+ampm;
+	}
+	
     
 	$("#now").text(thistime);
 		
@@ -64,6 +77,18 @@ setInterval(function(){
    
 	var thistime = m[mm]+" "+dd+"th "+yy+" "+h+":"+min+" "+ampm;
 	// m 배열도 0번째방부터 시작, Date함수의 month도 0번째 방부터 시작
+	
+	if(dd==1){
+		thistime = m[mm]+" "+dd+"st "+yy+" "+h+":"+min+" "+ampm;
+	}
+	
+	if(dd==2){
+		thistime = m[mm]+" "+dd+"nd "+yy+" "+h+":"+min+" "+ampm;
+	}
+	
+	if(dd==3){
+		thistime = m[mm]+" "+dd+"rd "+yy+" "+h+":"+min+" "+ampm;
+	}
     
 	$("#now").text(thistime);
 		
@@ -75,6 +100,8 @@ setInterval(function(){
 
 $(function(){
 
+	blockcheck();
+
 	$("input[name=menu]").on("click",function(){
 	
 	var menu = $(this).val();
@@ -82,7 +109,7 @@ $(function(){
 	
 		$.ajax({
 		
-		type : "get", //토큰 붙여야함
+		type : "get", 
 		url : "/admin/admin_menu",
 		data : ({
 			"menu" : menu,
@@ -101,12 +128,12 @@ $(function(){
 					output += '<div class ="row">';
 					output += '<div class="col-md-6" style="text-align:right;">'+result[i].status+'</div>';
 					output += '<div class="col-md-6">';
-					output += '<button type="button" class="btn_blocked" data-toggle="modal" data-target="#${list.id}" >Manage</button>';
+					output += '<button type="button" class="btn_blocked" data-toggle="modal" data-target="#'+result[i].id+'" >Manage</button>';
 					output += '</div>';
 					output += '</div>';
 					output += '<form action ="/admin/admin_member_forced_eviction" method="post" onclick="blockcheck()">';
 					output += '<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">';
-					output += '<div class="modal fade" style="text-align:left;" id="${list.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+					output += '<div class="modal fade" style="text-align:left;" id="'+result[i].id+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
 					output += '<div class="modal-dialog">';
 					output += '<div class="modal-content">';
 					output += '<div class="modal-header">';
@@ -114,7 +141,7 @@ $(function(){
 					output += '<label><input type="radio" name="block" value="활동 정지"> Block</label>';
 					output += '<label><input type="radio" name="block" value="블락"> Ban</label>'	;		
 					output += '<h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>'	;					
-					output += '<div class="block_square"><input readonly name="reported_id" value="${list.id}"></div>';						
+					output += '<div class="block_square"><input readonly name="reported_id" value="'+result[i].id+'"></div>';						
 					output += '</div>';					
 					output += '<div class="modal-header">';					
 					output += '<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>'	;					
@@ -153,7 +180,7 @@ $(function(){
 					output += '</div>';					
 					output += '<div class="modal-footer">';				   
 					output += '<p>대상 회원을 처리 하시겠습니까?</p>';				    	
-					output += '<button type="submit" class="btn_check">확인</button>';				    	
+					output += '<button type="submit" class="btn_check" style="margin-right: 5px;">확인</button>';				    	
 					output += '<button type="button" class="btn_cancel" data-dismiss="modal">취소</button>';				    	
 					output += '</div>';				    
 					output += '</div>';				
@@ -221,13 +248,18 @@ $("input[name=reason]").on("click",function(){
 	
 })
 
+	
+
+
+
+
+
 
 
 
 }; //fin
 
-
-
+//---------------------------------------------------------------
 
 
 

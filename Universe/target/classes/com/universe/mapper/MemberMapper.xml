@@ -25,5 +25,7 @@
     <update id="admin_member_forced_evictionCheck">
     	update member set status = '2' where usernumber=#{usernumber}
     </update>
+    
+    
 	
 </mapper>

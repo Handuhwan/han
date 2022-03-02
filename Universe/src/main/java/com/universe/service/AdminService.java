@@ -21,8 +21,14 @@ public interface AdminService {
 	//value(신고이유)값을 admin_report에 저장하기 위한
 	public void Admin_Reason(ReportVO rvo);
 	
+	//검색기능
 	public List<MemberVO> adminmenu(String sta);
 	
+	//카테고리별 출력
 	public List<MemberVO> allList();
+	
+	
+	
+	
 	
 }
