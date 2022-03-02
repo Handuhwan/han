@@ -20,6 +20,10 @@ function itemcookie(img,pno){ //최근본상품
 
 $(function(){ // 쿠키 실행
 	
+	var sss = document.cookie.length // 쿠기 존재 여부를 묻는다 
+	
+	if(sss>0){
+	
 	var cc = "";
 	
 	var str = "";
@@ -34,15 +38,15 @@ $(function(){ // 쿠키 실행
         var dic = item.split('=');
  		console.log("거름:"+dic);
  		
- 		str = "<a href='/product/productview'><img src='/Pupload/"+dic[1]+"'></a>"
+ 		str = "<a href='/product/productview?pno="+dic[0]+"'><img src='/Pupload/"+dic[1]+"'></a>"
     	$("#header_recent").append(str)
 	})
-	
+	}//if end
 	
 	
 	
 
-})
+})//function end
 
 $(window).scroll(function(){ //top버튼 
     

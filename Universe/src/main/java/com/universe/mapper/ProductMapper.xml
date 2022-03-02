@@ -9,6 +9,7 @@
 		(pno,title,content,kind,price,quantity,location,condition,exchange,id,img1,img2,img3) 
 		values
 		(product_seq.nextval,#{title},#{content},#{kind},#{price},#{quantity},#{location},#{condition},#{exchange},#{id},#{img1},#{img2},#{img3})
+<<<<<<< HEAD
 	</insert>
 	
 	<!-- 최신순 상품리스트 -->
@@ -32,5 +33,57 @@
 	</select>
 	
   
+=======
+					
+		
+	</insert>  
+  	
+  	
+  	<select id="Productview" resultType="com.universe.domain.ProductVO">
+  		 select * from product where pno=#{pno}
+  	</select>
+  	
+  	<select id="bestproduct" resultType="com.universe.domain.ProductVO">
+  		<![CDATA[
+  		select * from product where rownum <=4 order by viewcount desc
+  			]]>
+  	</select>
+  	
+  	<update id="productviewcount">
+  		update product set viewcount = viewcount + 1 where pno = #{pno}
+  	</update>
+  	
+  	<select id="productsalernew" resultType="com.universe.domain.ProductVO">
+  	<![CDATA[
+  		select m.nickname as title,p.img1,p.price,p.indate,p.pno,m.userimg as img2
+		from (select * from product order by indate desc) p,member m 
+		where m.id=#{id} and p.id=#{id} and rownum <=2
+  	]]>
+  	</select>
+  	
+  	<insert id="productjjim">
+  		insert into productlikecount values(#{id},#{pno})
+  	</insert>
+  	
+  	<update id="pjjimup">
+  		update product set likecount = likecount + 1 where pno = #{pno}
+  	</update>
+  	
+  	<delete id="productjjimdel">
+  		delete productlikecount where id=#{id} and pno=#{pno}
+  	</delete>
+  	
+  	<update id="pjjimdown">
+  		update product set likecount = likecount - 1 where pno = #{pno}
+  	</update>
+  	
+  	<select id="productjjimcount" resultType="int">
+  		select likecount from product where pno=#{pno}
+  	</select>
+  	
+  	<select id="productjjimcheck" resultType="int">
+  		select count(*) from productlikecount where pno=#{pno} and id=#{id}
+  	</select>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
   
 </mapper>

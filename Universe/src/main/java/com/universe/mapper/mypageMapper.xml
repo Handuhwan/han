@@ -37,6 +37,7 @@
 		select count(*) as cnt from faq where id = #{id}
 	</select>
 	
+<<<<<<< HEAD
 	<select id="likeCount" resultType="int">
 		select count(*) as cnt from liked where id = #{id}
 	</select>
@@ -47,6 +48,14 @@
 	
 	
 	
+=======
+	
+	
+	<!-- paypay충전 -->
+	<update id="paypay">
+		update member set point = point + #{amount} where id=#{id}
+	</update>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </mapper>
 
 

@@ -38,23 +38,47 @@ public class MypageController {
 	@GetMapping("/mypage")
 	public void mypage(@RequestParam("id") String id, Model model) {
 		
+		
 		UserVO uvo = service.infomationAboutUser(id);
 		
 		id = uvo.getId();
 		
 		service.storePlusCount(id);
+		System.out.println("여기까지실행1");
 		int userCount = service.selectUserCount(id);
+		System.out.println("여기까지실행2");
 		int pCount = service.selectProductCount(id);
+<<<<<<< HEAD
+=======
+		System.out.println("여기까지실행3");
+		//List<ProductVO> plist = service.selectProductListById(id);
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int faqCount = service.faqCount(id);
+<<<<<<< HEAD
 		int likeCount = service.likeCount(id);
 		int reviewCount = service.reviewCount(id);
 		
 	    model.addAttribute("memberInfo", uvo);
+=======
+		System.out.println(faqCount);
+		System.out.println("여기까지실행4");
+		log.info("방문자 수 : "+userCount);
+		log.info("상품 수 : "+pCount);
+		//log.info("상품리스트 : "+plist);
+		
+		model.addAttribute("memberInfo", uvo);
+		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
 		model.addAttribute("faqCount", faqCount);
+<<<<<<< HEAD
 		model.addAttribute("likeCount", likeCount);
 		model.addAttribute("rCount", reviewCount);
+=======
+		
+ 		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 	@GetMapping("/new")
@@ -104,6 +128,15 @@ public class MypageController {
 	
 	
 
+	@RequestMapping(value = "/paypay")
+	public void paypay(String id,int amount) {
+		System.out.println("paypay id : "+id);
+		System.out.println("payamount : " +amount);
+		int result = service.paypay(id, amount);
+		System.out.println(result);
+	}
+	
+	
 }
 	
 

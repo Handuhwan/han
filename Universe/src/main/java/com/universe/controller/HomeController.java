@@ -12,16 +12,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.universe.criteria.Criteria;
+import com.universe.criteria.PageVO;
 import com.universe.domain.ProductVO;
 import com.universe.service.HomeService;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.log4j.Log4j;
 
 
 @Controller
 @AllArgsConstructor
 @Data
+@Log4j
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -29,15 +33,17 @@ public class HomeController {
 	private HomeService hservice;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model ) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(Model model,Criteria cri ) {
+		
 		Date today = new Date();
 		double Dtime= today.getTime();
-		List<ProductVO> list = hservice.HomeList();
+	
+		List<ProductVO> list = hservice.getlistWithPaging(cri);
+		int total  = hservice.getTotal(cri);
 		int size = list.size();
-		for(int i =0; size>i; i++) {
 		
-			
+		for(int i =0; size>i; i++) {
+	
 		double pdate = list.get(i).getIndate().getTime();
 		int betweenTime = (int) Math.floor((Dtime-pdate) / 1000 / 60) ;
 		int betweenHour = betweenTime / 60;
@@ -61,17 +67,14 @@ public class HomeController {
 		}else {
 			list.get(i).setRealrealdate((betweenDay / 365) + "년");
 	
-		}
+		}//else end
+		} //for end
 		
-		
-		}
-		
-		
+		System.out.println("실행전");
 		model.addAttribute("homelist",list);
-		
+		model.addAttribute("pageMaker",new PageVO(cri, total));
+		System.out.println("실행완료");
 		return "index";
 	}
-	
-	
-	
+
 }

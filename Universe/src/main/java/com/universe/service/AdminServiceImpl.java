@@ -48,15 +48,18 @@ public class AdminServiceImpl implements AdminService {
 		return mapper.admin_alert();
 	}
 	
+	//검색기능
 	@Override
 	public List<MemberVO> adminmenu(String sta) {
 		return mapper.adminmenu(sta);
 	}
 	
+	//카테고리별 출력
 	@Override
 	public List<MemberVO> allList() {
-		
 		return mapper.allList();
 	}
+	
+	
 
-}
+}//fin

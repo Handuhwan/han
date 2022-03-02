@@ -1544,6 +1544,37 @@ th {
 }
 
 
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 .preview img{
 	width:200px;
 	height:200px;
@@ -1558,6 +1589,7 @@ th {
 .allblock0{
 	display:block
 }
+<<<<<<< HEAD
 
 .fTyTGh {
 	position: absolute;
@@ -1641,3 +1673,14 @@ th {
 
 
 
+=======
+#mypayplus{
+	text-align:right;
+	width:90px;
+	border:0;
+	background:#fff;
+}
+#realmypagepaybtn{
+	display:none;
+}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git

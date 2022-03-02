@@ -2,25 +2,42 @@ package com.universe.controller;
 
 import java.io.File;
 import java.security.Principal;
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+=======
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.stereotype.Controller;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+=======
+import org.springframework.ui.Model;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+<<<<<<< HEAD
 import com.universe.criteria.Criteria;
 import com.universe.domain.FaqVO;
+=======
+import com.universe.domain.MemberVO;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import com.universe.domain.ProductVO;
 import com.universe.service.ProductService;
 
@@ -103,18 +120,65 @@ public class ProductController {
 		return "redirect:/mypage/manage";
 	}
 	
-	private String getFolder() { //파일 이름 넣기 매소드이므로  항상 맨밑으로 보내서 밑에서 유지한다
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = new Date();
-		String str = sdf.format(date);
-		return str.replace("-", File.separator); // 날짜분리
-	}
+
 	
 	@RequestMapping(value="/productview")
-	public void productview() {
+	public void productview(@RequestParam("pno") int pno,Model model,@AuthenticationPrincipal Authentication auth) {
+		System.out.println(pno +"값");
+		ProductVO pvo = new ProductVO();
+		int jjimcheck = 0;
 		
+		
+		
+		if(auth!=null) {
+			
+			String id = auth.getName();
+			jjimcheck = pservice.productjjimcheck(pno, id);
+			model.addAttribute("jjimcheck", jjimcheck);
+		}
+		
+		
+		pvo = pservice.Productview(pno);
+		List<ProductVO>productsaler = new ArrayList<ProductVO>();
+		
+		productsaler = pservice.productsalernew(pvo.getId());
+		
+		
+		Date today = new Date();
+		double Dtime= today.getTime();
+		
+		double pdate = pvo.getIndate().getTime();
+		int betweenTime = (int) Math.floor((Dtime-pdate) / 1000 / 60) ;
+		int betweenHour = betweenTime / 60;
+		int betweenDay = betweenTime / 60 / 24;
+		String indate = null;
+		if(betweenTime<1) {
+			pvo.setRealrealdate("방금전");
+			
+		}else if(betweenTime < 60) {
+			indate = Integer.toString(betweenTime);
+			pvo.setRealrealdate(indate + " 분 전");
+	
+		}else if(betweenHour <24) {
+			indate = Integer.toString(betweenHour);
+			pvo.setRealrealdate(indate+"시간 전");
+		
+		}else if(betweenDay< 365) {
+			pvo.setRealrealdate(betweenDay+"일 전");
+			
+		}else {
+			pvo.setRealrealdate((betweenDay / 365) + "년");
+	
+		}
+		
+		model.addAttribute("saler",productsaler);
+		model.addAttribute("best",pservice.bestproduct()); //best상품
+		model.addAttribute("view",pvo );
+		
+		System.out.println("con productview end");
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "/productList")
 	public @ResponseBody List<ProductVO> recentList(String id, int no) {
 		
@@ -191,3 +255,28 @@ public class ProductController {
 
 
 
+=======
+	@RequestMapping(value = "/productjjim")
+	@ResponseBody
+	public int productjjim(int pno,@AuthenticationPrincipal Authentication prin) { // jjim in
+		System.out.println("ajax돌아감 찜");
+		String id = prin.getName();
+		
+		
+		int count = pservice.productjjim(pno, id);
+		System.out.println("ajax돌아감 찜 끝남");
+		return count;
+	}
+	@RequestMapping(value = "/productjjimdown")
+	@ResponseBody
+	public int productjjimdown(int pno,@AuthenticationPrincipal Authentication prin) {
+		System.out.println("ajax 찜 다운 실행");
+		String id = prin.getName();
+		
+		int count = pservice.productjjimdel(pno, id);
+		System.out.println("ajax 찜 삭제 끝남");
+		return count;
+	}
+	
+}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
