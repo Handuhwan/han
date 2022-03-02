@@ -21,7 +21,7 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
-<<<<<<< HEAD
+
 				<sec:authorize access="isAuthenticated()">
 					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 					<c:choose>
@@ -33,17 +33,15 @@
 						</c:otherwise>
 					</c:choose>
 				</sec:authorize>
-=======
+
 				<a href="new" class="myStoreLink">내 상점 관리</a>
-				
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
-<<<<<<< HEAD
+
 						<sec:authorize access="isAuthenticated()">
 							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 							<c:choose>
@@ -55,10 +53,9 @@
 								</c:otherwise>
 							</c:choose>
 						</sec:authorize>
-=======
+
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 			
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>
 				</div>
 				<div class="user_info">

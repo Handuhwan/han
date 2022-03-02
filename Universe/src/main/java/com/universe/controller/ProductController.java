@@ -2,42 +2,41 @@ package com.universe.controller;
 
 import java.io.File;
 import java.security.Principal;
-<<<<<<< HEAD
+
 import java.text.SimpleDateFormat;
-=======
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-<<<<<<< HEAD
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-=======
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-=======
+
 import org.springframework.ui.Model;
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-<<<<<<< HEAD
+
 import com.universe.criteria.Criteria;
 import com.universe.domain.FaqVO;
-=======
+
 import com.universe.domain.MemberVO;
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 import com.universe.domain.ProductVO;
 import com.universe.service.ProductService;
 
@@ -178,7 +177,7 @@ public class ProductController {
 		System.out.println("con productview end");
 	}
 	
-<<<<<<< HEAD
+
 	@RequestMapping(value = "/productList")
 	public @ResponseBody List<ProductVO> recentList(String id, int no) {
 		
@@ -221,41 +220,9 @@ public class ProductController {
 	}
 	
 	
-}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 	@RequestMapping(value = "/productjjim")
 	@ResponseBody
 	public int productjjim(int pno,@AuthenticationPrincipal Authentication prin) { // jjim in
@@ -279,4 +246,4 @@ public class ProductController {
 	}
 	
 }
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+

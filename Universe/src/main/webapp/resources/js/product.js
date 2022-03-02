@@ -60,41 +60,6 @@ var len = jum.value.length
 }
  
  
-<<<<<<< HEAD
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-=======
  $(function(){ //view페이지 active 
  
  	var i =$(".pcarousel").children("div").first();
@@ -153,4 +118,4 @@ function productviewjjimdown(pno){ //찜 삭제
 		}
 	}) //ajax end
 } // function end
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+

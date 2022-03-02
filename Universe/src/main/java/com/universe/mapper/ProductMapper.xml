@@ -9,7 +9,6 @@
 		(pno,title,content,kind,price,quantity,location,condition,exchange,id,img1,img2,img3) 
 		values
 		(product_seq.nextval,#{title},#{content},#{kind},#{price},#{quantity},#{location},#{condition},#{exchange},#{id},#{img1},#{img2},#{img3})
-<<<<<<< HEAD
 	</insert>
 	
 	<!-- 최신순 상품리스트 -->
@@ -32,12 +31,6 @@
 		select * from product where id = #{id} order by price asc
 	</select>
 	
-  
-=======
-					
-		
-	</insert>  
-  	
   	
   	<select id="Productview" resultType="com.universe.domain.ProductVO">
   		 select * from product where pno=#{pno}
@@ -84,6 +77,6 @@
   	<select id="productjjimcheck" resultType="int">
   		select count(*) from productlikecount where pno=#{pno} and id=#{id}
   	</select>
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
   
 </mapper>
