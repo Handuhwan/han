@@ -14,10 +14,13 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/table.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner1.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		    <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/hambuk.jpg" alt="...">
+		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner3.jpg" alt="...">
+		    </div>  <!-- item end  -->
+		     <div class="item">
+		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner4.jpg" alt="...">
 		    </div>  <!-- item end  -->
 		   
 		  </div> <!-- item inner box -->
@@ -31,7 +34,7 @@
 			
 			
 			
-		<div class="container" style="margin-top:90px; margin-bottom:90px;">
+		<div class="container" style="margin-top:40px; margin-bottom:90px;">
 			<div class="col-md-12">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
@@ -40,12 +43,9 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/table.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner2.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
-		    <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/hambuk.jpg" alt="...">
-		    </div>  <!-- item end  -->
-		   
+		 
 		  </div> <!-- item inner box -->
 		
 	
