@@ -92,12 +92,14 @@
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
+<<<<<<< HEAD
 				<form id="frm"name="header_logout" method="post" >
 
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
 				<button onclick ="header_logouts()" type="button" style="color:rgb(103 103 103);">로그아웃</button></span>
+
 
 				</form>
 				</sec:authorize>

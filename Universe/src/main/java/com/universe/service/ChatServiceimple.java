@@ -28,7 +28,7 @@ public class ChatServiceimple implements ChatService {
 			System.out.println("판매번호 : " +pno);
 			List<ChatVO> clist = new ArrayList<ChatVO>(); 
 			
-		if(id.equals(person) || pno==0) { // 본인 채팅방 끌고올떄
+		if(id.equals(person)) { // 본인 채팅방 끌고올떄
 			System.out.println("1번 조건 실행");
 			clist = cmapper.mychatroom(id);
 			

@@ -63,9 +63,10 @@
 						포인트&nbsp;:&nbsp;<span id="mymoeny">
 						<input disabled="disabled" value="${memberInfo.point} 원" type="text" id="mypayplus" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></span>&nbsp;
 						
-						<input type="hidden" id="mypayId" value="${memberInfo.id }">
+						
 						<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
 						<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
+					
 					</div>
 					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
 						상점오픈일&nbsp;:&nbsp;<span id="storeTimeValue"></span>
@@ -698,12 +699,8 @@ $(function() {
 $("#check_module").click(function () {
 	
 	var pageid="${memberInfo.id}"
-	var id="";
-	<sec:authorize access="isAuthenticated()">
+	var id="${logid}";
 	
-	id = '<sec:authentication property="principal.member.id"/>';
-
-	</sec:authorize>
 
 	if(id !='' || pageid==id){
 
