@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Universe</title>
+<link rel="icon" type="image/png" href="../resources/images/favicon.ico"/>
 
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
@@ -91,19 +92,12 @@
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><a href="/member/login" style="color:rgb(103 103 103);">로그인</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/member/join" style="color:rgb(103 103 103);">회원가입</a></span>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-				<form action="/admin/adminLogout" method="post" name="header_logout">
+				<form id="frm"name="header_logout" method="post" >
 
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
-
-				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-
-
-
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
 
 				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
-				<button onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
+				<button onclick ="header_logouts()" type="button" style="color:rgb(103 103 103);">로그아웃</button></span>
 
 				</form>
 				</sec:authorize>
@@ -186,6 +180,55 @@
 			
 			
 		
+		 <script>
+
+
+//function naverLogout() {
+	//sessionStorage.clear();
+	//alert("네이버")
+	//var form= $("#frm")
+	//frm.action="/admin/adminLogout"
+	//frm.submit();
+	//var win = window.open("https://nid.naver.com/nidlogin.logout")
+	//storage.removeItem(id);
+	//naverLogin.logout();
+	
+	
+//}
+var testPopUp;
+function openPopUp() {
+    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+}
+function closePopUp(){
+    testPopUp.close();
+}
+
+function naverLogout() {
+	openPopUp();
+	setTimeout(function() {
+		closePopUp();
+		}, 1000);
+	
+}
+
+
+function kakaoLogout() {
+	alert("카카오")
+      sessionStorage.clear();
+     
+        }
+        
+function signOut() {
+	
+	
+	alert("구글")
+	var form= $("#frm")
+	frm.action="/admin/adminLogout"
+		frm.submit();
+	
+	var win = window.open("https://accounts.google.com/Logout");
+}
+</script>
 		
 	
 		

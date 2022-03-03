@@ -67,20 +67,31 @@ $(function(){ // top버튼
 
 })
 
-function header_logout(){ //헤더 로그아웃 버튼
+function header_logouts(){ //헤더 로그아웃 버튼
+	alert("dd"); 
+	var form= $("#frm")
+	frm.action="/admin/adminLogout"
+
 	
 	if(kakaoLogout()){
-		header_logout.submit();
-		return true;
-	}else if(naverLogout()){
-		header_logout.submit();
-		return true;
-	}else if(signOut()){
-		header_logout.submit();
-		return true;
-	}
-	header_logout.submit();
-	return false;
+	alert("kakao");
+		frm.submit();
+	
+		
+	} if(naverLogout()){
+	alert("naver");
+		frm.submit();
+
+		
+	} if(signOut()){
+	alert("google");
+
+
+		
+	}alert("last")
+	frm.submit();
+	
+	
 }
 
 
