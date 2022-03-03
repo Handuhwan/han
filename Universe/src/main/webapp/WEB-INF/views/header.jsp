@@ -93,18 +93,7 @@
 				<sec:authorize access="isAuthenticated()">
 				<form action="/admin/adminLogout" method="post" name="header_logout">
 
-				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
-
-				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-
-
-
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;"><button type="submit" style="color:rgb(103 103 103);">로그아웃</button></span>
-
-				<span style="font-size:13px; font-family: 'Noto Sans KR', sans-serif;">
-				<button onclick="header_logout()" style="color:rgb(103 103 103);">로그아웃</button></span>
-
+				
 				</form>
 				</sec:authorize>
 				</div><!-- right end -->
