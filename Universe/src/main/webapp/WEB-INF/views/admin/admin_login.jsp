@@ -38,7 +38,7 @@
 		    <input type="password" placeholder="Enter Password" name="password" id="password" required>
 		        
 		    <label class="login_wrong">
-		    	가입하지 않은 아이디이거나, 잘못된 비밀번호 입니다. <!-- pw가 틀렸을 시 이 영역에 저 멘트가 뜨게 -->
+		    	${msg } <!-- pw가 틀렸을 시 이 영역에 저 멘트가 뜨게 -->
 		    </label>
 	    </div>
 	
