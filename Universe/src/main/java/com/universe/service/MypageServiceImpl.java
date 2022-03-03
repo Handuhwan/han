@@ -56,13 +56,7 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	@Override
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int likeCount(String id) {
 		return mapper.likeCount(id);
 	}
@@ -72,18 +66,12 @@ public class MypageServiceImpl implements MypageService {
 		return mapper.reviewCount(id);
 	}
 	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int paypay(String id, int amount) {
 		
 		return mapper.paypay(id, amount);
 	}
-<<<<<<< HEAD
+
 	
 	@Override
 	public List<ProductVO> manageList(Criteria cri) {
@@ -102,12 +90,9 @@ public class MypageServiceImpl implements MypageService {
 		 
 		return mapper.manageDelete(id, pno);
 	}
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
+
 }
 
 

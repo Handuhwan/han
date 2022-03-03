@@ -39,7 +39,7 @@
 				rownum rn ,pno,title,content,kind,price,indate,quantity,location,condition,exchange,
 				status,id,likecount,viewcount,img1,img2,img3 
 				from product 
-				where 
+				where pno > 0 and
 			]]>	
 		
 			<include refid="criteria"></include>

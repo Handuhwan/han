@@ -12,7 +12,7 @@
 				<div class="sc-wRHdD DcYnj">
 					<nav class="sc-cClmTo bnFEIX">
 						<div class="sc-kOCNXg cnmmrB">
-							<a class="sc-cZLAbK kSJVTd" href="new">상품등록</a>
+							<a class="kSJVTd" href="new">상품등록</a>
 						</div>
 						<div class="sc-kOCNXg gYlEW">
 							<a class="sc-cZLAbK kSJVTd" style="color: red;"
