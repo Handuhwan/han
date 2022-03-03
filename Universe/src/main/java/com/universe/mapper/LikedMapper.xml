@@ -5,7 +5,7 @@
 	
 	<!-- 찜 최신순 출력 -->
 	<select id="recentList" resultType="com.universe.domain.ProductVO">
-		select p.pno, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
+		select l.pno, l.id, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
 		from product p, liked l
 		where l.id = #{id} and p.pno = l.pno 
 		order by indate desc
@@ -13,7 +13,7 @@
 	
 	<!-- 찜 인기순 출력 -->
 	<select id="likeList" resultType="com.universe.domain.ProductVO">
-		select p.pno, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
+		select l.pno, l.id, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
 		from product p, liked l
 		where l.id = #{id} and p.pno = l.pno 
 		order by likecount desc
@@ -21,7 +21,7 @@
 	
 	<!-- 찜 저가순 출력 -->
 	<select id="rowpriceList" resultType="com.universe.domain.ProductVO">
-		select p.pno, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
+		select l.pno, l.id, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
 		from product p, liked l
 		where l.id = #{id} and p.pno = l.pno 
 		order by price asc
@@ -29,7 +29,7 @@
 	
 	<!-- 찜 고가순 출력 -->
 	<select id="highpriceList" resultType="com.universe.domain.ProductVO">
-		select p.pno, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
+		select l.pno, l.id, p.title, p.price, p.indate, p.location, p.status, p.img1, p.viewcount
 		from product p, liked l
 		where l.id = #{id} and p.pno = l.pno 
 		order by price desc

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 ul, ol {list-style: none;}
-a {text-decoration: none;}
+a {text-decoration-line: none !important;}
 
 .topmybox {
 	margin: 30px 0;
@@ -30,6 +30,29 @@ a {text-decoration: none;}
 .mybox_left > .myStoreLink {
 	padding: 5px 10px;
 	border: 1px solid #e8e8e8;
+	font-weight: bold;
+}
+
+.mybox_left > .myStoreLink:hover {
+	padding: 5px 10px;
+	border: 1px solid #e8e8e8;
+	background: #cfd4f4;
+	color: #fff;
+	font-weight: bold;
+}
+
+.mybox_left > .myStoreLink2 {
+	padding: 5px 25px;
+	border: 1px solid #e8e8e8;
+	font-weight: bold;
+}
+
+.mybox_left > .myStoreLink2:hover {
+	padding: 5px 25px;
+	border: 1px solid #e8e8e8;
+	background: #cfd4f4;
+	color: #fff;
+	font-weight: bold;
 }
 
 .mybox_right {
@@ -314,8 +337,8 @@ a {text-decoration: none;}
 .selectCheck::before {
     content: "";
     position: absolute;
-    bottom: 5px;
-    left: 2px;
+    bottom: 7px;
+    left: 3px;
     border-width: 2px;
     border-style: solid;
     border-color: transparent rgb(204, 204, 204) rgb(204, 204, 204) transparent;
@@ -476,6 +499,7 @@ a {text-decoration: none;}
 }
 
 .linkCheck {
+	top: -5px;
     width: 24px;
     height: 24px;
     border: 1px solid rgb(238, 238, 238);
@@ -487,8 +511,8 @@ a {text-decoration: none;}
 .linkCheck::before {
     content: "";
     position: absolute;
-    bottom: 5px;
-    left: 2px;
+    bottom: 7px;
+    left: 3px;
     border-width: 2px;
     border-style: solid;
     border-color: transparent rgb(204, 204, 204) rgb(204, 204, 204) transparent;
@@ -530,6 +554,7 @@ a {text-decoration: none;}
 .productContent {
     width: 363px;
     flex-shrink: 0;
+    padding-left: 20px;
 }
 
 .productImg > img {
@@ -595,7 +620,6 @@ a {text-decoration: none;}
 }
 
 .dcoOvl {
-    width: 196px;
     margin-right: 11px;
     margin-bottom: 11px;
 }
@@ -768,7 +792,7 @@ button {
 }
 
 .DcYnj {
-    height: 4rem;
+    height: 8rem;
     border-bottom: 1px solid rgb(244, 244, 250);
     display: flex;
     -webkit-box-pack: center;
@@ -810,6 +834,12 @@ button {
     margin-right: 2rem;
 }
 
+.locationName {
+	position: absolute;
+    bottom: 11px;
+}
+
+}
 .kSJVTd {
     padding: 0.5rem;
 }
@@ -1499,7 +1529,6 @@ th {
 	display:inline-block;
 }
 
-<<<<<<< HEAD
 .textBox {
 	position: absolute;
     right: 140px;
@@ -1513,6 +1542,110 @@ th {
     right: 140px;
     color: rgb(136, 136, 136);
 }
+
+
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+.preview img{
+	width:200px;
+	height:200px;
+	margin-left:42px;
+	margin-top:20px;
+}
+
+#imgblock .allblock1, .allblock2{
+	display:none;
+}
+
+.allblock0{
+	display:block
+}
+<<<<<<< HEAD
+
+.fTyTGh {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.soldout {
+	font-size: larger;
+    font-weight: bold;
+}
+
+.exSGCd {
+    height: 48px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.glWKMh {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+}
+
+.glWKMh > img {
+    margin-right: 3px;
+}
+
+.selectStatus {
+	position: absolute;
+    left: 420px;
+    height: 5rem;
+    border: 1px solid rgb(195, 194, 204);
+    border-radius: 2px;
+    width: 90px;
+}
+
+.selectStatus:hover {
+	border: #000;
+}
+
+
+
 
 
 
@@ -1541,17 +1674,13 @@ th {
 
 
 =======
-.preview img{
-	width:200px;
-	height:200px;
-	margin-left:42px;
-	margin-top:20px;
+#mypayplus{
+	text-align:right;
+	width:90px;
+	border:0;
+	background:#fff;
 }
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-
-#imgblock .allblock1, .allblock2{
+#realmypagepaybtn{
 	display:none;
 }
-.allblock0{
-	display:block
-}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git

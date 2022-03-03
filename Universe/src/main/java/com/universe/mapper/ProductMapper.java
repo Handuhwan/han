@@ -2,6 +2,9 @@ package com.universe.mapper;
 
 import java.util.List;
 
+<<<<<<< HEAD
+import org.apache.ibatis.annotations.Param;
+=======
 
 import org.apache.ibatis.annotations.Param;
 
@@ -9,11 +12,15 @@ import org.apache.ibatis.annotations.Param;
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import com.universe.domain.ProductVO;
 
 public interface ProductMapper {
 
+<<<<<<< HEAD
+=======
 	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public List<ProductVO> recentList(String id);
 	public List<ProductVO> viewcountList(String id);
 	public List<ProductVO> highPriceList(String id);
@@ -21,9 +28,12 @@ public interface ProductMapper {
 	
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public void ProductInsert(ProductVO pvo); //상품등록
 	
 	public ProductVO Productview(int pno); // 상품보기
@@ -44,9 +54,13 @@ public interface ProductMapper {
 	
 	public int productjjimcount(int pno); // 찜 카운터 ajax
 	
+<<<<<<< HEAD
+	public int productjjimcheck(@Param("pno") int pno,@Param("id") String id); //찜 체크 버튼 1 0
+=======
 	public int productjjimcheck(@Param("pno") int pno,@Param("id") String id); //찜 체크 버튼 1 0
 <<<<<<< HEAD
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

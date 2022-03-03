@@ -1,4 +1,8 @@
 package com.universe.service;
+<<<<<<< HEAD
+
+import java.util.ArrayList;
+=======
 
 <<<<<<< HEAD
 =======
@@ -8,6 +12,7 @@ import java.util.ArrayList;
 <<<<<<< HEAD
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.util.List;
 
@@ -31,10 +36,14 @@ public class ProductServiceImple implements ProductService {
 		mapper.ProductInsert(pvo);
 	}
 	
+<<<<<<< HEAD
+	@Override
+=======
 	@Override
 <<<<<<< HEAD
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public List<ProductVO> productList(String id, int no) {
 		
@@ -50,11 +59,15 @@ public class ProductServiceImple implements ProductService {
 			plist = mapper.highPriceList(id);
 		}
 		return plist;
+<<<<<<< HEAD
+	}
+=======
 	}
 <<<<<<< HEAD
 
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public ProductVO Productview(int pno) { // 상품 view
 		
@@ -96,9 +109,36 @@ public class ProductServiceImple implements ProductService {
 			
 		return mapper.productjjimcheck(pno, id);
 	}
+<<<<<<< HEAD
+	
+=======
 	
 <<<<<<< HEAD
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

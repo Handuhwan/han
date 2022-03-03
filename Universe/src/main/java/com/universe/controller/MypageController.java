@@ -7,10 +7,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.annotation.JacksonInject.Value;
+import com.universe.criteria.Criteria;
+import com.universe.criteria.PageVO;
 import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
@@ -35,19 +39,20 @@ public class MypageController {
 	@Setter (onMethod_ = @Autowired)
 	private MypageService service;
 	
-	@GetMapping("/mypage")
+	@GetMapping("/mypage/{id}")
 	public void mypage(@RequestParam("id") String id, Model model) {
 		
 		
 		UserVO uvo = service.infomationAboutUser(id);
 		
 		id = uvo.getId();
+		System.out.println("스토어 ID : "+id);
 		
 		service.storePlusCount(id);
-		System.out.println("여기까지실행1");
 		int userCount = service.selectUserCount(id);
-		System.out.println("여기까지실행2");
 		int pCount = service.selectProductCount(id);
+<<<<<<< HEAD
+=======
 
 		System.out.println("여기까지실행3");
 <<<<<<< HEAD
@@ -56,15 +61,21 @@ public class MypageController {
 
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int faqCount = service.faqCount(id);
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int likeCount = service.likeCount(id);
 		int reviewCount = service.reviewCount(id);
 		
 	    model.addAttribute("memberInfo", uvo);
+<<<<<<< HEAD
+=======
 		System.out.println(faqCount);
 		System.out.println("여기까지실행4");
 		log.info("방문자 수 : "+userCount);
@@ -77,21 +88,28 @@ public class MypageController {
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
 		model.addAttribute("faqCount", faqCount);
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("likeCount", likeCount);
 		model.addAttribute("rCount", reviewCount);
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 		
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
  		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 	@GetMapping("/new")
@@ -100,11 +118,27 @@ public class MypageController {
 	}
 	
 	@GetMapping("/manage")
-	public void manage(@RequestParam("id") String id, Model model) {
+	public void manage(@RequestParam("id") String id, Model model, Criteria cri) {
+		
+		int total = service.manageTotalCount(cri);
+		System.out.println("상품관리할 아이디 : "+id);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("list", service.manageList(cri));
+		model.addAttribute("pageMaker", new PageVO(cri, total));
 		
 	}
 	
-	@GetMapping("/details")
+	@ResponseBody
+	@GetMapping(value = "/manageRemove",
+			produces = { MediaType.TEXT_PLAIN_VALUE })
+	public String manageRemove(String id, int pno) {
+		
+		String result = Integer.toString(service.manageDelete(id, pno));
+		return result;
+	}
+	
+	@GetMapping("/details/{id}")
 	public void details(@RequestParam("id") String id, Model model) {
 		
 	}

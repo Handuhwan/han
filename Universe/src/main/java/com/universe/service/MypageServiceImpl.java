@@ -1,8 +1,12 @@
 package com.universe.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.universe.criteria.Criteria;
+import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.mapper.mypageMapper;
 
@@ -54,7 +58,10 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int likeCount(String id) {
 		return mapper.likeCount(id);
@@ -67,15 +74,39 @@ public class MypageServiceImpl implements MypageService {
 	
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int paypay(String id, int amount) {
 		
 		return mapper.paypay(id, amount);
 	}
 <<<<<<< HEAD
+	
+	@Override
+	public List<ProductVO> manageList(Criteria cri) {
+		
+		return mapper.manageList(cri);
+	}
+	
+	 @Override
+	public int manageTotalCount(Criteria cri) {
+		
+		return mapper.manageTotalCount(cri);
+	}
+	 
+	 @Override
+	public int manageDelete(String id, int pno) {
+		 
+		return mapper.manageDelete(id, pno);
+	}
+=======
+<<<<<<< HEAD
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 

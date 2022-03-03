@@ -11,7 +11,11 @@
 <<<<<<< HEAD
 		(product_seq.nextval,#{title},#{content},#{kind},#{price},#{quantity},#{location},#{condition},#{exchange},#{id},#{img1},#{img2},#{img3})
 =======
+<<<<<<< HEAD
 		(product_seq.nextval,#{title},#{content},#{kind},#{price},#{quantity},#{location},#{condition},#{exchange},#{id},#{img1},#{img2},#{img3})
+=======
+		(product_seq.nextval,#{title},#{content},#{kind},#{price},#{quantity},#{location},#{condition},#{exchange},#{id},#{img1},#{img2},#{img3})
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	</insert>
 	
@@ -35,10 +39,13 @@
 		select * from product where id = #{id} order by price asc
 	</select>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 	 
   	
 =======
 	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
   	
   	<select id="Productview" resultType="com.universe.domain.ProductVO">
@@ -85,10 +92,14 @@
   	
   	<select id="productjjimcheck" resultType="int">
   		select count(*) from productlikecount where pno=#{pno} and id=#{id}
+<<<<<<< HEAD
+  	</select>
+=======
   	</select>
 <<<<<<< HEAD
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
   
 </mapper>

@@ -4,9 +4,12 @@ import java.io.File;
 import java.security.Principal;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 import java.text.SimpleDateFormat;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,19 +18,27 @@ import java.util.UUID;
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.stereotype.Controller;
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
@@ -35,10 +46,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.ui.Model;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,12 +62,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 import com.universe.criteria.Criteria;
 import com.universe.domain.FaqVO;
 
 import com.universe.domain.MemberVO;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import com.universe.domain.ProductVO;
 import com.universe.service.ProductService;
@@ -193,16 +211,22 @@ public class ProductController {
 		
 		System.out.println("con productview end");
 	}
+<<<<<<< HEAD
+	
+=======
 	
 <<<<<<< HEAD
 =======
 
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	@RequestMapping(value = "/productList")
 	public @ResponseBody List<ProductVO> recentList(String id, int no) {
 		
 		List<ProductVO> plist = new ArrayList<ProductVO>();
+		System.out.println("상품리스트 ID : "+id);
 		plist = pservice.productList(id, no);
+		
 		
 		Date today = new Date();
 	    double Dtime= today.getTime();
@@ -238,6 +262,9 @@ public class ProductController {
 	    }
 	    return plist;
 	}
+<<<<<<< HEAD
+	
+=======
 	
 	
 
@@ -248,6 +275,7 @@ public class ProductController {
 
 =======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	@RequestMapping(value = "/productjjim")
 	@ResponseBody
@@ -274,5 +302,8 @@ public class ProductController {
 }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 >>>>>>> branch 'master' of https://github.com/Handuhwan/han.git

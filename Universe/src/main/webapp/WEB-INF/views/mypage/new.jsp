@@ -11,7 +11,7 @@
 			<div class="sc-jTqLGJ lfQZRP">
 				<div class="sc-wRHdD DcYnj">
 					<nav class="sc-cClmTo bnFEIX">
-						<div class="sc-kOCNXg cnmmrB"><a class="sc-cZLAbK kSJVTd" href="new">상품등록</a></div>
+						<div class="sc-kOCNXg cnmmrB"><a class="sc-cZLAbK kSJVTd" style="color:red;"href="new">상품등록</a></div>
 						<div class="sc-kOCNXg gYlEW"><a class="sc-cZLAbK kSJVTd" href="manage?id=<sec:authentication property="principal.member.id"/>">상품관리</a></div>
 						<div class="sc-kOCNXg gYlEW"><a class="sc-iVOTot jtVVsU" href="details?id=<sec:authentication property="principal.member.id"/>">구매 / 판매 내역</a></div>
 					</nav>
