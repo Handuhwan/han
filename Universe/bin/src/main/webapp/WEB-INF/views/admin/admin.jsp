@@ -63,11 +63,10 @@
 					<td class="column-1">${list.name}</td>
 					<td class="column-0">${list.nickname}</td>
 					<td class="column-0">${list.phone}</td>
-					<td class="column-2">
+					<td class="column-2"> <!-- manage 버튼 있는 곳 -->
 						<div class ="row">
 							<div class="col-md-6" style="text-align:right;">${list.status}</div>
 							<div class="col-md-6">
-								
 								<button type="button" class="btn_blocked" data-toggle="modal" data-target="#${list.id}" >Manage</button>
 							</div>
 						</div> <!-- /.row  -->
@@ -111,7 +110,7 @@
 											</div>
 											</div>
 										</div>
-							     		<div class="block_day">
+							     		<div class="block_day"> <!-- 정지기능 radio 버튼을 클릭해야만 나오는 모달 -->
 											<div class="modal-header">
 												<h4 class="modal-title" id="myModalLabel">활동 정지 기간</h4>
 												<div class="form-check">

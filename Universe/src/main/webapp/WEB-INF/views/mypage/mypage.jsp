@@ -1,8 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <%@ include file="../header.jsp"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal.member.id" var="logid"/>
+</sec:authorize>
 
 <!-- Contents Start -->
 <div class="container">
@@ -21,44 +24,22 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
-<<<<<<< HEAD
-				<sec:authorize access="isAuthenticated()">
-					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
-					<c:choose>
-						<c:when test="${memberInfo.id eq logID}">
-							<a href="new" class="myStoreLink2">우주톡</a>
-						</c:when>
-						<c:otherwise>
-							<a href="new" class="myStoreLink">내 상점 관리</a>
-						</c:otherwise>
-					</c:choose>
-				</sec:authorize>
-=======
-				<a href="new" class="myStoreLink">내 상점 관리</a>
 				
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+				<c:if test="${memberInfo.id == logid}">
+					<a href="new" class="myStoreLink">내 상점 관리</a>
+				</c:if>
+				<c:if test="${memberInfo.id != logid}">
+					<a href="/chat/chat?perseon=${memberInfo.id}&pno=0" class="myStoreLink2">우주톡</a>
+				</c:if>
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
-<<<<<<< HEAD
-						<sec:authorize access="isAuthenticated()">
-							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
-							<c:choose>
-								<c:when test="${memberInfo.id ne logID}">
-									<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
-								</c:when>
-								<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>
-						</sec:authorize>
-=======
-						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
-			
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+							<c:if test="${memberInfo.id == logid}">
+								<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
+							</c:if>
 					</div>
 				</div>
 				<div class="user_info">
@@ -66,9 +47,11 @@
 						포인트&nbsp;:&nbsp;<span id="mymoeny">
 						<input disabled="disabled" value="${memberInfo.point} 원" type="text" id="mypayplus" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></span>&nbsp;
 						
-						<input type="hidden" id="mypayId" value="${memberInfo.id }">
-						<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
-						<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
+						<c:if test="${memberInfo.id == logid}">
+							<input type="hidden" id="mypayId" value="${memberInfo.id }">
+							<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
+							<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
+						</c:if>
 					</div>
 					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
 						상점오픈일&nbsp;:&nbsp;<span id="storeTimeValue"></span>
@@ -83,24 +66,19 @@
 						<div class="intro_text" id="intro_text">
 							<p id="originIntro">${memberInfo.intro}</p>
 						</div>
-						<sec:authorize access="isAuthenticated()">
-							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
-							<c:choose>
-								<c:when test="${memberInfo.id eq logID}">
-									<button class="intro_btn2" id="intro_btn2" onclick="modifyIntro()">소개글 수정</button>
-								</c:when>
-								<c:otherwise>
-									<div class="intro_btn" id="intro_btn">
-										<div class="sc-gVLVqr exSGCd">
-											<a class="sc-hBbWxd glWKMh">
-												<img src="/resources/images/reportImg.png" width="14" height="14" alt="신고하기 아이콘">
-												신고하기
-											</a>
-										</div>
-									</div>
-								</c:otherwise>
-							</c:choose>
-						</sec:authorize>
+						<c:if test="${memberInfo.id == logid}">
+							<button class="intro_btn2" id="intro_btn2" onclick="modifyIntro()">소개글 수정</button>
+						</c:if>
+						<c:if test="${memberInfo.id != logid}">
+							<div class="intro_btn" id="intro_btn">
+								<div class="sc-gVLVqr exSGCd">
+									<a class="sc-hBbWxd glWKMh">
+										<img src="/resources/images/reportImg.png" width="14" height="14" alt="신고하기 아이콘">
+										신고하기
+									</a>
+								</div>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -196,8 +174,10 @@
 							<div class="likeBox">
 								<div class="likeBar">
 									<div class="selectBtn">
+									<c:if test="${memberInfo.id == logid}">
 										<input type="checkbox" class="selectCheck" id="allCheck" style="bottom: 2px;">
 										<button type="button" onclick="likeRemove()" class="scBtn">선택삭제</button>
+									</c:if>
 									</div>
 									<div class="aBtn" id="likeBtn">
 										<a class="rbBtn selected" href="javascript:likeList(0)">최신순</a>
@@ -272,17 +252,19 @@
 <script>//------------------------------------------ 상품 스크립트 ---------------------------------------------
 $(function() {
 	
-	var id = '<c:out value="${memberInfo.id}"/>';
+	var productid = '<c:out value="${memberInfo.id}"/>';
 	var productUL = $('#productList');
 	productList(0);
 	
 	console.log("상품리스트 출력실행");
-	console.log(id);
+	console.log("상품리스트 id : "+productid);
 	
 })
 	function productList(list) {
 	
-		var state = "판매완료"; 
+		var productid = '<c:out value="${memberInfo.id}"/>';
+		var state = "판매완료";
+		var state2 = "진행중";
 		var sttr = "";
 		var cnt = list+1;
 		
@@ -290,7 +272,7 @@ $(function() {
 			type : 'get',
 			url : '/product/productList',
 			data : {
-				id:id,
+				id:productid,
 				no:list
 			},
 			dataType : "json",
@@ -304,9 +286,13 @@ $(function() {
 					sttr +=		"<a class='sc-cugefK fRjjJt' href='/product/productview?pno="+result[i].pno+"'>";
 					sttr +=			"<div class='sc-fnwBNb bGOWdF'>";
 					sttr +=				"<img src='/resources/images/table.jpg' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
-											if(result[i].status == state){
+											if(result[i].status == state) {
 					sttr +=					"<div class='sc-dREXXX fTyTGh'>";
 					sttr +=						"<span class='soldout'>판 매 완 료</span>";
+					sttr +=					"</div>";
+											}else if(result[i].status == state2) {
+					sttr +=					"<div class='sc-dREXXX fTyTGh'>";
+					sttr +=						"<span class='soldout'>진 행 중</span>";
 					sttr +=					"</div>";
 											}
 					sttr +=			"</div>";
@@ -337,19 +323,21 @@ $(function() {
 </script>
 <script>//------------------------------------------ 상품문의 스크립트 ---------------------------------------------
 	
-	var id = '<c:out value="${memberInfo.id}"/>';
-	var replyer =  '<c:out value="${memberInfo.nickname}"/>'
+	var faqid = '<c:out value="${memberInfo.id}"/>'
 	
-	console.log(replyer);
-	console.log(id);
+		<sec:authorize access = "isAuthenticated()">
+			'<sec:authentication property="principal.member.nickname" var="faqReplyer" />';
+		</sec:authorize>
 
+	var faqReplyer = "${faqReplyer}"
 	var faqUL = $('.chat');
 	showList(1);
 	
 	function showList(page) {
+		console.log("문의 아이디 : "+faqid);
 		
-		replyService.getList( {id:id, page:page||1}, function(list) {
-			
+		replyService.getList( {id:faqid, page:page||1}, function(list) {
+
 			var str = "";
 			
 			if(list == null || list.length == 0) {
@@ -372,8 +360,10 @@ $(function() {
 				str +=		"<div class='chat_content'>"+list[i].reply+"</div>";
 		        str +=		"<div class='chat_btn'>";
 		        str +=			"<div class='comment_check'><img src='/resources/images/comment.png' width='17' height='14' alt='댓글달기 버튼 이미지'><button type='button' onclick='faqAnswer("+list[i].qno+")' >댓글달기</a></div>";
-		        str +=			"<div class='comment_check'><img src='/resources/images/faq_delete.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><button type='button' onclick='faqDelete("+list[i].qno+")' class='faqDeleteBtn' class='comdel'>삭제하기</a></div>";
-				str +=		"</div>";
+								if(list[i].replyer == faqReplyer) {
+				str +=			"<div class='comment_check'><img src='/resources/images/faq_delete.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><button type='button' onclick='faqDelete("+list[i].qno+")' class='faqDeleteBtn' class='comdel'>삭제하기</a></div>";
+								}
+		        str +=		"</div>";
 				str +=	"</div>";
 			}
 			faqUL.html(str);
@@ -386,12 +376,12 @@ $(function() {
 	$('#faqInsertBtn').on('click', function(e) {
 		
 		var reply = {
-			id : id,
+			id : faqid,
 			reply : $('#faqTextarea').val(),
-			replyer : replyer
+			replyer : faqReplyer
 		};
 		
-		if(replyer == null) {
+		if(faqReplyer == null) {
 			alert('로그인이 필요한 서비스입니다');
 			location.href = "/member/login";
 		}else{
@@ -408,20 +398,20 @@ $(function() {
 		
 		var listID = $("#"+qno).text();
 		
-		console.log(replyer);
+		console.log(faqReplyer);
 		console.log(listID);
 		
-		if(!replyer){
+		if(!faqReplyer){
 			alert("로그인후 이용해주세요");
 			location.href = "/member/login";
 		}
-		if(replyer != listID){
+		if(faqReplyer != listID){
 			alert("자신이 작성한 댓글만 삭제가능");
 			return;
 		}
 		replyService.remove(qno, function(result) {
-			console.log(id);
-			count(id);
+			console.log(faqid);
+			count(faqid);
 			showList(1);
 		})
 	}
@@ -439,7 +429,7 @@ $(function() {
 		$.ajax ({
 			type : "get",
 			url : "/faq/faqcount",
-			data : ({ id:id }),
+			data : ({ id:faqid }),
 			success : function(result) {
 				$("#faqCount").html(result);
 			},error : function(xhr, status, error) {
@@ -456,7 +446,8 @@ $(function() {
 
 $(function() {
 
-	var id = '<c:out value="${memberInfo.id}"/>';
+	var likeid = '<c:out value="${memberInfo.id}"/>';
+	console.log("찜 아이디 : "+likeid);
 	likeList(0);
     
 	$("#allCheck").click(function() {
@@ -482,8 +473,15 @@ $(function() {
 	}
 
 	function likeList(no) {
+		
+		<sec:authorize access = "isAuthenticated()">
+			'<sec:authentication property="principal.member.id" var="signID" />';
+		</sec:authorize>
 	
+		var likeid = '<c:out value="${memberInfo.id}"/>';
+		var signID = '${signID}';
 		var status = "판매완료"; 
+		var status2 = "진행중"; 
 		var str = "";
 		var nth = no+1;
 		
@@ -491,7 +489,7 @@ $(function() {
 			type : 'get',
 			url : '/liked/likeList',
 			data : {
-				id:id,
+				id:likeid,
 				no:no
 			},
 			dataType : "json",
@@ -503,15 +501,21 @@ $(function() {
 				for(var i=0, len=result.length || 0; i < len; i++) {
 					str +=	"<div class='selectOne' id='selectOne'>";
 					str +=		"<a class='oneLink' href='/product/productview?pno="+result[i].pno+"'>";  // <---------------------- 여기에 /product/productview경로 넣어주시면 됩니다 !!
+									if(result[i].id == signID) {
 					str +=			"<div class='productCheck'>";
 					str +=				"<input type='checkbox' onclick='chooseCheck()' name='lc' class='linkCheck' value="+result[i].pno+">";
 					str +=			"</div>";
+									}
 					str +=			"<div class='productImg'>";
 					str +=				"<img src='https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
 					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
 											if(result[i].status == status) {
 					str +=						"<div class='sc-dREXXX fTyTGh'>";
 					str +=							"<span class='soldout'>판 매 완 료</span>";
+					str +=						"</div>";
+											}else if(result[i].status == status2) {
+					str +=						"<div class='sc-dREXXX fTyTGh'>";
+					str +=							"<span class='soldout'>진 행 중</span>";
 					str +=						"</div>";
 											}
 					str +=			"</div>";
@@ -537,14 +541,13 @@ $(function() {
 	
 	function likeRemove() {
 		
-
+		var likeid = '<c:out value="${memberInfo.id}"/>';
 		var pnoCnt = $('input:checkbox[name=lc]:checked').length;
-		var thisID = id
+		var thisID = likeid
 		
 		var arr = $('input:checkbox[name=lc]:checked');
 		var values = [];
 		
-	
 		for(var i=0; i < pnoCnt; i++) {
 			values[i] = arr[i].value
 		}
@@ -568,7 +571,7 @@ $(function() {
 				data: data,
 				dataType: 'text',
 				success : function(result) {
-					likeCount(id);
+					likeCount(likeid);
 					likeList(0);
 				}
 				
@@ -578,12 +581,12 @@ $(function() {
 		}
 	}
 	
-	function likeCount(id) {
+	function likeCount(likeid) {
 		
 		$.ajax ({
 			type : 'get',
 			url : '/liked/likeCount',
-			data : ({ id:id }),
+			data : ({ id:likeid }),
 			success : function(result) {
 				$('#likeCount').html(result);
 			},error : function(xhr, status, error) {
@@ -599,7 +602,13 @@ $(function() {
 
 $(function() {
 	
-	var id = '<c:out value="${memberInfo.id}"/>';
+	var reviewid = '<c:out value="${memberInfo.id}"/>';
+	
+	<sec:authorize access = "isAuthenticated()">
+		'<sec:authentication property="principal.member.nickname" var="reviewReplyer" />';
+	</sec:authorize>
+	
+	var reviewReplyer = "${reviewReplyer}";
 	
 	reviewList(1);
 	
@@ -607,12 +616,16 @@ $(function() {
 	
 	function reviewList(page) {
 		
+		var reviewid = '<c:out value="${memberInfo.id}"/>';
+		var reviewReplyer = "${reviewReplyer}";
 		var str = "";
+		
+		console.log("리뷰 아이디 : "+reviewid);
 		
 		$.ajax ({
 			type : 'get',
-			url : '/review/pages/'+id+'/'+page,
-			data : { id:id, page:page },
+			url : '/review/pages/'+reviewid+'/'+page,
+			data : { id:reviewid, page:page },
 			dataType : "json",
 			success : function(result){
 				
@@ -645,7 +658,9 @@ $(function() {
 					str += 	"</div>";
 					str += 	"<div class='chat_content'>"+result[i].content+"</div>";
 					str += 	"<div class='chat_btn'>";
+								if(result[i].nickname == reviewReplyer) {
 					str += 		"<div class='comment_check'><img src='/resources/images/X.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><a href='javascript:reviewRemove("+result[i].rno+")'>댓글삭제</a></div>";
+								}
 					str += 	"</div>";
 					str += 	"</div>";
 					str += "</div>";
@@ -661,6 +676,7 @@ $(function() {
 	
 	function reviewRemove(rno) {
 		
+		var reviewid = '<c:out value="${memberInfo.id}"/>';
 		var data = { rno:rno };
 		
 		$.ajax ({
@@ -668,7 +684,7 @@ $(function() {
 			url : '/review/reviewDelete',
 			data : data,
 			success : function(result) {
-				reviewCount(id);
+				reviewCount(reviewid);
 				reviewList(1);
 			}
 			
@@ -677,12 +693,12 @@ $(function() {
 		
 	}
 	
-	function reviewCount(id) {
+	function reviewCount(reviewid) {
 		
 		$.ajax ({
 			type : "get",
 			url : "/review/reviewCount",
-			data : ({ id:id }),
+			data : ({ id:reviewid }),
 			dataType : 'text',
 			success : function(result) {
 				$('#rCount').html(result);
@@ -702,11 +718,11 @@ $("#check_module").click(function () {
 	
 	var pageid="${memberInfo.id}"
 	var id="";
-	<sec:authorize access="isAuthenticated()">
+		<sec:authorize access="isAuthenticated()">
+		
+		id = '<sec:authentication property="principal.member.id"/>';
 	
-	id = '<sec:authentication property="principal.member.id"/>';
-
-	</sec:authorize>
+		</sec:authorize>
 
 	if(id !='' || pageid==id){
 

@@ -56,10 +56,8 @@ public class FaqController {
 			produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> register(@RequestBody FaqVO vo){
 		
-		log.info("문의등록 내용 : "+vo);
 		int insertCount = service.register(vo);
 		
-		log.info("insertCount : "+insertCount);
 		return insertCount == 1
 				? new ResponseEntity<>("success", HttpStatus.OK)
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

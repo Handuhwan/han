@@ -1,12 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.universe.mapper.HomeMapper">
-
+		
+		
+		<sql id="criteria">
+			<trim prefix="(" suffix= ") and " prefixOverrides="OR">
+				<foreach collection="typeArr" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'L'.toString()">
+								location like '%'||#{keyword}||'%' 
+							</when>
+							<when test="type == 'C'.toString()">
+								content like '%'||#{keyword}||'%' 
+							</when>
+							<when test="type == 'T'.toString()">
+								title like '%'||#{keyword}||'%' 
+							</when>
+							
+						</choose>
+					</trim>
+				</foreach>
+			</trim>	
+	</sql>
+	
 
 	<select id="Homelist" resultType="com.universe.domain.ProductVO">
 
 	select * from product 
 	
+	</select>
+	
+		<select id="getlistWithPaging" resultType="com.universe.domain.ProductVO">
+		<![CDATA[
+			select *
+			from (
+				 select /*+ index_desc(product product_pk)*/ 
+				rownum rn ,pno,title,content,kind,price,indate,quantity,location,condition,exchange,
+				status,id,likecount,viewcount,img1,img2,img3 
+				from product 
+				where 
+			]]>	
+		
+			<include refid="criteria"></include>
+		<![CDATA[
+				 rownum <= #{pageNum} * #{amount}
+			)
+			where rn > (#{pageNum}-1) * #{amount}
+		]]>
+		
+	</select>
+	
+		<select id="getTotalCount" resultType="int">
+		
+			select count(*) from product where
+			
+			<include refid="criteria"></include>
+			<![CDATA[	
+			 pno>0
+		]]>
+	
+	</select>
+	
+	<select id="nextPage" resultType="com.universe.domain.ProductVO">
+	<![CDATA[	
+		select * from product where pno < #{pno} and rownum = 1 order by pno desc
+		]]>
+	</select>
+	
+	<select id="prevPage" resultType="com.universe.domain.ProductVO">
+		<![CDATA[	
+		select * from product where pno > #{pno} and rownum = 1 order by pno asc
+		]]>
 	</select>
  
 </mapper>

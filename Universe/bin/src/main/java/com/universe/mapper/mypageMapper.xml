@@ -28,11 +28,6 @@
 		select usercount from member where id = #{id}
 	</select>
 	
-	<!-- 해당 회원의 상품등록 정보출력 -->
-	<select id="selectProductListById" resultType="com.universe.domain.ProductVO">
-		select * from product where id = {#id}
-	</select>
-	
 	<!-- 상품의 개수 출력 -->
 	<select id="selectProductCount" resultType="int">
 		select count(*) as cnt from product where id = #{id}
@@ -42,6 +37,25 @@
 		select count(*) as cnt from faq where id = #{id}
 	</select>
 	
+<<<<<<< HEAD
+	<select id="likeCount" resultType="int">
+		select count(*) as cnt from liked where id = #{id}
+	</select>
+	
+	<select id="reviewCount" resultType="int">
+		select count(*) as cnt from review where id = #{id}
+	</select>
+	
+	
+	
+=======
+	
+	
+	<!-- paypay충전 -->
+	<update id="paypay">
+		update member set point = point + #{amount} where id=#{id}
+	</update>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </mapper>
 
 

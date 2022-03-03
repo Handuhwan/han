@@ -80,13 +80,16 @@
 	</update>
 	
 	
+	<!-- 검색기능 -->
 	<select id="adminmenu" resultType="com.universe.domain.MemberVO">
 		select * from member where status=#{str}
 	</select>
 	
+	<!-- 카테고리별 출력 -->
 	<select id="allList" resultType="com.universe.domain.MemberVO">
 		select * from member
 	</select>
+	
 	
 	
 </mapper>

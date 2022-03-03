@@ -58,43 +58,7 @@ var len = jum.value.length
  	var real = $("#pprice").val();
  	$("#pprice").val(real.replace(/,/g, "")); // 콤마제거;
 }
- 
- 
-<<<<<<< HEAD
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-=======
+
  $(function(){ //view페이지 active 
  
  	var i =$(".pcarousel").children("div").first();
@@ -153,4 +117,19 @@ function productviewjjimdown(pno){ //찜 삭제
 		}
 	}) //ajax end
 } // function end
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

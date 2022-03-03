@@ -26,18 +26,6 @@
 				</form>
 			</div>
 			
-			<div class="none_details">
-				구매 내역이 없습니다.
-			</div>
-			
-			<div class="none_details">
-				판매 내역이 없습니다.
-			</div>
-			
-			<div class="none_details">
-				정산 내역이 없습니다.
-			</div>
-			
 			<!-- Tab panes -->
 			<div class="tab-content detailsContents">
 				<div role="tabpanel" class="tab-pane active" id="buy">
@@ -75,6 +63,9 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="none_details">
+						구매 내역이 없습니다.
+					</div>
 				</div>
 				
 				<div role="tabpanel" class="tab-pane" id="sell">
@@ -112,10 +103,16 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="none_details">
+						판매 내역이 없습니다.
+					</div>
 				</div>
 				
 				<div role="tabpanel" class="tab-pane" id="calulate">
 					정산
+				</div>
+				<div class="none_details">
+					정산 내역이 없습니다.
 				</div>
 			</div>
 		

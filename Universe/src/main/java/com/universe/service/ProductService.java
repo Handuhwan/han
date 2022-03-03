@@ -6,13 +6,7 @@ import com.universe.domain.ProductVO;
 
 public interface ProductService {
 
-<<<<<<< HEAD
-	public void ProductInsert(ProductVO pvo);
-	
 	public List<ProductVO> productList(String id, int no);
-	
-=======
-	
 	
 	public void ProductInsert(ProductVO pvo); // 상품등록
 	
@@ -27,6 +21,4 @@ public interface ProductService {
 	public int productjjimdel(int pno,String id);// 찜 삭제 ajax
 	
 	public int productjjimcheck(int pno,String id); // 찜 체크 버튼
-
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

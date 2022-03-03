@@ -12,15 +12,15 @@
 				<div class="sc-wRHdD DcYnj">
 					<nav class="sc-cClmTo bnFEIX">
 						<div class="sc-kOCNXg cnmmrB"><a class="sc-cZLAbK kSJVTd" href="new">상품등록</a></div>
-						<div class="sc-kOCNXg gYlEW"><a class="sc-cZLAbK kSJVTd" href="manage">상품관리</a></div>
-						<div class="sc-kOCNXg gYlEW"><a href="" target="_blank" rel="noopener noreferrer" class="sc-iVOTot jtVVsU">구매 / 판매 내역</a></div>
+						<div class="sc-kOCNXg gYlEW"><a class="sc-cZLAbK kSJVTd" href="manage?id=<sec:authentication property="principal.member.id"/>">상품관리</a></div>
+						<div class="sc-kOCNXg gYlEW"><a class="sc-iVOTot jtVVsU" href="details?id=<sec:authentication property="principal.member.id"/>">구매 / 판매 내역</a></div>
 					</nav>
 				</div>
 				<div class="sc-hlELIx mCnrk">
 					<main class="sc-erOsFi erTKwf">
 						<section class="sc-eGXxtx dAQnYb">
 							<h2>
-								기본정보<span>*필수항목</span><button onclick="productinsertcheck()">zz</button>
+								기본정보
 							</h2>
 							<form name="productInsert" action="/product/productinsert" enctype="multipart/form-data" method="post" onsubmit="return productinsertcheck()">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
