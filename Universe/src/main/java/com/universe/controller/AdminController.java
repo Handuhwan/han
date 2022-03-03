@@ -86,7 +86,6 @@ public class AdminController {
 			 
 		 }
 		 
-		 System.out.println("이유씨"+rvo.getReason());
 		 
 			service.admin_member_forced_checked(block,rvo.getReported_id());
 			service.Admin_Reason(rvo);

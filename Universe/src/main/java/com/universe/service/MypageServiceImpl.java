@@ -52,7 +52,6 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	@Override
-<<<<<<< HEAD
 	public int likeCount(String id) {
 		return mapper.likeCount(id);
 	}
@@ -62,12 +61,10 @@ public class MypageServiceImpl implements MypageService {
 		return mapper.reviewCount(id);
 	}
 	
-=======
 	public int paypay(String id, int amount) {
 		
 		return mapper.paypay(id, amount);
 	}
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 
 

@@ -51,95 +51,31 @@
 					<th class="column-1">이름</th>
 					<th class="column-0">닉네임</th>
 					<th class="column-0">전화번호</th>
-					<th class="column-2">상태</th>
+					<th class="column-0">상태</th>
 				</tr>
-			<c:set var="num" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>	
-			<tbody id="admintbody">
-			<c:forEach var="list" items="${list}" > 
-			
-				<tr class="temp" >
-				
-					<td class="column-0">${list.id}</td>
-					<td class="column-1">${list.name}</td>
-					<td class="column-0">${list.nickname}</td>
-					<td class="column-0">${list.phone}</td>
-					<td class="column-2"> <!-- manage 버튼 있는 곳 -->
-						<div class ="row">
-							<div class="col-md-6" style="text-align:right;">${list.status}</div>
-							<div class="col-md-6">
-								<button type="button" class="btn_blocked" data-toggle="modal" data-target="#${list.id}" >Manage</button>
-							</div>
-						</div> <!-- /.row  -->
-						
-						<!-- Modal --> 
-						<form action ="/admin/admin_member_forced_eviction" method="post" onclick="blockcheck()">
-						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">		
-							<div class="modal fade" style="text-align:left;" id="${list.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<label><input type="radio" name="block" value="활동 정지"> Block</label>
-											<label><input type="radio" name="block" value="블락"> Ban</label>
-					
-											<h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>
-											<div class="block_square"><input readonly name="reported_id" value="${list.id}"></div>
-										</div>
-										<div class="modal-header">
-											<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>
-											<div class="form-check">
-											<input class="form-check-input" name="reason" type="radio" value="성인/도박 등 불법광고 및 스팸 활동" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">성인/도박 등 불법광고 및 스팸 활동</label>
-											</div>
-											
-											<div class="form-check">
-											<input class="form-check-input" name="reason" type="radio" value="바람직하지 않은 활동(광고,도배,욕설,비방 등)" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">바람직하지 않은 활동(광고,도배,욕설,비방 등)</label>
-											</div>
-											
-											<div class="form-check">
-											<input class="form-check-input" name="reason" type="radio" value="사이트 내 자체 운영 원칙에 위배되는 활동" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">사이트 내 자체 운영 원칙에 위배되는 활동</label>
-											</div>
-											
-											<div class="form-check">
-											<input class="form-check-input" name="reason" type="radio" value="" id="reason">
-											<label class="form-check-label" for="flexCheckDefault">기타</label>
-											<div class="textbox">
-											<textarea class="suspended" name="reasons"  id="suspended" placeholder="기타- 한글 25자 이내로 작성해 주세요"></textarea>
-											</div>
-											</div>
-										</div>
-							     		<div class="block_day"> <!-- 정지기능 radio 버튼을 클릭해야만 나오는 모달 -->
-											<div class="modal-header">
-												<h4 class="modal-title" id="myModalLabel">활동 정지 기간</h4>
-												<div class="form-check">
-												<input class="form-check-input" name="block_date" type="radio" value="7" id="flexCheckDefault">
-												<label class="form-check-label" for="flexCheckDefault">7일</label>
-												</div>
-												<div class="form-check">
-												<input class="form-check-input" name="block_date" type="radio" value="30" id="flexCheckDefault">
-												<label class="form-check-label" for="flexCheckDefault">30일</label>
-												</div>
-											</div>
-										</div>
-									    <div class="modal-footer">
-									    	<p>대상 회원을 처리 하시겠습니까?</p>
-									    	<button type="submit" class="btn_check">확인</button>
-									    	<button type="button" class="btn_cancel" data-dismiss="modal">취소</button>
-									    </div>
-									</div>
-								</div>
-							</div> <!-- /.modal -->
-						</form> <!-- /.form end -->
-					</td><!-- /.td end -->
-					
-				</tr>
-				</c:forEach>
-				</tbody>
-					
-			<c:set var="num" value="${num-1}"/>	
-		
+				<c:set var="num" value="${pageMaker.total -((pageMaker.cri.pageNum-1)*10)}"/>	
+					<tbody id="admintbody">
+						<c:forEach var="list" items="${list}" > 
+							<tr class="temp" >
+								<td class="column-0">${list.id}</td>
+								<td class="column-1">${list.name}</td>
+								<td class="column-0">${list.nickname}</td>
+								<td class="column-0">${list.phone}</td>
+								<c:choose>
+									<c:when test="${list.status == '활동 정지'}">
+										<td class="column-0" id="status1" style="color:#989ec6;">${list.status}</td>
+									</c:when>
+									<c:when test="${list.status == '블락'}">
+										<td class="column-0" style="color:#d58a8a;">${list.status}</td>
+									</c:when>
+									<c:otherwise>
+										<td class="column-0">${list.status}</td>
+									</c:otherwise>
+								</c:choose>
+							</tr>
+						</c:forEach>
+					</tbody>
+				<c:set var="num" value="${num-1}"/>	
 			</table>
 		</div>
 	</div>

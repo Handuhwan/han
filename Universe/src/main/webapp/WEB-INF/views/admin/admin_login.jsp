@@ -17,7 +17,6 @@
 	
 	<link rel="icon" type="image/png" href="../resources/images/favicon.ico"/>
 	<link href="../resources/css/admin.css" rel="stylesheet">
-	
 	<script src="../resources/js/admin.js"></script>
 	
 </head>
