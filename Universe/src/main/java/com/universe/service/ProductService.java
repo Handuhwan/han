@@ -6,11 +6,18 @@ import com.universe.domain.ProductVO;
 
 public interface ProductService {
 
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public List<ProductVO> productList(String id, int no);
 	
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public void ProductInsert(ProductVO pvo); // 상품등록
 	
 	public ProductVO Productview(int pno); // 상품보기
@@ -24,5 +31,9 @@ public interface ProductService {
 	public int productjjimdel(int pno,String id);// 찜 삭제 ajax
 	
 	public int productjjimcheck(int pno,String id); // 찜 체크 버튼
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

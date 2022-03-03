@@ -21,6 +21,10 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<sec:authorize access="isAuthenticated()">
 					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 					<c:choose>
@@ -32,14 +36,25 @@
 						</c:otherwise>
 					</c:choose>
 				</sec:authorize>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<a href="new" class="myStoreLink">내 상점 관리</a>
+<<<<<<< HEAD
 				
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 						<sec:authorize access="isAuthenticated()">
 							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 							<c:choose>
@@ -51,6 +66,10 @@
 								</c:otherwise>
 							</c:choose>
 						</sec:authorize>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 			
 					</div>
@@ -60,9 +79,10 @@
 						포인트&nbsp;:&nbsp;<span id="mymoeny">
 						<input disabled="disabled" value="${memberInfo.point} 원" type="text" id="mypayplus" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></span>&nbsp;
 						
-						<input type="hidden" id="mypayId" value="${memberInfo.id }">
+						
 						<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
 						<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
+					
 					</div>
 					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
 						상점오픈일&nbsp;:&nbsp;<span id="storeTimeValue"></span>
@@ -695,12 +715,8 @@ $(function() {
 $("#check_module").click(function () {
 	
 	var pageid="${memberInfo.id}"
-	var id="";
-	<sec:authorize access="isAuthenticated()">
+	var id="${logid}";
 	
-	id = '<sec:authentication property="principal.member.id"/>';
-
-	</sec:authorize>
 
 	if(id !='' || pageid==id){
 

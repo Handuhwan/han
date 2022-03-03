@@ -59,6 +59,7 @@ var len = jum.value.length
  	$("#pprice").val(real.replace(/,/g, "")); // 콤마제거;
 }
  
+<<<<<<< HEAD
  
  
  
@@ -92,6 +93,8 @@ var len = jum.value.length
  
  
  
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
  
  $(function(){ //view페이지 active 
  
@@ -151,3 +154,7 @@ function productviewjjimdown(pno){ //찜 삭제
 		}
 	}) //ajax end
 } // function end
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git

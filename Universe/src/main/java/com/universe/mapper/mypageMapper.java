@@ -18,10 +18,22 @@ public interface mypageMapper {
 	
 	public int faqCount(String id);
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int likeCount(String id);
 	
 	public int reviewCount(String id);
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	public int paypay(@Param("id") String id,@Param("amount") int amount);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 }

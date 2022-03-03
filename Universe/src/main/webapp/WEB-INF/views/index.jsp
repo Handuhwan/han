@@ -126,7 +126,7 @@ $("#pagenums>a").on("click",function(e){
 		}
 </script>
 
-
+<!-- 네이버 로그아웃 -->
 
 
 <%@ include file="footer.jsp"%>

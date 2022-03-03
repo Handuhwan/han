@@ -50,8 +50,17 @@ public class MypageController {
 		int pCount = service.selectProductCount(id);
 
 		System.out.println("여기까지실행3");
+<<<<<<< HEAD
 		//List<ProductVO> plist = service.selectProductListById(id);
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int faqCount = service.faqCount(id);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int likeCount = service.likeCount(id);
 		int reviewCount = service.reviewCount(id);
 		
@@ -64,12 +73,24 @@ public class MypageController {
 		
 		model.addAttribute("memberInfo", uvo);
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
 		model.addAttribute("faqCount", faqCount);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("likeCount", likeCount);
 		model.addAttribute("rCount", reviewCount);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
  		
 	}
 	

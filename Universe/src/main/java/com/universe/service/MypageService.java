@@ -21,16 +21,27 @@ public interface MypageService {
 		// 상품문의 개수 출력
 		public int faqCount(String id);
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		// 찜 개수 출력
 		public int likeCount(String id);
 		
 		// 후기 개수 출력
 		public int reviewCount(String id);
 		
+<<<<<<< HEAD
 		
 		
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		// paypay충전
 		public int paypay(String id,int amount);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 
 
