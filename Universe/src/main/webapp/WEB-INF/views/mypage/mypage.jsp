@@ -21,7 +21,10 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<sec:authorize access="isAuthenticated()">
 					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 					<c:choose>
@@ -33,15 +36,25 @@
 						</c:otherwise>
 					</c:choose>
 				</sec:authorize>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				<a href="new" class="myStoreLink">내 상점 관리</a>
+<<<<<<< HEAD
+				
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 						<sec:authorize access="isAuthenticated()">
 							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
 							<c:choose>
@@ -53,7 +66,10 @@
 								</c:otherwise>
 							</c:choose>
 						</sec:authorize>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 			
 					</div>

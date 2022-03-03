@@ -43,24 +43,24 @@
 				<div class="nav">
 					<ul>
 						<li>
-							<img src="/resources/images/logo_03-1.png" class="admin_logo">
+							<img src="/resources/images/temp_logo/wjmarket.png" class="admin_logo">
 						</li>	
 							
-						<li class="admin_ctgry" id="now" style="font-family: Poppins-Italic; font-size: 20px;">
+						<li class="admin_ctgry" id="now" style="font-family: Poppins-Italic; font-size: 18px;">
 						</li>
 						
 						<li class="admin_ctgry" style="font-family: Poppins-Italic; font-size: 12px; font-style: italic;">
 							관리자님 환영합니다!
 						</li>
-
+						
 						<li class="admin_ctgry">
-							<a href="/admin/admin_alert" class="admin_ctgry_detail" style="padding-left: 5px;">
-								✔ 알림
+							<a href="/admin/admin" class="admin_ctgry_detail" style="padding-left: 5px;">
+								✔ 회원목록
 							</a>
 						</li>
 
 						<li class="admin_ctgry">
-							<a href="/admin/admin" class="admin_ctgry_detail" style="padding-left: 5px;">
+							<a href="/admin/admin_alert" class="admin_ctgry_detail" style="padding-left: 5px;">
 								✔ 회원관리
 							</a>
 						</li>

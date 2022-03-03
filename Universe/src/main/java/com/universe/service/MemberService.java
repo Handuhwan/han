@@ -1,10 +1,14 @@
 package com.universe.service;
 
+<<<<<<< HEAD
+
+=======
 import java.util.HashMap;
 import java.util.List;
 
 import org.json.simple.JSONObject;
 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import com.universe.domain.MemberVO;
 
 import net.nurigo.java_sdk.api.Message;

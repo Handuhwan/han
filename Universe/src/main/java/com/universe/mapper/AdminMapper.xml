@@ -76,7 +76,7 @@
 	
 	<!-- Report테이블에 value값(관리자가 기재하는 정지/블락 이유)을 admin_report컬럼에 update -->
 	<update id="Admin_Reason">
-		update report set admin_report = #{reason} where reported_id=#{reported_id}
+		update report set admin_report = #{reason} where report_seq = #{report_seq}
 	</update>
 	
 	
