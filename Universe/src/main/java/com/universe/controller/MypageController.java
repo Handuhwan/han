@@ -51,16 +51,65 @@ public class MypageController {
 		service.storePlusCount(id);
 		int userCount = service.selectUserCount(id);
 		int pCount = service.selectProductCount(id);
+<<<<<<< HEAD
+=======
+
+		System.out.println("여기까지실행3");
+<<<<<<< HEAD
+		//List<ProductVO> plist = service.selectProductListById(id);
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int faqCount = service.faqCount(id);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		int likeCount = service.likeCount(id);
 		int reviewCount = service.reviewCount(id);
 		
 	    model.addAttribute("memberInfo", uvo);
+<<<<<<< HEAD
+=======
+		System.out.println(faqCount);
+		System.out.println("여기까지실행4");
+		log.info("방문자 수 : "+userCount);
+		log.info("상품 수 : "+pCount);
+		//log.info("상품리스트 : "+plist);
+		
+		model.addAttribute("memberInfo", uvo);
+		
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
 		model.addAttribute("faqCount", faqCount);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		model.addAttribute("likeCount", likeCount);
 		model.addAttribute("rCount", reviewCount);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+ 		
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 	@GetMapping("/new")

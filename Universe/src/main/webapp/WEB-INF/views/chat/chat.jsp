@@ -12,10 +12,19 @@
 			<c:forEach items="${crlist }" var="list">
 			<div class="chatroombox" id="${list.pno }">
 			<button class="chatroom" onclick="chatlist('${list.me}','${list.person}',${list.pno})">
+				<c:if test="${list.img1 != '' }">
 				<img class="pull-left" src="/Pupload/${list.img1 }">
+				</c:if>
+				<c:if test="${list.img1 == '' }">
+				<img class="pull-left" src="/resources/images/store.png">
+				</c:if>
 				<span class="chatsaler">거래 상대 : ${list.nickname } 님</span><br><br>
+				<c:if test="${list.title != '' }">
 				<span>상품 명  : ${list.title }</span>
-				
+				</c:if>
+				<c:if test="${list.title == '' }">
+				<span>간 단 문 의</span>
+				</c:if>
 			</button>
 			<button onclick="chatroomdel('${list.me}','${list.person}',${list.pno})"><img src="/resources/images/door.png"></button>
 			</div>

@@ -25,14 +25,30 @@ public interface MypageService {
 		// 상품문의 개수 출력
 		public int faqCount(String id);
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		// 찜 개수 출력
 		public int likeCount(String id);
 		
 		// 후기 개수 출력
 		public int reviewCount(String id);
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		
+		
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		// paypay충전
 		public int paypay(String id,int amount);
+<<<<<<< HEAD
 		
 		// 상품관리 페이지 리스트 출력
 		public List<ProductVO> manageList(Criteria cri);
@@ -42,6 +58,12 @@ public interface MypageService {
 		
 		
 		
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }
 
 

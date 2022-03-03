@@ -128,6 +128,7 @@
 
 <script>
 
+<<<<<<< HEAD
 	var actionForm = $("#actionForm");
 	
 	$(".paging > a").on("click", function(e) {
@@ -184,33 +185,9 @@
 
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
 <%@ include file="../footer.jsp"%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

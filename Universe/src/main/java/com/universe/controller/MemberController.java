@@ -1,7 +1,63 @@
+<<<<<<< HEAD
 package com.universe.controller;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+=======
+package com.universe.controller;
+<<<<<<< HEAD
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.text.ParseException;
+import java.util.HashMap;
+import java.util.UUID;
+
+import javax.servlet.http.HttpSession;
+
+
+
+=======
+
+
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+import java.security.Principal;
+<<<<<<< HEAD
+
+import java.util.Iterator;
+import java.util.Map;
+
+=======
+import java.util.Random;
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import javax.servlet.http.HttpServletRequest;
+<<<<<<< HEAD
+
+
+
+import javax.servlet.http.HttpSession;
+
+import java.security.Principal;
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+import javax.servlet.http.HttpServletRequest;
+<<<<<<< HEAD
+=======
+=======
+import javax.servlet.http.HttpServletResponse;
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+import javax.servlet.http.HttpSession;
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,6 +68,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.universe.domain.MemberVO;
 import com.universe.service.MemberService;
@@ -24,7 +81,9 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/member/*")
 @AllArgsConstructor
 @Log4j
+
 public class MemberController {
+	
 	
 	@Setter(onMethod_ = @Autowired)
 	private MemberService service;
@@ -32,14 +91,49 @@ public class MemberController {
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pwencoder;
 	
+	
 	@GetMapping("/join")
 	public void memberView() { //회원가입
 		
 	}
-	@RequestMapping(value="/findPwd")
-	public void finpwd() {
+	 
+	//아이디 찾기
+	
+
+	
+	  @RequestMapping(value="/findPwd") 
+	  public String findId() throws Exception{
+	  return"/member/findPwd"; 
+	  }
+	 
+	
+	//문자인증
+	 
+	 @RequestMapping(value = "/findphonecheck", method = RequestMethod.GET) 
+	 @ResponseBody 
+	 public String sendSMS(@RequestParam("phone")String phone) { // 휴대폰 문자보내기 
+		 System.out.println(phone);
+		 int randomNumber = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성 
+		 service.certifiedPhoneNumber(phone,randomNumber); 
+		 return Integer.toString(randomNumber); 
+		 
+		 }
+	 
+	
+	 
+	 
+	 @RequestMapping(value="/findPwdView", method=RequestMethod.POST)
+		public String findId(MemberVO memberVO,Model model) throws Exception{
+			log.info("name"+memberVO.getName());
+			log.info("phone"+memberVO.getPhone());
+					
+			model.addAttribute("member", service.findId(memberVO.getName(), memberVO.getPhone()));
+			return "/member/findPwdView";
+			}
 		
-	}
+	// 비밀번호 찾기
+	 
+		
 	@RequestMapping(value="/memberdrop")
 	public void memberdrop() {
 		
@@ -64,7 +158,11 @@ public class MemberController {
 		log.info("result(아이디체크 ajax) : " + result);
 		
 		return result;
+<<<<<<< HEAD
 	}
+=======
+	}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
@@ -75,23 +173,49 @@ public class MemberController {
 		service.register(member);
 		
 		return "redirect:/";
+<<<<<<< HEAD
 	}
+=======
+	}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 	@RequestMapping(value="/login")
 	public void login() {
 		
 	}
+	
+	
+
 
 	//네이버 로그인
 	@RequestMapping(value="/naverlogin")
 	public String isComplete(HttpSession session) {
 		return"/login";
+<<<<<<< HEAD
 	}
+=======
+		}
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 	@RequestMapping(value="/callback")
 	public String navLogin(HttpServletRequest request) throws Exception {
 		return "/login";
+<<<<<<< HEAD
+=======
 	}
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
+	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
+		
+		//String id = prin.getName(); // login한 아이디를 가져옴
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
 	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
@@ -99,6 +223,18 @@ public class MemberController {
 	}
 	
 	 @RequestMapping(value="/", method= RequestMethod.GET)
+=======
+	@RequestMapping(value="/", method= RequestMethod.GET)
+
+	 
+=======
+
+	}
+	
+
+	 @RequestMapping(value="/", method= RequestMethod.GET)
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	    public String index() {
 	        log.info("home controller");
 	        return "APIExamNaverLogin";
@@ -107,9 +243,31 @@ public class MemberController {
 	@RequestMapping(value="/membercallback", method=RequestMethod.GET)
 	    public String loginPOSTNaver(HttpSession session) {
 	        log.info("callback controller");
+<<<<<<< HEAD
 	        return "callback";
 	}
 }
+=======
+	        return "callback";
+<<<<<<< HEAD
+	        
+	
+	}
+}//fin
+
+=======
+
+	 }
+
+	   	    
+	    
+	   }//fin
+
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+	
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
 
 

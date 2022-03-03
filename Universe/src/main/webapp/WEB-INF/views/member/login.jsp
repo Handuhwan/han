@@ -8,14 +8,31 @@
     <!-- contents -->
     <section class="product">
     	<div class="container">
-    		<div class="row">
-    		
-    		<div class="col-md-6 newitem">
-    			<img src="/resources/images/ingg.webp" alt="" class="" style="width: 500px; height: 500px;  margin-top: 36px;">
+    		<div class="row" style=" border: 3px solid #cfd4f4; margin-top:30px; margin-bottom:30px; margin-right:20px;">
+   			
+   			<div class="col-md-1">
     		</div>
-    	
-    			<div class="col-md-6 newitem">
-    				<h2 class="loginheader">LOGIN</h2>
+   			
+    		<div class="col-md-5 newitem" >
+    			<div class="form-group"style="border-right:3px solid #cfd4f4;">
+    				<h2 class="loginheader" style="margin-left: 71px; font-weight: bold;">SNS LOGIN</h2>
+    				
+					   		<button type="button"  class="naverfont" id="naverIdLogin_loginButton" onclick="naverlogin()" style="padding-top: 4px; border-radius: 6px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인
+					   			</button>
+					 
+				
+							<button type="button" class=" kakaofont" id="custom-login-btn" onclick="loginWithKakao()"id="kakao-login-btn" style="display:block; "><img src="/resources/images/ico-kakao.png" alt="" class="naverbutton" ><p style="padding-top: 5px; border: 1px solid transparent; border-radius: 6px;">카카오 로그인</p></button>
+					
+						   <!--  <button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
+						
+							<button type="button"   class="googlefont g-signin2" onclick="onSignIn()"  style="width:300px; color:#fff; ">구글 로그인</button>
+    					
+    			</div>
+    		</div><!-- 6컬럼end -->
+    		<div class="col-md-1 ">
+    		</div>
+    			<div class="col-md-5 newitem">
+    				<h2 class="loginheader" style="margin-left: 115px; font-weight: bold;">LOGIN</h2>
     				<p style="color:red">${error }</p>
     				<form class="form-horizontal"  method="post" action="/login">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
@@ -38,7 +55,7 @@
 					  
 					  <div class="form-group">
 					    <div >
-					      <input type="submit" class="btn2 btn btn-default  signup" value="SIGN UP" style="	margin-left:0px;">
+					      <input type="submit" class="btn2 btn-default moonju  signup" value="Signed in" style="	margin-left:0px;">
 					       </div>
 					       <div>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join'" style="margin-left:0px;">회원가입</button>
@@ -46,83 +63,62 @@
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
-					    
-					   		<button type="button"  class="naverfont" id="naverIdLogin_loginButton" onclick="naverlogin()" style="padding-top: 4px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인
-					   			</button>
-					   			
-							<button type="button" class=" kakaofont" id="custom-login-btn" onclick="loginWithKakao()"id="kakao-login-btn" style="display:block; "><img src="/resources/images/kakao.png" alt="" class="naverbutton" ><p style="padding-top: 5px; border: 1px solid transparent;">카카오 로그인</p></button>
-						
-						   <!--  <button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
-
-							<button type="button"  class="googlefont g-signin2" data-onsuccess="onSignIn"  style="width:300px; color:#fff; ">구글 로그인</button>
-								
 						</div>
 						
-								  
 					</form>
     			</div><!-- 6 end -->
+    			
     		</div>
     	</div>
     </section>
     <!-- contents end -->
     <!-- 네이버 -->
-    <script>
+<script>
 
-var naverLogin = new naver.LoginWithNaverId(
-		{
+var naverLogin = new naver.LoginWithNaverId({
 			clientId: "baMwiMBqHorI4Lhtxxif", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
 			callbackUrl: "http://localhost:1976/member/login",
 			isPopup: false,
 			callbackHandle: true
-		}
-	);	
+		});	
 
 naverLogin.init();
-
-window.addEventListener('load', function () {
-	naverLogin.getLoginStatus(function (status) {
-		if (status) {
-			var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
-    		
-			console.log(naverLogin.user );
-            console.log(naverLogin.user.email);
-            console.log(naverLogin.user.name );
-            
-          	var id = naverLogin.user.email;
-        	var name = naverLogin.user.name;
-            
-            checkid(id,name);
-            
-            if( email == undefined || email == null) {
-				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
-				naverLogin.reprompt();
-				return;
-			}
-        
-		} else {
-			console.log("callback 처리에 실패하였습니다.");
-		}
-	});
-
-});
-
-
-var testPopUp;
-function openPopUp() {
-    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
-}
-function closePopUp(){
-    testPopUp.close();
-}
-
-
-function naverLogout() {
-	openPopUp();
-	setTimeout(function() {
-		closePopUp();
-		}, 1000);
+	$('#naverIdLogin_loginButton').on("click",function(){
+		
 	
-}
+	//window.addEventListener('#naverIdLogin_loginButton', function () {
+		naverLogin.getLoginStatus(function (status) {
+			console.log(status)
+			if (status) {
+				var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+				var id = naverLogin.user.email;
+	        	var name = naverLogin.user.getName();
+	       		console.log(id);
+	        	sessionStorage.setItem("user_info",email); 
+	        	sessionStorage.setItem("naver_email", naverLogin.user.getEmail()); 
+	        	sessionStorage.setItem("naver_name", naverLogin.user.getName());
+	            
+	          
+	            
+	            checkid(id,name);
+	            
+	            if( email == undefined || email == null) {
+					alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+					naverLogin.reprompt(); 
+					return;
+				}
+	        
+			} else {
+				console.log("callback 처리에 실패하였습니다.");
+			}
+		});
+
+	//});
+	})
+
+
+
+
 
 
 //window.location.href='http://localhost:1976/member/joinsns';
@@ -190,19 +186,21 @@ function naverLogout() {
     <!--  구글 로그인 -->
 <script>
 
-function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('name: ' + profile.getName());
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('id: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	
-	  var id = profile.getEmail();
-	var name = 	profile.getName();
-	  
-	  checkid(id,name);
+function onSignIn() {
+		var auth2 = gapi.auth2.getAuthInstance();
+		  var profile = auth2.currentUser.get().getBasicProfile();
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('id: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+		
+		  var id = profile.getEmail();
+		var name = 	profile.getName();
+		  
+		  checkid(id,name);
 
-	} // 구글
+		} // 구글
+		
 	
 	 function signOut() {
 		    var auth2 = gapi.auth2.getAuthInstance();
@@ -227,7 +225,7 @@ function checkid(id,name) {
 			
 			} ,// JSON.(뭐있음)modify() 보내는 타입
 		dataType:"json", 
-		//contentType:"application/json; charset=utf-8", 받는 타입
+		//contentType:"application/json; charset=utf-8", 보내는타입ㄴ
 		url:"/member/checkUserid.do",
 		success:function(data){
 			if(data==1){

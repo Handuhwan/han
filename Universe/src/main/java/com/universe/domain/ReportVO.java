@@ -10,4 +10,5 @@ public class ReportVO {
     private String reported_id;
     private String reason;
     private String indate;
+    private int report_seq;
 }

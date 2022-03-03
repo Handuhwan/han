@@ -21,7 +21,8 @@
 									<th class="column-0">신고 받은 아이디</th>
 									<th class="column-0">신고 아이디</th>
 									<th class="column-2">신고 사유</th>
-									<th class="column-3">신고 날짜</th>
+									<th class="column-0">신고 날짜</th>
+									<th class="column-0">관리</th>
 								</tr>
 								
 							
@@ -36,17 +37,12 @@
 												<td class="column-0">${report.reported_id}</td>
 												<td class="column-0">${report.id}</td>
 												<td class="column-2">${report.report}</td>
-												<td class="column-3">
-													<div class ="row">
-														<div class="col-md-6" style="text-align:right;">
-															<fmt:parseDate var="indate" value="${report.indate}" pattern="yyyy-MM-dd"/>
-															<fmt:formatDate value="${indate}" pattern="yyyy-MM-dd"/> 
-														</div>
-														<div class="col-md-6">
-															<button type="button" class="btn_blocked" data-toggle="modal" data-target="#${report.reported_id}" >Manage</button>
-														</div>
-													</div> <!-- /.row  -->
-													
+												<td class="column-0">
+													<fmt:parseDate var="indate" value="${report.indate}" pattern="yyyy-MM-dd"/>
+													<fmt:formatDate value="${indate}" pattern="yyyy-MM-dd"/> 
+												</td>
+												<td class="column-0">
+													<button type="button" class="btn_blocked" data-toggle="modal" data-target="#${report.reported_id}" >Manage</button>
 													<!-- Modal --> 
 													<form action ="/admin/admin_member_forced_eviction" method="post" onclick="blockcheck()">
 													<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">		
@@ -60,6 +56,8 @@
 												
 																		<h4 class="modal-title" id="myModalLabel">활동 정지 회원</h4>
 																		<div class="block_square"><input readonly name="reported_id" value="${report.reported_id}"></div>
+																		<input type="hidden" readonly name="report_seq" value="${report.report_seq}">
+																		
 																	</div>
 																	<div class="modal-header">
 																		<h4 class="modal-title" id="myModalLabel">활동 정지 사유</h4>

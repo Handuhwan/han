@@ -24,22 +24,75 @@
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
 				</div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+				<sec:authorize access="isAuthenticated()">
+					<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
+					<c:choose>
+						<c:when test="${memberInfo.id eq logID}">
+							<a href="new" class="myStoreLink2">우주톡</a>
+						</c:when>
+						<c:otherwise>
+							<a href="new" class="myStoreLink">내 상점 관리</a>
+						</c:otherwise>
+					</c:choose>
+				</sec:authorize>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+				<a href="new" class="myStoreLink">내 상점 관리</a>
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 				
+<<<<<<< HEAD
 				<c:if test="${memberInfo.id == logid}">
 					<a href="new" class="myStoreLink">내 상점 관리</a>
 				</c:if>
 				<c:if test="${memberInfo.id != logid}">
 					<a href="/chat/chat?perseon=${memberInfo.id}&pno=0" class="myStoreLink2">우주톡</a>
 				</c:if>
+=======
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 			</div>
 			
 			<div class="pull-right mybox_right" id="myboxRight">
 				<div class="nicknameBox" id="nicknameBox">
 					<div class="nickname" id="nickname">
 						<span id="storeNickname">${memberInfo.nickname}</span> <!-- 닉네임 출력 -->
+<<<<<<< HEAD
 							<c:if test="${memberInfo.id == logid}">
 								<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 							</c:if>
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+						<sec:authorize access="isAuthenticated()">
+							<c:set var="logID" value="<sec:authentication property='principal.member.id'/>"/>
+							<c:choose>
+								<c:when test="${memberInfo.id ne logID}">
+									<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
+								</c:when>
+								<c:otherwise>
+									
+								</c:otherwise>
+							</c:choose>
+						</sec:authorize>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+						<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
+			
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>
 				</div>
 				<div class="user_info">
@@ -47,11 +100,18 @@
 						포인트&nbsp;:&nbsp;<span id="mymoeny">
 						<input disabled="disabled" value="${memberInfo.point} 원" type="text" id="mypayplus" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></span>&nbsp;
 						
+<<<<<<< HEAD
 						<c:if test="${memberInfo.id == logid}">
 							<input type="hidden" id="mypayId" value="${memberInfo.id }">
 							<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
 							<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
 						</c:if>
+=======
+						
+						<span id="mypagepaybtn"><button id="mypayorder" style="font-size:1px;">+ 충전</button></span>
+						<span id="realmypagepaybtn"><button id="check_module" style="font-size:1px;">+ 충전</button></span>
+					
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 					</div>
 					<div class="user_a pull-left"><img src="/resources/images/store2.png" width="14" height="13" alt="오픈일 아이콘">
 						상점오픈일&nbsp;:&nbsp;<span id="storeTimeValue"></span>
@@ -717,12 +777,19 @@ $(function() {
 $("#check_module").click(function () {
 	
 	var pageid="${memberInfo.id}"
+<<<<<<< HEAD
 	var id="";
 		<sec:authorize access="isAuthenticated()">
 		
 		id = '<sec:authentication property="principal.member.id"/>';
+=======
+	var id="${logid}";
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	
+<<<<<<< HEAD
 		</sec:authorize>
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 	if(id !='' || pageid==id){
 

@@ -1566,6 +1566,10 @@ th {
 .allblock0{
 	display:block
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 .fTyTGh {
 	position: absolute;
@@ -1616,6 +1620,15 @@ th {
     width: 90px;
 }
 
+<<<<<<< HEAD
+=======
+.selectStatus:hover {
+	border: #000;
+}
+
+
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 #mypayplus{
 	text-align:right;
 	width:90px;
@@ -1626,6 +1639,7 @@ th {
 	display:none;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -1649,3 +1663,5 @@ th {
 
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
