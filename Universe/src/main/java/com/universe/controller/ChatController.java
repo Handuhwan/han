@@ -34,7 +34,13 @@ public class ChatController {
 		System.out.println("판매번호 : "+pno);
 		String id = prin.getName();
 		System.out.println("로그인한 아이디: "+id);		
+		
+		
+		
 		model.addAttribute("crlist", cservice.chatroomCheck(id, person, pno));
+
+		
+		model.addAttribute("personlist",cservice.chatroompersonCheck(id, person, pno));
 		
 	}
 	@RequestMapping(value = "/chatlog")

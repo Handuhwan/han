@@ -3,6 +3,7 @@ package com.universe.service;
 import java.util.List;
 
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReportVO;
 
 public interface ProductService {
 
@@ -23,4 +24,6 @@ public interface ProductService {
 
 	public int productjjimcheck(int pno,String id); // 찜 체크 버튼
 
+
+	public void complain(ReportVO report);
 }

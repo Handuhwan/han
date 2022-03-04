@@ -26,6 +26,7 @@
 <link href="/resources/css/mypage.css" rel="stylesheet">
 <link href="/resources/css/product.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
+<link href="/resources/css/admin.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
@@ -101,9 +102,10 @@
 		<div class="pull-right">
 			<div class="header_recent" id="header_recent"> <!-- 최근본 게시물 -->
 				<p style="margin-bottom:15px; padding-top:5px; padding-bottom:5px;">최근본 상품</p>
+				
 			</div> <!-- 최근본 게시물 end -->
 			<div style="margin-top:20px;" class="header_recent" >
-				<a class="b_top" style="color:#586fff; font-weight:600" id="top_btn">　　　TOP　　　</a>
+				<a class="b_top" style="color:#989ec6; font-weight:600" id="top_btn">　　　TOP　　　</a>
 			</div> <!--  맨위로 가기 버튼 -->
 		</div> <!-- pull right end -->
 		
@@ -111,7 +113,7 @@
 			<div class="col-md-12 col-sm-12" style="margin-top:20px;">
 				<div class="pull-left">
 					<div class="serch-box" > <!-- serch box -->
-						<a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
+						<a href="/"><img alt="" src="/resources/images/marketlogo.png" style="width:200px; height:100px; margin-right:80px;"></a>
 						<form style="display:inline" id ="searchForm" method="get" action="/" onsubmit="searchEvt()">
 							<input type="text" name="keyword" class="search_word" placeholder="#상품명 #지역명 #상점명" >
 							<div style="display:none">
@@ -126,7 +128,7 @@
 				</div>
 				<div class="pull-right" style="margin-top:35px;">
 					<div class="dropdown">
- 						<button class="dropbtn" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
+ 						<button class="dropbtn" style=""><img style="margin-bottom: 5px;" alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>물건 팔기</span></button>
 			  			
 					</div>&nbsp;&nbsp;
 
@@ -134,16 +136,16 @@
 
 
 						<sec:authorize access="isAuthenticated()">
- 						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+ 						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png" style="margin-bottom: 5px;">&nbsp;&nbsp;MY PAGE</button>
 			 			</sec:authorize>
 			 			<sec:authorize access="isAnonymous()">
- 						<button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+ 						<button class="dropbtn" onclick="headermypageidchek()" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png" style="margin-bottom: 5px;">&nbsp;&nbsp;MY PAGE</button>
 			 			</sec:authorize>
 
 					</div>&nbsp;&nbsp;
 					
 					
-					<a href="" class="dropbtn" href="/mypage/mypage"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>
+					<a href="" class="dropbtn" href="/mypage/mypage"><img alt="" src="/resources/images/main-love.png" style="margin-bottom: 5px;">&nbsp;&nbsp;찜</a>
 					
 					
 				</div> <!-- pull right end -->
@@ -194,6 +196,10 @@ function signOut() {
 		frm.submit();
 	
 	var win = window.open("https://accounts.google.com/Logout");
+}
+
+function headermypageidchek(){
+	alert("로그인후 이용가능합니다.")
 }
 </script>
 		

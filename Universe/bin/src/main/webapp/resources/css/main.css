@@ -160,6 +160,7 @@ a.on{
   background-color: #989ec6;
   border-color: #989ec6;
   color: #fff;
+  text-decoration: none;
 }
 
 
@@ -172,5 +173,6 @@ a.on{
 
 .index_pagination_active:hover {
   color: #fff;
+  text-decoration: none;
 }
 

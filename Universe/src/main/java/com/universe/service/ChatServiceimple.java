@@ -36,11 +36,10 @@ public class ChatServiceimple implements ChatService {
 			System.out.println("2번 조건 실행");
 			clist = cmapper.chatroomCheck(id, pno);
 			int size = clist.size();
-			if(size==0) {
+			if(size==0 && pno!=0 ) {
 				System.out.println("2-1번 조건 실행");
 				cmapper.chatroominsert1(id, person, pno);
 				cmapper.chatroominsert2(id, person, pno);
-				
 				System.out.println("2-1번 조건 끝");
 			}
 			clist = cmapper.mychatroom(id);
@@ -49,6 +48,35 @@ public class ChatServiceimple implements ChatService {
 			return clist;	
 		}
 	
+		@Override
+		public List<ChatVO> chatroompersonCheck(String id, String person, int pno) {
+			System.out.println("개인채팅서비스 시작1");
+			System.out.println("개인서비스 내아이디1 : "+id);
+			System.out.println("개인서비스 판매자 아이디 1: "+person);
+			System.out.println("개인판매번호 : " +pno);
+			
+			List<ChatVO> clist = new ArrayList<ChatVO>();
+			
+			
+				clist = cmapper.mypersonchatroom(id);
+				
+				int size = clist.size();
+				if(size==0 && pno == 0 ) { // 채팅방 생성 유무;
+					System.out.println("개인 1-1번 조건 실행");
+					cmapper.chatroominsert1(id, person, pno);
+					cmapper.chatroominsert2(id, person, pno);
+					System.out.println("개인 1-1번 조건 끝");
+					
+				}
+				clist = cmapper.mypersonchatroom(id);
+			
+			return clist;
+		}
+	
+		
+		
+		
+		
 		@Override
 		public List<ChatVO> chatlog(String me, String person, int pno) {
 			System.out.println("채팅로그 불러오기");

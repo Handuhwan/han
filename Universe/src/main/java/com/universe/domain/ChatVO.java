@@ -19,5 +19,8 @@ public class ChatVO {
 	private Date indate;
 	private String img1;
 	private String title;
+	private String userimg;
+	private String status;
+	private int count;
 	
 }
