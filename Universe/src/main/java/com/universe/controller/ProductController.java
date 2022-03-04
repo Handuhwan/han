@@ -14,7 +14,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReportVO;
 import com.universe.service.ProductService;
 
 import lombok.AllArgsConstructor;
@@ -227,5 +228,13 @@ public class ProductController {
 		return count;
 	}
 	
+	@GetMapping("/complain")
+	public String complain(ReportVO report,Principal prin) {
+		System.out.println("신고하기 시작");
+		report.setReported_id(prin.getName());
+		System.out.println("ajax서비스 시작");
+		pservice.complain(report);
+		return "redirect:/";
+	}
 }
 

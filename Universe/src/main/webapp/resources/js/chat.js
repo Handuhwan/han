@@ -124,3 +124,22 @@ function chatroomdel(me,person,pno){
 	
 	})//ajax end
 } //function end
+$(function(){
+	
+	$("#tradechatbtn").addClass("chatactive")
+
+})
+
+function personbtn(){
+	$(".chatroombox").css("display","none");
+	$(".chatrpersonbox").css("display","block");
+	$("#personbtn").addClass("chatactive")
+	$("#tradechatbtn").removeClass("chatactive")
+}
+function tradechatbtn(){
+	$(".chatroombox").css("display","block");
+	$(".chatrpersonbox").css("display","none");
+	$("#tradechatbtn").addClass("chatactive")
+	$("#personbtn").removeClass("chatactive")
+}
+

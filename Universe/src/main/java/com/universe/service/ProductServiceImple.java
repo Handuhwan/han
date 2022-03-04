@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReportVO;
 import com.universe.mapper.ProductMapper;
 
 import lombok.AllArgsConstructor;
@@ -85,6 +86,12 @@ public class ProductServiceImple implements ProductService {
 		return mapper.productjjimcheck(pno, id);
 	}
 
+	@Override
+	public void complain(ReportVO report) {
+		System.out.println(report);
+		mapper.complain(report);
+		
+	}
 }
 
 

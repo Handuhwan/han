@@ -121,3 +121,40 @@ function productviewjjimdown(pno){ //찜 삭제
 } // function end
 
 
+
+function gotradebtn(saler,pno){
+	
+	location.href="/trade/trade?saler="+saler+"&&pno="+pno
+
+}
+
+
+function modalbye(){
+	var id = $('#reported').val();
+	
+	var report = $('#reporttext').val();
+	
+
+	$.ajax({
+	
+		type:"get",
+		url :"/product/complain", //!!!!!!주소 고치세요!!!!!!!!
+		data:({
+			'id' : id,
+			'report' : report,
+		}),
+		
+		contentType:"application/json; charset=utf-8",
+		//dataType:"json",
+		
+		success:function(result){
+			alert("신고가 접수되었습니다");
+	  		$('#myModal').modal("hide");
+		},
+		error:function(){
+			alert("로그인 후 이용가능한 서비스입니다.")
+			$('#myModal').modal("hide");
+		}
+	
+	})//ajax end
+}

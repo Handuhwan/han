@@ -61,7 +61,37 @@
 				<span><img src="/resources/images/plove1.png"><span id="productlikecount" style="border-right:none; padding-right:0px;" id="">${view.likecount }</span></span>
 				<span><img src="/resources/images/eye.png">${view.viewcount }</span>
 				<span><img src="/resources/images/clock.png">${view.realrealdate }</span>
-				<span class="pull-right"><img src="/resources/images/alert.png">신고하기</span>
+				<button style="font-weight:700; background:none; border:none; font-size:16px; color:#cfd4f4" type="button" class="pull-right btn btn-primary btn-sm btsbts" data-toggle="modal" data-target="#myModal">
+				<img style="padding-bottom:6px; margin-right:6px;" src="/resources/images/alert.png">신고하기</button>
+				<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header" style="border-bottom:none;">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel"><img style="margin-top: -8px;" src="/resources/images/alert.png">신고하기</h4>
+	      </div>
+	      <div class="modal-body" style="border-bottom: px solid #e5e5e5;">
+			<div class="block_square">
+			<span style="border:none;">신고 대상</span><input type="text" id="reported" value="${view.id }" name="reported_id" readonly placeholder="신고받는사람"></div> <!-- mypage주인 id : readonly로 출력되게 ${view.id} 였던가 -->
+		  </div>
+		  <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel" style="margin-bottom: 15px;">신고 이유</h4>
+	        <textarea style="resize: none;" class="suspended" id="reporttext" name="report" placeholder="신고사유"></textarea>
+	      </div>	
+	      
+	      <div class="modal-footer" style="text-align:center;">
+	      	<p>대상 회원을 신고 하시겠습니까?</p>
+	        <button type="button" class="btn_check" onclick="modalbye()">신고</button>
+	        <button type="button" class="btn_cancel" data-dismiss="modal">취소</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- modal end -->
+	
+	
 			</div> <!-- pinfo end -->
 			<div class="pstatus">
 			
@@ -77,7 +107,9 @@
 				<c:if test="${jjimcheck == 1}">
 				<button id="pjjimbutton" type="button" onclick="productviewjjimdown(${view.pno})"><img src="/resources/images/pjjim1.png">찜</button>
 				</c:if>
+				<button id="gotradebtn" type="button" onclick="gotradebtn('${view.id}','${view.pno }')"><img src="/resources/images/buy.png">구매하기</button>
 				<button id="pchatbutton" type="button" onclick="location.href='/chat/chat?person=${view.id}&pno=${view.pno}'" ><img src="/resources/images/chat.png">채팅하기</button>
+				
 				
 			</div>
 		</div><!-- col md 7 end -->

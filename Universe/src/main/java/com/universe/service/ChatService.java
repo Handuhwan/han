@@ -8,6 +8,8 @@ public interface ChatService {
 	
 	public List<ChatVO> chatroomCheck(String id,String person,int pno);
 	
+	public List<ChatVO> chatroompersonCheck(String id,String person,int pno);
+	
 	public List<ChatVO> chatlog(String me,String person,int pno);
 	
 	public void chatinput(String me,String person,int pno,String chat);

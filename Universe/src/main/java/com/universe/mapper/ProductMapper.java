@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReportVO;
 
 public interface ProductMapper {
 
@@ -39,7 +40,8 @@ public interface ProductMapper {
 	public int productjjimcount(int pno); // 찜 카운터 ajax
 
 	public int productjjimcheck(@Param("pno") int pno,@Param("id") String id); //찜 체크 버튼 1 0
-
+	
+	public void complain(ReportVO report);
 
 
 }
