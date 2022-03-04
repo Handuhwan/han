@@ -105,7 +105,82 @@
 	<delete id="manageDelete">
 		delete from product where id = #{id} and pno = #{pno}
 	</delete>
+	
+	<!-- 상품관리 판매내역 리스트 출력 -->
+	<select id="detailsSellAllList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} order by indate desc
+	</select>
+	
+	<select id="detailsSellIngList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '진행중' order by indate desc
+	</select>
+	
+	<select id="detailsSoldList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '판매완료' order by indate desc
+	</select>
+	
+	<select id="detailsSellCancelList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '취소' order by indate desc
+	</select>
+	
+	<!-- 상품관리 구매내역 리스트 출력 -->
+	<select id="detailsBuyAllList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyIngList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '진행중'
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyEndList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '구매완료'
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyCancelList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '취소'
+		order by b.indate desc
+	</select>
+	
+	
+	
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

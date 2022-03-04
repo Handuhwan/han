@@ -41,6 +41,9 @@ public interface MypageService {
 		public int manageTotalCount(Criteria cri);
 		public int manageDelete(String id, int pno);
 		
+		// 구매내역, 판매내역 리스트출력
+		public List<ProductVO> detailsSellList(String id, int no);
+		public List<ProductVO> detailsBuyList(String id, int no);
 		
 		
 

@@ -15,13 +15,10 @@
 							<a class="kSJVTd" href="new">상품등록</a>
 						</div>
 						<div class="sc-kOCNXg gYlEW">
-							<a class="sc-cZLAbK kSJVTd" style="color: red;"
-								href="manage?id=<sec:authentication property="principal.member.id"/>">상품관리</a>
+							<a class="sc-cZLAbK kSJVTd" style="color: red;" href="manage?id=<sec:authentication property="principal.member.id"/>">상품관리</a>
 						</div>
 						<div class="sc-kOCNXg gYlEW">
-							<a class="sc-iVOTot jtVVsU"
-								href="details?id=<sec:authentication property="principal.member.id"/>">구매
-								/ 판매 내역</a>
+							<a class="sc-iVOTot jtVVsU" href="details?id=<sec:authentication property="principal.member.id"/>">구매 / 판매 내역</a>
 						</div>
 					</nav>
 				</div>
@@ -49,6 +46,15 @@
 		<div class="col-md-12 productList">
 			<div class="pTableBox">
 				<table class="pTable">
+					<colgroup>
+						<col width="*">
+						<col width="10%">
+						<col width="20%">
+						<col width="10%">
+						<col width="15%">
+						<col width="15%">
+						<col width="15%">
+					</colgroup>
 					<thead>
 						<tr>
 							<th>상품사진</th>
@@ -78,7 +84,7 @@
 											<td>판매중</td>
 										</c:otherwise>
 									</c:choose>
-									<td>${list.title}</td>
+									<td><a href="/product/productview?pno=${list.pno}">${list.title}</a></td>
 									<td><fmt:formatNumber value="${list.price}" type="currency" /></td>
 									<td>찜${list.likecount} / 조회수${list.viewcount}</td>
 									<td><fmt:formatDate value="${list.indate}" pattern="yyyy-MM-dd" /></td>
@@ -86,30 +92,6 @@
 								</tr>
 							<c:set var="num" value="${num-1}" />
 							</c:forEach>
-								<!-- 페이지 처리 -->
-								<div class="paging">
-									<c:if test="${pageMaker.prev }">
-										<a href="${pageMaker.startPage - 1}"><i
-											class="fa fa-angle-double-left"></i></a>
-									</c:if>
-									<c:forEach var="num" begin="${pageMaker.startPage }"
-										end="${pageMaker.endPage }">
-										<a href="${num }"
-											class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
-									</c:forEach>
-									<c:if test="${pageMaker.next }">
-										<a href="${pageMaker.endPage + 1}">
-											<i class="fa fa-angle-double-right"></i>
-										</a>
-									</c:if>
-									<form id="actionForm" action="/mypage/manage" method="get">
-										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-										<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-										<input type="hidden" name="type" value="${pageMaker.cri.type }">
-										<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-									</form>
-								</div>
-								<!-- 페이지 처리 끝 -->
 						</c:when>
 						<c:otherwise>
 							<td><div class="sc-bqjOQT jPSlgl">등록된 상품이 없습니다</div></td>
@@ -117,18 +99,39 @@
 					</c:choose>
 					</tbody>
 				</table>
-				
-				
-				
 			</div>
 		</div>
 		<!-- 상품리스트 끝 -->
 	</div>
+	
+	<!-- 페이지 처리 -->
+	<div class="paging" style="text-align:center;">
+		<c:if test="${pageMaker.prev }">
+			<a href="${pageMaker.startPage - 1}"><i
+				class="fa fa-angle-double-left"></i></a>
+		</c:if>
+		<c:forEach var="num" begin="${pageMaker.startPage }"
+			end="${pageMaker.endPage }">
+			<a href="${num }"
+				class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
+		</c:forEach>
+		<c:if test="${pageMaker.next }">
+			<a href="${pageMaker.endPage + 1}">
+				<i class="fa fa-angle-double-right"></i>
+			</a>
+		</c:if>
+		<form id="actionForm" action="/mypage/manage" method="get">
+			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+			<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+			<input type="hidden" name="type" value="${pageMaker.cri.type }">
+			<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+		</form>
+	</div>
+	<!-- 페이지 처리 끝 -->
 </div>
 
 <script>
 
-<<<<<<< HEAD
 	var actionForm = $("#actionForm");
 	
 	$(".paging > a").on("click", function(e) {
@@ -180,14 +183,29 @@
 
 
 
-
-
-
-
-
-=======
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
-
-
 <%@ include file="../footer.jsp"%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

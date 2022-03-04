@@ -25,5 +25,6 @@ public class ProductVO {
 	private String img2;
 	private String img3;
 	
+	private int review;
 	private String realrealdate;
 }

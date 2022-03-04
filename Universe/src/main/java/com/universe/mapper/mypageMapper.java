@@ -31,5 +31,15 @@ public interface mypageMapper {
 	public List<ProductVO> manageList(Criteria cri);
 	public int manageTotalCount(Criteria cri);
 	public int manageDelete(@Param("id") String id, @Param("pno") int pno);
+	
+	public List<ProductVO> detailsSellAllList(String id);
+	public List<ProductVO> detailsSellIngList(String id);
+	public List<ProductVO> detailsSoldList(String id);
+	public List<ProductVO> detailsSellCancelList(String id);
+	
+	public List<ProductVO> detailsBuyAllList(String id);
+	public List<ProductVO> detailsBuyIngList(String id);
+	public List<ProductVO> detailsBuyEndList(String id);
+	public List<ProductVO> detailsBuyCancelList(String id);
 
 }

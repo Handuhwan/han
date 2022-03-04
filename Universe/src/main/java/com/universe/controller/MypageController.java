@@ -1,9 +1,15 @@
 package com.universe.controller;
 
 import java.security.Principal;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
+import org.apache.taglibs.standard.tag.common.fmt.FormatDateSupport;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.universe.criteria.Criteria;
 import com.universe.criteria.PageVO;
+import com.universe.domain.ProductVO;
 import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
 
@@ -70,7 +77,6 @@ public class MypageController {
 	public void manage(@RequestParam("id") String id, Model model, Criteria cri) {
 		
 		int total = service.manageTotalCount(cri);
-		System.out.println("상품관리할 아이디 : "+id);
 		
 		model.addAttribute("id", id);
 		model.addAttribute("list", service.manageList(cri));
@@ -87,9 +93,51 @@ public class MypageController {
 		return result;
 	}
 	
-	@GetMapping("/details/{id}")
+	@RequestMapping(value = "/details",
+			method = {RequestMethod.POST, RequestMethod.GET})
 	public void details(@RequestParam("id") String id, Model model) {
 		
+		model.addAttribute("id", id);
+		
+	}
+	
+	@ResponseBody
+	@GetMapping("/details/sellList")
+	public List<ProductVO> detailsSellList(String id, int no) { 
+		
+		List<ProductVO> sellList = service.detailsSellList(id, no);
+		
+		int size;
+		size = sellList.size();
+		
+		for(int i=0; i<size; i++) {
+			
+			SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+			String indate = date.format(sellList.get(i).getIndate());
+			
+			sellList.get(i).setRealrealdate(indate);
+			
+		}
+		return sellList;
+	}
+	
+	@ResponseBody
+	@GetMapping("/details/BuyList")
+	public List<ProductVO> detailsBuyList(String id, int no) { 
+		
+		List<ProductVO> buyList = service.detailsBuyList(id, no);
+		
+		int size;
+		size = buyList.size();
+		
+		for(int i=0; i<size; i++) {
+			
+			SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+			String indate = date.format(buyList.get(i).getIndate());
+			
+			buyList.get(i).setRealrealdate(indate);
+		}
+		return buyList;
 	}
 	
 	@ResponseBody

@@ -1,5 +1,6 @@
 package com.universe.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,19 +80,52 @@ public class MypageServiceImpl implements MypageService {
 		return mapper.manageList(cri);
 	}
 	
-	 @Override
+	@Override
 	public int manageTotalCount(Criteria cri) {
 		
 		return mapper.manageTotalCount(cri);
 	}
 	 
-	 @Override
+	@Override
 	public int manageDelete(String id, int pno) {
 		 
 		return mapper.manageDelete(id, pno);
 	}
 
-
+	@Override
+	public List<ProductVO> detailsSellList(String id, int no) {
+		
+		List<ProductVO> detailsSellList = new ArrayList<ProductVO>();
+		
+		if(no == 1) {
+			detailsSellList = mapper.detailsSellAllList(id);
+		}else if(no == 2) {
+			detailsSellList = mapper.detailsSellIngList(id);
+		}else if(no == 3) {
+			detailsSellList = mapper.detailsSoldList(id);
+		}else {
+			detailsSellList = mapper.detailsSellCancelList(id);
+		}
+		return detailsSellList;
+	}
+	
+	@Override
+	public List<ProductVO> detailsBuyList(String id, int no) {
+		
+		List<ProductVO> detailsBuyList = new ArrayList<ProductVO>();
+		
+		if(no == 1) {
+			detailsBuyList = mapper.detailsBuyAllList(id);
+		}else if(no == 2) {
+			detailsBuyList = mapper.detailsBuyIngList(id);
+		}else if(no == 3) {
+			detailsBuyList = mapper.detailsBuyEndList(id);
+		}else {
+			detailsBuyList = mapper.detailsBuyCancelList(id);
+		}
+		return detailsBuyList;
+	}
+	
 
 }
 

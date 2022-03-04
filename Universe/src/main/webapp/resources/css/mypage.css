@@ -1426,7 +1426,7 @@ th {
 }
 
 .detailsTab > li {
-	width: 33.3333%;
+	width: 50%;
 }
 
 .detailsTab li a {
@@ -1447,7 +1447,7 @@ th {
     font-weight: bold;
 }
 
-.statusBtn {
+.B-statusBtn {
 	margin-top: 10px;
 	border: none;
 	background-color: #e8e8e8;
@@ -1457,8 +1457,18 @@ th {
 	margin-right: 6px;
 }
 
-.statusBtn:hover,
-.status:active {
+.S-statusBtn {
+	margin-top: 10px;
+	border: none;
+	background-color: #e8e8e8;
+	border-radius: 20px;
+	padding: 3px 6px;
+	color: rgb(155, 153, 169);
+	margin-right: 6px;
+}
+
+.B-statusBtn:hover, .S-statusBtn,
+.B-statusBtn, .S-statusBtn:active {
 	margin-top: 10px;
 	border: none;
 	background-color: #cfd4f4;
@@ -1473,8 +1483,8 @@ th {
 
 .detailsContents table thead {
     font-weight: bold;
-    border-top: 2px solid #cfd4f4;
-    border-bottom: 2px solid #cfd4f4;
+    border-top: 2px solid rgb(195, 194, 204);
+    border-bottom: 2px solid rgb(195, 194, 204);
     height: 4.5rem;
     font-size: larger;
 }
@@ -1603,6 +1613,22 @@ th {
     font-size: 13px;
 }
 
+.btn-sm2 {
+	border: none;
+    background: none;
+    color: rgb(136, 136, 136);
+    padding: 2px;
+    font-size: small;
+}
+
+.btn-sm2:hover {
+	border: none;
+    background: none;
+    color: rgb(136, 136, 136);
+    padding: 2px;
+    font-size: small;
+}
+
 .glWKMh > img {
     margin-right: 3px;
 }
@@ -1614,8 +1640,22 @@ th {
     border: 1px solid rgb(195, 194, 204);
     border-radius: 2px;
     width: 90px;
+    font-size: medium;
+    padding-left: 5px;
+    font-weight: bold;
 }
 
+.detailsTab li:first-child.selected2 ~ .line {
+    transform: translateX(0px) scaleX(0.333);
+}
+
+.buyListR-Btn {
+	border: 1px solid #e8e8e8;
+    padding: 5px 5px;
+    border-radius: 8px;
+    font-size: small;
+    font-weight: bold;
+}
 
 #mypayplus{
 	text-align:right;

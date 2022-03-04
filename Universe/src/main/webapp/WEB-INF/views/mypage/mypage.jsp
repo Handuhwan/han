@@ -18,11 +18,83 @@
 					<h2 id="prNickname">${memberInfo.nickname}</h2> <!-- 닉네임 출력 -->
 				</div>
 				<div class="Stars">
-					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
-					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
-					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
-					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
-					<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 0}">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 0.5 and memberInfo.grade / memberInfo.gradecount > 0}">
+						<img src="/resources/images/halfStar.png" width="15" height="14" alt="작은 별점 0.5점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 1 and memberInfo.grade / memberInfo.gradecount > 0.5}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 1.5 and memberInfo.grade / memberInfo.gradecount > 1}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/halfStar.png" width="15" height="14" alt="작은 별점 0.5점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 2 and memberInfo.grade / memberInfo.gradecount > 1.5}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 2.5 and memberInfo.grade / memberInfo.gradecount > 2}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/halfStar.png" width="15" height="14" alt="작은 별점 0.5점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 3 and memberInfo.grade / memberInfo.gradecount > 2.5}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 3.5 and memberInfo.grade / memberInfo.gradecount > 3}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/halfStar.png" width="15" height="14" alt="작은 별점 0.5점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 4 and memberInfo.grade / memberInfo.gradecount > 3.5}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/noStar.png" width="15" height="14" alt="작은 별점 0점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 4.5 and memberInfo.grade / memberInfo.gradecount > 4}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/halfStar.png" width="16" height="16" alt="작은 별점 0.5점 이미지">
+					</c:if>
+					<c:if test="${memberInfo.grade / memberInfo.gradecount <= 5 and memberInfo.grade / memberInfo.gradecount > 4.5}">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+						<img src="/resources/images/inStar.png" width="15" height="14" alt="작은 별점 1점 이미지">
+					</c:if>
 				</div>
 
 				<c:if test="${memberInfo.id == logid}">
@@ -75,11 +147,44 @@
 								<div class="sc-gVLVqr exSGCd">
 									<a class="sc-hBbWxd glWKMh">
 										<img src="/resources/images/reportImg.png" width="14" height="14" alt="신고하기 아이콘">
-										신고하기
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-sm2" data-toggle="modal" data-target="#myModal">
+										  신고하기
+										</button>
 									</a>
 								</div>
 							</div>
 						</c:if>
+					</div>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+					     		<div class="modal-header" style="border-bottom:none;">
+					        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					        			<span aria-hidden="true">&times;</span>
+					        		</button>
+					        		<h4 class="modal-title" id="myModalLabel">신고하기</h4>
+					      		</div>
+					      		<div class="modal-body" style="border-bottom: 1px solid #e5e5e5;">
+									<div class="block_square">
+										<span style="border:none">신고대상 : ${memberInfo.id}</span>
+									</div>
+						  		</div>
+						  		<div class="modal-header">
+					       			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					       				<span aria-hidden="true">&times;</span>
+					       			</button>
+									<h4 class="modal-title" id="myModalLabel" style="margin-bottom: 15px;">신고 이유</h4>
+					        		<textarea style="resize:none;"class="suspended" id="reporttext" name="report" placeholder="신고사유"></textarea>
+					      		</div>	
+					      		<div class="modal-footer" style="text-align:center;">
+							      	<p>대상 회원을 신고 하시겠습니까?</p>
+							        <button type="button" class="btn_check" onclick="modalbye()">신고</button>
+							        <button type="button" class="btn_cancel" data-dismiss="modal">취소</button>
+						      </div>
+							</div>
+					  	</div>
 					</div>
 				</div>
 			</div>
@@ -283,7 +388,7 @@ $(function() {
 				$("#proBtn a:nth-child("+cnt+")").css("color", "red");
 				
 				for(var i=0, len=result.length || 0; i < len; i++) {
-					sttr +=	"<div class='col-md-3'>";
+					sttr +=	"<div class='col-md-3' style='margin: 15px 0;'>";
 					sttr +=		"<a class='sc-cugefK fRjjJt' href='/product/productview?pno="+result[i].pno+"'>";
 					sttr +=			"<div class='sc-fnwBNb bGOWdF'>";
 					sttr +=				"<img src='/resources/images/table.jpg' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
