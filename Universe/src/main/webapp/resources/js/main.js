@@ -27,21 +27,26 @@ $(function(){ // 쿠키 실행
 	var cc = "";
 	
 	var str = "";
-	
+
 	  var cookie = document.cookie.split(';');
-	  
+	  var len = cookie.length
+	  console.log( Math.ceil(len));
     cookie.some(function (item) {
         // 공백을 제거
         item = item.replace(' ', '');
- 		console.log("거름1:"+item);
+ 		console.log("쿠키:"+item);
 
         var dic = item.split('=');
- 		console.log("거름:"+dic);
+ 		console.log("쿠키:"+dic);
  		
- 		str = "<a href='/product/productview?pno="+dic[0]+"'><img src='/Pupload/"+dic[1]+"'></a>"
-    	$("#header_recent").append(str)
+ 		str += "<a href='/product/productview?pno="+dic[0]+"'><img src='/Pupload/"+dic[1]+"'></a>"
+ 
+   		
 	})
-	}//if end
+	
+		$("#header_recent").append(str)
+
+	}
 	
 	
 	

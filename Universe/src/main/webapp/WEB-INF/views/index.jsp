@@ -67,7 +67,12 @@
       							<img src="/Pupload/${list.img1 }" alt="..." onclick="">
       						</a>
       						<div class="caption">
-        					<p style="font-size:20px;">${list.title }</p>   					
+      						<c:if test="${fn:length(list.title) > 8 }">
+        					<p style="font-size:20px;">${fn:substring(list.title,0,8)}...</p>   
+        					</c:if>	
+        					<c:if test="${fn:length(list.title) <= 8 }">
+        					<p style="font-size:20px;">${list.title}</p>   
+        					</c:if>						
         					<span style="font-size:16px; font-weight:600"><fmt:formatNumber value="${list.price }"/>원</span>
         					<span class="items_day" >${list.realrealdate}</span>
       						</div> <!-- 썸네일 내용 -->

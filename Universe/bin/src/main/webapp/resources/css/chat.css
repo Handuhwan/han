@@ -8,6 +8,12 @@
 	background:#e8e8e8;
 	border:1px solid #fff;
 }
+
+.chatrpersonbox{
+	background:#e8e8e8;
+	border:1px solid #fff;
+	display:none;
+}
 .chatroom:hover{
 	background: #bfc1e0;
 }
@@ -54,14 +60,14 @@ float:right;
  position:relative;
  width:auto;
  height:40px;
-  background:#fff;
+  background:yellow;
   border-radius: 10px;
   display: table;
   padding: 8px;
   margin-top:0px;
 }
 .balloon_02:after {
- border-top:15px solid #fff;
+ border-top:15px solid yellow;
  border-left: 0px solid transparent;
  border-right: 15px solid transparent;
  border-bottom: 0px solid transparent;
@@ -123,4 +129,19 @@ float:right;
 	}
 .chatgoback:hover{
 	background:#ffdfdf;
+}
+.chatselbtn{
+	width:168px;
+	margin-bottom:10px;
+	border: 3px solid #cdced4;
+	background: #989ec61a;
+}
+.chatselbtn:hover{
+	
+	background: #c4c4c4;
+	border: 3px solid #f4f5f9;
+}
+.chatactive{
+	background: #c4c4c4;
+	border: 3px solid #f4f5f9;
 }

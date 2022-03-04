@@ -14,10 +14,13 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/table.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner1.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		    <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/hambuk.jpg" alt="...">
+		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner3.jpg" alt="...">
+		    </div>  <!-- item end  -->
+		     <div class="item">
+		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner4.jpg" alt="...">
 		    </div>  <!-- item end  -->
 		   
 		  </div> <!-- item inner box -->
@@ -31,7 +34,7 @@
 			
 			
 			
-		<div class="container" style="margin-top:90px; margin-bottom:90px;">
+		<div class="container" style="margin-top:40px; margin-bottom:90px;">
 			<div class="col-md-12">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
@@ -40,12 +43,9 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/table.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner2.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
-		    <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/hambuk.jpg" alt="...">
-		    </div>  <!-- item end  -->
-		   
+		 
 		  </div> <!-- item inner box -->
 		
 	
@@ -67,7 +67,12 @@
       							<img src="/Pupload/${list.img1 }" alt="..." onclick="">
       						</a>
       						<div class="caption">
-        					<p style="font-size:20px;">${list.title }</p>   					
+      						<c:if test="${fn:length(list.title) > 8 }">
+        					<p style="font-size:20px;">${fn:substring(list.title,0,8)}...</p>   
+        					</c:if>	
+        					<c:if test="${fn:length(list.title) <= 8 }">
+        					<p style="font-size:20px;">${list.title}</p>   
+        					</c:if>						
         					<span style="font-size:16px; font-weight:600"><fmt:formatNumber value="${list.price }"/>원</span>
         					<span class="items_day" >${list.realrealdate}</span>
       						</div> <!-- 썸네일 내용 -->
@@ -126,7 +131,7 @@ $("#pagenums>a").on("click",function(e){
 		}
 </script>
 
-
+<!-- 네이버 로그아웃 -->
 
 
 <%@ include file="footer.jsp"%>

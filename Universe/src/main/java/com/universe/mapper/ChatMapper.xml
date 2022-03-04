@@ -19,6 +19,14 @@
   	
   	</select>
   	
+  	<select id="mypersonchatroom" resultType="com.universe.domain.ChatVO">
+  		select m.userimg,c.pno,c.me,m.nickname,c.person
+    	from chatroom c ,member m
+    	where c.pno=0 and c.person=m.id and c.me=#{id}
+  	</select>
+  	
+  	
+  	
   	 <insert id="chatroominsert1">
   	 	insert into chatroom(pno,me,person) values(#{pno},#{id},#{person})
   	 

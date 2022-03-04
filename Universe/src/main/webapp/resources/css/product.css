@@ -129,3 +129,15 @@
     background: #e8e8e8;
     background-color: rgba(0, 0, 0, 0.4);
 }
+#gptradebtn{
+	background:#63ff468c;
+	
+}
+
+#gptradebtn:hover{
+	background:#63ff46;
+}
+
+.btsbts:focus{
+	border:none;
+}
