@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.universe.mapper.mypageMapper">
+	
+	<sql id="criteria">
+		<trim prefix="(" suffix=") and " prefixOverrides="OR">
+			<foreach collection="typeArr" item = "type">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'a'.toString()">
+							status like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'b'.toString()">
+							status like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'c'.toString()">
+							status like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<!-- 회원정보 불러오기 -->
+	<select id="infomationAboutUser" resultType="com.universe.domain.UserVO">
+		select * from member where id = #{id}
+	</select>
+	
+	<!-- 상점명 수정 -->
+	<update id="updateNickname">
+		update member set nickname = #{nickname} where id = #{id}
+	</update>
+	
+	<!-- 상점소개 수정 -->
+	<update id="updateIntro">
+		update member set intro = #{intro} where id = #{id}
+	</update>
+	
+	<!-- 해당 회원의 상점 방문자수 카운트 -->
+	<update id="storePlusCount">
+		update member set usercount = usercount + 1 where id = #{id}
+	</update>
+	
+	<!-- 해당 회원의 상점 방문자수 출력 -->
+	<select id="selectUserCount" resultType="int">
+		select usercount from member where id = #{id}
+	</select>
+	
+	<!-- 상품의 개수 출력 -->
+	<select id="selectProductCount" resultType="int">
+		select count(*) as cnt from product where id = #{id}
+	</select>
+	
+	<select id="faqCount" resultType="int">
+		select count(*) as cnt from faq where id = #{id}
+	</select>
+	
+
+	<select id="likeCount" resultType="int">
+		select count(*) as cnt from liked where id = #{id}
+	</select>
+	
+	<select id="reviewCount" resultType="int">
+		select count(*) as cnt from review where id = #{id}
+	</select>
+	
+
+	<!-- paypay충전 -->
+	<update id="paypay">
+		update member set point = point + #{amount} where id=#{id}
+	</update>
+
+	
+	<!-- 상품관리 리스트 -->
+	<select id="manageList" resultType="com.universe.domain.ProductVO">
+		<![CDATA[
+			select pno, id, title, price, indate, viewcount, likecount, status, img1
+			from (
+			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
+			from product
+			where 
+		]]>
+		
+		<include refid="criteria"></include>
+		
+		<![CDATA[
+				rownum <= #{pageNum} * #{amount} 
+			) 
+			where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="manageTotalCount" resultType="int">
+		
+			select count(*) from product where 
+			
+			<include refid="criteria"></include>
+			
+			pno > 0
+		
+	</select>
+	
+	<delete id="manageDelete">
+		delete from product where id = #{id} and pno = #{pno}
+	</delete>
+	
+	<!-- 상품관리 판매내역 리스트 출력 -->
+	<select id="detailsSellAllList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} order by indate desc
+	</select>
+	
+	<select id="detailsSellIngList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '진행중' order by indate desc
+	</select>
+	
+	<select id="detailsSoldList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '판매완료' order by indate desc
+	</select>
+	
+	<select id="detailsSellCancelList" resultType="com.universe.domain.ProductVO">
+		select * from product where id = #{id} and status = '취소' order by indate desc
+	</select>
+	
+	<!-- 상품관리 구매내역 리스트 출력 -->
+	<select id="detailsBuyAllList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyIngList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '진행중'
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyEndList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '구매완료'
+		order by b.indate desc
+	</select>
+	
+	<select id="detailsBuyCancelList" resultType="com.universe.domain.ProductVO">
+		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		from buylist b, product p
+		where b.id = #{id} and b.pno = p.pno and b.status = '취소'
+		order by b.indate desc
+	</select>
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
