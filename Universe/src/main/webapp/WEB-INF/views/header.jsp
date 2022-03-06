@@ -100,14 +100,14 @@
 	</div>
 </div> <!-- main_header_nav -->
 
-	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #cfd4f4; height:120px;">
+	<div style="position:sticky;top:0px;z-index: 999;bottom:50px;background:#fff; border-bottom:1px solid #bbbbbbcf; height:120px;">
 		<div class="pull-right">
 			<div class="header_recent" id="header_recent"> <!-- 최근본 게시물 -->
 				<p style="margin-bottom:15px; padding-top:5px; padding-bottom:5px;">최근본 상품</p>
 				
 			</div> <!-- 최근본 게시물 end -->
 			<div style="margin-top:20px;" class="header_recent" >
-				<a class="b_top" style="color:#989ec6; font-weight:600" id="top_btn">　　　TOP　　　</a>
+				<a class="b_top" style="color:#989ec6; font-weight:600; border-radius: 5px;" id="top_btn">　　　TOP　　　</a>
 			</div> <!--  맨위로 가기 버튼 -->
 		</div> <!-- pull right end -->
 		
@@ -128,14 +128,13 @@
 						</form>
 					</div>
 				</div>
-				<div class="pull-right" style="margin-top:35px;">
+				<div class="pull-right" style="margin-top:29px;">
 					<div class="dropdown">
  						<button class="dropbtn" style=""><img style="margin-bottom: 5px;" alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
 			  			
 					</div>&nbsp;&nbsp;
 
 					<div class="dropdown">
-
 
 						<sec:authorize access="isAuthenticated()">
  						<button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png" style="margin-bottom: 5px;">&nbsp;&nbsp;MY PAGE</button>

@@ -13,7 +13,7 @@ public interface ReviewService {
 	public int insert(ReviewVO vo);
 		
 	// 후기 리스트출력
-	public List<ReviewVO> reviewList(@Param("cri") Criteria cri, @Param("id") String id);
+	public List<ReviewVO> reviewList(String id);
 	
 	// 후기 삭제하기
 	public int delete(int rno);

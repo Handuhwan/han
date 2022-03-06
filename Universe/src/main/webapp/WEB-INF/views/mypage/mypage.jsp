@@ -112,7 +112,6 @@
 							<c:if test="${memberInfo.id == logid}">
 								<button class="modify_nickname" id="modifyStorename" onclick="modifyNickname()">상점명 수정</button>
 							</c:if>
-
 					</div>
 				</div>
 				<div class="user_info">
@@ -158,33 +157,30 @@
 					</div>
 					<!-- Modal -->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-					     		<div class="modal-header" style="border-bottom:none;">
-					        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					        			<span aria-hidden="true">&times;</span>
-					        		</button>
-					        		<h4 class="modal-title" id="myModalLabel">신고하기</h4>
-					      		</div>
-					      		<div class="modal-body" style="border-bottom: 1px solid #e5e5e5;">
-									<div class="block_square">
-										<span style="border:none">신고대상 : ${memberInfo.id}</span>
-									</div>
-						  		</div>
-						  		<div class="modal-header">
-					       			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					       				<span aria-hidden="true">&times;</span>
-					       			</button>
-									<h4 class="modal-title" id="myModalLabel" style="margin-bottom: 15px;">신고 이유</h4>
-					        		<textarea style="resize:none;"class="suspended" id="reporttext" name="report" placeholder="신고사유"></textarea>
-					      		</div>	
-					      		<div class="modal-footer" style="text-align:center;">
-							      	<p>대상 회원을 신고 하시겠습니까?</p>
-							        <button type="button" class="btn_check" onclick="modalbye()">신고</button>
-							        <button type="button" class="btn_cancel" data-dismiss="modal">취소</button>
-						      </div>
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header" style="border-bottom:none;">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">신고하기</h4>
+					      </div>
+					      <div class="modal-body" style="border-bottom: 1px solid #e5e5e5;">
+							<input type="text" id="reporter" name="id" placeholder="신고자" value=""> <!-- 이 부분은 jsp에서 값을 넘겨주지 않고 나중에 controller에서 로그인 한사람(=나) 정보를 받을 것. 나중에 지워주세요-->
+							<div class="block_square">
+								<input readonly type="text" id="reported" name="reported_id" placeholder="신고받는사람" value="${memberInfo.id}">
 							</div>
-					  	</div>
+						  </div>
+						  <div class="modal-header">
+					        <h4 class="modal-title" id="myModalLabel" style="margin-bottom: 15px;">신고 이유</h4>
+					        <textarea style="resize:none" class="suspended" id="reporttext" name="report" placeholder="신고사유"></textarea>
+					      </div>	
+					      
+					      <div class="modal-footer" style="text-align:center;">
+					      	<p>대상 회원을 신고 하시겠습니까?</p>
+					        <button type="button" class="btn_check" onclick="modalbye()">신고</button>
+					        <button type="button" class="btn_cancel" data-dismiss="modal">취소</button>
+					      </div>
+					    </div>
+					  </div>
 					</div>
 				</div>
 			</div>
@@ -250,27 +246,10 @@
 								
 							</div>
 							
-							<div class="paging">
-								<c:if test="${pageMaker.prev }">
-									<a href="${pageMaker.startPage - 1}"><i
-										class="fa fa-angle-double-left"></i></a>
-								</c:if>
-								<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-									<a href="${num }" class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
-								</c:forEach>
-								<c:if test="${pageMaker.next }">
-									<a href="${pageMaker.endPage + 1}"><i
-										class="fa fa-angle-double-right"></i></a>
-								</c:if>
-								<div>
-								
-								</div>
-								<form id="actionForm" action="my" method="get">
-									<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-									<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-									<input type="hidden" name="type" value="${pageMaker.cri.type }">
-									<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-								</form>
+							<div class="sc-cNnxps eRohwo">
+								<button id="load" class="sc-bvTASY hXMCla" style="margin: 10px 0px 100px;">
+									<div class="sc-koErNt hTdWoQ">상점문의 더보기</div>
+								</button>
 							</div>
 							
 					</div>
@@ -306,27 +285,10 @@
 								
 							</div>
 							
-							<div class="paging">
-								<c:if test="${pageMaker.prev }">
-									<a href="${pageMaker.startPage - 1}"><i
-										class="fa fa-angle-double-left"></i></a>
-								</c:if>
-								<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-									<a href="${num }" class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
-								</c:forEach>
-								<c:if test="${pageMaker.next }">
-									<a href="${pageMaker.endPage + 1}"><i
-										class="fa fa-angle-double-right"></i></a>
-								</c:if>
-								<div>
-								
-								</div>
-								<form id="actionForm" action="my" method="get">
-									<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-									<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-									<input type="hidden" name="type" value="${pageMaker.cri.type }">
-									<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-								</form>
+							<div class="sc-cNnxps eRohwo">
+								<button id="reviewLoad" class="sc-bvTASY hXMCla" style="margin: 10px 0px 100px;">
+									<div class="sc-koErNt hTdWoQ">상점후기 더보기</div>
+								</button>
 							</div>
 							
 					</div>
@@ -437,13 +399,12 @@ $(function() {
 
 	var faqReplyer = "${faqReplyer}"
 	var faqUL = $('.chat');
-	showList(1);
+	showList(faqid);
 	
-	function showList(page) {
-		console.log("문의 아이디 : "+faqid);
+	function showList(faqid) {
 		
-		replyService.getList( {id:faqid, page:page||1}, function(list) {
-
+		replyService.getList( {id:faqid}, function(list) {
+			
 			var str = "";
 			
 			if(list == null || list.length == 0) {
@@ -452,24 +413,25 @@ $(function() {
 			}
 			
 			for(var i=0, len=list.length || 0; i<len; i++) {
-				str +=  "<div class='leftBox pull-left' style='margin: 10px 0;'>";
-				str +=		"<img src='/resources/images/store.png' width='48' height='48' alt='프로필 이미지'>";
-				str +=	"</div>";
-				str +=	"<div class='rightBox'>";
-				str +=		"<div class='chat_user'>";
-				str +=			"<input type='hidden' id='faqQno' data-qno="+list[i].qno+">";
-				str +=			"<div class='id' id="+list[i].qno+">"+list[i].replyer+"</div>";
-				str +=				"<div class='faqTimeValue'>";
-				str +=					"<span id='faqTimeValue'>"+list[i].realrealdate+"</span>";
-				str +=				"</div>";
+				str +=  "<div class='replyDIV' style='display:none;'>";
+				str +=  	"<div class='leftBox pull-left' style='margin: 10px 0;'>";
+				str +=			"<img src='/resources/images/store.png' width='48' height='48' alt='프로필 이미지'>";
 				str +=		"</div>";
-				str +=		"<div class='chat_content'>"+list[i].reply+"</div>";
-		        str +=		"<div class='chat_btn'>";
-		        str +=			"<div class='comment_check'><img src='/resources/images/comment.png' width='17' height='14' alt='댓글달기 버튼 이미지'><button type='button' onclick='faqAnswer("+list[i].qno+")' >댓글달기</a></div>";
-								if(list[i].replyer == faqReplyer) {
-				str +=			"<div class='comment_check'><img src='/resources/images/faq_delete.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><button type='button' onclick='faqDelete("+list[i].qno+")' class='faqDeleteBtn' class='comdel'>삭제하기</a></div>";
-								}
-		        str +=		"</div>";
+				str +=		"<div class='rightBox'>";
+				str +=			"<div class='chat_user'>";
+				str +=				"<input type='hidden' id='faqQno' data-qno="+list[i].qno+">";
+				str +=				"<div class='id' id="+list[i].qno+">"+list[i].replyer+"</div>";
+				str +=					"<div class='faqTimeValue'>";
+				str +=						"<span id='faqTimeValue'>"+list[i].realrealdate+"</span>";
+				str +=					"</div>";
+				str +=			"</div>";
+				str +=			"<div class='chat_content'>"+list[i].reply+"</div>";
+		        str +=			"<div class='chat_btn'>";
+		        str +=				"<div class='comment_check'><img src='/resources/images/comment.png' width='17' height='14' alt='댓글달기 버튼 이미지'><button type='button' onclick='faqAnswer("+list[i].qno+")' >댓글달기</a></div>";
+									if(list[i].replyer == faqReplyer) {
+				str +=				"<div class='comment_check'><img src='/resources/images/faq_delete.png' width='17' height='14' alt='댓글삭제 버튼 이미지'><button type='button' onclick='faqDelete("+list[i].qno+")' class='faqDeleteBtn' class='comdel'>삭제하기</a></div>";
+									}
+		        str +=			"</div>";
 				str +=	"</div>";
 			}
 			faqUL.html(str);
@@ -716,26 +678,25 @@ $(function() {
 	
 	var reviewReplyer = "${reviewReplyer}";
 	
-	reviewList(1);
+	reviewList(reviewid);
 	
 })
 	
-	function reviewList(page) {
+	function reviewList(reviewid) {
 		
 		var reviewid = '<c:out value="${memberInfo.id}"/>';
 		var reviewReplyer = "${reviewReplyer}";
 		var str = "";
 		
-		console.log("리뷰 아이디 : "+reviewid);
-		
 		$.ajax ({
 			type : 'get',
-			url : '/review/pages/'+reviewid+'/'+page,
-			data : { id:reviewid, page:page },
+			url : '/review/pages/'+reviewid,
+			data : { id:reviewid },
 			dataType : "json",
 			success : function(result){
 				
 				for(var i=0, len=result.length || 0; i < len; i++) {
+					str +=  "<div class='reviewDIV' style='display:none;'>";
 					str += "<div class='comment_contain'>";
 					str += 	"<div class='leftBox pull-left'>";
 					str += 		"<img src='/resources/images/store.png' width='48' height='48' alt='프로필 이미지' style='margin-top: 13px;'>"; // <----- 프로필이미지 추가하면 여기에 넣어주세요!!
@@ -746,11 +707,37 @@ $(function() {
 					str += 			"<div class='date'>"+result[i].realrealdate+"</div>";
 					str +=	"</div>";
 					str +=	"<div class='sc-gGCbJM eAYqVt'>"; // <----------- 별점은 이곳에서 처리해주세요 !!
-					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
-					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
-					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
-					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
-					str += 		"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 2점 이미지'>";
+								if(result[i].grade == 1){
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+								}else if(result[i].grade == 2){
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+								}else if(result[i].grade == 3){
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+								}else if(result[i].grade == 4){
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/noStar.png' width='15' height='14' alt='작은 별점 0점 이미지'>";
+								}else {
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+					str += 			"<img src='/resources/images/inStar.png' width='15' height='14' alt='작은 별점 1점 이미지'>";
+								}
 					str += 		"<br>";
 					str += 	"</div>";	
 					str += 	"<div class='aTag'>";
@@ -760,7 +747,7 @@ $(function() {
 					str += 		"</a>";
 					str += 	"</div>";
 					str += 	"<div class='sc-MYvYT izkVcA'>";
-					str += 		"<img src='/resources/images/hambuk.jpg' width='100' height='100' alt='상품이미지'>";
+					str += 		"<img style='border-radius: 5px;' src='/resources/images/hambuk.jpg' width='100' height='100' alt='상품이미지'>"; // <------------------상품이미지 경로 넣어주기 !!!
 					str += 	"</div>";
 					str += 	"<div class='chat_content'>"+result[i].content+"</div>";
 					str += 	"<div class='chat_btn'>";
@@ -769,6 +756,7 @@ $(function() {
 								}
 					str += 	"</div>";
 					str += 	"</div>";
+					str += "</div>";
 					str += "</div>";
 			}
 			$('#reviewChat').html(str);
@@ -891,6 +879,32 @@ $("#check_module").click(function () {
 	
 	
 }); // fun end
+</script>
+<script>
+
+window.onload = function() {
+	
+	$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택
+	$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택
+
+}
+
+	$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+		e.preventDefault();
+		$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+		if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+		}
+	});
+	
+	$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
+		r.preventDefault();
+		$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+		if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+		}
+	});
+
 </script>
 
 <%@ include file="../footer.jsp"%>

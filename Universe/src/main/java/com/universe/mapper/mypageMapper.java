@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.universe.criteria.Criteria;
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReviewVO;
 import com.universe.domain.UserVO;
 
 public interface mypageMapper {
@@ -35,11 +36,13 @@ public interface mypageMapper {
 	public List<ProductVO> detailsSellAllList(String id);
 	public List<ProductVO> detailsSellIngList(String id);
 	public List<ProductVO> detailsSoldList(String id);
-	public List<ProductVO> detailsSellCancelList(String id);
 	
 	public List<ProductVO> detailsBuyAllList(String id);
 	public List<ProductVO> detailsBuyIngList(String id);
 	public List<ProductVO> detailsBuyEndList(String id);
-	public List<ProductVO> detailsBuyCancelList(String id);
+	
+	public int ReviewInsert(ReviewVO vo);
+	public void buyListUpdateRV(int pno);
+	public void updateMemberGrade(@Param("id") String id, @Param("grade") int grade);
 
 }

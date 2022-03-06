@@ -29,7 +29,7 @@
 		<div class="col-md-12 search">
 			<div class="search_box pull-left">
 				<form name="search" method="get" action="/mypage/manage" class="search" id="searchForm">
-					<input type="text" placeholder="Search" name="keyword">
+					<input type="text" placeholder="Search" name="keyword" id="managekey">
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 					<button type="submit" class="eYKCSk"></button>
@@ -72,7 +72,7 @@
 							<c:set var="num" value="${pageMaker.total - ((pageMaker.cri.pageNum - 1) * 10)}" />
 							<c:forEach var="list" items="${list}">
 								<tr id="${list.pno}">
-									<td><img src="/resources/images/notica.jpg" alt="" width="55"></td>
+									<td><img src="/resources/images/notica.jpg" alt="" width="55" style="border-radius: 5px;"></td>
 									<c:choose>
 										<c:when test="${list.status == '판매완료'}">
 											<td style="color:red;">판매완료</td>

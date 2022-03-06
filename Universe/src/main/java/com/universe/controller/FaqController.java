@@ -63,16 +63,14 @@ public class FaqController {
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}//문의등록
 	
-	@GetMapping(value = "/pages/{id}/{page}", 
+	@GetMapping(value = "/pages/{id}", 
 			produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public ResponseEntity<List<FaqVO>> getList(@PathVariable("page") int page, @PathVariable("id") String id) {
-		
-		Criteria cri = new Criteria(page, 5);
+	public ResponseEntity<List<FaqVO>> getList(@PathVariable("id") String id) {
 		
 		Date today = new Date();
 	    double Dtime= today.getTime();
-		
-		List<FaqVO> list = service.getListWithPaging(cri, id);
+	    
+		List<FaqVO> list = service.getListWithPaging(id);
 		int size = list.size();
 	    for(int i=0; size>i; i++) {
 	      
@@ -101,6 +99,7 @@ public class FaqController {
 		   
 		    }
 	    }
+	    
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}//문의목록
 	
