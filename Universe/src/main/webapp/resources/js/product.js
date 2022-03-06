@@ -122,14 +122,6 @@ function productviewjjimdown(pno){ //찜 삭제
 
 
 
-<<<<<<< HEAD
-=======
-function gotradebtn(saler,pno){
-	
-	location.href="/trade/trade?saler="+saler+"&&pno="+pno
-
-}
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 
 function modalbye(){

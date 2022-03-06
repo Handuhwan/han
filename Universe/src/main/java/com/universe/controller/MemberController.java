@@ -112,10 +112,9 @@ public class MemberController {
 	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
 		
-<<<<<<< HEAD
+
 		System.out.println(member);
-=======
->>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
+
 		String inputPass = pwencoder.encode(member.getPwd());
 		member.setPwd(inputPass);
 		
