@@ -12,12 +12,17 @@ public class TradeVO {
     private String saler ;
     private int amount ;
     private int buystatus ;
-    private int saletatus ;
+    private int salestatus ;
+   
     private Date tradedate ;
+    private String content;
     
     private String img1;
     private String title;
     private String nickname;
+    private String name;
+    private String userimg;
+
     
 	
 	

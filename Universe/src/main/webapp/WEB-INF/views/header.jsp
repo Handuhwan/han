@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -50,6 +51,63 @@
 <meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 <script src="/resources/js/product.js"></script>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Universe</title>
+<link rel="icon" type="image/png" href="../resources/images/favicon.ico"/>
+
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="/resources/css/summernote.min.css" rel="stylesheet">
+<link href="/resources/css/admin.css" rel="stylesheet">
+<link href="/resources/css/common.css" rel="stylesheet">
+
+<link href="/resources/css/main.css" rel="stylesheet">
+<link href="/resources/css/sub.css" rel="stylesheet">
+<link href="/resources/css/member.css" rel="stylesheet">
+<link href="/resources/css/mypage.css" rel="stylesheet">
+<link href="/resources/css/product.css" rel="stylesheet">
+<link href="/resources/css/chat.css" rel="stylesheet">
+<link href="/resources/css/trade.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- 구글 폰트 -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<!-- font-family: 'Noto Sans KR', sans-serif; < css에 적용할 폰트 복붙 -->
+<!-- /구글 폰트 -->
+
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<!-- <link href="/resources/css/" rel="stylesheet"> 여분-->
+<script src="/resources/js/jquery-3.3.1.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/summernote.min.js"></script>
+<script src="/resources/js/main.js"></script>
+<script src="/resources/js/member.js"></script>
+<script src="/resources/js/chat.js"></script>
+<script src="/resources/js/pay.js"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+<script src="/resources/js/product.js"></script>
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 <script src="/resources/js/mypage.js"></script>
 <script src="/resources/js/details.js"></script>
 <script src="/resources/js/faqReply.js"></script>

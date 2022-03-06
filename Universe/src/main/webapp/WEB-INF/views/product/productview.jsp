@@ -3,11 +3,15 @@
 <!DOCTYPE html>
 <%@ include file="../header.jsp"%>
 
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal.member.point" var="meprice"/>
+	<sec:authentication property="principal.member.id" var="meid"/>
+</sec:authorize>
 	<div class="container">
 		<h3 style="margin-bottom:30px; font-weight:600">현재 인기 상품입니다.</h3>
 		<c:forEach items="${best }" var="best">
 		<div class="col-md-3">
-		<a href="/product/prodcutview?pno=${best.pno }" style="text-decoration:none;">
+		<a href="/product/productview?pno=${best.pno }" style="text-decoration:none;">
 			<img style="width:150px; height:150px;" src="/Pupload/${best.img1 }">
 			<h4><fmt:formatNumber value="${best.price }"/>원</h4>
 		</a>	
@@ -159,6 +163,29 @@
 		
 		</div><!-- con end -->
 <script>
+
+
+
+
+
+function gotradebtn(saler,pno){
+	var p ="${view.price}"
+	var mp ="${meprice}"
+	var id ="${view.id}"
+	var meid="${meid}"	
+	
+	if(meid==id){
+		location.href="/trade/trade?saler="+saler+"&&pno="+pno
+	}else{			
+		if(mp>=p){
+		location.href="/trade/trade?saler="+saler+"&&pno="+pno
+		}else{
+		alert("금액이 부족합니다.")
+		}
+	}
+
+}
+
 
 
 

@@ -144,6 +144,9 @@ public class MemberController {
 	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
 		
+
+		System.out.println(member);
+
 		String inputPass = pwencoder.encode(member.getPwd());
 		member.setPwd(inputPass);
 		

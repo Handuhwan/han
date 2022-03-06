@@ -276,7 +276,7 @@ a:hover {
 
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
     color: #333;
-    background-color: #f0f4ff;
+    background-color: rgb(207, 212, 244);
     border-color: #adadad;
 }
 
@@ -318,7 +318,7 @@ a:hover {
 
 .login_btn {
 	padding: 14px 20px;
-    background-color: #989ec6;
+    background-color: #bbbbbbcf;
     color:white;
     width:100%;
     font-family: Poppins-Regular; 
