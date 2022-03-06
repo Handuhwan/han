@@ -42,6 +42,7 @@ public class AdminController {
 	//admin로그인화면
 	@GetMapping("/admin_login")
 	public void adminLoginForm() {
+		System.out.println("zz");
 		//아이디나 비밀번호가 틀렸을 때 경고 메세지를 띄워야함 
 	}
 	
