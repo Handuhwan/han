@@ -4,6 +4,7 @@
   
   
   <insert id="tradeinsert">
+<<<<<<< HEAD
   	<selectKey keyProperty="amount" resultType="int" order="BEFORE">
   		select price from product where pno=#{pno}
   	</selectKey>
@@ -78,4 +79,32 @@
   	delete from trade where tno=#{tno}
   </delete>
   
+=======
+  	insert into trade(tno,pno,buyer,saler,amount)values(trade.nextval,#{pno},#{buyer},#{saler},#{amount})
+  </insert> <!-- 구매신청 -->
+  
+  <select id="tradecheck" resultType="int">
+  	select count(*) from trade where pno=#{pno} and buystatus=0 and salestatus=0
+  </select> <!-- 구매자 체크 -->
+  
+  <update id="buystatusok">
+  	update trade set buystatus = 1 where pno = #{pno} and buyer=#{buyer}
+  </update> <!-- 구매 확정 -->
+  
+   <update id="salestatusok">
+  	update trade set salestatus = 1 where pno = #{pno} and saler=#{saler}
+  </update> <!-- 판매 확정 -->
+  
+  <update id="buyend">
+  	update member set amount = amount - #{amount} where id=#{id}
+  </update> <!-- 구매완료 -->
+  
+  <update id="saleend">
+  	update member set amount = amount + #{amount} where id=#{id}
+  </update> <!-- 판매 완료 -->
+  
+  <update id="">
+  	update product set status = 1 where pno=#{pno}
+  </update> <!-- 해당 품목 1상태로 만듬 -->
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 </mapper>

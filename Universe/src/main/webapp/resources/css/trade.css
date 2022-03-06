@@ -65,6 +65,7 @@
     color:#fff;
     font-weight:bold;
 }
+<<<<<<< HEAD
 .tradetuworking:hover{
 	   border: 1px solid #ccc;
     margin-left: 118px;
@@ -114,6 +115,46 @@
     height: 259px;
     margin-top: 30px;
     width: 201px; 
+=======
+.tradetuworking1{
+    border: 1px solid #ccc;
+    margin-left: 118px;
+    width: 40%;
+    background: #9abf7f;
+    height: 43px;
+    display: block;
+    border-radius: 6%;
+    color:#fff;
+    font-weight:bold;
+}
+
+.tradeheymama{
+	margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 88px;
+    width: 80%;
+    margin-top: 14px;
+    background: #fff;
+    height: 48px;
+    display: block;
+}
+.tradebordertop {
+	margin-left: 171px;
+    border-left: 1px solid #d5d5d5;
+    padding-top: 112px;
+}
+.tradeborderbottom{
+	margin-left: 171px;
+    border-left: 1px solid #d5d5d5;
+    padding-bottom: 112px;
+}
+	
+.tradephoto{
+	margin-left: 108px;
+    height: 259px;
+    margin-top: 30px;
+    max-width: 100%; 
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
     border-width : -6px; 
     border-style :double; 
  	 border-color : #d5d5d5;

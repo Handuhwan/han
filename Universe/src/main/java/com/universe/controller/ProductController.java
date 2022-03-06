@@ -101,7 +101,11 @@ public class ProductController {
 		pservice.ProductInsert(pvo);
 		System.out.println("여기까지실행2");
 		
+<<<<<<< HEAD
 		return "redirect:/mypage/manage?id="+pvo.getId()+"";
+=======
+		return "redirect:/mypage/manage";
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 

@@ -2,6 +2,7 @@ package com.universe.service;
 
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import com.universe.domain.TradeVO;
 import com.universe.mapper.TradeMapper;
 
@@ -102,4 +103,13 @@ public class TradeServiceImple implements TradeService {
 		
 		return check;
 	}
+=======
+import lombok.AllArgsConstructor;
+
+@Service
+
+@AllArgsConstructor
+public class TradeServiceImple implements TradeService {
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

@@ -1,5 +1,6 @@
 package com.universe.mapper;
 
+<<<<<<< HEAD
 import org.apache.ibatis.annotations.Param;
 
 import com.universe.domain.TradeVO;
@@ -43,4 +44,8 @@ public interface TradeMapper {
 	//상품 스테이터스 되돌림
 	public void cancel(int tno);
 	//trade 테이블에서 해당 거래 내역을 삭제
+=======
+public interface TradeMapper {
+
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 }

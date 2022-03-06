@@ -1,5 +1,6 @@
 package com.universe.controller;
 
+<<<<<<< HEAD
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -68,6 +69,25 @@ public class TradeController {
 		System.out.println("거래취소 시작");
 		
 		return tservice.tradecancel(vo);
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Controller
+@RequestMapping("/trade/*")
+@AllArgsConstructor
+
+
+public class TradeController {
+	
+	
+	@RequestMapping("/trade")
+	public void trade() {
+		System.out.println("trade실행");
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 	}
 	
 
