@@ -8,8 +8,8 @@
 	color:#000;
 	padding-bottom:10px;
 	padding-top:10px;
-	border-bottom:1px solid;
-	border-color:#cfd4f4;
+	border-bottom:1px solid #bbbbbbcf;
+	border-color:#bbbbbbcf;
 	
 }
 
@@ -67,9 +67,11 @@
 }
 
 .serch-box input{
-	border:3px solid #cfd4f4;
+	border:2px solid #cfd4f4;
 	padding:6px 13px;
 	width:435px;
+	border-radius: 5px;
+	font-weight: bolder;
 }
 .header_recent{
 	border: 1px solid #e8e8e8;
@@ -78,6 +80,25 @@
     right: 55px;
     width: 110px;
     text-align: center;
+    border-radius: 5px;
+}
+
+.ujuh1 {
+	
+	margin-bottom: 70px; 
+	font-size: xx-large; 
+	font-weight: bold;
+	text-align: center;
+	
+}
+
+.ujuh1::after {
+	content: "";
+    position: absolute;
+    top: 75px;
+    left: 400px;
+    border-bottom: 2px solid #bbbbbbcf;
+    width: 340px;
 }
 
 .header_recent a img{
@@ -91,7 +112,8 @@
 }
 
 .thumbnail{
- 	border:1px solid #cfd4f4;
+ 	border:1px solid #bbbbbbcf;
+ 	border-radius: 5px;
  	
 }
 .thumbnail a img{

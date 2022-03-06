@@ -28,8 +28,9 @@ public class FaqServiceImpl implements FaqService {
 	}
 	
 	@Override
-	public List<FaqVO> getListWithPaging(Criteria cri, String id) {
-		return mapper.getListWithPaging(cri, id);
+	public List<FaqVO> getListWithPaging(String id) {
+		System.out.println("FAQ LIST IMPL");
+		return mapper.getListWithPaging(id);
 	}
 	
 	@Override

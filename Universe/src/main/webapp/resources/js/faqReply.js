@@ -26,15 +26,14 @@ var replyService = (function() {
 	function getList(param, callback, error) {
 	 
    		var id = param.id;
-   		var page = param.page;
    		
-   		$.getJSON("/faq/pages/"+id+"/"+page+".json", function(data){
+   		$.getJSON("/faq/pages/"+id+".json", function(data){
    			if(callback) {
    				callback(data);
    			}
    			
    		}).fail(function(xhr, status, err){
-   			
+   			alert("FAQ ERROR");
    		});
    
    

@@ -25,7 +25,7 @@
 					
 						   <!--  <button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
 						
-							<button type="button"   class="googlefont g-signin2" onclick="onSignIn()"  style="width:300px; color:#fff; ">구글 로그인</button>
+							<button type="button"   class="googlefont g-signin2" onclick="onSignIn()"  style="width:300px; color:#fff; padding-right: 30px;">구글 로그인</button>
     					
     			</div>
     		</div><!-- 6컬럼end -->

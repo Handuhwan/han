@@ -11,7 +11,7 @@ public interface FaqService {
 	
 	public int delete(Long qno); // 삭제
 	
-	public List<FaqVO> getListWithPaging(Criteria cri, String id); // 페이지리스트
+	public List<FaqVO> getListWithPaging(String id); // 페이지리스트
 	
 	public int counting(String id);
 

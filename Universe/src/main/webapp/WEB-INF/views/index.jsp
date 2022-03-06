@@ -14,13 +14,13 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner1.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%; border-radius: 5px;" src="/resources/images/mainbanner1.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		    <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner3.jpg" alt="...">
+		      <img style="height:250px;  width:100%; border-radius: 5px;" src="/resources/images/mainbanner3.jpg" alt="...">
 		    </div>  <!-- item end  -->
 		     <div class="item">
-		      <img style="height:250px;  width:100%;" src="/resources/images/mainbanner4.jpg" alt="...">
+		      <img style="height:250px;  width:100%; border-radius: 5px;" src="/resources/images/mainbanner4.jpg" alt="...">
 		    </div>  <!-- item end  -->
 		   
 		  </div> <!-- item inner box -->
@@ -43,7 +43,7 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner2.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%; border-radius: 5px;" src="/resources/images/mainbanner2.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		 
 		  </div> <!-- item inner box -->
@@ -79,7 +79,7 @@
 		
 		<div class="container">
 			<div class="col-md-12">
-				<h1 style="margin-bottom:70px;">Universe 상품 추천</h1>
+				<h1 class="ujuh1">우주마켓 상품추천</h1>
 				<div class="row">
 				<c:forEach items="${homelist}" var="list">
   					<div class="col-sm-6 main_items">
@@ -89,10 +89,10 @@
       							<img src="/Pupload/${list.img1 }" alt="..." onclick="">
       						</a>
       						<div class="caption">
-      						<c:if test="${fn:length(list.title) > 8 }">
-        					<p style="font-size:20px;">${fn:substring(list.title,0,8)}...</p>   
+      						<c:if test="${fn:length(list.title) > 10 }">
+        					<p style="font-size:20px;">${fn:substring(list.title,0,10)}...</p>   
         					</c:if>	
-        					<c:if test="${fn:length(list.title) <= 8 }">
+        					<c:if test="${fn:length(list.title) <= 10 }">
         					<p style="font-size:20px;">${list.title}</p>   
         					</c:if>						
         					<span style="font-size:16px; font-weight:600"><fmt:formatNumber value="${list.price }"/>원</span>

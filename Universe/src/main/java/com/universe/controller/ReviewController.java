@@ -46,16 +46,14 @@ public class ReviewController {
 	// 댓글이 추가된 숫자를 확인해서 브라우저에서 200K 혹은 500 Internal Server Error를 반환한다.
 
 	@ResponseBody
-	@GetMapping(value = "/pages/{id}/{page}",
+	@GetMapping(value = "/pages/{id}",
 			produces = { MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public ResponseEntity<List<ReviewVO>> reviewList(@PathVariable("page") int page, @PathVariable("id") String id) {
-		
-		Criteria cri = new Criteria(page, 5);
+	public ResponseEntity<List<ReviewVO>> reviewList(@PathVariable("id") String id) {
 		
 		Date today = new Date();
 	    double Dtime= today.getTime();
 		
-		List<ReviewVO> list = service.reviewList(cri, id);
+		List<ReviewVO> list = service.reviewList(id);
 		
 		int size = list.size();
 	    for(int i=0; size>i; i++) {

@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +25,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.universe.criteria.Criteria;
 import com.universe.criteria.PageVO;
+import com.universe.domain.FaqVO;
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReviewVO;
 import com.universe.domain.UserVO;
 import com.universe.service.MypageService;
 
@@ -125,6 +128,8 @@ public class MypageController {
 	@GetMapping("/details/BuyList")
 	public List<ProductVO> detailsBuyList(String id, int no) { 
 		
+		System.out.println("Details BuyList ID : "+id);
+		
 		List<ProductVO> buyList = service.detailsBuyList(id, no);
 		
 		int size;
@@ -138,6 +143,21 @@ public class MypageController {
 			buyList.get(i).setRealrealdate(indate);
 		}
 		return buyList;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/details/insertRV",
+			method = RequestMethod.GET)
+	public int insertReview(ReviewVO vo) {
+
+		System.out.println("리뷰 작성 데이터 : "+vo);
+		int result = service.ReviewInsert(vo);
+		if(result == 1) {
+			service.buyListUpdateRV(vo.getPno());
+			service.updateMemberGrade(vo.getId(), vo.getGrade());
+			System.out.println("구매내역 업데이트완료");
+		}
+		return result;
 	}
 	
 	@ResponseBody

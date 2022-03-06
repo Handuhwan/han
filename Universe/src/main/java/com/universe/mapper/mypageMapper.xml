@@ -80,16 +80,14 @@
 			from (
 			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
 			from product
-			where 
+			where pno > 0
 		]]>
 		
 		<include refid="criteria"></include>
 		
-		<![CDATA[
-				rownum <= #{pageNum} * #{amount} 
+		
 			) 
-			where rn > (#{pageNum} - 1) * #{amount}
-		]]>
+	
 	</select>
 	
 	<select id="manageTotalCount" resultType="int">
@@ -119,38 +117,40 @@
 		select * from product where id = #{id} and status = '판매완료' order by indate desc
 	</select>
 	
-	<select id="detailsSellCancelList" resultType="com.universe.domain.ProductVO">
-		select * from product where id = #{id} and status = '취소' order by indate desc
-	</select>
-	
 	<!-- 상품관리 구매내역 리스트 출력 -->
 	<select id="detailsBuyAllList" resultType="com.universe.domain.ProductVO">
-		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		select b.pno, b.buyer, b.seller, p.title, p.quantity, p.price, b.indate, b.status, b.review, p.img1
 		from buylist b, product p
-		where b.id = #{id} and b.pno = p.pno
+		where b.buyer = #{id} and b.pno = p.pno
 		order by b.indate desc
 	</select>
 	
 	<select id="detailsBuyIngList" resultType="com.universe.domain.ProductVO">
-		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		select b.pno, b.buyer, b.seller, p.title, p.quantity, p.price, b.indate, b.status, b.review, p.img1
 		from buylist b, product p
-		where b.id = #{id} and b.pno = p.pno and b.status = '진행중'
+		where b.buyer = #{id} and b.pno = p.pno and b.status = '진행중'
 		order by b.indate desc
 	</select>
 	
 	<select id="detailsBuyEndList" resultType="com.universe.domain.ProductVO">
-		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
+		select b.pno, b.buyer, b.seller, p.title, p.quantity, p.price, b.indate, b.status, b.review, p.img1
 		from buylist b, product p
-		where b.id = #{id} and b.pno = p.pno and b.status = '구매완료'
+		where b.buyer = #{id} and b.pno = p.pno and b.status = '구매완료'
 		order by b.indate desc
 	</select>
 	
-	<select id="detailsBuyCancelList" resultType="com.universe.domain.ProductVO">
-		select b.pno, b.id, p.title, p.quantity, p.price, b.indate, b.status, b.review
-		from buylist b, product p
-		where b.id = #{id} and b.pno = p.pno and b.status = '취소'
-		order by b.indate desc
-	</select>
+	<insert id="ReviewInsert">
+		insert into review (rno, pno, id, nickname, grade, content, title, img1)
+		values (review_seq.nextval, #{pno}, #{id}, #{nickname}, #{grade}, #{content}, #{title}, #{img1})
+	</insert>
+	
+	<update id="buyListUpdateRV">
+		update buylist set review = 1 where pno = #{pno}
+	</update>
+	
+	<update id="updateMemberGrade">
+		update member set grade = #{grade}, gradecount = gradecount + 1 where id = #{id}
+	</update>
 	
 	
 	
