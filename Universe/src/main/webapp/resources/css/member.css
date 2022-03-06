@@ -215,6 +215,7 @@ transition: all .3s
 .intextline {
 	height: 200px;
     width: 1100px;
+    resize: none;
 }
 .address{
 	border: 1px solid #ddd;
@@ -248,15 +249,15 @@ transition: all .3s
 }
 .signup1    
 {
+	background-color: #989ec6;
+    color: white;
+    font-family: Poppins-Regular;
 	margin-top: 20px;
    font-weight: 560;
     font-size: 18px;
     border: solid 2px;
-    padding: 18px 125px 18px 125px;
+    padding: 15px 125px 15px 125px;
 	margin-bottom: 50px;
-}
-.signup1:hover {
-	color:#6098FF; 
 }
 .joinbuttton {
 	padding: 12px 0 12px 18px;
@@ -434,3 +435,42 @@ font-size: 1.4rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    /* background-color: #f0f4ff; */
+    /* border-color: #adadad; */
+}
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+button, [type="button"], [type="reset"], [type="submit"] {
+    appearance: button;
+}
+.signup1 {
+    background-color: #989ec6;
+    color: white;
+    font-family: Poppins-Regular;
+    margin-top: 20px;
+    font-weight: 560;
+    font-size: 18px;
+    border: solid 2px;
+    padding: 15px 125px 15px 125px;
+    margin-bottom: 50px;
+}
+#registerForm label.error {
+	margin-left: 10px; color:red; 
+	}
+	
+/* 중복아이디 존재하지 않는경우 */
+	.id_input_re_1{
+		color : green;
+		display : none;
+	}
+	/* 중복아이디 존재하는 경우 */
+	.id_input_re_2{
+		color : red;
+		display : none;
+	}

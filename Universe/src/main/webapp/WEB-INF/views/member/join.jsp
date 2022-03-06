@@ -7,9 +7,9 @@
     <section class="product">
     	<div class="container">
     		<div class="row">
-
+    	<form class="form-horizontal" action="/member/memberinsert" name="join" id="registerForm" method="post" onsubmit="return memeber_insert_form()">
     		<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 79px;">
-						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;">
 								    이용약관 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
@@ -37,16 +37,16 @@
 					<div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
 						  
 						    <div class="chkbox accordionbottom" style="margin-top: 53px;">
-							    <input id="one" type="checkbox" name="agreeall" value="y" >
-							    <span class="check"></span>
-							    <label for="one">동의</label>
+							    <input id="one" name="one" type="checkbox"  value="y" >
+							    <span class="check" ></span>
+							    <label for="one"  >동의</label>
 							  </div>
     				 </div><!-- col-md-3 -->
     				
     				
 					
 					<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
-						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;">
 								     이메일 수신 동의 <span class="consent" style="font-weight: 100;">(필수)</span>
 							</button>
 							<ul class="dropdown-menu" role="menu" >
@@ -66,9 +66,9 @@
 						  <div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 19px;">
 						  
 						    <div class="chkbox accordionbottom" style="margin-top: 45px;">
-							    <input id="two" type="checkbox" name="agreeall" value="y" >
-							    <span class="check"></span>
-							    <label for="two">동의</label>
+							    <input id="two"  name="two" type="checkbox"  value="y" >
+							    <span class="check" ></span>
+							    <label for="two" >동의</label>
 							  </div>
     				     	</div><!-- col-md-3 -->
     				 
@@ -76,7 +76,7 @@
     				   	
     				   	<div class="col-md-9" style=" border-bottom: 1px solid #dbdbdb; margin-top: 45px;">
 
-						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;"">
+						     <button class="accordion" type="button" data-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-size: 17px;">
 								     마케팅 수신 동의 <span class="consent" style="font-weight: 100;">(선택)</span>
 							</button>
 							<ul class="dropdown-menu" role="menu" >
@@ -88,7 +88,7 @@
 								</a>
 							</li>
 						  </ul>
-					</div><!--col-md-6  -->
+					</div><!--col-md-9  -->
 						  
 						  <div class="col-md-3" style=" border-bottom: 1px solid #dbdbdb; margin-top: 34px;">
 						  
@@ -105,21 +105,21 @@
     			<div class="col-md-9 newitem" >
     				<h2 class="join">회원가입</h2>
     				
-    				<form class="form-horizontal" action="/member/memberinsert" name="join" method="post" onsubmit="return memeber_insert_form()">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-					  
+					  	
 					  <div class="">
-					    <label for="id" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >이메일</label>
+					    <label for="id" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >아이디</label>
 					    <div class="col-sm-10 joinbox" >
-					      <input type="text" name="id" class="form-control " id="id" placeholder="이메일 형식" style="padding: 16px; width: 27%;">
-					      <span id="idmsg"></span>
+					      <input type="text" name="id" class="form-control check id" id="id" placeholder="아이디 입력" style="padding: 16px; width: 27%; display: inline;"  value="" ><br/>
 					    </div>
+					    	<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
+							<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
 					  </div>
 					  
 					  <div class="">
 					    <label for="pwd" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >암호</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 16px; width: 27%;">
+					      <input type="password" name="pwd" class="form-control" id="pwd" placeholder="암호입력" style="padding: 16px; width: 27%; display: inline;"><br/>
 					     <span id="pwmsg"></span>
 					    </div>
 					  </div>
@@ -127,28 +127,28 @@
 					  <div class="">
 					    <label for="pwdcheck" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >암호확인</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인" style="padding: 16px; width: 27%;">
+					      <input type="password" name="pwdcheck" class="form-control" id="pwdcheck" placeholder="암호확인" style="padding: 16px; width: 27%; display: inline;"><br/>
 					    </div>
 					  </div>
 					  
 					  <div class="">
 					    <label for="name" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >이름</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력" style="padding: 16px; width: 27%;">
+					      <input type="text" name="name" class="form-control" id="name" placeholder="이름입력" style="padding: 16px; width: 27%; display: inline;"><br/>
 					    </div>
 					  </div>
 					  
 					  <div class="">
 					    <label for="nikname" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >별명</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="text" name="nickname" class="form-control" id="nickname" placeholder="별명입력" style="padding: 16px; width: 27%;">
+					      <input type="text" name="nickname" class="form-control" id="nickname" placeholder="별명입력" style="padding: 16px; width: 27%; display: inline;"><br/>
 					    </div>
 					  </div>
 					  
 					  <div class="">
 					    <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >주소</label>
 					    <div class="col-sm-10 joinbox">
-					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px; text-align: left; width: 27%; border: 1px solid #ccc;">
+					      <input type="text" name="zip_num"  id="member_post" placeholder="우편번호" style="padding: 10px; text-align: left; width: 27%; border: 1px solid #ccc;" readonly>
 					      <input type="button" value="우편번호 찾기" onclick="findAddr()" class="address" style="margin-left: 3px;"><br><br>
 					      <input type="text" name="address1" class="form-control"  placeholder="지번" id="member_addr" style="margin-bottom: 5px; padding: 16px; width: 27%;">
 					      <input type="text" name="address2" class="form-control"  placeholder="나머지 주소" style="padding: 16px; width: 27%;">
@@ -158,15 +158,15 @@
 					 <div >
 						  	 <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >전화번호</label>
 						  	 <div class="col-sm-10 joinbox">
-						  		<input class="form-control" type="text" id="phone" placeholder="전호번호입력" style="padding: 17px; width: 28%; display: inline-block; " name="to"/>
-							 <input type="button" class="address" id="phoneChk" value="전송" style="margin-left: 3px;   width: 96px;"/><br>
+						  		<input class="form-control" type="text" id="phone" value=""   placeholder="전화번호입력" style="padding: 17px; width: 28%; display: inline-block; " name="phone"/>
+							 <input type="button" class="address" id="phoneChk" value="전송" style="margin-left: 3px;   width: 96px; display: inline;"><br/>
 						   </div>	
 					   </div>
 					   
 					   <div>
 						<label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 17px; padding-bottom: 18px; border-bottom: 1px solid #e5e5e5; " >인증번호 작성</label>
 							<div class="col-sm-10 joinbox">
-							<input class="form-control" type="text"  placeholder="인증번호입력" id="userNum" style="padding: 17px; width: 28%; display: inline-block; "> 
+							<input class="form-control" type="text"  placeholder="인증번호입력" id="userNum" name="userNum" style="padding: 17px; width: 28%; display: inline-block; "> 
 								<input type="button" class="address" id="enterBtn" value="확인" style="margin-left: 3px;   width: 96px;">
 							  <input type="hidden" name="text" id="text">
 							</div>
@@ -174,46 +174,18 @@
 					  
 					  <div class="">
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="submit" class="btn btn-default  signup1" >회원가입 등록</button>
+					      <button type="submit" class=" btn-default  signup1" >회원가입 등록</button>
 					      
 					    </div>
 					  </div>
-					  
+					  </div>
 					</form>
-    			</div><!-- 9 end -->
+    			</div><!-- row -->
     		</div>
-    	</div>
+    
     </section>
     <!-- contents end -->
-	<script>
-    $("#agreeall").click(function(){
-    	if($("#agreeall").is(":checked")){
-    		$(".agree").prop("checked",true); //prop이건 비동기식
-    	}else{
-    		$(".agree").prop("checked",false);
-    	}
-    });
-    
-    $(".agree").click(function(){
-    	if($("input[name='agree']:checked").length == 3){
-    		$("#agreeall").prop("checked",true);
-    		}else{
-    			$("#agreeall").prop("checked",false);
-    		}
-    
-    	
-    })
-    function checkIDnext(){
-    	 if ($("#agreeall").is(":checked") == true){
- 		    location.href = "member2.do";
- 		    
- 	 }else{
- 		    alert ("약관에 동의하셔야 가입이 가능합니다.")
- 		    return false;
- 		  
-  }
-    }
-  </script> 
+	
   <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -306,5 +278,92 @@ $("#phoneChk2").click(function(){
 	});
 
   </script> 
+  
+<script >
+
+$("#id").blur(function(){
+
+	var id = $('#id').val();
+
+	console.log(id);
+	
+	$.ajax ({
+	    url: '/member/checkjoinid.do',
+	    type: 'get',
+	    data : {id:id},
+	    dataType : 'json',//서버로부터 내가 받는 데이터의 타입
+	    success: function(result){
+	    	console.log("result : "+result);
+	    	if(result == 0){
+				$('.id_input_re_1').css("display","inline-block");
+				$('.id_input_re_2').css("display", "none");				
+			} else {
+				$('.id_input_re_2').css("display","inline-block");
+				$('.id_input_re_1').css("display", "none");				
+			}
+	    }
+	  
+	  });
+    
+});// function 종료
+
+</script>
+  
+  
+  <!-- 에러메세지 -->
+ <script type="text/javascript">
+                   
+      $(document).ready(function () {          
+        //기본형태
+        //$('#registerForm').validate(); //유효성 검사를 적용
+       
+        // validate signup form on keyup and submit
+        //확장옵션
+        $('#registerForm').validate({
+            rules: {
+               /* 	id:{required:true, minlength:3, remote:"Validate"}, */
+               	pwd: "required",
+               	pwdcheck: {required:true, equalTo:'#pwd'},               
+                name: {required:true},
+                nickname: {required:true},
+                phone: {required:true, minlength:11, maxlength:11} , // 1~100범위
+                userNum: {required:true, minlength:4, maxlength:4} 
+                
+            },
+            messages: {
+                id: {
+                     required:"아이디를 입력하시오.",
+                     minlength: jQuery.format("아이디는 {0}자 이상 입력해주세요!"),
+                     remote : jQuery.format("입력하신 {0}는 이미존재하는 아이디입니다. ")
+                },
+                pwd:"암호를 입력하시오.",
+                pwdcheck: {
+                    required: "암호확인를 입력하시오.",
+                    equalTo:"암호가 틀립니다." },
+               	name: {required:"이름을 입력하시오."},
+                nickname: {required:"별명을 입력하시오."},
+              	phone: {required: "11자리 입력",
+              		minlength: jQuery.format("휴대폰번호는 {0}자 이상 입력해주세요!"),
+              		maxlength: jQuery.format("휴대폰번호는 11자로 입력해주세요!")
+              			},
+                userNum: { required: "4자리 입력",
+                	minlength: jQuery.format("인증번호는 {0}자 이상 입력해주세요!"),
+                	maxlength: jQuery.format("인증번호는 4자로 입력해주세요!")
+                	}
+            }
+//여기부터
+,
+            submitHandler: function (frm){
+                frm.submit();   //유효성 검사를 통과시 전송
+            },
+            success: function(e){
+                //
+            }
+//여기까지는 생략 가능           
+        });
+      }); //end ready()
+ 
+    </script>
+  
 
 <%@ include file = "../footer.jsp"%>

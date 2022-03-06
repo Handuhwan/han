@@ -47,6 +47,11 @@ public class MemberServiceimple implements MemberService {
 		
 		return mapper.findId(name, phone);
 	}
+	@Override
+	public List<MemberVO> findPssword(String id, String name, String phone) throws Exception {
+	
+		return mapper.findPssword(id, name, phone);
+	}
 	
 	@Override
 	public void certifiedPhoneNumber(String phone, int randomNumber) {
@@ -67,6 +72,12 @@ public class MemberServiceimple implements MemberService {
 				System.out.println(e.getCode()); 
 				}
 		
+	}
+	
+	@Override
+	public int joinid(String id){
+		System.out.println(id);
+		return mapper.joinid(id);
 	}
 
 }

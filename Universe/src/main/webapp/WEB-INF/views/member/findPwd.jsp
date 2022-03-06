@@ -68,11 +68,11 @@
 					</div>
 					
 					<div id="Paris" class="tabcontent" style="padding-bottom: 190px; ">
-				 <form class="" action="/member/findPwd" method="post" onsubmit="return findPwdview()"> 
+				 <form class="" action="/member/findpassword" method="post" onsubmit="return findPwdpassword()"> 
 					<div class="form-group" style="padding: 6px 12px;">
 					   <div class="loginemail">
 					    	<p class="findphone">이메일</p>
-					      <input type="text" name="id" class="form-control" id="id" placeholder="이메일" style="height: 50px; "required="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)?$/i" type="email" />
+					      <input type="text" name="id" class="form-control" id="id" placeholder="이메일" style="height: 50px; " required="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)?$/i" type="email" />
 					   	<div class="error">유효하지 않은 이메일주소 입니다  </div>
 					    </div><br><br>
 					 </div> 
@@ -84,13 +84,13 @@
 					    
 					  <div class="loginemail">
 					  	<p class="findphone">전화번호</p>
-					  	<input class="form-control" type="text" id="phone" placeholder="전화번호" name="to" style="height: 50px;"/>
+					  	<input class="form-control" type="text" id="phone" placeholder="phone" name="to" style="height: 50px;"/>
 						 <input type="button" id="phoneChk" value="전송"/><br>
 					   </div>	
 					   
 					   <div class="loginemail">
 						<p class="findphone">인증번호 작성</p>
-						<input class="form-control" type="text"  placeholder="인증번호" id="userNum" style="height: 50px;"> 
+						<input class="form-control" type="text" placeholder="인증번호" id="userNum" style="height: 50px;"> 
 						<input type="button" id="enterBtn" value="확인">
 						  <input type="hidden" name="text" id="text">
 
