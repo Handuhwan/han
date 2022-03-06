@@ -65,6 +65,18 @@
     color:#fff;
     font-weight:bold;
 }
+
+.tradetuworking:hover{
+	   border: 1px solid #ccc;
+    margin-left: 118px;
+    width: 40%;
+    background: #9abf7f;
+    height: 43px;
+    display: block;
+    border-radius: 6%;
+    color:#fff;
+    font-weight:bold;
+}
 .tradetuworking1{
     border: 1px solid #ccc;
     margin-left: 118px;
@@ -102,7 +114,8 @@
 	margin-left: 108px;
     height: 259px;
     margin-top: 30px;
-    max-width: 100%; 
+    width: 201px; 
+
     border-width : -6px; 
     border-style :double; 
  	 border-color : #d5d5d5;

@@ -32,9 +32,9 @@
     		<div class="col-md-1 ">
     		</div>
     			<div class="col-md-5 newitem">
-    				<h2 class="loginheader" style="margin-left: 115px; font-weight: bold;">LOGIN</h2>
+    				<h2 class="loginheader" style="margin-left: 106px; font-weight: bold;">LOGIN</h2>
     				<p style="color:red">${error }</p>
-    				<form class="form-horizontal"  method="post" action="/login">
+    				<form class="form-horizontal"  method="post" action="/login" style="margin-right: 131px;">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="form-group">

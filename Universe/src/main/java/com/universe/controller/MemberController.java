@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,6 +80,17 @@ public class MemberController {
 		
 	// 비밀번호 찾기
 	 
+	 @RequestMapping(value="/findpassword", method=RequestMethod.POST)
+		public String findPassword(MemberVO memberVO,Model model) throws Exception{
+		 	log.info("email"+memberVO.getId());
+		 	log.info("name"+memberVO.getName());
+			log.info("phone"+memberVO.getPhone());
+					
+			model.addAttribute("member", service.findPssword( memberVO.getId(), memberVO.getName(), memberVO.getPhone()));
+			return "/member/findpassword";
+			}
+		
+	 
 		
 	@RequestMapping(value="/memberdrop")
 	public void memberdrop() {
@@ -104,14 +116,37 @@ public class MemberController {
 		log.info("result(아이디체크 ajax) : " + result);
 		
 		return result;
+	}
+	
+	@GetMapping("/checkjoinid.do")
+	@ResponseBody
+	public int checkjoinid(String id) { // @ResponseBody json형식으로 리턴
+		System.out.println(id);
+		
+		int result = service.joinid(id);		
+		log.info("결과값 = " + result);
+		
+		if(result != 0) {
+			System.out.println("if : "+result);
+			return result;	// 중복 아이디가 존재
+			
+		} else {
+			System.out.println("if : "+result);
+			return result;	// 중복 아이디 x
+			
+		}	
 
 	}
+	
 
 
 	
 	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
 		
+
+		System.out.println(member);
+
 		String inputPass = pwencoder.encode(member.getPwd());
 		member.setPwd(inputPass);
 		

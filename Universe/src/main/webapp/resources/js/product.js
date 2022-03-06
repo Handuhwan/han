@@ -122,11 +122,6 @@ function productviewjjimdown(pno){ //찜 삭제
 
 
 
-function gotradebtn(saler,pno){
-	
-	location.href="/trade/trade?saler="+saler+"&&pno="+pno
-
-}
 
 
 function modalbye(){

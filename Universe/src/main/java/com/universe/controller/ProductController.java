@@ -101,7 +101,10 @@ public class ProductController {
 		pservice.ProductInsert(pvo);
 		System.out.println("여기까지실행2");
 		
-		return "redirect:/mypage/manage";
+
+		return "redirect:/mypage/manage?id="+pvo.getId()+"";
+
+
 	}
 	
 
