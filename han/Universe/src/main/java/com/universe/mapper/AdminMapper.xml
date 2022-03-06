@@ -63,6 +63,7 @@
 		
 	</select>
 	
+	
 	<!-- status바꾸는 메소드 -->
 	<update id="admin_member_forced_checked">
 		update member set status = #{block} where id=#{id}
@@ -71,6 +72,9 @@
 	<!-- admin_alert페이지 리스트 출력 -->
 	<select id="admin_alert" resultType="com.universe.domain.ReportVO">
 		select * from report
+		
+		
+		
 	</select>
 	
 	
@@ -88,6 +92,79 @@
 	<!-- 카테고리별 출력 -->
 	<select id="allList" resultType="com.universe.domain.MemberVO">
 		select * from member
+	</select>
+	
+	
+	<select id="nextPage" resultType="com.universe.domain.MemberVO">
+	<![CDATA[	
+		select * from member where usernumber < #{usernumber} and rownum = 1 order by usernumber desc
+		]]>
+	</select>
+	
+	<select id="prevPage" resultType="com.universe.domain.MemberVO">
+		<![CDATA[	
+		select * from member where usernumber > #{usernumber} and rownum = 1 order by usernumber asc
+		]]>
+	</select>
+	
+	
+	<!-- admin_alert -->
+	
+	
+	<select id="alert_getTotalCount" resultType="int">
+		
+			select count(*) from report where 
+			
+			<include refid="criteria"></include>
+		<![CDATA[	
+			  report_seq>0
+		]]>
+	
+		
+	</select>
+	
+	<select id="alert_getlistWithPaging" resultType="com.universe.domain.ReportVO">
+		<![CDATA[
+			
+			select reported_id,id,report,indate 
+			from (
+				select /*+ index_desc(report report_pk)*/ rownum rn ,reported_id,id,report,indate  
+				from report 
+				where 
+			]]>	
+			
+		<include refid="criteria"></include>
+		
+			
+			
+		<![CDATA[
+				 rownum <= #{pageNum} * #{amount}
+			)
+			where rn > (#{pageNum}-1) * #{amount}
+		
+		]]>
+		
+	</select>
+	
+	<select id="admin_alertmenu" resultType="com.universe.domain.ReportVO">
+		select * from report where reported_id=#{reported_id}
+	</select>
+	
+	<select id="alert_nextPage" resultType="com.universe.domain.ReportVO">
+	<![CDATA[	
+		select * from report where report_seq < #{usernumber} and rownum = 1 order by report_seq desc
+		]]>
+	</select>
+	
+	<select id="alert_prevPage" resultType="com.universe.domain.ReportVO">
+		<![CDATA[	
+		select * from report where report_seq > #{usernumber} and rownum = 1 order by report_seq asc
+		]]>
+	</select>
+	
+	<!-- 카테고리별 출력 -->
+	<select id="alert_allList" resultType="com.universe.domain.ReportVO">
+		select * from report
 	</select>
 	
 	
