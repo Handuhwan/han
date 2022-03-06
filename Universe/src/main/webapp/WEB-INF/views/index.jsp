@@ -34,7 +34,7 @@
 			
 			
 			
-		<div class="container" style="margin-top:40px; margin-bottom:90px;">
+		<div class="container" style="margin-top:40px; margin-bottom:25px;">
 			<div class="col-md-12">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
@@ -44,6 +44,28 @@
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
 		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner2.jpg" alt="..."> <!--  임시 사진 -->
+		    </div> <!-- item end  -->
+		 
+		  </div> <!-- item inner box -->
+		
+	
+		</div><!-- 슬라이드 box end  -->
+		
+			</div> <!-- col md 12 end -->
+			
+			</div> <!-- container box end -->
+			
+			
+			<div class="container" style="margin-top:0px; margin-bottom:65px;">
+			<div class="col-md-12">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner5.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		 
 		  </div> <!-- item inner box -->
@@ -112,7 +134,7 @@
 
 	
 <script> 
-//이 스크립트는 해당페이지에만 작성한다. js파일에 작성시 오류가 생길 수있음.
+
 var actionForm = $("#actionForm");
 
 $("#pagenums>a").on("click",function(e){
@@ -132,6 +154,5 @@ $("#pagenums>a").on("click",function(e){
 </script>
 
 <!-- 네이버 로그아웃 -->
-
 
 <%@ include file="footer.jsp"%>

@@ -19,14 +19,17 @@
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/resources/css/summernote.min.css" rel="stylesheet">
+<link href="/resources/css/admin.css" rel="stylesheet">
 <link href="/resources/css/common.css" rel="stylesheet">
+
 <link href="/resources/css/main.css" rel="stylesheet">
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/mypage.css" rel="stylesheet">
 <link href="/resources/css/product.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
-<link href="/resources/css/admin.css" rel="stylesheet">
+<link href="/resources/css/trade.css" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
