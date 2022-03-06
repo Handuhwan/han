@@ -43,7 +43,7 @@
 				<div class="nav">
 					<ul>
 						<li>
-							<img src="/resources/images/temp_logo/wjmarket.png" class="admin_logo">
+							<a href="/"><img src="/resources/images/temp_logo/wjmarket.png" class="admin_logo"></a>
 						</li>	
 							
 						<li class="admin_ctgry" id="now" style="font-family: Poppins-Italic; font-size: 18px;">
