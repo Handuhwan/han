@@ -9,13 +9,7 @@
 	</insert>
 	
 	<select id="reviewList" resultType="com.universe.domain.ReviewVO">
-		<![CDATA[
-			select * from (
-			select /*+index_desc(review SYS_C007984) */ rownum rn, rno, pno, id, nickname, indate, grade, content, title, img1
-			from review
-			where id = #{id} and rno > 0 and rownum <= #{cri.pageNum} * #{cri.amount}) 
-			where (rn > (#{cri.pageNum} -1) * #{cri.amount})
-		]]>
+		select * from review where id = #{id} order by indate desc
 	</select>
 	
 	<delete id="delete">

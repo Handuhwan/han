@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.universe.criteria.Criteria;
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReviewVO;
 import com.universe.domain.UserVO;
 
 public interface MypageService {
@@ -45,7 +46,14 @@ public interface MypageService {
 		public List<ProductVO> detailsSellList(String id, int no);
 		public List<ProductVO> detailsBuyList(String id, int no);
 		
+		// 리뷰작성하기
+		public int ReviewInsert(ReviewVO vo);
 		
+		// 리뷰작성후 리뷰카운트 업데이트
+		public void buyListUpdateRV(int pno);
+		
+		// 리뷰가 정상적으로 추가되면 멤버업데이트
+		public void updateMemberGrade(String id, int grade);
 
 }
 

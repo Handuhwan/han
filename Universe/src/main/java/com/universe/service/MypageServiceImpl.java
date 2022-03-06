@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.universe.criteria.Criteria;
 import com.universe.domain.ProductVO;
+import com.universe.domain.ReviewVO;
 import com.universe.domain.UserVO;
 import com.universe.mapper.mypageMapper;
 
@@ -103,8 +104,6 @@ public class MypageServiceImpl implements MypageService {
 			detailsSellList = mapper.detailsSellIngList(id);
 		}else if(no == 3) {
 			detailsSellList = mapper.detailsSoldList(id);
-		}else {
-			detailsSellList = mapper.detailsSellCancelList(id);
 		}
 		return detailsSellList;
 	}
@@ -120,10 +119,28 @@ public class MypageServiceImpl implements MypageService {
 			detailsBuyList = mapper.detailsBuyIngList(id);
 		}else if(no == 3) {
 			detailsBuyList = mapper.detailsBuyEndList(id);
-		}else {
-			detailsBuyList = mapper.detailsBuyCancelList(id);
 		}
 		return detailsBuyList;
+	}
+	
+	@Override
+	public int ReviewInsert(ReviewVO vo) {
+		System.out.println("리뷰인서트 확인");
+		return mapper.ReviewInsert(vo);
+	}
+	
+	@Override
+	public void buyListUpdateRV(int pno) {
+		System.out.println("바이리스트 리뷰업데이트 확인");
+		mapper.buyListUpdateRV(pno);
+		
+	}
+	
+	@Override
+	public void updateMemberGrade(String id, int grade) {
+		System.out.println("리뷰정상등록 & 멤버평점 업데이트");
+		mapper.updateMemberGrade(id, grade);
+		
 	}
 	
 

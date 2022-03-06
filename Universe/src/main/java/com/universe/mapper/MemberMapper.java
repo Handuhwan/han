@@ -19,7 +19,10 @@ public interface MemberMapper {
 
 	public List<MemberVO> findId(@Param("name") String name, @Param("phone")String phone)throws Exception;
 	
+	public List<MemberVO> findPssword(@Param("id") String id, @Param("name") String name, @Param("phone")String phone)throws Exception;
+
+	
 	public String certifiedPhoneNumbe(String phone, int randomNumber);
 	
-
+	public int joinid(String id);
 }

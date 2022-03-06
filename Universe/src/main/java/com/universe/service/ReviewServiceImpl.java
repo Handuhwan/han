@@ -37,9 +37,9 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 	
 	@Override
-	public List<ReviewVO> reviewList(Criteria cri, String id) {
+	public List<ReviewVO> reviewList(String id) {
 		
-		return mapper.reviewList(cri, id);
+		return mapper.reviewList(id);
 	}
 
 }
