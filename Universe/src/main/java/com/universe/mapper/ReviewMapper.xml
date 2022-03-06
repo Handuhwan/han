@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.universe.mapper.ReviewMapper">
+
+	<insert id="insert">
+		insert into review (rno, pno, id, nickname, grade, content, title, img1)
+		values (review_seq.nextval, #{pno}, #{id}, #{nickname}, #{grade}, #{content}, #{title}, #{img1})
+	</insert>
+	
+	<select id="reviewList" resultType="com.universe.domain.ReviewVO">
+		<![CDATA[
+			select * from (
+			select /*+index_desc(review SYS_C007984) */ rownum rn, rno, pno, id, nickname, indate, grade, content, title, img1
+			from review
+			where id = #{id} and rno > 0 and rownum <= #{cri.pageNum} * #{cri.amount}) 
+			where (rn > (#{cri.pageNum} -1) * #{cri.amount})
+		]]>
+	</select>
+	
+	<delete id="delete">
+		delete from review where rno = #{rno}
+	</delete>
+	
+	<select id="count" resultType="int">
+		select count(*) as cnt  from review where id = #{id}
+	</select>
+	
+</mapper>

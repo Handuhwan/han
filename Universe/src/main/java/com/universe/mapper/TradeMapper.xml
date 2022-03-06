@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.universe.mapper.TradeMapper">
+  
+  
+  <insert id="tradeinsert">
+  	<selectKey keyProperty="amount" resultType="int" order="BEFORE">
+  		select price from product where pno=#{pno}
+  	</selectKey>
+  		insert into trade(tno,pno,buyer,saler,amount) values(trade_seq.nextval,#{pno},#{buyer},#{saler},#{amount})
+  		
+  </insert> <!-- 구매신청 -->
+  
+  <select id="selectbuingcheck" resultType="int">
+  	select count(*) from trade where pno=#{pno} and buyer = #{buyer} and saler = #{saler}
+  </select> <!-- 새로고침했을때 현재 이상품과 거래중인가 아닌가를 판별 -->
+  
+  <select id ="buyerview" resultType="com.universe.domain.TradeVO">
+     select m.userimg,m.nickname,m.name,t.buystatus,t.salestatus,p.title,t.tno,p.pno,
+        p.content,p.img1,t.saler,t.buyer,t.amount,t.tradedate
+        from trade t, member m, product p
+        where t.pno=p.pno and saler=m.id and p.pno=#{pno}
+  </select> <!-- 구매자가 판매자의 정보 및 상품정보 불러오기 -->
+  
+    <select id ="salerview" resultType="com.universe.domain.TradeVO">
+     select m.userimg,m.nickname,m.name,t.buystatus,t.salestatus,p.title,t.tno,p.pno,
+        p.content,p.img1,t.saler,t.buyer,t.amount,t.tradedate
+        from trade t, member m, product p
+        where t.pno=p.pno and buyer=m.id and p.pno=#{pno}
+  </select> <!-- 판매자가 구매자의 정보 및 상품정보 불러오기 -->
+  
+  <select id="productstatuscheck" resultType="int">
+  	select count(*) from product where pno=#{pno} and status='판매완료'
+  </select> <!-- 상품 상태 확인 -->
+  
+  <update id="productcheck">
+  	update product set status='판매완료' where pno = #{pno}
+  </update> <!-- 상품 판매완료로 바꾸기 -->
+  
+  <update id="productchange">
+  	update product set status= '진행중' where pno = #{pno}
+  </update>
+  
+  <select id="tradecheck" resultType="int">
+  	select count(*) from trade where tno=#{tno} and buystatus=1 and salestatus=1
+  </select> <!-- 거래 종료 체크 -->
+  
+  <update id="buyOK">
+  	update trade set buystatus = 1 where tno = #{tno}
+  </update> <!-- 구매 확정 -->
+  
+   <update id="saleOK">
+  	update trade set salestatus = 1 where tno = #{tno} 
+  </update> <!-- 판매 확정 -->
+  
+  <update id="buyend">
+  	<selectKey keyProperty="amount"  order="BEFORE" resultType="int">
+  		select amount from trade where tno=#{tno}
+  	</selectKey>
+  	update member set point = point - #{amount} where id=#{buyer}
+  </update> <!-- 구매완료 -->
+  
+  <update id="salend">
+  	<selectKey keyProperty="amount"  order="BEFORE" resultType="int">
+  		select amount from trade where tno=#{tno}
+  	</selectKey>
+  	update member set point = point + #{amount} where id=#{saler}
+  </update> <!-- 판매 완료 -->
+  
+  <select id="cancelcheck" resultType="int">
+  	select count(*) from trade where tno=#{tno} and buystatus = 1 or salestatus = 1
+  </select> <!-- 해당 품목 1상태로 만듬 -->
+  
+  <update id="productstatuschange">
+  	update proudct set status='판매중' where pno =#{pno}
+  </update>
+  <delete id="cancel">
+  	delete from trade where tno=#{tno}
+  </delete>
+  
+</mapper>

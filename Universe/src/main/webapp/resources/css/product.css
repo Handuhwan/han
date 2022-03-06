@@ -1,0 +1,143 @@
+.pleftarrow{
+	position: relative;
+    top: 200px;
+    height: 65px;
+    width: 65px;
+    left: -10px;
+}
+
+.prightarrow{
+	position: relative;
+    top: 200px;
+    height: 65px;
+    width: 65px;
+    left: 10px;
+}
+.carousel-control.left{
+	background-image:none;
+}
+.carousel-control.right{
+	background-image:none;
+}
+.pfont{
+	font-weight:600;
+}
+.ptitle{
+	border-bottom:1px solid #cfd4f4;
+	padding-bottom:20px;
+}
+.pinfo{
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #cfd4f4;
+	
+}
+.pinfo span{
+	border-right:1px solid #cfd4f4;
+	padding-right:10px;
+}
+.pinfo img{
+	margin-right:15px;
+	margin-left:15px;
+}
+.pinfo span:nth-child(1) img{
+	margin-left:0px;
+}
+.pinfo span:nth-child(3){
+	border-right:none;
+}
+.pinfo span:nth-child(4){
+	border-right:none;
+	
+	font-weight:700;
+	color: #cfd4f4;
+}
+.pinfo span:nth-child(4) img{
+	margin-right:5px;
+	margin-top:-7px;
+	margin-left:0px;
+}
+.pstatus{
+	margin-top:20px;
+	margin-left:20px;
+}
+.pstatus h3{
+	display:inline-block;
+	font-size: 14px;
+    font-weight: 700;
+}
+.pline{
+	display:inline-block;
+	width:110px;
+	color:#949494;
+}
+.pbutton{
+	margin-top:10px;
+	
+}
+.pbutton button{
+	width: 100px;
+    border: 1px solid;
+    margin: 0 10px 0 10px;
+    height: 40px;
+    font-weight: 700;
+    color:#fff;
+}
+.pbutton button img{
+	margin-right:10px;
+}
+#pjjimbutton{
+	background: #ff9dbdfa;
+	
+}
+
+#pjjimbutton:hover{
+	background:#ff3476fa;
+}
+#pchatbutton{
+	background:#93b5f6;
+}
+#pchatbutton:hover{
+	background:#3e7aee;
+}
+.prealinfo{
+	border-bottom:3px solid #cfd4f4;
+	padding-bottom:20px;
+	color:#626262;
+	margin-bottom:20px;
+	padding-left:15px;
+}
+.psaler{
+	border-bottom: 1px solid #cfd4f4;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.psalermore{
+	display:inline-block;
+	
+}
+
+.psalermore span{
+	width: 130px;
+    position: absolute;
+    bottom: 66px;
+    left: 39px;
+    color: #fff;
+    font-size: 20px;
+    background: #e8e8e8;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#gotradebtn{
+	background:#63ff468c;
+	
+}
+
+#gotradebtn:hover{
+	background:#63ff46;
+}
+
+.btsbts:focus{
+	border:none;
+}

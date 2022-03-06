@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.universe.mapper.ChatMapper">
+  
+  	<select id="mychatroom" resultType="com.universe.domain.ChatVO">
+  		select p.pno,p.title,p.img1,m.nickname,c.person,c.me 
+		from product p, member m, chatroom c 
+		where c.person=m.id and p.pno=c.pno and c.me=#{id}
+  	</select>
+  
+  	
+  	
+  	<select id="chatroomCheck" resultType="com.universe.domain.ChatVO">
+  		select p.pno,p.title,p.img1,m.nickname,c.person,c.me 
+		from product p, member m, chatroom c 
+		where c.person=m.id and p.pno=c.pno and c.me=#{id} and p.pno=#{pno}
+  	
+  	</select>
+  	
+  	<select id="mypersonchatroom" resultType="com.universe.domain.ChatVO">
+  		select m.userimg,c.pno,c.me,m.nickname,c.person
+    	from chatroom c ,member m
+    	where c.pno=0 and c.person=m.id and c.me=#{id}
+  	</select>
+  	
+  	
+  	
+  	 <insert id="chatroominsert1">
+  	 	insert into chatroom(pno,me,person) values(#{pno},#{id},#{person})
+  	 
+  	 </insert>
+  	 
+  	 <insert id="chatroominsert2">
+  	 	insert into chatroom(pno,me,person) values(#{pno},#{person},#{id})
+  	 
+  	 </insert>
+  	 
+  	 <select id="chatlog" resultType="com.universe.domain.ChatVO">
+  	 	select * from chatlog 
+		where pno=#{pno} and me in(#{me},#{person})
+		order by indate
+  	 </select>
+  	 
+  	 <insert id="chatinput">
+  	 	insert into chatlog(pno,chat,me,person) values(#{pno},#{chat},#{me},#{person})
+  	 
+  	 </insert>
+  	 
+  	 <delete id="chatdel">
+  	 	delete chatroom where pno=#{pno} and me in(#{me},#{person})
+  	 </delete>
+  	 
+  	 <delete id="chatlogdel">
+  	 	delete chatlog where pno=#{pno} and me in(#{me},#{person})
+  	 </delete>
+  	 
+</mapper>
