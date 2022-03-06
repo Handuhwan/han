@@ -3,18 +3,34 @@
 <%@ include file="admin_header.jsp" %>
 
 			<div class="col-md-10">
-				<div class="col-md-12" style="margin-bottom:40px;">
-					<form class="form-inline">
-						<!-- 이쯤에 검색 옵션 넣어야 함 -->
-					  	<div class="form-group" style="width:100%; margin-top: 50px;">
-					    
-					    <div class="wrap_admin_search">
-							<!-- button아직 안 넣었음 -->
-						</div>
-					  </div>
-					</form>
-				</div>
-					<div class="col-md-12" style="margin-top: 60px;">
+				<div class="col-md-12" style="margin-bottom:40px; margin-top: 85px;">
+					<div class="row">
+
+					<!-- search form -->
+					<form name="myform" method="get" action="/admin/admin_alert" id ="searchForm">	
+					
+						<select name="type" class="btn btn-default dropdown-toggle" style="text-align:center; min-width: 82px; margin-left: 370px; font-family: Poppins-Regular;">
+							<option value="" style="font-family: Poppins-Regular; text-align:left;">   선택</option> <!-- 공백 일부러 띄어쓰기 했음 -->
+							<option value="I" style="font-family: Poppins-Regular; text-align:left;">   아이디</option>
+							<option value="N" style="font-family: Poppins-Regular; text-align:left;">   이름</option>
+							<option value="B" style="font-family: Poppins-Regular; text-align:left;">   닉네임</option> <!-- 별명의 B -->
+						</select>
+						
+					  	<div class="col-lg-6" style="float:right;">
+		                	<div class="input-group">
+		                    	<input type="text" class="form-control" name="keyword" placeholder="검색어를 입력하세요">
+		                   		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+								<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+		                   		<span class="input-group-btn">
+						        	<button class="btn btn-default" type="submit">Submit</button>
+						      	</span>
+		                   </div><!-- /input-group -->
+						</div><!-- /.col-lg-6 -->
+						
+					</form> 
+					</div><!-- /.row -->
+				</div> <!-- /.12column -->
+					<div class="col-md-12">
 						<div class="wrap_admin_menu"> 
 							<table class="admin_menu"> <!-- table -->
 								<tr class="admin_head">
@@ -116,24 +132,53 @@
 				<!-- pagination -->
 				<div class="col-md-12" > 
 					<div style="text-align: center; padding-top: 25px; padding-bottom: 70px;">
-						<a href="#" class="admin_pagination admin_pagination_active">
-							1
-						</a>
-
-						<a href="#" class="admin_pagination">
-							2
-						</a>
+						<c:if test="${pageMaker.prev }">
+							<a href="${pageMaker.startPage-1 }"><i class="fa  fa-angle-double-left"></i></a>
+						</c:if>
+						
+						<div id="pagenums">
+							<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+								<a href="${num}"  class="admin_pagination ${pageMaker.cri.pageNum == num?'admin_pagination_active':''}">${num }</a>
+							</c:forEach>
+						</div>
+						
+						<c:if test="${pageMaker.next }">
+							<a href="${pageMaker.endPage+1 }"><i class="fa  fa-angle-double-right"></i></a>
+						</c:if>
+						
+						<form id="actionForm" action ="/admin/admin_alert" method="get">
+							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+							<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+							<input type="hidden" name="type" value="${pageMaker.cri.type }">
+							<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+						</form>
+						
 					</div>				
 				</div> <!-- /.pagination -->
-				
-				
-				
-				
-				
-						
 			</div>
 		</div>
 	</div>
 </div>
+
+<script> 
+//이 스크립트는 해당페이지에만 작성한다. js파일에 작성시 오류가 생길 수있음.
+var actionForm = $("#actionForm");
+
+$("#pagenums>a").on("click",function(e){
+	e.preventDefault();
+	actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+	actionForm.submit();
+})
+
+	function searchEvt(){
+		
+		 var serchForm = $("#searchForm");
+			serchForm.find("input[name=pageNum]").val("1");
+			e.preventDefault();
+			serchForm.submit();
+		
+		}
+</script>
+
 </body>
 </html>

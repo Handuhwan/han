@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,13 +43,13 @@ public class AdminController {
 	//admin로그인화면
 	@GetMapping("/admin_login")
 	public void adminLoginForm() {
-		System.out.println("zz");
 		//아이디나 비밀번호가 틀렸을 때 경고 메세지를 띄워야함 
 	}
 	
 	//admin list페이지
 	@GetMapping("/admin")
 	public String adminMain(Criteria cri ,Model model) {
+		System.out.println(cri);
 		model.addAttribute("list",service.getlistWithPaging(cri));
 		int total  = service.getTotal(cri);
 		model.addAttribute("pageMaker",new PageVO(cri, total));
@@ -61,8 +62,10 @@ public class AdminController {
 	//admin_alert.jsp에 리스트를 출력하기 위한
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin_alert")
-	public String adminAlert(Model model) {
-		model.addAttribute("report", service.admin_alert());
+	public String adminAlert(Criteria cri, Model model) {
+		model.addAttribute("report", service.alert_getlistWithPaging(cri));
+		int total  = service.alert_getTotalCount(cri);
+		model.addAttribute("pageMaker",new PageVO(cri, total));
 		return "/admin/admin_alert";
 	}
 	
@@ -87,8 +90,9 @@ public class AdminController {
 			 
 		 }
 		 
-		 
+		 System.out.println("reason값 : "+reason);
 			service.admin_member_forced_checked(block,rvo.getReported_id());
+			
 			service.Admin_Reason(rvo);
 			
 		//if(rvo.getAdmin_report() == "7") {
@@ -134,6 +138,28 @@ public class AdminController {
 		 return list;
 	                     
 	 }
+	 
+	//admin 검색 기능
+		 @ResponseBody
+		 @GetMapping("/alert_admin_menu")
+		 public  List<ReportVO> AAjaxstatusList(String menu){
+			 List<ReportVO> list = new ArrayList<ReportVO>();
+			 
+			 if(menu ==null || menu=="") {
+				list = service.alert_allList();
+			 }else {
+			 System.out.println("현재 값"+menu);
+			
+			 System.out.println("최종값"+menu);
+			 list =  service.admin_alertmenu(menu);
+			 }
+			 
+			 
+			 System.out.println("control end");
+			 System.out.println(list.size());
+			 return list;
+		                     
+		 }
 	
 
 	
