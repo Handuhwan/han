@@ -43,6 +43,11 @@ public class AdminController {
 	//admin로그인화면
 	@GetMapping("/admin_login")
 	public void adminLoginForm() {
+<<<<<<< HEAD
+=======
+		System.out.println("zz");
+		System.out.println("zz");
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 		//아이디나 비밀번호가 틀렸을 때 경고 메세지를 띄워야함 
 	}
 	
