@@ -353,7 +353,7 @@ $(function() {
 					sttr +=	"<div class='col-md-3' style='margin: 15px 0;'>";
 					sttr +=		"<a class='sc-cugefK fRjjJt' href='/product/productview?pno="+result[i].pno+"'>";
 					sttr +=			"<div class='sc-fnwBNb bGOWdF'>";
-					sttr +=				"<img src='/resources/images/table.jpg' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
+					sttr +=				"<img src='/Pupload/"+result[i].img1+"' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
 											if(result[i].status == state) {
 					sttr +=					"<div class='sc-dREXXX fTyTGh'>";
 					sttr +=						"<span class='soldout'>판 매 완 료</span>";
@@ -400,9 +400,10 @@ $(function() {
 	var faqReplyer = "${faqReplyer}"
 	var faqUL = $('.chat');
 	showList(faqid);
+
 	
 	function showList(faqid) {
-		
+	
 		replyService.getList( {id:faqid}, function(list) {
 			
 			var str = "";
@@ -435,6 +436,7 @@ $(function() {
 				str +=	"</div>";
 			}
 			faqUL.html(str);
+			$(".replyDIV:hidden").slice(0, 4).show();
 			
 		})
 	}
@@ -456,7 +458,8 @@ $(function() {
 			replyService.add(reply, function(result) {
 				$('#faqTextarea').val("");
 				count();
-				showList(1);
+				showList(faqid);
+				showmore1()
 			})
 		}
 		
@@ -480,7 +483,8 @@ $(function() {
 		replyService.remove(qno, function(result) {
 			console.log(faqid);
 			count(faqid);
-			showList(1);
+			showList(faqid);
+			showmore1()
 		})
 	}
 	
@@ -575,7 +579,7 @@ $(function() {
 					str +=			"</div>";
 									}
 					str +=			"<div class='productImg'>";
-					str +=				"<img src='https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
+					str +=				"<img src='/Pupload/"+result[i].img1+"' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
 					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
 											if(result[i].status == status) {
 					str +=						"<div class='sc-dREXXX fTyTGh'>";
@@ -747,7 +751,7 @@ $(function() {
 					str += 		"</a>";
 					str += 	"</div>";
 					str += 	"<div class='sc-MYvYT izkVcA'>";
-					str += 		"<img style='border-radius: 5px;' src='/resources/images/hambuk.jpg' width='100' height='100' alt='상품이미지'>"; // <------------------상품이미지 경로 넣어주기 !!!
+					str += 		"<img style='border-radius: 5px;' src='/Pupload/"+result[i].img1+"' width='100' height='100' alt='상품이미지'>"; // <------------------상품이미지 경로 넣어주기 !!!
 					str += 	"</div>";
 					str += 	"<div class='chat_content'>"+result[i].content+"</div>";
 					str += 	"<div class='chat_btn'>";
@@ -760,6 +764,7 @@ $(function() {
 					str += "</div>";
 			}
 			$('#reviewChat').html(str);
+			showmore1()
 			},error : function(error){
 				console.log(error);
 			}
@@ -779,7 +784,9 @@ $(function() {
 			data : data,
 			success : function(result) {
 				reviewCount(reviewid);
-				reviewList(1);
+				reviewList(reviewid);
+				
+				showmore1()
 			}
 			
 		})
@@ -882,28 +889,55 @@ $("#check_module").click(function () {
 </script>
 <script>
 
-window.onload = function() {
-	
-	$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택
-	$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택
+	window.onload = function() {
+		console.log("show more실행")
+		$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택 리뷰
+		$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택 문의
+
+	}
+
+		$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+			e.preventDefault();
+			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+		
+		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
+			r.preventDefault();
+			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+
+
+function showmore1(){
+	window.onload = function() {
+		console.log("show more실행")
+		$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택 리뷰
+		$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택 문의
+
+	}
+
+		$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+			e.preventDefault();
+			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+		
+		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
+			r.preventDefault();
+			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
 
 }
-
-	$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
-		e.preventDefault();
-		$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
-		if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-		}
-	});
-	
-	$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
-		r.preventDefault();
-		$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
-		if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-		}
-	});
 
 </script>
 
