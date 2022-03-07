@@ -400,9 +400,10 @@ $(function() {
 	var faqReplyer = "${faqReplyer}"
 	var faqUL = $('.chat');
 	showList(faqid);
+
 	
 	function showList(faqid) {
-		
+	
 		replyService.getList( {id:faqid}, function(list) {
 			
 			var str = "";
@@ -435,6 +436,7 @@ $(function() {
 				str +=	"</div>";
 			}
 			faqUL.html(str);
+			$(".replyDIV:hidden").slice(0, 4).show();
 			
 		})
 	}
@@ -456,7 +458,8 @@ $(function() {
 			replyService.add(reply, function(result) {
 				$('#faqTextarea').val("");
 				count();
-				showList(1);
+				showList(faqid);
+				showmore1()
 			})
 		}
 		
@@ -480,7 +483,8 @@ $(function() {
 		replyService.remove(qno, function(result) {
 			console.log(faqid);
 			count(faqid);
-			showList(1);
+			showList(faqid);
+			showmore1()
 		})
 	}
 	
@@ -760,6 +764,7 @@ $(function() {
 					str += "</div>";
 			}
 			$('#reviewChat').html(str);
+			showmore1()
 			},error : function(error){
 				console.log(error);
 			}
@@ -779,7 +784,9 @@ $(function() {
 			data : data,
 			success : function(result) {
 				reviewCount(reviewid);
-				reviewList(1);
+				reviewList(reviewid);
+				
+				showmore1()
 			}
 			
 		})
@@ -882,28 +889,55 @@ $("#check_module").click(function () {
 </script>
 <script>
 
-window.onload = function() {
-	
-	$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택
-	$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택
+	window.onload = function() {
+		console.log("show more실행")
+		$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택 리뷰
+		$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택 문의
+
+	}
+
+		$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+			e.preventDefault();
+			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+		
+		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
+			r.preventDefault();
+			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+
+
+function showmore1(){
+	window.onload = function() {
+		console.log("show more실행")
+		$(".reviewDIV").slice(0, 2).show(); // 최초 2개 선택 리뷰
+		$(".replyDIV").slice(0, 2).show(); // 최초 2개 선택 문의
+
+	}
+
+		$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
+			e.preventDefault();
+			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
+		
+		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
+			r.preventDefault();
+			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
+			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
+				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			}
+		});
 
 }
-
-	$("#load").click(function(e){ // Load More를 위한 클릭 이벤트e
-		e.preventDefault();
-		$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
-		if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-		}
-	});
-	
-	$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
-		r.preventDefault();
-		$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
-		if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-			alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-		}
-	});
 
 </script>
 
