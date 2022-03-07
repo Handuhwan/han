@@ -126,9 +126,9 @@
 	<select id="alert_getlistWithPaging" resultType="com.universe.domain.ReportVO">
 		<![CDATA[
 			
-			select reported_id,id,report,indate 
+			select reported_id,id,report,indate,report_seq
 			from (
-				select /*+ index_desc(report report_pk)*/ rownum rn ,reported_id,id,report,indate  
+				select /*+ index_desc(report report_pk)*/ rownum rn ,reported_id,id,report,indate,report_seq 
 				from report 
 				where 
 			]]>	

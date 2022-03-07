@@ -39,7 +39,7 @@
     				<form class="form-horizontal"  method="post" action="/login">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
-					  <div class="form-group">
+					  <div class="form-group" style="margin-right:113px;">
 					    <label for="userid" class="col-sm-2 control-label"></label>
 
 
@@ -48,7 +48,7 @@
 					    </div>
 					  </div>
 					  
-					  <div class="form-group">
+					  <div class="form-group" style="margin-right:113px;">
 					    <label for="userpwd" class="col-sm-2 control-label"></label>
 					    <div class="loginemail">
 					      <input type="password" name="password" class="form-control" id="id" value="${id}"  style="height: 50px; "readonly>

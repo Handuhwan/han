@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="admin_header.jsp" %>
-s
-s
+
 
 <div class="col-md-10">
 	<div class="col-md-12" style="margin-bottom:30px; margin-top: 85px;">
