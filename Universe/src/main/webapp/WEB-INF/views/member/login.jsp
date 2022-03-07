@@ -25,16 +25,16 @@
 					
 						   <!--  <button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
 						
-							<button type="button"   class="googlefont g-signin2" onclick="onSignIn()"  style="width:300px; color:#fff; padding-right: 30px;">구글 로그인</button>
+							<button type="button"   class="googlefont g-signin2" onclick="onSignIn()"  style="width:300px; color:#fff; ">구글 로그인</button>
     					
     			</div>
     		</div><!-- 6컬럼end -->
     		<div class="col-md-1 ">
     		</div>
     			<div class="col-md-5 newitem">
-    				<h2 class="loginheader" style="margin-left: 115px; font-weight: bold;">LOGIN</h2>
+    				<h2 class="loginheader" style="margin-left: 106px; font-weight: bold;">LOGIN</h2>
     				<p style="color:red">${error }</p>
-    				<form class="form-horizontal"  method="post" action="/login">
+    				<form class="form-horizontal"  method="post" action="/login" style="margin-right: 131px;">
 					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					  
 					  <div class="form-group">
@@ -57,12 +57,10 @@
 					    <div >
 					      <input type="submit" class="btn2 btn-default moonju  signup" value="Signed in" style="	margin-left:0px;">
 					       </div>
-					       <div style="margin-left: 42px;">
-					       
-					       <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findPwd'" style="color: #8b8b8b;">아이디/비밀번호 찾기</button>
-					     	 	 <a   class="btn-default btn4"  style="color: #8b8b8b;">|</a>
-					       <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join'" style="margin-left:0px; color: #8b8b8b;">회원가입</button>
-					     
+					       <div>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join'" style="margin-left:0px;">회원가입</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/findPwd'">아이디/비밀번호 찾기</button>
+					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/memberdrop'">회원 탈퇴</button>
 					      </div>
 					      
 						</div>

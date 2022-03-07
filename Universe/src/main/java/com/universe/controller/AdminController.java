@@ -16,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,6 +42,11 @@ public class AdminController {
 	//admin로그인화면
 	@GetMapping("/admin_login")
 	public void adminLoginForm() {
+<<<<<<< HEAD
+=======
+
+		System.out.println("zz");
+>>>>>>> branch 'master' of https://github.com/Handuhwan/han.git
 
 		//아이디나 비밀번호가 틀렸을 때 경고 메세지를 띄워야함 
 	}

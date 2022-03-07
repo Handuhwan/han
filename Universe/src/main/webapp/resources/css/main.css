@@ -1,5 +1,50 @@
 @charset "UTF-8";
+.alertbtn:focus{
+	border:none;
+	outline:none;
+}
+.alertbtn{
+	outline:none;
+}
 
+.block_square input {
+	border: 1px solid #ccc;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.modal-title {
+	font-family: Poppins-Bold;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer p {
+	text-align: center;
+    font-size: 18px;
+    font-family: Poppins-Bold;
+}
+
+.suspended {
+	border: 1px solid #ccc;
+    width: 100%;
+    height: 100px;
+}
+
+.form-check-label {
+	font-family: Poppins-Regular;
+	font-weight: 100;
+}
+.block_day{
+	display:none;
+}
+.textbox{
+	display:none;
+}
 
 
 .main_header_nav{

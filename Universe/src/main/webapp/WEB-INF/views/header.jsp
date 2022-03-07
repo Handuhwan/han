@@ -19,14 +19,18 @@
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="/resources/css/summernote.min.css" rel="stylesheet">
+
 <link href="/resources/css/common.css" rel="stylesheet">
+
 <link href="/resources/css/main.css" rel="stylesheet">
+
 <link href="/resources/css/sub.css" rel="stylesheet">
 <link href="/resources/css/member.css" rel="stylesheet">
 <link href="/resources/css/mypage.css" rel="stylesheet">
 <link href="/resources/css/product.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
 <link href="/resources/css/trade.css" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <!-- 구글 폰트 -->
@@ -40,6 +44,7 @@
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
+
 <script src="/resources/js/main.js"></script>
 <script src="/resources/js/member.js"></script>
 <script src="/resources/js/chat.js"></script>
@@ -113,7 +118,7 @@
          <div class="col-md-12 col-sm-12" style="margin-top:20px;">
             <div class="pull-left">
                <div class="serch-box" > <!-- serch box -->
-                  <a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
+                  <a href="/"><img alt="" src="/resources/images/marketlogo.png" style="width:200px; height:101px; margin-right:80px;"></a>
                   <form style="display:inline" id ="searchForm" method="get" action="/" onsubmit="searchEvt()">
                      <input type="text" name="keyword" class="search_word" placeholder="#상품명 #지역명 #상점명" >
                      <div style="display:none">
@@ -128,24 +133,29 @@
             </div>
             <div class="pull-right" style="margin-top:35px;">
                <div class="dropdown">
-                   <button class="dropbtn" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>알림</span><span class="caret"></span></button>
-                    
+               <sec:authorize access="isAuthenticated()">
+                   <button class="dropbtn" onclick="location.href='/mypage/manage?id=${headid}'" ><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                 <button class="dropbtn" onclick="mymenucheck()" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
+                 </sec:authorize>
                </div>&nbsp;&nbsp;
 
                <div class="dropdown">
 
 
                   <sec:authorize access="isAuthenticated()">
-                   <button class="dropbtn" onclick="location.href='/mypage/mypage?id=<sec:authentication property="principal.member.id"/>'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+                  <sec:authentication property="principal.member.id" var="headid" />
+                   <button class="dropbtn" onclick="location.href='/mypage/mypage?id=${headid}'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
                    </sec:authorize>
                    <sec:authorize access="isAnonymous()">
-                   <button class="dropbtn" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+                   <button class="dropbtn" onclick="mymenucheck()" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
                    </sec:authorize>
 
                </div>&nbsp;&nbsp;
                
                
-               <a href="" class="dropbtn" href="/mypage/mypage"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>
+               <a href="" class="dropbtn" href="/mypage/mypage?id=${headid}"><img alt="" src="/resources/images/main-love.png">&nbsp;&nbsp;찜</a>
                
                
             </div> <!-- pull right end -->
@@ -196,5 +206,10 @@ function signOut() {
       frm.submit();
    
    var win = window.open("https://accounts.google.com/Logout");
+}
+
+
+function mymenucheck(){
+	alert("로그인후 이용가능한 서비스입니다.")
 }
 </script>

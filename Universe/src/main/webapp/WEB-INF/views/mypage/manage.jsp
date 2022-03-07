@@ -32,12 +32,12 @@
 					<input type="text" placeholder="Search" name="keyword" id="managekey">
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-					<button type="submit" class="eYKCSk"></button>
+					<button type="button" class="eYKCSk"></button>
 					<select name="type" id="selectStatus" class="select">
 						<option value="">전체</option>
-						<option value="a">판매중</option>
-						<option value="b">진행중</option>
-						<option value="c">판매완료</option>
+						<option value="판매중">판매중</option>
+						<option value="진행중">진행중</option>
+						<option value="핀매완료">판매완료</option>
 					</select>
 				</form>
 			</div>
@@ -66,10 +66,10 @@
 							<th>취소</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="listajax">
 					<c:choose>
 						<c:when test="${list ne null}">
-							<c:set var="num" value="${pageMaker.total - ((pageMaker.cri.pageNum - 1) * 10)}" />
+							
 							<c:forEach var="list" items="${list}">
 								<tr id="${list.pno}">
 									<td><img src="/resources/images/notica.jpg" alt="" width="55" style="border-radius: 5px;"></td>
@@ -90,7 +90,7 @@
 									<td><fmt:formatDate value="${list.indate}" pattern="yyyy-MM-dd" /></td>
 									<td><a href="javascript:manageRemove(${list.pno})">삭제하기</a></td>
 								</tr>
-							<c:set var="num" value="${num-1}" />
+							
 							</c:forEach>
 						</c:when>
 						<c:otherwise>
@@ -104,30 +104,7 @@
 		<!-- 상품리스트 끝 -->
 	</div>
 	
-	<!-- 페이지 처리 -->
-	<div class="paging" style="text-align:center;">
-		<c:if test="${pageMaker.prev }">
-			<a href="${pageMaker.startPage - 1}"><i
-				class="fa fa-angle-double-left"></i></a>
-		</c:if>
-		<c:forEach var="num" begin="${pageMaker.startPage }"
-			end="${pageMaker.endPage }">
-			<a href="${num }"
-				class="${pageMaker.cri.pageNum == num?'active':''}">${num }</a>
-		</c:forEach>
-		<c:if test="${pageMaker.next }">
-			<a href="${pageMaker.endPage + 1}">
-				<i class="fa fa-angle-double-right"></i>
-			</a>
-		</c:if>
-		<form id="actionForm" action="/mypage/manage" method="get">
-			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-			<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-			<input type="hidden" name="type" value="${pageMaker.cri.type }">
-			<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-		</form>
-	</div>
-	<!-- 페이지 처리 끝 -->
+
 </div>
 
 <script>
@@ -181,6 +158,117 @@
 	
 </script>
 
+
+<script>
+
+$(function(){
+
+ 	$("#selectStatus").on("change",function(){
+ 	var types =  $("#selectStatus").val();
+	var keywords =  $("#managekey").val();
+	var id = "${headid}";
+	var str = "";
+	var status1 = "판매완료";
+	var status2 = "진행중";
+	
+	
+		
+	$.ajax({
+		type:"get",
+		data:({
+			
+			types:types,
+			keywords:keywords,
+			id:id
+		}),
+		dataType:"json",
+		url:"/mypage/serchmanage",
+		success:function(result){
+			
+			for(var i in result){
+			str += "<tr id="+result[i].pno+">";
+			str += "<td><img src='/Pupload/"+result[i].img1+"' width='55' style='border-radius: 5px;'></td>";
+				if(result[i].status==status1){
+					str += "<td style='color:red;'>"+result[i].status+"</td>";
+				}else if(result[i].status==status2){
+					str +="<td style='color:#ff8f00;'>"+result[i].status+"</td>";
+				}else{
+					str +="<td>"+result[i].status+"</td>";
+				}
+			str += "<td><a href='/product/productview?pno="+result[i].pno+"'>"+result[i].title+"</a></td>";
+			str += "<td>"+result[i].price+" 원</td>";
+			str += "<td>찜"+result[i].likecount+" / 조회수"+result[i].viewcount+"</td>";
+			str += "<td>"+result[i].realrealdate+"</td>";
+			str += "<td><a href='javascript:manageRemove("+result[i].pno+")'>삭제하기</a></td>";
+			}
+			$("#listajax").html(str);
+				
+		}, //suc end
+		error:function(){
+			alert("에러입니다.")
+		}//error end
+	
+		
+	})//ajax end
+
+	})//change end
+	
+	
+	$("#managekey").on("propertychange change keyup paste input",function(){
+	 	var types =  $("#selectStatus").val();
+		var keywords =  $("#managekey").val();
+		var id = "${headid}";
+		var str = "";
+		var status1 = "판매완료";
+		var status2 = "진행중";
+	
+		$.ajax({
+			type:"get",
+			data:({
+				
+				types:types,
+				keywords:keywords,
+				id:id
+			}),
+			dataType:"json",
+			url:"/mypage/serchmanage",
+			success:function(result){
+				
+				for(var i in result){
+				str += "<tr id="+result[i].pno+">";
+				str += "<td><img src='/Pupload/"+result[i].img1+"' width='55' style='border-radius: 5px;'></td>";
+					if(result[i].status==status1){
+						str += "<td style='color:red;'>"+result[i].status+"</td>";
+					}else if(result[i].status==status2){
+						str +="<td style='color:#ff8f00;'>"+result[i].status+"</td>";
+					}else{
+						str +="<td>"+result[i].status+"</td>";
+					}
+				str += "<td><a href='/product/productview?pno="+result[i].pno+"'>"+result[i].title+"</a></td>";
+				str += "<td>"+result[i].price+"</td>";
+				str += "<td>찜"+result[i].likecount+" / 조회수"+result[i].viewcount+"</td>";
+				str += "<td>"+result[i].indate+"</td>";
+				str += "<td><a href='javascript:manageRemove("+result[i].pno+")'>삭제하기</a></td>";
+				}
+				$("#listajax").html(str);
+					
+			}, //suc end
+			error:function(){
+				alert("에러입니다.")
+			}//error end
+			
+			
+		})//ajax end
+			
+		})//change end
+	
+	
+})//fun end
+
+
+
+
+</script>
 
 
 <%@ include file="../footer.jsp"%>

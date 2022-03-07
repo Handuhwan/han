@@ -2,7 +2,7 @@ package com.universe.controller;
 
 import java.io.File;
 import java.security.Principal;
-
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -175,7 +175,7 @@ public class ProductController {
 		
 		Date today = new Date();
 	    double Dtime= today.getTime();
-		
+	    DecimalFormat angkimotti = new DecimalFormat("###,###");
 		int size = plist.size();
 	    for(int i=0; size>i; i++) {
 	      
@@ -204,6 +204,13 @@ public class ProductController {
 		       plist.get(i).setRealrealdate((betweenDay / 365) + "년 전");
 		   
 		    }
+		    
+			int angang=Integer.parseInt(plist.get(i).getPrice());
+			System.out.println("가격 체인지 앙앙:"+angang);
+			String ang = angkimotti.format(angang);
+			System.out.println("가격 체인지 앙:"+ang);
+			plist.get(i).setPrice(ang);
+		    
 	    }
 	    return plist;
 	}

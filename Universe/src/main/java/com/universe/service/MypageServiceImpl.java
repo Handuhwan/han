@@ -143,6 +143,22 @@ public class MypageServiceImpl implements MypageService {
 		
 	}
 	
+	@Override
+	public List<ProductVO> serchingmanage(String types, String keywords, String id) {
+		System.out.println("서치 서비스 실행");
+		
+		List<ProductVO> list = new ArrayList<ProductVO>();
+			if(types=="" && keywords=="") {
+				list = mapper.nullserchingmanage(types, keywords, id);
+			}else {
+			
+				list = mapper.serchingmanage(types, keywords, id);
+			}
+		
+		return list;
+		
+	}
+	
 
 }
 

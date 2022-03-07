@@ -45,4 +45,9 @@ public interface mypageMapper {
 	public void buyListUpdateRV(int pno);
 	public void updateMemberGrade(@Param("id") String id, @Param("grade") int grade);
 
+	
+	public List<ProductVO> serchingmanage(@Param("types")String types,@Param("keywords")String keywords,@Param("id")String id);
+	
+	public List<ProductVO> nullserchingmanage(@Param("types")String types,@Param("keywords")String keywords,@Param("id")String id);
+
 }
