@@ -85,7 +85,7 @@ public class AdminController {
 	 @PostMapping("/admin_member_forced_eviction")
 		public String admin_member_forced_eviction(ReportVO rvo,@RequestParam("reasons") String reason,String block) throws Exception{
 		 
-		 
+		 System.out.println("인");
 		
 		 if(rvo.getReason() == null || rvo.getReason() == "") { //기타의 raido박스는 value값이 0이니까 밑의 textarea의 값을 가지고 오기 위해
 			 rvo.setReason(reason);

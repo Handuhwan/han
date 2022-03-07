@@ -220,9 +220,9 @@ public class MypageController {
 			list.get(i).setRealrealdate(indate);
 			
 			int angang=Integer.parseInt(list.get(i).getPrice());
-			System.out.println("가격 체인지 앙앙:"+angang);
+		
 			String ang = angkimotti.format(angang);
-			System.out.println("가격 체인지 앙:"+ang);
+			
 			list.get(i).setPrice(ang);
 		}
 		
