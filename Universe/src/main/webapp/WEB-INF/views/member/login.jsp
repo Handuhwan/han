@@ -15,7 +15,7 @@
    			
     		<div class="col-md-5 newitem" >
     			<div class="form-group"style="border-right:3px solid #cfd4f4;">
-    				<h2 class="loginheader" style="margin-left: 71px; font-weight: bold;">SNS LOGIN1</h2>
+    				<h2 class="loginheader" style="margin-left: 71px; font-weight: bold;">SNS LOGIN</h2>
     				
 					   		<button type="button"  class="naverfont" id="naverIdLogin_loginButton" onclick="naverLogin()" style="padding-top: 4px; border-radius: 6px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인
 					   			</button>
@@ -82,17 +82,20 @@ var naverLogin = new naver.LoginWithNaverId({
 		});	
 
 naverLogin.init();
+$(function(){
+	
+
 	$('#naverIdLogin_loginButton').on("click",function(){
 		
-	
+		
 	//window.addEventListener('#naverIdLogin_loginButton', function () {
 		naverLogin.getLoginStatus(function (status) {
-			console.log(status)
+			
 			if (status) {
 				var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
 				var id = naverLogin.user.email;
 	        	var name = naverLogin.user.getName();
-	       		console.log(id);
+	       		console.log("ss"+id);
 	        	sessionStorage.setItem("user_info",email); 
 	        	sessionStorage.setItem("naver_email", naverLogin.user.getEmail()); 
 	        	sessionStorage.setItem("naver_name", naverLogin.user.getName());
@@ -112,7 +115,7 @@ naverLogin.init();
 
 	//});
 	})
-
+})
 
 
 
