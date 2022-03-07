@@ -353,7 +353,7 @@ $(function() {
 					sttr +=	"<div class='col-md-3' style='margin: 15px 0;'>";
 					sttr +=		"<a class='sc-cugefK fRjjJt' href='/product/productview?pno="+result[i].pno+"'>";
 					sttr +=			"<div class='sc-fnwBNb bGOWdF'>";
-					sttr +=				"<img src='/resources/images/table.jpg' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
+					sttr +=				"<img src='/Pupload/"+result[i].img1+"' width='100%' height='194' alt='상품 이미지'>"; // <------- 상품경로 넣어주세요!!
 											if(result[i].status == state) {
 					sttr +=					"<div class='sc-dREXXX fTyTGh'>";
 					sttr +=						"<span class='soldout'>판 매 완 료</span>";
@@ -575,7 +575,7 @@ $(function() {
 					str +=			"</div>";
 									}
 					str +=			"<div class='productImg'>";
-					str +=				"<img src='https://media.bunjang.co.kr/product/178714686_1_1644559148_w268.jpg' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
+					str +=				"<img src='/Pupload/"+result[i].img1+"' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
 					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
 											if(result[i].status == status) {
 					str +=						"<div class='sc-dREXXX fTyTGh'>";
@@ -747,7 +747,7 @@ $(function() {
 					str += 		"</a>";
 					str += 	"</div>";
 					str += 	"<div class='sc-MYvYT izkVcA'>";
-					str += 		"<img style='border-radius: 5px;' src='/resources/images/hambuk.jpg' width='100' height='100' alt='상품이미지'>"; // <------------------상품이미지 경로 넣어주기 !!!
+					str += 		"<img style='border-radius: 5px;' src='/Pupload/"+result[i].img1+"' width='100' height='100' alt='상품이미지'>"; // <------------------상품이미지 경로 넣어주기 !!!
 					str += 	"</div>";
 					str += 	"<div class='chat_content'>"+result[i].content+"</div>";
 					str += 	"<div class='chat_btn'>";

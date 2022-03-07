@@ -3,6 +3,7 @@ package com.universe.controller;
 import java.security.Principal;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -198,6 +199,38 @@ public class MypageController {
 		System.out.println("payamount : " +amount);
 		int result = service.paypay(id, amount);
 		System.out.println(result);
+	}
+	
+	@RequestMapping(value = "/serchmanage")
+	@ResponseBody
+	public List<ProductVO> serchingmanage(String types,String keywords,String id) {
+
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		
+		list = service.serchingmanage(types, keywords, id);
+		int size;
+		size = list.size();
+		DecimalFormat angkimotti = new DecimalFormat("###,###");
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+		for(int i=0; i<size; i++) {
+			
+		
+			String indate = date.format(list.get(i).getIndate());
+			
+			list.get(i).setRealrealdate(indate);
+			
+			int angang=Integer.parseInt(list.get(i).getPrice());
+			System.out.println("가격 체인지 앙앙:"+angang);
+			String ang = angkimotti.format(angang);
+			System.out.println("가격 체인지 앙:"+ang);
+			list.get(i).setPrice(ang);
+		}
+		
+		
+		
+		
+		
+		return list;
 	}
 	
 	

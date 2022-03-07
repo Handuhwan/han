@@ -80,15 +80,45 @@
 			from (
 			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
 			from product
-			where pno > 0
+			where pno > 0 ) 
 		]]>
 		
-		<include refid="criteria"></include>
 		
-		
-			) 
+			
 	
 	</select>
+	
+	
+	
+	<select id="nullserchingmanage" resultType="com.universe.domain.ProductVO">
+		<![CDATA[
+			select pno, id, title, price, indate, viewcount, likecount, status, img1
+			from (
+			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
+			from product
+			where pno > 0 ) 
+		]]>
+		
+		
+			
+	
+	</select>
+	
+	
+	<select id="serchingmanage" resultType="com.universe.domain.ProductVO">
+		<![CDATA[
+			select pno, id, title, price, indate, viewcount, likecount, status, img1
+			from (
+			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
+			from product
+			where pno > 0 and status = #{types} and title like '%'||#{keywords}||'%' ) 
+		]]>
+		
+		
+			
+	
+	</select>
+	
 	
 	<select id="manageTotalCount" resultType="int">
 		
