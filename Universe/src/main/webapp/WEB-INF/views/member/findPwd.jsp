@@ -17,8 +17,8 @@
     				<p class="lockname">아이디/패스워드를 잊어버리셨나요?</p>
     				<p class="locksub">하단의 방법을 통해 아이디를 찾을 수 있습니다</p>
     					<div class="idpwfindbtn" style="text-align: center;">
-					   		<button type="button"  class="moonju" onclick="openCity(event, 'London')" style="padding-top: 4px; border-radius: 6px;">ID찾기</button>
-					 		<button type="button"  class="moonju" onclick="openCity(event, 'Paris')" style="padding-top: 4px; border-radius: 6px;">PW찾기</button>
+					   		<button type="button"  class="moonju" onclick="openCity(event, 'London')" style="padding-top: 4px; border-radius: 5px;">ID찾기</button>
+					 		<button type="button"  class="moonju" onclick="openCity(event, 'Paris')" style="padding-top: 4px; border-radius: 5px;">PW찾기</button>
     					</div>
     					
     				<div style="padding-top: 126px;">
@@ -44,7 +44,7 @@
 					    </div>	
 					   
 					   <div class="loginemail">
-							<p class="findphone">인증번호 작성</p>
+							<p class="findphone">인증번호</p>
 							<input class="form-control" type="text" placeholder="인증번호" id="userNum"> 
 							<input type="button" id="enterBtn" value="확인" class="address">
 							<input type="hidden" name="text" id="text" >
@@ -53,7 +53,7 @@
 					    
 					    <div class="form-group">
 						   	<div>
-						    	<input type="submit"  class="btn2 btn btn-default account" value="확인" >
+						    	<input type="submit"  class="btn2 btn btn-default account" value="확인" style="margin-right: 95px;">
 						    </div>
 					    </div>
 					      
@@ -95,7 +95,7 @@
 					   	
 					   	<div class="form-group">
 					    	<div>
-					      		<input type="submit" class="btn2 btn btn-default account" value="확인" class="address" >
+					      		<input type="submit" class="btn2 btn btn-default account" value="확인" class="address" style="margin-right: 95px;">
 					       	</div>
 					    </div>
 					    </form> 

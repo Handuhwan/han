@@ -55,7 +55,7 @@
 					  
 					  <div class="form-group">
 					    <div >
-					      <input type="submit" class="btn2 btn-default moonju  signup" value="Signed in" style="	margin-left:0px;">
+					      <input type="submit" class="btn2 btn-default moonju  signup" value="Signed in" style="margin-left:0px; border-radius: 5px;">
 					       </div>
 					       <div>
 					     	 <button type="button" class="btn btn-default btn4" onclick="location.href='/member/join'" style="margin-left:0px;">회원가입</button>

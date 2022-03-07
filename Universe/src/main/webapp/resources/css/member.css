@@ -46,12 +46,21 @@
 
 
 }
-.moonju{
-	 background-color: #989ec6;
+.moonju {
+	 background-color: #bbbbbbcf;
 		color:white;
 	    font-family: Poppins-Regular; 
 	
 }
+
+.moonju:hover {
+	 background-color: #cfd4f4;
+		color:white;
+	    font-family: Poppins-Regular;
+	    border: none;
+	
+}
+
 .loginemail {
 	width: 340px;
 	font-weight:bold;
@@ -224,7 +233,7 @@ transition: all .3s
     margin-left: 3px;
     padding: 4px;
     background-color:#fff;
-	padding: 9px 13px 9px 13px;
+	padding: 6px 13px 6px 13px;
 }
 .address:hover {
      text-decoration: underline;
@@ -299,7 +308,7 @@ transition: all .3s
 }
 .chkbox label {
   font-size: 15px;
-  color: #4D4D4D;
+  color: #000;
   position: absolute;
   z-index: 10;
   padding-left: 50px;
@@ -311,8 +320,8 @@ transition: all .3s
   position: absolute;
 }
 .chkbox input:checked ~ .check {
-  border-color: #a99765;
-  box-shadow: 0px 0px 0px 15px #a99765 inset;
+  border-color: #cfd4f4;
+  box-shadow: 0px 0px 0px 15px #cfd4f4 inset;
 }
 .chkbox input:checked ~ .check::after {
   opacity: 1;
@@ -327,8 +336,8 @@ transition: all .3s
   position: relative;
   border-radius: 100px;
   background-color: #FFF;
-  border: 2px solid #a99765;
-  box-shadow: 0px 0px 0px 0px #a99765 inset;
+  border: 2px solid #cfd4f4;
+  box-shadow: 0px 0px 0px 0px #cfd4f4 inset;
   transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
 }
 .chkbox .check::after {
@@ -476,21 +485,22 @@ font-size: 1.4rem;
     /* border-color: #adadad; */
 }
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
-    color: #333;
-    background-color: #e6e6e6;
-    border-color: #adadad;
+    color: #fff;
+    background-color: rgb(207, 212, 244);
 }
 button, [type="button"], [type="reset"], [type="submit"] {
     appearance: button;
 }
 .signup1 {
-    background-color: #989ec6;
+	background : #bbbbbbcf;
+	color : #fff;
+	font-weight : bold;
+	border-radius: 5px;
+	border : none;
     color: white;
     font-family: Poppins-Regular;
     margin-top: 20px;
-    font-weight: 560;
     font-size: 18px;
-    border: solid 2px;
     padding: 15px 125px 15px 125px;
     margin-bottom: 50px;
 }
