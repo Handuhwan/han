@@ -15,7 +15,7 @@
    			
     		<div class="col-md-5 newitem" >
     			<div class="form-group"style="border-right:3px solid #cfd4f4;">
-    				<h2 class="loginheader" style="margin-left: 71px; font-weight: bold;">SNS LOGIN</h2>
+    				<h2 class="loginheader" style="margin-left: 71px; font-weight: bold;">SNS LOGIN1</h2>
     				
 					   		<button type="button"  class="naverfont" id="naverIdLogin_loginButton" onclick="naverLogin()" style="padding-top: 4px; border-radius: 6px;"><img src="/resources/images/naver.png" alt="" class="naverbutton" >네이버 로그인
 					   			</button>
