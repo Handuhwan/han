@@ -109,11 +109,11 @@
 					  	
 					  <div class="">
 					    <label for="id" class="col-sm-2 control-label joinbuttton" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >아이디</label>
-					    <div class="col-sm-10 joinbox" >
+					    <div class="col-sm-10 joinbox" style="display: flex; " >
 					      <input type="text" name="id" class="form-control check id" id="id" placeholder="아이디 입력" style="padding: 16px; width: 27%; display: inline;"  value="" ><br/>
+					   		<span class="id_input_re_1" style="padding: 9px;">사용 가능한 아이디입니다.</span>
+							<span class="id_input_re_2" style="padding: 9px;">아이디가 이미 존재합니다.</span>
 					    </div>
-					    	<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
-							<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
 					  </div>
 					  
 					  <div class="">
@@ -155,26 +155,29 @@
 					    </div>
 					  </div>
 					  
-					 <div >
-						  	 <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >전화번호</label>
+						<div >
+						 <label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 16px; padding-bottom: 14px" >전화번호</label>
 						  	 <div class="col-sm-10 joinbox">
-						  		<input class="form-control" type="text" id="phone" value=""   placeholder="전화번호입력" style="padding: 17px; width: 28%; display: inline-block; " name="phone"/>
-							 <input type="button" class="address" id="phoneChk" value="전송" style="margin-left: 3px;   width: 96px; display: inline;"><br/>
-						   </div>	
-					   </div>
-					   
-					   <div>
+								<input class="form-control" id="phone" type="text" name="phone" placeholder="전화번호입력"  style="padding: 17px; width: 28%; display: inline-block; " required/> 
+								<input type="button" id="phoneChk" class="address doubleChk" value="전송" style="margin-left: 3px;   width: 96px; display: inline;"><br/> 
+							</div>
+						</div>
+						
+						<div>
 						<label for="member_post" class="col-sm-2 control-label joinbuttton1" style="text-align: left; font-weight: 900; padding-top: 17px; padding-bottom: 18px; border-bottom: 1px solid #e5e5e5; " >인증번호 작성</label>
 							<div class="col-sm-10 joinbox">
-							<input class="form-control" type="text"  placeholder="인증번호입력" id="userNum" name="userNum" style="padding: 17px; width: 28%; display: inline-block; "> 
-								<input type="button" class="address" id="enterBtn" value="확인" style="margin-left: 3px;   width: 96px;">
-							  <input type="hidden" name="text" id="text">
-							</div>
-						</div>	
+								<input class="form-control" id="phone2" type="text" name="phone2"placeholder="인증번호입력" style="padding: 17px; width: 28%; display: inline-block;"  disabled required/> 
+								<span id="phoneChk2" class="doubleChk address"  style="margin-left: 3px; width: 96px; text-align: center;">확인</span> 
+								<span class="point successPhoneChk">휴대폰 번호 입력후 인증번호 보내기를 해주십시오.</span> 
+								<input type="hidden" id="phoneDoubleChk"/>
+						 	</div>
+						 </div>
+						
+
 					  
 					  <div class="">
 					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="submit" class=" btn-default  signup1" >회원가입 등록</button>
+					      <button type="submit" id="tmpBtn" class=" btn-default  signup1" >회원가입 등록</button>
 					      
 					    </div>
 					  </div>
@@ -236,7 +239,6 @@ var code2 = "";
 $("#phoneChk").click(function(){ 
 	alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오."); 
 	var phone = $("#phone").val(); 
-	alert(phone);
 	$.ajax({ 
 		type:"GET", 
 		url:"/member/findphonecheck?phone="+phone,
@@ -269,6 +271,12 @@ $("#phoneChk2").click(function(){
 		$(".successPhoneChk").css("color","green"); 
 		$("#phoneDoubleChk").val("true"); 
 		$("#phone2").attr("disabled",true); 
+		alert("인증완료") 
+		
+	    $(document).ready(function(){
+		$("#tmpBtn").trigger('click');
+		
+	    });
 		}else{ 
 			$(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
 			$(".successPhoneChk").css("color","red"); 
@@ -324,10 +332,9 @@ $("#id").blur(function(){
                /* 	id:{required:true, minlength:3, remote:"Validate"}, */
                	pwd: "required",
                	pwdcheck: {required:true, equalTo:'#pwd'},               
-                name: {required:true},
+                name: {required:true,minlength:3},
                 nickname: {required:true},
                 phone: {required:true, minlength:11, maxlength:11} , // 1~100범위
-                userNum: {required:true, minlength:4, maxlength:4} 
                 
             },
             messages: {
@@ -340,16 +347,15 @@ $("#id").blur(function(){
                 pwdcheck: {
                     required: "암호확인를 입력하시오.",
                     equalTo:"암호가 틀립니다." },
-               	name: {required:"이름을 입력하시오."},
+               	name: {required:"이름을 입력하시오.",
+              	 	minlength: jQuery.format("3자 이상 입력해주세요!")
+               	},
                 nickname: {required:"별명을 입력하시오."},
               	phone: {required: "11자리 입력",
               		minlength: jQuery.format("휴대폰번호는 {0}자 이상 입력해주세요!"),
               		maxlength: jQuery.format("휴대폰번호는 11자로 입력해주세요!")
               			},
-                userNum: { required: "4자리 입력",
-                	minlength: jQuery.format("인증번호는 {0}자 이상 입력해주세요!"),
-                	maxlength: jQuery.format("인증번호는 4자로 입력해주세요!")
-                	}
+             
             }
 //여기부터
 ,
