@@ -7,12 +7,14 @@ ul li{
 a{
 	color:#000;
 	font-family: 'Noto Sans KR', sans-serif;
+	
 }
 
 a:hover{
 	color:#000;
 	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
+	
 }
 h1, h2, h3, h4, h5, span, div, p, ul, li, a, strong{
 	font-family: 'Noto Sans KR', sans-serif;

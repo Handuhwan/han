@@ -63,6 +63,8 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="http://code.jquery.com/jquery-1.3.2.min.js" ></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js" ></script>
 </head>
 
 <script type="text/javascript"> 
@@ -118,7 +120,7 @@
          <div class="col-md-12 col-sm-12" style="margin-top:20px;">
             <div class="pull-left">
                <div class="serch-box" > <!-- serch box -->
-                  <a href="/"><img alt="" src="/resources/images/mark.png" style="width:200px; height:100px; margin-right:80px;"></a>
+                  <a href="/"><img alt="" src="/resources/images/marketlogo.png" style="width:200px; height:101px; margin-right:80px;"></a>
                   <form style="display:inline" id ="searchForm" method="get" action="/" onsubmit="searchEvt()">
                      <input type="text" name="keyword" class="search_word" placeholder="#상품명 #지역명 #상점명" >
                      <div style="display:none">
@@ -133,8 +135,12 @@
             </div>
             <div class="pull-right" style="margin-top:35px;">
                <div class="dropdown">
-                   <button class="dropbtn" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
-                    
+               <sec:authorize access="isAuthenticated()">
+                   <button class="dropbtn" onclick="location.href='/mypage/manage?id=${headid}'" ><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                 <button class="dropbtn" onclick="mymenucheck()" style=""><img alt="" src="/resources/images/hhmoney.png">&nbsp;&nbsp;<span>판매하기</span></button>
+                 </sec:authorize>
                </div>&nbsp;&nbsp;
 
                <div class="dropdown">
@@ -142,7 +148,7 @@
 
                   <sec:authorize access="isAuthenticated()">
                   <sec:authentication property="principal.member.id" var="headid" />
-                   <button class="dropbtn" onclick="location.href='/mypage/mypage?id=${headid}'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE<span class="caret"></span></button>
+                   <button class="dropbtn" onclick="location.href='/mypage/mypage?id=${headid}'" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>
                    </sec:authorize>
                    <sec:authorize access="isAnonymous()">
                    <button class="dropbtn" onclick="mymenucheck()" style="margin-left:0px;"><img alt="" src="/resources/images/main-user.png">&nbsp;&nbsp;MY PAGE</button>

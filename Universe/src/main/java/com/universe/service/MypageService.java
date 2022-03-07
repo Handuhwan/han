@@ -54,7 +54,10 @@ public interface MypageService {
 		
 		// 리뷰가 정상적으로 추가되면 멤버업데이트
 		public void updateMemberGrade(String id, int grade);
-
+		
+		
+		public List<ProductVO> serchingmanage(String types,String keywords,String id);
+		//ajax 마나지 써치기능
 }
 
 
