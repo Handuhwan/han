@@ -39,14 +39,14 @@
 					  
 					 	<div class="loginemail">
 						  	<p class="findphone">전화번호</p>
-						  	<input class="form-control" type="text" id="phone" placeholder="phone" name="to">
+						  	<input class="form-control" type="text" id="phone" placeholder="phone" name="phone">
 							<input type="button" id="phoneChk" value="전송" class="address"><br>
 					    </div>	
 					   
 					   <div class="loginemail">
 							<p class="findphone">인증번호</p>
-							<input class="form-control" type="text" placeholder="인증번호" id="userNum"> 
-							<input type="button" id="enterBtn" value="확인" class="address">
+							<input class="form-control" type="text"id="phone2" placeholder="인증번호" id="userNum"> 
+							<input type="button" id="phoneChk2" value="확인" class="address">
 							<input type="hidden" name="text" id="text" >
 						</div>	
 						
@@ -68,10 +68,11 @@
 					</div> <!-- /.id찾기  -->
 					
 					<div id="Paris" class="tabcontent" style="padding-bottom: 190px; "> <!-- pw찾기 -->
-				 		<form class="" action="/member/findPwd" method="post" onsubmit="return findPwdview()"> 
+				 		<form class="" action="/member/findpassword" method="post" onsubmit="return findPwdview()"> 
+						    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 						    <div class="loginemail">
-						   		<p class="findphone">이메일</p>
-						    	<input type="text" name="id" class="form-control" id="id" placeholder="이메일" required="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)?$/i" type="email" />
+						   		<p class="findphone">아이디</p>
+						    	<input type="text" name="id" class="form-control" id="id" placeholder="아이디" required="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)?$/i" type="email" />
 						   		<!--  <div class="error">유효하지 않은 이메일주소 입니다  </div>-->
 						    </div>
 					 
@@ -82,14 +83,14 @@
 					    
 					    <div class="loginemail">
 						  	<p class="findphone">전화번호</p>
-						  	<input class="form-control" type="text" id="phone" placeholder="전화번호" name="to">
-							<input type="button" id="phoneChk" value="전송" class="address"><br>
+						  	<input class="form-control" type="text" id="phone1" placeholder="전화번호" name="phone">
+							<input type="button" id="phoneChk1" value="전송" class="address"><br>
 					    </div>	
 					   
 					    <div class="loginemail">
 							<p class="findphone">인증번호 작성</p>
-							<input class="form-control" type="text"  placeholder="인증번호" id="userNum"> 
-							<input type="button" id="enterBtn" value="확인" class="address">
+							<input class="form-control" type="text"id="phone3"  placeholder="인증번호" id="userNum"> 
+							<input type="button" id="phoneChk3" value="확인" class="address">
 							<input type="hidden" name="text" id="text">
 						</div>	
 					   	
@@ -150,7 +151,7 @@ var code2 = "";
 $("#phoneChk").click(function(){ 
 	alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오."); 
 	var phone = $("#phone").val(); 
-	alert(phone);
+	
 	$.ajax({ 
 		type:"GET", 
 		url:"/member/findphonecheck?phone="+phone,
@@ -162,6 +163,8 @@ $("#phoneChk").click(function(){
 			$(".successPhoneChk").text("유효한 번호를 입력해주세요."); 
 			$(".successPhoneChk").css("color","red"); 
 			$("#phone").attr("autofocus",true); 
+			$("#phone").css("background","#e8e8e8"); 
+			alert("인증완료")
 						
 			}else{ 
 			$("#phone2").attr("disabled",false); 
@@ -174,7 +177,35 @@ $("#phoneChk").click(function(){
 			} 
 	}); 
 	});
-
+$("#phoneChk1").click(function(){ 
+	alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오."); 
+	var phone = $("#phone1").val(); 
+	
+	$.ajax({ 
+		type:"GET", 
+		url:"/member/findphonecheck?phone="+phone,
+	
+		cache : false, 
+		success:function(data){ 
+			if(data == "error"){ 
+			alert("휴대폰 번호가 올바르지 않습니다.") 
+			$(".successPhoneChk").text("유효한 번호를 입력해주세요."); 
+			$(".successPhoneChk").css("color","red"); 
+			$("#phone1").attr("autofocus",true); 
+			$("#phone1").css("background","#e8e8e8"); 
+			alert("인증완료")
+						
+			}else{ 
+			$("#phone2").attr("disabled",false); 
+			$("#phoneChk2").css("display","inline-block"); 
+			$(".successPhoneChk").text("인증번호를 입력한 뒤 본인인증을 눌러주십시오.");
+			$(".successPhoneChk").css("color","green"); 
+			$("#phone1").attr("readonly",true); 
+			code2 = data;
+				} 
+			} 
+	}); 
+	});
 //휴대폰 인증번호 대조 
 
 $("#phoneChk2").click(function(){ 
@@ -183,6 +214,8 @@ $("#phoneChk2").click(function(){
 		$(".successPhoneChk").css("color","green"); 
 		$("#phoneDoubleChk").val("true"); 
 		$("#phone2").attr("disabled",true); 
+		$("#phone2").css("background","#e8e8e8"); 
+		alert("인증완료")
 		}else{ 
 			$(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
 			$(".successPhoneChk").css("color","red"); 
@@ -190,6 +223,24 @@ $("#phoneChk2").click(function(){
 			$(this).attr("autofocus",true); 
 			} 
 	});
+	
+$("#phoneChk3").click(function(){ 
+	
+	if($("#phone3").val() == code2){ 
+		$(".successPhoneChk").text("인증번호가 일치합니다."); 
+		$(".successPhoneChk").css("color","green"); 
+		$("#phoneDoubleChk").val("true"); 
+		$("#phone3").attr("disabled",true); 
+		$("#phone3").css("background","#e8e8e8"); 
+		alert("인증완료")
+		}else{ 
+			$(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
+			$(".successPhoneChk").css("color","red"); 
+			$("#phoneDoubleChk").val("false"); 
+			$(this).attr("autofocus",true); 
+			} 
+	});
+
 
 </script> 
 

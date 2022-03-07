@@ -54,7 +54,7 @@
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="954610008697-7i20sge4p4mhm6jh1sksaqkstrlkn7q2.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
-<script src="/resources/js /product.js"></script>
+<script src="/resources/js/product.js"></script>
 <script src="/resources/js/mypage.js"></script>
 <script src="/resources/js/faqReply.js"></script>
 
@@ -63,7 +63,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d7cf7c45cb24235fcf556bb5c6d9655&libraries=services"></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
 
 </head>
 
