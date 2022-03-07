@@ -22,7 +22,7 @@
       <div class="jumbotron" >	 
 		  	
 		  		<c:forEach items="${member}" var="member">
-		  		  	
+		  		  		아이디 : ${member.id }
 		  		  	 <h2 > 비밀번호 : <a >${member.pwd} </a></h2><br/>
 		  		
 		  		</c:forEach>
