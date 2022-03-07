@@ -65,7 +65,7 @@
 				<span><img src="/resources/images/plove1.png"><span id="productlikecount" style="border-right:none; padding-right:0px;" id="">${view.likecount }</span></span>
 				<span><img src="/resources/images/eye.png">${view.viewcount }</span>
 				<span><img src="/resources/images/clock.png">${view.realrealdate }</span>
-				<button style="font-weight:700; background:none; border:none; font-size:16px; color:#cfd4f4" type="button" class="pull-right btn btn-primary btn-sm btsbts" data-toggle="modal" data-target="#myModal">
+				<button style="font-weight:700; background:none; border:none; font-size:16px; color:#cfd4f4" type="button" class="alertbtn pull-right btn btn-primary btn-sm btsbts " data-toggle="modal" data-target="#myModal">
 				<img style="padding-bottom:6px; margin-right:6px;" src="/resources/images/alert.png">신고하기</button>
 				<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
