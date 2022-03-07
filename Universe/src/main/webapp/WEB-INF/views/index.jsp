@@ -65,7 +65,7 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img style="height:250px; width:100%;" src="/resources/images/mainbanner5.jpg" alt="..."> <!--  임시 사진 -->
+		      <img style="height:250px; width:100%; border-radius: 5px" src="/resources/images/mainbanner5.jpg" alt="..."> <!--  임시 사진 -->
 		    </div> <!-- item end  -->
 		 
 		  </div> <!-- item inner box -->

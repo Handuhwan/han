@@ -369,6 +369,7 @@ a {text-decoration-line: none !important;}
     transform: rotate(40deg);
     transform-origin: 100% 100%;
     transition: width 0.1s ease-out 0s, height 0.1s ease-out 0.1s;
+    background-image: url(https://webdevtrick.com/demos/checkmark.svg);
 }
 
 .scBtn {
@@ -1835,8 +1836,6 @@ th {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAAC9JREFUKBVjYMAB/kMBDmkGJlwShMRHgkZGUOARCghs8mQHDjbDwGKj8chAfloFAO6aFATVmNerAAAAAElFTkSuQmCC);
     background-position: 4px 4px;
 }
-
-
 
 
 
