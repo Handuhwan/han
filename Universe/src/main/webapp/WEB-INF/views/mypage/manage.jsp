@@ -72,7 +72,7 @@
 							
 							<c:forEach var="list" items="${list}">
 								<tr id="${list.pno}">
-									<td><img src="/resources/images/notica.jpg" alt="" width="55" style="border-radius: 5px;"></td>
+									<td><img src="/Pupload/${list.img1 }" alt=""  style="border-radius: 5px;width:50px; height:50px;"></td>
 									<c:choose>
 										<c:when test="${list.status == '판매완료'}">
 											<td style="color:red;">판매완료</td>
@@ -187,7 +187,7 @@ $(function(){
 			
 			for(var i in result){
 			str += "<tr id="+result[i].pno+">";
-			str += "<td><img src='/Pupload/"+result[i].img1+"' width='55' style='border-radius: 5px;'></td>";
+			str += "<td><img src='/Pupload/"+result[i].img1+"' style='border-radius: 5px; width:150px;height:150px;'></td>";
 				if(result[i].status==status1){
 					str += "<td style='color:red;'>"+result[i].status+"</td>";
 				}else if(result[i].status==status2){

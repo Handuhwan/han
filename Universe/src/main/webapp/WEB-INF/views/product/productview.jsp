@@ -112,7 +112,7 @@
 				<button id="pjjimbutton" type="button" onclick="productviewjjimdown(${view.pno})"><img src="/resources/images/pjjim1.png">찜</button>
 				</c:if>
 				 <sec:authorize access="isAuthenticated()">
-				<button id="gotradebtn" type="button" onclick="gotradebtn('${view.id}','${view.pno }')"><img src="/resources/images/buy.png">구매하기</button>
+				<button id="gotradebtn" type="button" onclick="gotradebtn('${view.id}','${view.pno}')"><img src="/resources/images/buy.png">구매하기</button>
 				<button id="pchatbutton" type="button" onclick="location.href='/chat/chat?person=${view.id}&pno=${view.pno}'" ><img src="/resources/images/chat.png">채팅하기</button>
 				</sec:authorize>
 				<sec:authorize access="isAnonymous()">
@@ -175,6 +175,7 @@
 function gotradebtn(saler,pno){
 	var p ="${view.price}"
 	var mp ="${meprice}"
+	console.log(mp);
 	var id ="${view.id}"
 	var meid="${meid}"	
 	

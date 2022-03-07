@@ -579,7 +579,7 @@ $(function() {
 					str +=			"</div>";
 									}
 					str +=			"<div class='productImg'>";
-					str +=				"<img src='/Pupload/"+result[i].img1+"' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
+					str +=				"<img src='/Pupload/"+result[i].img1+"' style='width:150px;height:150px;'alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
 					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
 											if(result[i].status == status) {
 					str +=						"<div class='sc-dREXXX fTyTGh'>";

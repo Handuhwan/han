@@ -80,7 +80,7 @@
 			from (
 			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
 			from product
-			where pno > 0 ) 
+			where pno > 0  and id=#{id}) 
 		]]>
 		
 		
@@ -96,7 +96,7 @@
 			from (
 			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
 			from product
-			where pno > 0 ) 
+			where pno > 0 and id=#{id} and title like '%'||#{keywords}||'%') 
 		]]>
 		
 		
@@ -111,7 +111,7 @@
 			from (
 			select /*+ index_desc(product SYS_C007886) */ rownum rn, pno, id, title, price, indate, viewcount, likecount, status, img1
 			from product
-			where pno > 0 and status = #{types} and title like '%'||#{keywords}||'%' ) 
+			where pno > 0 and id=#{id} and status = #{types} and title like '%'||#{keywords}||'%' ) 
 		]]>
 		
 		

@@ -29,7 +29,7 @@ public interface mypageMapper {
 	public int reviewCount(String id);
 	public int paypay(@Param("id") String id,@Param("amount") int amount);
 	
-	public List<ProductVO> manageList(Criteria cri);
+	public List<ProductVO> manageList(Criteria cri,@Param("id")String id);
 	public int manageTotalCount(Criteria cri);
 	public int manageDelete(@Param("id") String id, @Param("pno") int pno);
 	

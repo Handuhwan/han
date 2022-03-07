@@ -57,12 +57,13 @@
 					<div style="margin-left: 25px;">
 					<c:if test="${info != null }">
 					<c:choose>
-					<c:when test="${info.userimg != ''}">
+					<c:when test="${info.userimg != null}">
 					<img alt="" class="tradephoto" src="/Pupload/${info.userimg }">
 					</c:when>
-					<c:otherwise>
+					<c:when test="${info.userimg == null}">
 					<img alt="" class="tradephoto" src="/resources/images/store.png">
-					</c:otherwise>
+					</c:when>
+					
 					</c:choose>
 					<button class="tradeheymama">상대방 : ${info.name }</button> <!-- 이름표시 -->		
 					</c:if>
