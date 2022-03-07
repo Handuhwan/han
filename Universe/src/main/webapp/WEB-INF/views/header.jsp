@@ -118,7 +118,7 @@
          <div class="col-md-12 col-sm-12" style="margin-top:20px;">
             <div class="pull-left">
                <div class="serch-box" > <!-- serch box -->
-                  <a href="/"><img alt="" src="/resources/images/marketlogo.png" style="width:250px; height:100px; margin-right:80px;"></a>
+                  <a href="/"><img alt="" src="/resources/images/marketlogo.png" style="width:200px; height:101px; margin-right:80px;"></a>
                   <form style="display:inline" id ="searchForm" method="get" action="/" onsubmit="searchEvt()">
                      <input type="text" name="keyword" class="search_word" placeholder="#상품명 #지역명 #상점명" >
                      <div style="display:none">
