@@ -4,8 +4,12 @@ import java.security.Principal;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.spi.http.HttpHandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.http.ResponseEntity;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.universe.domain.MemberVO;
 import com.universe.domain.ReportVO;
@@ -81,18 +86,7 @@ public class MemberController {
 			return "/member/findPwdView";
 			}
 		
-	// 비밀번호 찾기
-	 
-	 @RequestMapping(value="/findpassword", method=RequestMethod.POST)
-		public String findPassword(MemberVO memberVO,Model model) throws Exception{
-		 	log.info("email"+memberVO.getId());
-		 	log.info("name"+memberVO.getName());
-			log.info("phone"+memberVO.getPhone());
-					
-			model.addAttribute("member", service.findPssword( memberVO.getId(), memberVO.getName(), memberVO.getPhone()));
-			return "/member/findpassword";
-			}
-		
+	
 	 
 		
 	@RequestMapping(value="/memberdrop")
@@ -121,6 +115,8 @@ public class MemberController {
 		return result;
 	}
 	
+	
+	
 	@GetMapping("/checkjoinid.do")
 	@ResponseBody
 	public int checkjoinid(String id) { // @ResponseBody json형식으로 리턴
@@ -140,16 +136,53 @@ public class MemberController {
 		}	
 
 	}
+
 	
-
-
+	
+	// 비밀번호 찾기
+	/*
+	 * @RequestMapping(value="/findpassword", method=RequestMethod.POST) public
+	 * String findPassword(MemberVO memberVO,Model model) throws Exception{
+	 * log.info("email"+memberVO.getId()); log.info("name"+memberVO.getName());
+	 * log.info("phone"+memberVO.getPhone());
+	 * 
+	 * model.addAttribute("member", service.findPssword( memberVO.getId(),
+	 * memberVO.getName(), memberVO.getPhone())); return "/member/findpassword"; }
+	 */
+	
+	/*
+	 * @GetMapping("/findpassword") public String findPasswordview() {
+	 * return"/member/findpassword"; }
+	 */
+	@RequestMapping(value="/findpassword")
+	public void pwUpdate(MemberVO vo,Model model){
+		System.out.println("들어옴");
+		
+		model.addAttribute("id", vo.getId());
+		
+		
+	}
+	@RequestMapping("/updatepassword")
+	public String updatepassword(MemberVO memberVO) {
+		String inputPass = pwencoder.encode(memberVO.getPwd());
+		System.out.println("중간");
+		memberVO.setPwd(inputPass);
+		System.out.println("마지막");
+		System.out.println(memberVO.getId());
+		int check = service.pwUpdate(memberVO.getId(),memberVO.getPwd());
+		
+		System.out.println(check+"업데이트가 성공적으로 끝났습니다.");
+		if(check==1) {
+			return "/member/login";
+		}else {
+			return"/member/findPwd";
+		}
+	}
+		
+	
 	
 	@PostMapping("/memberinsert")
 	public String memberInsert(MemberVO member) {
-		
-
-		System.out.println(member);
-
 		String inputPass = pwencoder.encode(member.getPwd());
 		member.setPwd(inputPass);
 		

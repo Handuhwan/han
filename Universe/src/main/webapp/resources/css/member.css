@@ -518,3 +518,23 @@ button, [type="button"], [type="reset"], [type="submit"] {
 		color : red;
 		display : none;
 	}
+
+.findpassword{
+padding: 6px 0px;
+    background-color: #bbbbbbcf;
+    color: white;
+    width: 47%;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    border: 1px solid #fff;
+    width: 143px;
+    margin: -13px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #3c763d;
+}
+.alert-danger {
+    color: #a94442;
+}
