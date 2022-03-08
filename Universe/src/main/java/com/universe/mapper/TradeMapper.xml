@@ -68,7 +68,7 @@
   </update> <!-- 판매 완료 -->
   
   <select id="cancelcheck" resultType="int">
-  	select count(*) from trade where tno=#{tno} and buystatus = 1 or salestatus = 1
+  	select count(*) from trade where tno=#{tno} and buystatus = 0 or salestatus = 0
   </select> <!-- 해당 품목 1상태로 만듬 -->
   
   <update id="productstatuschange">
@@ -78,6 +78,11 @@
   	delete from trade where tno=#{tno}
   </delete>
   
-
+  <insert id="buylistinsert">
+  	insert into buylist(pno,buyer,seller) values(#{pno},#{buyer},#{saler})
+  </insert>
+	<update id="buylistcomple">
+		update buylist set status='구매안료' where pno =#{pno}
+	</update>
 
 </mapper>

@@ -7,7 +7,11 @@ import javax.servlet.http.HttpSession;
 import javax.xml.ws.spi.http.HttpHandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 import com.universe.service.MemberService;
 
 import lombok.AllArgsConstructor;
@@ -211,9 +216,13 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/controller",method = {RequestMethod.GET,RequestMethod.POST})
-	public void error(Principal prin) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
-		
-		//String id = prin.getName(); // login한 아이디를 가져옴
+	public void error(@AuthenticationPrincipal Authentication auth) { // login을 했을때 정지 먹은사람들 안내하는 페이지 혹은 로그인 후 판매등록이나 기타 등의 제한을 막고 여기 페이지로 안내함
+		System.out.println("여기");
+		String id =auth.getName();
+		ReportVO rvo = service.controller(id);
+		if(rvo != null) {
+			//model.addAttribute("report", rvo);
+		}
 
 	}
 

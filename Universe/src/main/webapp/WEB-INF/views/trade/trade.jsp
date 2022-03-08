@@ -57,12 +57,13 @@
 					<div style="margin-left: 25px;">
 					<c:if test="${info != null }">
 					<c:choose>
-					<c:when test="${info.userimg != ''}">
+					<c:when test="${info.userimg != null}">
 					<img alt="" class="tradephoto" src="/Pupload/${info.userimg }">
 					</c:when>
-					<c:otherwise>
+					<c:when test="${info.userimg == null}">
 					<img alt="" class="tradephoto" src="/resources/images/store.png">
-					</c:otherwise>
+					</c:when>
+					
 					</c:choose>
 					<button class="tradeheymama">상대방 : ${info.name }</button> <!-- 이름표시 -->		
 					</c:if>
@@ -210,7 +211,7 @@ function saleOK(tno){
 	}) //ajax end
 	}// if end
 	else{
-		alert("당신은 구매자가 아닙니다.");
+		alert("당신은 판매자가 아닙니다.");
 	}
 	}
 	
@@ -231,7 +232,7 @@ function canceltrade(tno){
 		url:"/trade/tradecancel",
 		dataType:"json",
 		success:function(result){
-			if(result == 1){
+			if(result == 0){
 				alert("취소가 불가능합니다.");
 			}else{
 				alert("해당거래가 취소되었습니다.");

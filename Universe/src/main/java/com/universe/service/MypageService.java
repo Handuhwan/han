@@ -38,7 +38,7 @@ public interface MypageService {
 
 		
 		// 상품관리 페이지 리스트 출력
-		public List<ProductVO> manageList(Criteria cri);
+		public List<ProductVO> manageList(Criteria cri,String id);
 		public int manageTotalCount(Criteria cri);
 		public int manageDelete(String id, int pno);
 		

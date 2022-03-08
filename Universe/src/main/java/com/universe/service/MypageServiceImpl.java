@@ -76,9 +76,9 @@ public class MypageServiceImpl implements MypageService {
 
 	
 	@Override
-	public List<ProductVO> manageList(Criteria cri) {
+	public List<ProductVO> manageList(Criteria cri,String id) {
 		
-		return mapper.manageList(cri);
+		return mapper.manageList(cri,id);
 	}
 	
 	@Override
@@ -105,6 +105,7 @@ public class MypageServiceImpl implements MypageService {
 		}else if(no == 3) {
 			detailsSellList = mapper.detailsSoldList(id);
 		}
+		System.out.println(detailsSellList);
 		return detailsSellList;
 	}
 	
@@ -120,6 +121,8 @@ public class MypageServiceImpl implements MypageService {
 		}else if(no == 3) {
 			detailsBuyList = mapper.detailsBuyEndList(id);
 		}
+		
+		System.out.println(detailsBuyList);
 		return detailsBuyList;
 	}
 	
@@ -148,7 +151,7 @@ public class MypageServiceImpl implements MypageService {
 		System.out.println("서치 서비스 실행");
 		
 		List<ProductVO> list = new ArrayList<ProductVO>();
-			if(types=="" && keywords=="") {
+			if(types=="") {
 				list = mapper.nullserchingmanage(types, keywords, id);
 			}else {
 			

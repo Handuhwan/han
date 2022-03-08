@@ -38,9 +38,7 @@
   	 </insert>
   	 
   	 <select id="chatlog" resultType="com.universe.domain.ChatVO">
-  	 	select * from chatlog 
-		where pno=#{pno} and me in(#{me},#{person})
-		order by indate
+  	 	select * from (select * from chatlog where pno=#{pno}) chatlog where me=#{me} or person=#{me} order by indate
   	 </select>
   	 
   	 <insert id="chatinput">

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 import com.universe.mapper.MemberMapper;
 
 import lombok.AllArgsConstructor;
@@ -94,6 +95,17 @@ public class MemberServiceimple implements MemberService {
 		return mapper.pwUpdate(id, memberPw2);
 	}
 	
-	
+	@Override
+	public ReportVO controller(String id) {
+		int check = mapper.controller(id);
+		if(check==1) {
+			ReportVO rvo = mapper.roles(id);
+			return rvo;
+		}else {
+			return null;
+		}
+		
+		
+	}
 
 }

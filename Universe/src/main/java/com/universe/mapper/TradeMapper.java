@@ -19,6 +19,11 @@ public interface TradeMapper {
 	public TradeVO salerview(int pno);
 	//판매자 입장에서 보는 상대 info 및 상품정보
 	
+	public void buylistinsert(@Param("saler")String saler,@Param("pno")int pno,@Param("buyer")String buyer);
+	//구매신청시 바이리스트에 들어감
+	public void buylistcomple(@Param("saler")String saler,@Param("pno")int pno,@Param("buyer")String buyer);
+	//구매완료시 
+	
 	public int buyOK(int tno); // 구매확정
 	
 	public int saleOK(int tno); // 판매확정

@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 
 public interface MemberService {
 	
@@ -22,9 +23,13 @@ public interface MemberService {
 	
 	public void certifiedPhoneNumber(String phone, int randomNumber) ;
 	
+
 	public int pwUpdate(String id, String memberPw2);
 	
 	
+
+	public ReportVO controller(String id);
+		
 	}
 
 	

@@ -62,7 +62,7 @@ public class MypageController {
 		int reviewCount = service.reviewCount(id);
 		System.out.println(faqCount);
 
-
+		System.out.println(uvo);
 		model.addAttribute("memberInfo", uvo);
 		model.addAttribute("userCount", userCount);
 		model.addAttribute("pCount", pCount);
@@ -83,7 +83,7 @@ public class MypageController {
 		int total = service.manageTotalCount(cri);
 		
 		model.addAttribute("id", id);
-		model.addAttribute("list", service.manageList(cri));
+		model.addAttribute("list", service.manageList(cri,id));
 		model.addAttribute("pageMaker", new PageVO(cri, total));
 		
 	}

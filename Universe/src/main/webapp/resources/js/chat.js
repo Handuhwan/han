@@ -57,10 +57,10 @@ function chatlist(me,person,pno){
 		}),
 		dataType:"json",
 		success:function(data){
-			
+			console.log(data)
 			for(var i in data){
 			
-			if(data[i].person==person){
+			if(data[i].me==me){
 				str += "<div style='height:50px; margin-bottom:10px;'><p class='balloon_02'><span>"+data[i].chat+"</span></p></div>";
 				
 			}//if end
@@ -120,6 +120,7 @@ function chatroomdel(me,person,pno){
 		
 			
 			$("#"+pno).remove();
+			$("#chatlogbox").html("");
 		}
 	
 	})//ajax end

@@ -579,7 +579,7 @@ $(function() {
 					str +=			"</div>";
 									}
 					str +=			"<div class='productImg'>";
-					str +=				"<img src='/Pupload/"+result[i].img1+"' alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
+					str +=				"<img src='/Pupload/"+result[i].img1+"' style='width:150px;height:150px;'alt='상품 이미지'>"; // <---- src에 사진경로 넣어주세요!!
 					str +=				"<div class='sc-cqPOvA kWqxvV'></div>";
 											if(result[i].status == status) {
 					str +=						"<div class='sc-dREXXX fTyTGh'>";
@@ -900,15 +900,14 @@ $("#check_module").click(function () {
 			e.preventDefault();
 			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-			}
+							}
 		});
 		
 		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
 			r.preventDefault();
 			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+				
 			}
 		});
 
@@ -925,7 +924,7 @@ function showmore1(){
 			e.preventDefault();
 			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			
 			}
 		});
 		
@@ -933,7 +932,7 @@ function showmore1(){
 			r.preventDefault();
 			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+				
 			}
 		});
 

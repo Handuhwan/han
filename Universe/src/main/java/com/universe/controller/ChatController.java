@@ -46,9 +46,9 @@ public class ChatController {
 	@RequestMapping(value = "/chatlog")
 	@ResponseBody
 	public List<ChatVO> chatlog(String me,String person,int pno) {
-		
-		
-		return cservice.chatlog(me, person, pno);
+		List<ChatVO> list =cservice.chatlog(me, person, pno);
+		System.out.println("여기까지는 옵니다");
+		return list;
 	}
 	@RequestMapping(value = "/chatinput")
 	@ResponseBody
