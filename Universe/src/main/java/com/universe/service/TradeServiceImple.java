@@ -35,6 +35,7 @@ public class TradeServiceImple implements TradeService {
 				}else {
 				tmapper.productchange(pno);
 				tmapper.tradeinsert(saler, pno, buyer);
+				tmapper.buylistinsert(saler, pno, buyer);
 				//거래 인서트
 				tvo = tmapper.buyerview(pno);
 				System.out.println("인서트합니다");
@@ -56,6 +57,7 @@ public class TradeServiceImple implements TradeService {
 			if(check == 1) {
 				tmapper.productcheck(pno);
 				System.out.println("금액 입출금 시작");
+				tmapper.buylistcomple(saler, pno, buyer);
 				tmapper.salend(tno, saler);
 				tmapper.buyend(tno, buyer);
 				System.out.println("금액 입출금 끝");
@@ -78,6 +80,7 @@ public class TradeServiceImple implements TradeService {
 			if(check== 1) {
 				tmapper.productcheck(pno);
 				System.out.println("금액 입출금 시작");
+				tmapper.buylistcomple(saler, pno, buyer);
 				tmapper.salend(tno, saler);
 				tmapper.buyend(tno, buyer);
 				System.out.println("금액 입출금 끝");
@@ -93,7 +96,7 @@ public class TradeServiceImple implements TradeService {
 		System.out.println("여기");
 		int check =tmapper.cancelcheck(tvo.getTno());
 		System.out.println("여기까지 시작");
-			if(check==0) {
+			if(check==1) {
 				System.out.println("취소가능 조건");
 				tmapper.productchange(tvo.getPno());
 				tmapper.cancel(tvo.getTno());

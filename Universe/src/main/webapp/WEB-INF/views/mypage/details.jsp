@@ -57,7 +57,7 @@
 									<span aria-hidden='true'>&times;</span>
 								</button>
 								<div class='modal-title' id='myModalLabel' style="float:left">
-									<img id="review_Img1" class="review_Img1" src='/resources/images/marketlogo.png' width='100'> <!-- 상품사진 경로 정해주기 img1 -->
+									<img id="review_Img1" class="review_Img1"  style="width:45px;height:50px;"> <!-- 상품사진 경로 정해주기 img1 -->
 									<span id='pTitle' class="pTitle" style='font-weight: bold;'></span>
 								</div>
 							</div>
@@ -255,7 +255,7 @@
 
 		var statusIng = '진행중';
 		var statusEnd = '판매완료';
-
+		
 		$.ajax({
 
 			type : 'get',
@@ -263,7 +263,7 @@
 			data : data,
 			dataType : 'json',
 			success : function(result) {
-
+				//console.log(result[0].status)
 				$('.S-statusBtn').css('color', 'rgb(155, 153, 169)');
 				$('.S-statusBtn').css('background', '#e8e8e8');
 
@@ -321,9 +321,12 @@
 		console.log("nickname : "+"${nickname}");
 		console.log("title : "+title);
 		console.log("img1 : "+img1);
+		var readimg ="/Pupload/"+img1; 
+		
 		
 		$('#pTitle').text(title);
-		$('#review_img1').val(img1);
+		$('#review_Img1').attr("src",readimg);
+		$('#review_Img1').val(img1);
 		$('#pno').val(pno);
 		$('#title').val(title);
         $('#seller').val(seller);
@@ -370,7 +373,7 @@
         var id = $('#seller').val();
         var nickname = $('#nickname').val();
         var title = $('#review_title').val();
-        var img1 = $('#review_img1').val();
+        var img1 = $('#review_Img1').val();
         console.log("상품번호 : "+pno);
         console.log("판매자 : "+id);
         console.log("닉네임 : "+nickname);

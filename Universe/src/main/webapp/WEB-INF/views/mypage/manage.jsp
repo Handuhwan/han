@@ -37,7 +37,7 @@
 						<option value="">전체</option>
 						<option value="판매중">판매중</option>
 						<option value="진행중">진행중</option>
-						<option value="핀매완료">판매완료</option>
+						<option value="판매완료">판매완료</option>
 					</select>
 				</form>
 			</div>

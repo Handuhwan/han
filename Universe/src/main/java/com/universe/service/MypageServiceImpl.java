@@ -105,6 +105,7 @@ public class MypageServiceImpl implements MypageService {
 		}else if(no == 3) {
 			detailsSellList = mapper.detailsSoldList(id);
 		}
+		System.out.println(detailsSellList);
 		return detailsSellList;
 	}
 	
@@ -120,6 +121,8 @@ public class MypageServiceImpl implements MypageService {
 		}else if(no == 3) {
 			detailsBuyList = mapper.detailsBuyEndList(id);
 		}
+		
+		System.out.println(detailsBuyList);
 		return detailsBuyList;
 	}
 	

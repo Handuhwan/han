@@ -211,7 +211,7 @@ function saleOK(tno){
 	}) //ajax end
 	}// if end
 	else{
-		alert("당신은 구매자가 아닙니다.");
+		alert("당신은 판매자가 아닙니다.");
 	}
 	}
 	
@@ -232,7 +232,7 @@ function canceltrade(tno){
 		url:"/trade/tradecancel",
 		dataType:"json",
 		success:function(result){
-			if(result == 1){
+			if(result == 0){
 				alert("취소가 불가능합니다.");
 			}else{
 				alert("해당거래가 취소되었습니다.");

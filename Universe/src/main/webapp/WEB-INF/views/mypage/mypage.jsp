@@ -900,15 +900,14 @@ $("#check_module").click(function () {
 			e.preventDefault();
 			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
-			}
+							}
 		});
 		
 		$("#reviewLoad").click(function(r){ // Load More를 위한 클릭 이벤트r
 			r.preventDefault();
 			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+				
 			}
 		});
 
@@ -925,7 +924,7 @@ function showmore1(){
 			e.preventDefault();
 			$(".replyDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".replyDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+			
 			}
 		});
 		
@@ -933,7 +932,7 @@ function showmore1(){
 			r.preventDefault();
 			$(".reviewDIV:hidden").slice(0, 2).show(); // 숨김 설정된 다음 4개를 선택하여 표시
 			if($(".reviewDIV:hidden").length == 0){ // 숨겨진 DIV가 있는지 체크
-				alert("더 이상 항목이 없습니다"); // 더 이상 로드할 항목이 없는 경우 경고
+				
 			}
 		});
 

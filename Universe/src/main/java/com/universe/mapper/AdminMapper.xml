@@ -167,6 +167,9 @@
 		select * from report
 	</select>
 	
+	<update id="Role_change">
+		update member_auth set auth='ROLE_BEN' where id=#{id}
+	</update>
 	
 	
 </mapper>

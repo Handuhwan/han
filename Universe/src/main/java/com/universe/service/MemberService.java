@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 
 public interface MemberService {
 	
@@ -19,7 +20,8 @@ public interface MemberService {
 	public List<MemberVO> findPssword(String id, String name, String phone)throws Exception;
 	
 	public void certifiedPhoneNumber(String phone, int randomNumber) ;
-		
+	
+	public ReportVO controller(String id);
 		
 	}
 

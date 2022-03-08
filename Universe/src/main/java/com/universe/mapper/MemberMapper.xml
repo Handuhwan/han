@@ -37,5 +37,15 @@
     <update id="admin_member_forced_evictionCheck">
     	update member set status = '2' where usernumber=#{usernumber}
     </update>
+    
+    	<!-- id 권한 체크-->
+    <select id="controller">
+    	select count(*) from member_auth where id=#{id} and auth='ROLE_BEN';
+    </select>
+    
+    <select id="roles">
+    	select * from report where id=#{id}
+    </select>
+    
 	
 </mapper>

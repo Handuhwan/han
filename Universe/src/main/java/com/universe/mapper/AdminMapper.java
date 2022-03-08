@@ -33,6 +33,8 @@ public interface AdminMapper {
 	public MemberVO prevPage(int usernumber);
 	
 	
+	//권한 뻇기
+	public void Role_change(String id);
 	//alert 부분
 	
 	//admin_alert.jsp에 리스트를 출력하기 위한
@@ -51,5 +53,6 @@ public interface AdminMapper {
 	public ReportVO alert_nextPage(int usernumber);
 	public ReportVO alert_prevPage(int usernumber);
 	
-
+	
+	
 }

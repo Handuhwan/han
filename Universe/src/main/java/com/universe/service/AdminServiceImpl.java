@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService {
 	public void Admin_Reason(ReportVO rvo) {
 		System.out.println("rvo값 : "+rvo);
 		mapper.Admin_Reason(rvo);
+		mapper.Role_change(rvo.getReported_id());
 	}
 	
 	//admin_alert.jsp에 리스트를 출력하기 위한

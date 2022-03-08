@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.universe.domain.MemberVO;
+import com.universe.domain.ReportVO;
 
 
 
@@ -25,4 +26,11 @@ public interface MemberMapper {
 	public String certifiedPhoneNumbe(String phone, int randomNumber);
 	
 	public int joinid(String id);
+	
+	//에러 권한체크
+	public int controller(String id);
+	
+	//권한없는자 이유 가져오기
+	
+	public ReportVO roles(String id);
 }
