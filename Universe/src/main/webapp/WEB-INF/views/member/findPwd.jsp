@@ -84,10 +84,10 @@
 					    <div class="loginemail">
 						  	<p class="findphone">전화번호</p>
 						  	<input class="form-control" type="text" id="phone1" placeholder="전화번호" name="phone">
-							<input type="button" id="phoneChk1" value="전송" class="address"><br>
+							<input type="button" id="phoneChk1" value="전송" class="address"><br> 
 					    </div>	
 					   
-					    <div class="loginemail">
+					     <div class="loginemail">
 							<p class="findphone">인증번호 작성</p>
 							<input class="form-control" type="text"id="phone3"  placeholder="인증번호" id="userNum"> 
 							<input type="button" id="phoneChk3" value="확인" class="address">
@@ -123,9 +123,6 @@
 <div style=" margin-top: 100px;">
 	<%@ include file = "../footer.jsp"%>
 </div>
-
-
-
 
 <script>
 function openCity(evt, cityName) {

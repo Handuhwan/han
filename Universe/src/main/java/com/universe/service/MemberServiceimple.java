@@ -2,6 +2,7 @@ package com.universe.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class MemberServiceimple implements MemberService {
 		System.out.println("서비스 id실행 "+id);
 		return mapper.idCheck(id);
 	}
+	
 	@Override
 	public void register(MemberVO member) {
 		System.out.println("여기");
@@ -47,11 +49,16 @@ public class MemberServiceimple implements MemberService {
 		
 		return mapper.findId(name, phone);
 	}
+	
+	
 	@Override
 	public List<MemberVO> findPssword(String id, String name, String phone) throws Exception {
 	
 		return mapper.findPssword(id, name, phone);
 	}
+	
+	
+	
 	
 	@Override
 	public void certifiedPhoneNumber(String phone, int randomNumber) {
@@ -79,5 +86,14 @@ public class MemberServiceimple implements MemberService {
 		System.out.println(id);
 		return mapper.joinid(id);
 	}
+	
+	@Override
+	public int pwUpdate(String id, String memberPw2) {
+		System.out.println("id: "+ id);
+		System.out.println("pwd2"+memberPw2);
+		return mapper.pwUpdate(id, memberPw2);
+	}
+	
+	
 
 }

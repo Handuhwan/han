@@ -21,8 +21,13 @@ public interface MemberMapper {
 	
 	public List<MemberVO> findPssword(@Param("id") String id, @Param("name") String name, @Param("phone")String phone)throws Exception;
 
+	public void updatePw(MemberVO member) throws Exception;
+
 	
 	public String certifiedPhoneNumbe(String phone, int randomNumber);
 	
 	public int joinid(String id);
+	
+	public int pwUpdate(@Param("id") String id, @Param("memberPw2")String memberPw2 );
+	
 }
